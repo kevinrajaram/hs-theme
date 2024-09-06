@@ -1,0 +1,13 @@
+{% if customer.b2b? %}
+  <span class="Boost_CartCount">{{ cart.item_count }}</span>
+{% else %}
+  <span class="Boost_CartCount">0</span>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Cart Count",
+  "tag": "div",
+  "class": "rtnu-header__cart-count"
+}
+{% endschema %}

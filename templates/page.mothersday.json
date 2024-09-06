@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "main": {
+      "type": "md-hero",
+      "settings": {
+      }
+    },
+    "50dab3a1-e0c0-407b-af8f-2b51d758be5f": {
+      "type": "md-intro",
+      "settings": {
+      }
+    },
+    "48fbbe14-21eb-4485-a501-5b000f95ba29": {
+      "type": "md-benefits",
+      "settings": {
+      }
+    },
+    "d00feb4b-20b0-41a2-8559-87bd91e204e6": {
+      "type": "md-reviews-slider",
+      "settings": {
+      }
+    },
+    "3e62388c-1309-43c9-9ccc-cefa16b438e5": {
+      "type": "md-nutrients",
+      "blocks": {
+        "07556c8f-a4c8-41c6-a540-6be92e6ab413": {
+          "type": "product",
+          "settings": {
+            "product": "her-package",
+            "custom_product_description": "<p>Next-level support for hormonal balance, menstrual support, and overall female health.<\/p>"
+          }
+        },
+        "52c0ac5f-89d5-4afe-b0dd-16dca533fa64": {
+          "type": "product",
+          "settings": {
+            "product": "bone-matrix",
+            "custom_product_description": "<p>Foundational support to build strong bones, joints, and improve flexibility.<\/p>"
+          }
+        },
+        "928fa766-313a-4998-a2b4-8a7962f5e396": {
+          "type": "product",
+          "settings": {
+            "product": "skin-hair-nails",
+            "custom_product_description": "<p>Packed with vital nutrients and peptides to support healthy (and beautiful) skin, hair, and nails.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "07556c8f-a4c8-41c6-a540-6be92e6ab413",
+        "52c0ac5f-89d5-4afe-b0dd-16dca533fa64",
+        "928fa766-313a-4998-a2b4-8a7962f5e396"
+      ],
+      "settings": {
+      }
+    },
+    "e2fd2b4c-5525-4062-bb5c-1efa05316341": {
+      "type": "md-cta",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "50dab3a1-e0c0-407b-af8f-2b51d758be5f",
+    "48fbbe14-21eb-4485-a501-5b000f95ba29",
+    "d00feb4b-20b0-41a2-8559-87bd91e204e6",
+    "3e62388c-1309-43c9-9ccc-cefa16b438e5",
+    "e2fd2b4c-5525-4062-bb5c-1efa05316341"
+  ]
+}

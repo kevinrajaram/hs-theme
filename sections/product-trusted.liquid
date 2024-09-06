@@ -1,0 +1,34 @@
+{%- liquid
+    assign image = 'Paul-pdp-2.jpg' | asset_img_url: 'grande'
+    assign heading = 'Trusted'
+    assign description = 'Made by Dr. Paul Saladino aka Carnivore MD. He’s helped thousands of people reclaim their health. He’s Heart & Soil’s founder and a practicing doctor.'
+    assign description2 = 'Formulated by Dr. Paul Saladino aka Carnivore MD. He’s helped thousands of people reclaim their health. He’s Heart & Soil’s founder and a practicing doctor.'
+-%}
+<div class="wayfx-wrapper">
+    <div class="wayfx-grid">
+        <div class="wayfx-grid__item wayfx-product__trusted-image">
+            <img src="{{ image }}" alt="" />
+        </div>
+        <div class="wayfx-grid__item wayfx-product__trusted-content">
+            {%- if heading -%}
+                <h2>{{ heading }}</h2>
+            {%- endif -%}
+            {% if product.handle == 'her-package' %}
+              {%- if description2 -%}
+                <p>{{ description2 }}</p>
+              {%- endif -%}
+            {% else %}
+              {%- if description -%}
+                <p>{{ description }}</p>
+              {%- endif -%}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Trusted",
+        "tag": "section",
+        "class": "wayfx-product__trusted"
+    }
+{% endschema %}

@@ -1,0 +1,24 @@
+<section class="rtnu-product-infobar">
+  <div class="rtnu-wrapper">
+    <div class="rtnu-grid">
+        <div class="rtnu-grid__item">
+            <h2 class="rtnu-product__infobar__title">{{ product.title }}</h2>
+            {%- if template contains 'warrior' -%}
+            <p>Maximize Your Performance, Strength & Recovery</p>
+            {%- endif -%}
+            <div class="rtnu-product__infobar__reviews-widget"{%- if template contains 'warrior' -%}style="display: none"{%- endif -%}>
+                <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" data-product-type="{{product.type}}" data-product-title="{{product.title}}" style="display: inline-block;">{{ product.metafields.stamped.badge }}</span>
+            </div>
+        </div>
+        <div class="rtnu-grid__item">
+            <a href="#rtnu-product" class="rtnu-btn" role="button">Buy Now</a>
+        </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "V3 Product Infobar"
+}
+{% endschema %}

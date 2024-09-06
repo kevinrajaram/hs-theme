@@ -1,0 +1,43 @@
+<div id="reviews" class="rtnu-wrapper">
+  <h2>
+    {% if section.settings.title != blank %}
+      {{ section.settings.title }}
+    {% else %}
+    They love {{ product.title }}
+    {% endif %}
+    </h2>
+  <div id="stamped-main-widget"
+       data-widget-style="standard"
+       data-product-id="{{ product.id }}"
+       data-name="{{ product.title | escape }}"
+       data-url="{{ shop.url }}{{ product.url }}"
+       data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+       data-description="{{ product.description | escape }}"
+       data-product-sku="{{product.handle}}"
+       data-product-type="{{product.type}}">
+  </div>
+</div>
+
+<script>
+</script>
+
+{% schema %}
+{
+  "name": "Product Reviews",
+  "tag": "section",
+  "class": "wayfx-product__reviews rtnu-pdp-reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "info": "Leave blank to use default title of 'They love product-name-here'."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Reviews"
+    }
+  ]
+}
+{% endschema %}

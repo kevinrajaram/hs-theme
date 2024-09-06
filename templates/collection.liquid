@@ -1,0 +1,51 @@
+{% if collection.handle == 'growaov-subscriptions'
+  or collection.handle == 'growaov-collection'
+%}
+  {%- layout none -%}
+  <!doctype html>
+  <html class="no-js" lang="{{ request.locale.iso_code }}">
+    <head>
+      {% render 'stacks-redirect' %}
+      <script>
+        const currentUrl = window.location.href;
+        if (currentUrl.includes('?layout=subscriptions')) {
+          window.location.href = '/a/collections/products?subscriptions=true';
+        } else if (currentUrl.includes('?filter=stacks')) {
+          window.location.href = '/a/collections/products?filters=stacks';
+        } else {
+          window.location.href = '/a/collections/products';
+        }
+      </script>
+    </head>
+    <body></body>
+  </html>
+{% else %}
+  {% if customer.b2b? == false or customer.b2b? == null %}
+    <script>
+      window.location.href = '/a/collections/products';
+    </script>
+  {% endif %}
+  <div class="wayfx-collection">
+    <div class="wayfx-collection__header visually-hidden">
+      <h1>{{ collection.title }}</h1>
+    </div>
+    <div class="wayfx-wrapper">
+      {% render 'collection-sidebar' %}
+      <div class="wayfx-collection__main">
+        {%- paginate collection.products by 50 -%}
+          {% render 'collection-option-bar' %}
+          <div class="wayfx-products">
+            {% for product in collection.products %}
+              {% render 'product-grid-item', product: product %}
+            {% else %}
+              <div class="grid__item">
+                <p>{{ 'collections.general.no_matches' | t }}</p>
+              </div>
+            {% endfor %}
+            <span class="empty-item">No results found.</span>
+          </div>
+        {%- endpaginate -%}
+      </div>
+    </div>
+  </div>
+{% endif %}

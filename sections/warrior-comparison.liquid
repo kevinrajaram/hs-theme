@@ -1,0 +1,51 @@
+<div class="wayfx-warrior__comparison">
+  <div class="wayfx-wrapper">
+    <div class="wayfx-versus-table">
+      <div class="wayfx-versus-table__header">
+        <div class="other"></div>
+        <div class="warrior">
+          <img loading="lazy" src="{{ 'gsp-warrior-logo.png' | asset_img_url: '236x' }}" alt="Warrior" width="259" height="66">
+        </div>
+        <div class="other">
+          <img loading="lazy" src="{{ 'other.png' | asset_img_url: '260x' }}" alt="Synthetic Multivitamin" width="129" height="120">
+        </div>
+      </div>
+      <div class="wayfx-versus-table__comparison">
+        <p>Made with treasured organs</p>
+        <div class="warrior" data-label="Made with treasured organs">{% render 'svg-red-check' %}</div>
+        <div class="other" data-label="Made with treasured organs">{% render 'svg-cross' %}</div>
+      </div>
+      <div class="wayfx-versus-table__comparison">
+        <p>Highest Bioavailability</p>
+        <div class="warrior" data-label="Highest Bioavailability">{% render 'svg-red-check' %}</div>
+        <div class="other" data-label="Highest Bioavailability">{% render 'svg-cross' %}</div>
+      </div>
+      <div class="wayfx-versus-table__comparison">
+        <p>B12, CoQ10 & 10+ Powerful Nutrients</p>
+        <div class="warrior" data-label="CoQ10, Taurine & 10+ Powerful Nutrients">{% render 'svg-red-check' %}</div>
+        <div class="other" data-label="CoQ10, Taurine & 10+ Powerful Nutrients">{% render 'svg-cross' %}</div>
+      </div>
+      <div class="wayfx-versus-table__comparison">
+        <p>No junk or filler</p>
+        <div class="warrior" data-label="No junk or filler">{% render 'svg-red-check' %}</div>
+        <div class="other" data-label="No junk or filler">{% render 'svg-cross' %}</div>
+      </div>
+      <div class="wayfx-versus-table__comparison">
+        <p>Free from pesticides, GMO, antibiotics</p>
+        <div class="warrior" data-label="Free from pesticides GMO, antibiotics">{% render 'svg-red-check' %}</div>
+        <div class="other" data-label="Free from pesticides GMO, antibiotics">{% render 'svg-cross' %}</div>
+      </div>
+      <div class="wayfx-versus-table__comparison">
+        <p>Formulated by a board-certified doctor</p>
+        <div class="warrior" data-label="Formulated by board-certified doctor">{% render 'svg-red-check' %}</div>
+        <div class="other" data-label="Formulated by board-certified doctor">{% render 'svg-cross' %}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Warrior Comparison"
+}
+{% endschema %}

@@ -1,0 +1,307 @@
+{%- assign cart_count = 0 -%}
+{%- assign cart_discount_price = 0 -%}
+{%- assign cart_has_recharge = false -%}
+{%- for item in cart.items -%}
+  {%- assign is_recharge = false -%}
+  {%- if item.original_line_price > 0 -%}
+    {%- for p in item.properties -%}
+      {%- if p.first == 'shipping_interval_frequency' -%}
+        {%- assign cart_has_recharge = true -%}
+        {%- assign is_recharge = true -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- unless is_recharge -%}
+      {% assign cart_count = cart_count | plus: item.quantity %}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+
+<div class="wayfx-cart">
+  <div class="wayfx-wrapper">
+    {% if cart.item_count > 0 %}
+      <form action="{{ checkout_url }}" method="post" novalidate class="cart">
+        <div class="wayfx-cart-wrapper">
+          <div class="wayfx-cart-items">
+            <h1>{{ 'cart.general.title' | t }}</h1>
+            <table class="cart-table full">
+              <tbody>
+                {% for item in cart.items %}
+                  {% assign recurringchecked = 'false' %}
+                  {% assign property_size = item.properties | size %}
+                  {% if property_size > 0 %}
+                    {% for p in item.properties %}
+                      {% assign first_character_in_key = p.first
+                        | truncate: 1, ''
+                      %}
+                      {% assign recurringchecked = 'false' %}
+                      {% for p in item.properties %}
+                        {% if p.first == 'shipping_interval_frequency' %}
+                          {% assign frequency = p.last %}
+                          {% assign recurringchecked = 'true' %}
+                        {% endif %}
+                        {% if p.first == 'shipping_interval_unit_type' %}
+                          {% if frequency == '1' %}
+                            {% if p.last == 'Days' %}
+                              {% assign frequency_unit = 'Day' %}
+                            {% elsif p.last == 'Months' %}
+                              {% assign frequency_unit = 'Month' %}
+                            {% elsif p.last == 'Weeks' %}
+                              {% assign frequency_unit = 'Week' %}
+                            {% endif %}
+                          {% else %}
+                            {% assign frequency_unit = p.last %}
+                          {% endif %}
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
+                  {% endif %}
+
+                  <tr class="cart__row table__section">
+                    <td
+                      data-label="{{ 'customer.order.product' | t }}"
+                      class="cart__image"
+                    >
+                      <a href="{{ item.url | within: collections.all }}">
+                        <img
+                          src="{{ item | img_url: 'medium' }}"
+                          alt="{{ item.title | escape }}"
+                        >
+                      </a>
+                    </td>
+                    <td class="cart__info">
+                      <div class="cart__inner-row">
+                        <div class="cart__product">
+                          <div class="cart__title">
+                            <a href="{{ item.url }}">
+                              {{- item.product.title -}}
+                            </a>
+                          </div>
+                          {% unless item.variant.title contains 'Default' %}
+                            <div class="cart__variant">
+                              {{ item.variant.title }}
+                            </div>
+                          {% endunless %}
+                          {% if settings.cart_vendor_enable %}
+                            <p>{{ item.vendor }}</p>
+                          {% endif %}
+                          {% if recurringchecked == 'true' %}
+                            <p class="cart__delivery">
+                              Delivers every {{ frequency }}
+                              {{ frequency_unit }}
+                            </p>
+                          {% endif %}
+                        </div>
+                        <div class="cart-item__remove">
+                          <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              width="24"
+                              height="24"
+                              stroke="currentColor"
+                            >
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="cart__inner-row">
+                        {% unless item.variant.id == 43520157024387 %}
+                          {% if customer.b2b? %}
+                            {% liquid
+                              assign qtyMin = item.variant.quantity_rule.min | default: 1
+                              assign qtyMax = item.variant.quantity_rule.max
+                              assign increment = item.variant.quantity_rule.increment
+                            %}
+                            <div class="cart__inner-row-qty">
+                              <label for="quantity" class="visually-hidden"
+                                >Quantity</label
+                              >
+                              <button
+                                type="button"
+                                class="cart__inner-row-qty-btn"
+                                onclick="this.parentNode.querySelector('input[type=number]').stepDown({{ increment }});"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="2"
+                                  stroke="currentColor"
+                                >
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>
+                              </button>
+                              <input
+                                type="number"
+                                name="updates[]"
+                                id="updates_{{ item.key | replace: ':', '' }}"
+                                data-id="{{ item.key }}"
+                                value="{{ item.quantity }}"
+                                step="{{ increment }}"
+                                min="{{ qtyMin }}"
+                                max="{{ qtyMax }}"
+                              >
+                              <button
+                                type="button"
+                                class="cart__inner-row-qty-btn"
+                                onclick="if (parseInt(this.parentNode.querySelector('input[type=number]').value) < 24) { this.parentNode.querySelector('input[type=number]').stepUp({{ increment }}); }"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="2"
+                                  stroke="currentColor"
+                                >
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                              </button>
+                            </div>
+                          {% else %}
+                            <div class="cart__qty">
+                              <input
+                                type="button"
+                                value="-"
+                                class="qtyminus"
+                                field="updates_{{ item.key | replace: ':', '' }}"
+                              >
+                              <input
+                                type="text"
+                                name="updates[]"
+                                id="updates_{{ item.key | replace: ':', '' }}"
+                                data-id="{{ item.key }}"
+                                value="{{ item.quantity }}"
+                                min="0"
+                                class="qty"
+                              >
+                              <input
+                                type="button"
+                                value="+"
+                                class="qtyplus"
+                                field="updates_{{ item.key | replace: ':', '' }}"
+                              >
+                            </div>
+                          {% endif %}
+                        {% endunless %}
+                        <div class="cart__price">
+                          <span class="cart__final-price">
+                            {%- if recurringchecked == 'true' -%}
+                              <div
+                                class="pn-total-line-item"
+                                data-id="{{ item.key }}"
+                              >
+                                {{ item.line_price | money }}
+                              </div>
+                            {%- else -%}
+                              <div
+                                class="pn-total-line-item"
+                                data-id="{{ item.key }}"
+                              >
+                                {{ item.line_price | money }}
+                              </div>
+                            {%- endif -%}
+                          </span>
+                          {% unless recurringchecked == 'true' %}
+                            {% if item.original_line_price != item.line_price %}
+                              <span class="cart__original-price"
+                                ><s>
+                                  <div
+                                    class="pn-total-line-item"
+                                    data-id="{{ item.key }}"
+                                  >
+                                    {{ item.original_line_price | money }}
+                                  </div>
+                                </s></span
+                              >
+                            {% endif %}
+                          {% endunless %}
+                          {% for discount in item.discounts %}
+                            <div class="cart-item__discount cart-item__discount--desktop">
+                              <i class="wayfx-icon-tag"></i>
+                              {{ discount.title }}
+                            </div>
+                          {% endfor %}
+                        </div>
+                      </div>
+                      {% for discount in item.discounts %}
+                        <div class="cart-item__discount cart-item__discount--mobile">
+                          <i class="wayfx-icon-tag"></i> {{ discount.title }}
+                        </div>
+                      {% endfor %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+            <button
+              type="submit"
+              name="update"
+              class="wayfx-btn wayfx-btn--outline update-cart"
+            >
+              {{ 'cart.general.update' | t }}
+            </button>
+          </div>
+          <div class="wayfx-cart-sidebar">
+            <div class="wayfx-cart-sidebar__sticky">
+              <h2>Order Summary</h2>
+              <div class="wayfx-cart-summary">
+                <dl>
+                  <dt>Shipping</dt>
+                  <dd>TBD</dd>
+                </dl>
+                <dl>
+                  <dt>Tax</dt>
+                  <dd>TBD</dd>
+                </dl>
+                <dl>
+                  <dt>{{ 'cart.general.subtotal' | t }}</dt>
+                  <dd>
+                    <strong>
+                      {{- cart.total_price | money_with_currency -}}
+                    </strong>
+                  </dd>
+                </dl>
+                {% if cart.total_discounts > 0 %}
+                  {% assign savings = cart.total_discounts | money %}
+                  <p>
+                    <span class="cart-subtotal__savings">
+                      {{- 'cart.general.savings_html' | t: price: savings -}}
+                    </span>
+                  </p>
+                {% endif %}
+                <button
+                  type="submit"
+                  name="checkout"
+                  class="wayfx-btn wayfx-btn--medium cart__checkout"
+                >
+                  Checkout
+                </button>
+                {% unless customer.b2b? %}
+                  <i data-govx-id></i>
+                {% endunless %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    {% else %}
+      <div class="wayfx-cart-empty">
+        <h1>Your cart is currently empty.</h1>
+        <p>Fill your cart with some amazing supplements.</p>
+        {% if customer.b2b? %}
+          <a href="/collections/b2b-collection" class="wayfx-btn">Shop Now</a>
+        {% else %}
+          <a href="/a/collections/products" class="wayfx-btn">Shop Now</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  .govx-id-full {
+    width: 100% !important;
+  }
+</style>

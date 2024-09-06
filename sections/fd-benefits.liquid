@@ -1,0 +1,108 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Fd benefits
+-------------------------------------------------------------------------------
+Usage
+{% section 'fd-benefits' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+<section class="rtnu-fd-benefits">
+  <div class="rtnu-wrapper">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="rtnu-fd-benefits__content">
+      {{ section.settings.content }}
+    </div>
+
+    <div class="splide" aria-label="Whole Package Benefits" id="whole-package-benefits">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide" {{ block.shopify_attributes }}>
+              <div class="rtnu-fd-benefits__item">
+                <div class="rtnu-fd-benefits__item__icon">
+                  <img src="{{ block.settings.icon | image_url: width: 236 }}" alt="" width="118" height="118" loading="lazy">
+                </div>
+                <div class="rtnu-fd-benefits__item__name">
+                  {{ block.settings.name }}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <a href="https://shop.heartandsoil.co/cart/33759900565635:1?discount=DADWHOLEPACKAGE" class="wayfx-btn rtnu-fd-add">Add to cart</a>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (e) => {
+    var benefits = new Splide( '#whole-package-benefits', {
+      type      : 'slide',
+      pagination: false,
+      arrows    : false,
+      drag:     false,
+      perPage   : 4,
+      gap: 24,
+      breakpoints: {
+        800: {
+          perPage: 2,
+          focus: 'center',
+          trimSpace: false,
+          pagination: true,
+          drag:     true
+        },
+        600: {
+          perPage: 1,
+          gap: 12,
+        }
+      }
+    });
+
+    benefits.mount();
+  });
+</script>
+{% schema %}
+{
+  "name": "Fd benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Whole Package Benefits"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "default": "<p>Whole Package is packed with vital nutrients to support natural testosterone production for healthy aging and quality of life. It also supports energy production for improved muscle performance, cognition, and blood flow.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FD Benefits"
+    }
+  ]
+}
+{% endschema %}

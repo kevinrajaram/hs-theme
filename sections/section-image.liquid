@@ -1,0 +1,22 @@
+<section class="rtnu-image">
+  <img src="{{ section.settings.section_image | image_url }}" alt="" loading="lazy">
+</section>
+
+{% schema %}
+  {
+    "name": "Image",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "section_image",
+        "label": "Image"
+      }
+    ],
+    "presets": [
+      {
+          "name": "Image",
+          "category": "general"
+      }
+    ]
+  }
+{% endschema %}

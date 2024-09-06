@@ -1,0 +1,44 @@
+{%- liquid
+    assign heading = 'How to use it'
+    assign content_title_1 = 'One Daily'
+    assign content_description_1 = '<p>Take six capsules once daily. It’s that easy. If you’re new to taking organ supplements, start with ½ dose. <a href="#">Ask us</a> if you need help.</p>'
+    assign content_image_1 = 'hs-once-daily.png' | asset_img_url: 'medium'
+
+    assign content_title_2 = 'Stay Consistent'
+    assign content_description_2 = '<p>Get results and feel better with consistent use. Plus save 10% when you subscribe.</p>'
+    assign content_image_2 = 'hs-stay-consistent.png' | asset_img_url: 'medium'
+
+    assign content_title_3 = 'Pairs well with'
+    assign content_description_3 = '<p>If you want to kickstart weight loss, pair Beef Organs with <a href="/">Fire Starter</a>.</p>'
+    assign content_image_3 = 'hs-pairs-well.png' | asset_img_url: 'medium'
+-%}
+<div class="wayfx-wrapper">
+    <h2>{{ heading }}</h2>
+
+    <div class="wayfx-grid">
+        <div class="wayfx-grid__item">
+            <img class="lazyload" data-src="{{ content_image_1 }}" alt=""/>
+            <h3>{{ content_title_1 }}</h3>
+            {{ content_description_1 }}
+        </div>
+        <div class="wayfx-grid__item">
+            <img class="lazyload" data-src="{{ content_image_2 }}" alt=""/>
+            <h3>{{ content_title_2 }}</h3>
+            {{ content_description_2 }}
+        </div>
+        <div class="wayfx-grid__item">
+            <img class="lazyload" data-src="{{ content_image_3 }}" alt=""/>
+            <h3>{{ content_title_3 }}</h3>
+            {{ content_description_3 }}
+            <p>or <a href="/">Shop By Health Goal</a></p>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Product How To",
+        "tag": "section",
+        "class": "wayfx-product__how-to"
+    }
+{% endschema %}

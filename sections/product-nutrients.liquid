@@ -1,0 +1,469 @@
+{%- liquid
+    assign nutrient_heading = product.metafields.sf_nutrients.heading
+    assign nutrient_heading_1 = product.metafields.sf_nutrients.nutrient_1_title
+    assign nutrient_description_1 = product.metafields.sf_nutrients.nutrient_1_description
+    assign nutrient_image_1 = product.metafields.sf_nutrients.nutrient_1_image
+    assign nutrient_heading_2 = product.metafields.sf_nutrients.nutrient_2_title
+    assign nutrient_description_2 = product.metafields.sf_nutrients.nutrient_2_description
+    assign nutrient_image_2 = product.metafields.sf_nutrients.nutrient_2_image
+    assign nutrient_heading_3 = product.metafields.sf_nutrients.nutrient_3_title
+    assign nutrient_description_3 = product.metafields.sf_nutrients.nutrient_3_description
+    assign nutrient_image_3 = product.metafields.sf_nutrients.nutrient_3_image
+    assign nutrient_heading_4 = product.metafields.sf_nutrients.nutrient_4_title
+    assign nutrient_description_4 = product.metafields.sf_nutrients.nutrient_4_description
+    assign nutrient_image_4 = product.metafields.sf_nutrients.nutrient_4_image
+    assign nutrient_heading_5 = product.metafields.sf_nutrients.nutrient_5_title
+    assign nutrient_description_5 = product.metafields.sf_nutrients.nutrient_5_description
+    assign nutrient_image_5 = product.metafields.sf_nutrients.nutrient_5_image
+    assign nutrient_heading_6 = product.metafields.sf_nutrients.nutrient_6_title
+    assign nutrient_description_6 = product.metafields.sf_nutrients.nutrient_6_description
+    assign nutrient_image_6 = product.metafields.sf_nutrients.nutrient_6_image
+    assign nutrient_heading_7 = product.metafields.sf_nutrients.nutrient_7_title
+    assign nutrient_description_7 = product.metafields.sf_nutrients.nutrient_7_description
+    assign nutrient_image_7 = product.metafields.sf_nutrients.nutrient_7_image
+    assign nutrient_heading_8 = product.metafields.sf_nutrients.nutrient_8_title
+    assign nutrient_description_8 = product.metafields.sf_nutrients.nutrient_8_description
+    assign nutrient_image_8 = product.metafields.sf_nutrients.nutrient_8_image
+    assign nutrient_heading_9 = product.metafields.sf_nutrients.nutrient_9_title
+    assign nutrient_description_9 = product.metafields.sf_nutrients.nutrient_9_description
+    assign nutrient_image_9 = product.metafields.sf_nutrients.nutrient_9_image
+    assign nutrient_heading_10 = product.metafields.sf_nutrients.nutrient_10_title
+    assign nutrient_description_10 = product.metafields.sf_nutrients.nutrient_10_description
+    assign nutrient_image_10 = product.metafields.sf_nutrients.nutrient_10_image
+    assign nutrient_heading_11 = product.metafields.sf_nutrients.nutrient_11_title
+    assign nutrient_description_11 = product.metafields.sf_nutrients.nutrient_11_description
+    assign nutrient_image_11 = product.metafields.sf_nutrients.nutrient_11_image
+    assign nutrient_heading_12 = product.metafields.sf_nutrients.nutrient_12_title
+    assign nutrient_description_12 = product.metafields.sf_nutrients.nutrient_12_description
+    assign nutrient_image_12 = product.metafields.sf_nutrients.nutrient_12_image
+    assign nutrient_heading_13 = product.metafields.sf_nutrients.nutrient_13_title
+    assign nutrient_description_13 = product.metafields.sf_nutrients.nutrient_13_description
+    assign nutrient_image_13 = product.metafields.sf_nutrients.nutrient_13_image
+    assign nutrient_heading_14 = product.metafields.sf_nutrients.nutrient_14_title
+    assign nutrient_description_14 = product.metafields.sf_nutrients.nutrient_14_description
+    assign nutrient_image_14 = product.metafields.sf_nutrients.nutrient_14_image
+    assign nutrient_heading_15 = product.metafields.sf_nutrients.nutrient_15_title
+    assign nutrient_description_15 = product.metafields.sf_nutrients.nutrient_15_description
+    assign nutrient_image_15 = product.metafields.sf_nutrients.nutrient_15_image
+    assign nutrient_heading_16 = product.metafields.sf_nutrients.nutrient_16_title
+    assign nutrient_description_16 = product.metafields.sf_nutrients.nutrient_16_description
+    assign nutrient_image_16 = product.metafields.sf_nutrients.nutrient_16_image
+    assign nutrient_heading_17 = product.metafields.sf_nutrients.nutrient_17_title
+    assign nutrient_description_17 = product.metafields.sf_nutrients.nutrient_17_description
+    assign nutrient_image_17 = product.metafields.sf_nutrients.nutrient_17_image
+    assign nutrient_heading_18 = product.metafields.sf_nutrients.nutrient_18_title
+    assign nutrient_description_18 = product.metafields.sf_nutrients.nutrient_18_description
+    assign nutrient_image_18 = product.metafields.sf_nutrients.nutrient_18_image
+    assign nutrient_heading_19 = product.metafields.sf_nutrients.nutrient_19_title
+    assign nutrient_description_19 = product.metafields.sf_nutrients.nutrient_19_description
+    assign nutrient_image_19 = product.metafields.sf_nutrients.nutrient_19_image
+    assign nutrient_heading_20 = product.metafields.sf_nutrients.nutrient_20_title
+    assign nutrient_description_20 = product.metafields.sf_nutrients.nutrient_20_description
+    assign nutrient_image_20 = product.metafields.sf_nutrients.nutrient_20_image
+-%}
+<div class="wayfx-wrapper">
+    <h2>{{ nutrient_heading }}</h2>
+
+    <div class="desktop-only">
+        <div class="wayfx-grid">
+            {%- if nutrient_heading_1 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_1 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_1 }}" />
+                </div>
+                <p>{{ nutrient_description_1 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_2 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_2 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_2 }}" />
+                </div>
+                <p>{{ nutrient_description_2 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_3-%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_3 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_3 }}" />
+                </div>
+                <p>{{ nutrient_description_3 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_4 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_4 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_4 }}" />
+                </div>
+                <p>{{ nutrient_description_4 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_5 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_5 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_5 }}" />
+                </div>
+                <p>{{ nutrient_description_5 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_6 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_6 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_6 }}" />
+                </div>
+                <p>{{ nutrient_description_6 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_7 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_7 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_7 }}" />
+                </div>
+                <p>{{ nutrient_description_7 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_8 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_8 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_8 }}" />
+                </div>
+                <p>{{ nutrient_description_8 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_9 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_9 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_9 }}" />
+                </div>
+                <p>{{ nutrient_description_9 }}</p>
+            </div>
+            {%- endif -%}
+        </div>
+        {%- if nutrient_heading_10 -%}
+        <div data-readmore>
+            <div class="wayfx-grid toggled-content">
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_10 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_10 }}" />
+                    </div>
+                    <p>{{ nutrient_description_10 }}</p>
+                </div>
+                {%- if nutrient_heading_11 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_11 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_11 }}" />
+                    </div>
+                    <p>{{ nutrient_description_11 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_12 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_12 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_12 }}" />
+                    </div>
+                    <p>{{ nutrient_description_12 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_13 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_13 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_13 }}" />
+                    </div>
+                    <p>{{ nutrient_description_13 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_14 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_14 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_14 }}" />
+                    </div>
+                    <p>{{ nutrient_description_14 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_15 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_15 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_15 }}" />
+                    </div>
+                    <p>{{ nutrient_description_15 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_16 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_16 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_16 }}" />
+                    </div>
+                    <p>{{ nutrient_description_16 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_17 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_17 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_17 }}" />
+                    </div>
+                    <p>{{ nutrient_description_17 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_18 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_18 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_18 }}" />
+                    </div>
+                    <p>{{ nutrient_description_18 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_19 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_19 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_19 }}" />
+                    </div>
+                    <p>{{ nutrient_description_19 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_20 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_20 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_20 }}" />
+                    </div>
+                    <p>{{ nutrient_description_20 }}</p>
+                </div>
+                {%- endif -%}
+            </div>
+        </div>
+        {%- endif -%}
+    </div>
+
+    <div class="mobile-only">
+        <div class="wayfx-grid">
+            {%- if nutrient_heading_1 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_1 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_1 }}" />
+                </div>
+                <p>{{ nutrient_description_1 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_2 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_2 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_2 }}" />
+                </div>
+                <p>{{ nutrient_description_2 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_3-%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_3 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_3 }}" />
+                </div>
+                <p>{{ nutrient_description_3 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_4 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_4 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_4 }}" />
+                </div>
+                <p>{{ nutrient_description_4 }}</p>
+            </div>
+            {%- endif -%}
+            {%- if nutrient_heading_5 -%}
+            <div class="wayfx-grid__item wayfx-product__nutrient">
+                <div>
+                    <h3>{{ nutrient_heading_5 }}</h3>
+                    <img class="lazyload" data-src="{{ nutrient_image_5 }}" />
+                </div>
+                <p>{{ nutrient_description_5 }}</p>
+            </div>
+            {%- endif -%}
+        </div>
+        {%- if nutrient_heading_6 -%}
+        <div data-readmore>
+            <div class="wayfx-grid toggled-content">
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_6 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_6 }}" />
+                    </div>
+                    <p>{{ nutrient_description_6 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_7 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_7 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_7 }}" />
+                    </div>
+                    <p>{{ nutrient_description_7 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_8 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_8 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_8 }}" />
+                    </div>
+                    <p>{{ nutrient_description_8 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_9 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_9 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_9 }}" />
+                    </div>
+                    <p>{{ nutrient_description_9 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_10 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_10 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_10 }}" />
+                    </div>
+                    <p>{{ nutrient_description_10 }}</p>
+                </div>
+                {%- if nutrient_heading_11 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_11 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_11 }}" />
+                    </div>
+                    <p>{{ nutrient_description_11 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_12 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_12 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_12 }}" />
+                    </div>
+                    <p>{{ nutrient_description_12 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_13 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_13 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_13 }}" />
+                    </div>
+                    <p>{{ nutrient_description_13 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_14 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_14 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_14 }}" />
+                    </div>
+                    <p>{{ nutrient_description_14 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_15 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_15 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_15 }}" />
+                    </div>
+                    <p>{{ nutrient_description_15 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_16 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_16 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_16 }}" />
+                    </div>
+                    <p>{{ nutrient_description_16 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_17 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_17 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_17 }}" />
+                    </div>
+                    <p>{{ nutrient_description_17 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_18 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_18 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_18 }}" />
+                    </div>
+                    <p>{{ nutrient_description_18 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_19 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_19 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_19 }}" />
+                    </div>
+                    <p>{{ nutrient_description_19 }}</p>
+                </div>
+                {%- endif -%}
+                {%- if nutrient_heading_20 -%}
+                <div class="wayfx-grid__item wayfx-product__nutrient">
+                    <div>
+                        <h3>{{ nutrient_heading_20 }}</h3>
+                        <img class="lazyload" data-src="{{ nutrient_image_20 }}" />
+                    </div>
+                    <p>{{ nutrient_description_20 }}</p>
+                </div>
+                {%- endif -%}
+            </div>
+        </div>
+        {%- endif -%}
+    </div>
+</div>
+
+<div style="display: none;" id="peptide">
+	<h2>What are Peptides?</h2>
+	<p>Peptides are a smaller version of proteins. Like proteins, peptides are made of amino acids. And amino acids play a vital role in almost every system in the human body.</p>
+    <p>By taking the peptides found in our supplements, you can:</p>
+    <ul>
+        <li>{% include 'svg-hs-time' %} Slow down the aging process</li>
+        <li>{% include 'svg-hs-prevent-bone-loss' %} Prevent age-related bone loss</li>
+        <li>{% include 'svg-hs-reduce-inflammation' %} Reduce inflammation</li>
+        <li>{% include 'svg-hs-strength' %} Build strength and muscle mass</li>
+        <li>{% include 'svg-hs-lower-blood-pressure' %} Lower blood pressure</li>
+    </ul>
+</div>
+
+{%- unless nutrient_heading_1 -%}
+    <style type="text/css">.wayfx-product__nutrients {display: none;}</style>
+{%- endunless -%}
+
+{% schema %}
+    {
+        "name": "Product Nutrients",
+        "tag": "section",
+        "class": "wayfx-product__nutrients"
+    }
+{% endschema %}

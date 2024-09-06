@@ -1,0 +1,37 @@
+{%- liquid
+    assign main_heading = 'Why Heart &amp; Soil'
+    assign description = 'Formulated with a blend of five of the most treasured organs, this beef organs supplement gets to work by improving your mitochondria function, supporting optimal brain, heart and reproductive health, while also increasing your nutrient absorption.'
+    assign video_url = 'https://www.youtube.com/watch?v=7R17G5-xcKA'
+    assign video_cover = 'hs-why-video-cover.jpg' | asset_img_url: 'original'
+    assign sub_heading = 'Want to keep researching?'
+-%}
+<div class="wayfx-wrapper">
+    {%- if main_heading -%}
+  	    <h2>{{ main_heading }}</h2>
+    {%- endif -%}
+    {%- if description -%}
+        <p>{{ description }}</p>
+    {%- endif -%}
+    <div class="wayfx-video-wrapper">
+        <a href="{{ video_url }}" data-fancybox data-width="1280" data-height="720">
+            <div class="video-play-trigger">
+                {% include 'svg-hs-play-icon' %}
+                <span>Watch our video</span>
+            </div>
+            <img class="lazyload" data-src="{{ video_cover }}" alt="{{ heading }}">
+        </a>
+    </div>
+    <h2>{{ sub_heading }}</h2>
+    <div class="wayfx-grid">
+        {% comment %} <div class="wayfx-grid__item"><a href="#">{% include 'svg-hs-product-guide' %} <span>{{ product.title }} Product Guide</span></a></div> {% endcomment %}
+        <div class="wayfx-grid__item"><a href="https://faq.heartandsoil.co/en-US">{% include 'svg-hs-common-questions' %} <span>Frequently Asked Questions</span></a></div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Why Heart & Soil",
+        "tag": "section",
+        "class": "wayfx-product__why-hs"
+    }
+{% endschema %}

@@ -1,0 +1,32 @@
+<div class="wayfx-warrior">
+  <img loading="lazy" src="{{ 'GSP-signup-head.png' | asset_img_url: '870x' }}" alt="GSP Warrior" width="435" height="81">
+  <h1 id="wayfx-warrior-title">Sign up to be notified</h1>
+  <div id="ps__subscribe-form" style="max-width: 350px; margin: auto;">
+    <form action="https://api.postscript.io/subscribe/form" method="post" onsubmit="document.getElementById('ps__sent-message').style.display = 'block'; document.getElementById('ps__subscribe-form').style.display = 'none'; document.getElementById('wayfx-warrior-title').style.display = 'none';" target="dummyframe">
+      <input id="ps__shop_id" name="shop_id" type="hidden" value="53102"/>
+      <input id="ps__keyword_id" name="keyword_id" type="hidden" value="123808"/>
+      <div style="margin-bottom: 24px; text-align: center">
+        <input autofocus id="ps__phone-subscribe" name="phone" placeholder="Phone Number" style="width: 100%;" type="phone" required pattern="1[0-9]{3}[0-9]{3}[0-9]{4}"/>
+        <small style="display: block;width: 100%;text-align: left;margin-top: 8px;color: #fff;margin-left: 6px; font-size: 15px">Format: 13476004000</small>
+      </div>
+      <div>
+        <input class="btn wayfx-btn" style="width: 100%;" type="submit" value="Subscribe"/>
+      </div>
+      <div class="disclaimer">*By subscribing, you agree to receive recurring automated marketing text messages (e.g. cart reminders) at the phone number provided. Consent is not a condition to purchase. Msg & data rates may apply. Msg frequency varies. Reply HELP for help and STOP to cancel. View our <a href="{{ shop.terms_of_service.url }}">Terms of Service</a> and <a href="{{ shop.privacy_policy.url }}">Privacy Policy</a>.
+      </div> 
+    </form>
+  </div>
+  <div id="ps__sent-message" style="max-width: 350px; margin: auto; display: none">
+    <p>Thanks for subscribing! We'll send you a message shortly.</p>
+  </div>
+</div>
+<iframe border="0" height="0" id="ps__dummyframe" name="dummyframe" width="0"></iframe>
+
+<script>
+
+function phoneMask() { 
+  var num = $(this).val().replace(/\D/g,''); 
+  $(this).val(1 + num.substring(1,4) + num.substring(4,7) + num.substring(7,11)); 
+}
+$('#ps__phone-subscribe').keyup(phoneMask);
+</script>

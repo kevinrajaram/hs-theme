@@ -1,0 +1,122 @@
+{% comment %}
+  -------------------------------------------------------------------------------
+  LP Benefits
+  -------------------------------------------------------------------------------
+  Usage
+  {% section 'lp-benefits' %}
+  -------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign benefitsProduct = section.settings.product
+  assign benefitsImage = section.settings.image
+  assign benefitsTitle = section.settings.title
+  assign benefitsButtonText = section.settings.button_text
+  assign benefitsButtonLink = section.settings.button_link
+  assign item_text_1 = benefitsProduct.metafields.sf_cta_block.item_1_text
+  assign item_text_2 = benefitsProduct.metafields.sf_cta_block.item_2_text
+  assign item_text_3 = benefitsProduct.metafields.sf_cta_block.item_3_text
+  assign item_text_4 = benefitsProduct.metafields.sf_cta_block.item_4_text
+  assign item_text_5 = benefitsProduct.metafields.sf_cta_block.item_5_text
+  assign item_text_6 = benefitsProduct.metafields.sf_cta_block.item_6_text
+  assign item_text_7 = benefitsProduct.metafields.sf_cta_block.item_7_text
+%}
+
+<section class="rtnu-lp__benefits">
+  <div class="rtnu-grid">
+    <div class="rtnu-grid__item">
+      <div class="rtnu-lp__benefits-img">
+        {% if benefitsImage != blank %}
+          {{ benefitsImage | image_url: width: 1600 | image_tag }}
+        {% else %}
+          <p><em>Upload an image to feature in this section.</em></p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="rtnu-grid__item">
+      <div class="rtnu-lp__benefits-content">
+        <h2>{{ benefitsTitle }}</h2>
+
+        {% if item_text_1 != blank %}
+          <ul>
+            <li>{{ item_text_1 }}</li>
+            {% if item_text_2 != blank %}
+              <li>{{ item_text_2 }}</li>
+            {% endif %}
+            {% if item_text_3 != blank %}
+              <li>{{ item_text_3 }}</li>
+            {% endif %}
+            {% if item_text_4 != blank %}
+              <li>{{ item_text_4 }}</li>
+            {% endif %}
+            {% if item_text_5 != blank %}
+              <li>{{ item_text_5 }}</li>
+            {% endif %}
+            {% if item_text_6 != blank %}
+              <li>{{ item_text_6 }}</li>
+            {% endif %}
+            {% if item_text_7 != blank %}
+              <li>{{ item_text_7 }}</li>
+            {% endif %}
+          </ul>
+        {% endif %}
+
+        <div class="rtnu-lp__benefits-cta">
+          <a href="{{ benefitsButtonLink }}" class="rtnu-btn">{{ benefitsButtonText }}</a>
+          <div>
+            <span
+              class="stamped-product-reviews-badge stamped-main-badge"
+              data-id="{{ benefitsProduct.id }}"
+              data-product-sku="{{ benefitsProduct.handle }}"
+              data-product-type="{{ benefitsProduct.type }}"
+              data-product-title="{{ benefitsProduct.title }}"
+              style="display: inline-block;"
+            >
+              {{- benefitsProduct.metafields.stamped.badge -}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LP Benefits",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Daily Benefits"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Benefits"
+    }
+  ]
+}
+{% endschema %}

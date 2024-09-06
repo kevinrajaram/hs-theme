@@ -1,0 +1,122 @@
+{% comment %}
+-------------------------------------------------------------------------------
+LP Health Experts
+-------------------------------------------------------------------------------
+Usage
+{% section 'lp-health-experts' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign section_heading = section.settings.section_heading
+%}
+
+<section class="rtnu-lp__experts">
+  <div class="rtnu-wrapper">
+    {% if section_heading != blank %}
+    <h2>{{ section_heading }}</h2>
+    {% endif %}
+
+    <div class="rtnu-lp__experts-sliders">
+      <div class="splide rtnu-lp__experts-slider-main" aria-label="Health Experts">
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for block in section.blocks %}
+              <li class="splide__slide" {{ block.shopify_attributes }}  data-image="{{ block.settings.slider_item_image | image_url: width: 972 }}">
+                {{ block.settings.slider_item_image | image_url: width: 378 | image_tag: class: 'rtnu-lp__experts-slider-image' }}
+                <div class="top">
+                  <p>{{ block.settings.slider_item_name }}</p>
+                  <span>{{ block.settings.slider_item_title }}</span>
+                </div>
+
+                <div class="content">
+                  {{ block.settings.slider_item_content }}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path stroke="#F7ECDE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 16C1 7.72 7.72 1 16 1c8.28 0 15 6.72 15 15 0 8.28-6.72 15-15 15-8.28 0-15-6.72-15-15Z"/><path stroke="#F7ECDE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 10-6 6 6 6"/><path stroke="#F7ECDE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 16H10"/></svg>
+          </button>
+          <button class="splide__arrow splide__arrow--next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path stroke="#F7ECDE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M31 16c0 8.28-6.72 15-15 15-8.28 0-15-6.72-15-15C1 7.72 7.72 1 16 1c8.28 0 15 6.72 15 15Z"/><path stroke="#F7ECDE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 22 6-6-6-6"/><path stroke="#F7ECDE" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 16h12"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <ul class="rtnu-lp__experts-slider-thumbs">
+        <!-- Thumbnails will be generated here -->
+      </ul>
+    </div>
+
+    <div class="splide rtnu-lp__experts-slider-mobile" aria-label="Health Experts">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide" {{ block.shopify_attributes }}>
+              {{ block.settings.slider_item_image | image_url: width: 378 | image_tag: class: 'rtnu-lp__experts-slider-image' }}
+              <div class="top">
+                <p>{{ block.settings.slider_item_name }}</p>
+                <span>{{ block.settings.slider_item_title }}</span>
+              </div>
+
+              <div class="content">
+                {{ block.settings.slider_item_content }}
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LP Health Experts",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "RECOMMENDED BY TOP HEALTH EXPERTS, ENTHUSIASTS, AND ATHLETES."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider_item",
+      "name": "Slider Item",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "slider_item_content",
+          "label": "Content"
+        },
+        {
+          "type": "text",
+          "id": "slider_item_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "slider_item_title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "slider_item_image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Health Experts"
+    }
+  ]
+}
+{% endschema %}

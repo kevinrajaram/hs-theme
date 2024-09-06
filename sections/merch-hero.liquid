@@ -1,0 +1,284 @@
+{%- liquid
+  assign id = '#shopify-section-' | append: section.id
+  assign product_form_id = 'wayfx-product-form-' | append: section.id
+  assign current_variant = product.selected_or_first_available_variant | default: product.variants.first
+  assign subscription_product = product.metafields.subscriptions
+  assign subscription_variant_id = product.selected_or_first_available_variant.metafields.subscriptions.discount_variant_id
+  assign discount_percentage = subscription_product.discount_percentage | round: 2
+  assign discount_floor = subscription_product.discount_percentage | floor
+
+  if discount_percentage == discount_floor
+    assign discount_percentage = discount_floor
+  endif
+
+  assign plan_id = current_variant.selling_plan_allocations[0].selling_plan.id
+  assign plan_percentage = current_variant.selling_plan_allocations[0].selling_plan.price_adjustments[0].value
+  assign plan_percentage_decimal = plan_percentage | times: 1.0 | divided_by: 100
+  assign plan_discount = current_variant.price | times: plan_percentage_decimal
+  assign plan_price = current_variant.price | minus: plan_discount
+  assign selected_plan_discount = current_variant.price | times: plan_percentage_decimal
+  assign selected_plan_price = current_variant.price | minus: selected_plan_discount
+
+  assign sold_out = true
+  if current_variant.available
+    assign sold_out = false
+  endif
+
+  assign heroAccentColor = product.metafields.rtnu.hero_accent_color
+  assign heroTextColor = product.metafields.rtnu.hero_text_color
+-%}
+
+{%- capture productTitleAndSubTitle -%}
+  <h1 class="rtnu-product__title">{{ product.title }}</h1>
+  {% if section.settings.product_subtitle != blank %}
+  <p class="rtnu-product__subtitle">{{ section.settings.product_subtitle }}</p>
+  {% endif %}
+{%- endcapture -%}
+
+<section class="rtnu-product__hero rtnu-product__hero--merch" style="--bgAccent: {{ heroAccentColor }}; --textAccent: {{ heroTextColor }}">
+  <div class="rtnu-product__hero-title">
+  {{ productTitleAndSubTitle }}
+  </div>
+  <div class="rtnu-grid__left">
+    {%- if product.media.size > 0 -%}
+    <section
+      id="pdp-main-carousel"
+      class="splide rtnu-product__main-image"
+      aria-label="PDP main carousel"
+    >
+      <div class="splide__track">
+        <ul class="splide__list">
+          {%- for image in product.images -%}
+          <li class="splide__slide" {% if image.attached_to_variant? %}data-variant="{{ image.variants | map: 'id' | join: ',' }}"{% endif %}>
+            <img src="{{ image.src | image_url: width: 1200 }}" alt="{{ image.alt | escape }}" data-image-id="{{ image.id }}" width="600" height="600">
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </section>
+    <div class="rtnu-product__thumbails splide" id="pdp-main-thumbnails" aria-label="PDP main carousel thumbnails">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {%- for image in product.images -%}
+          <li class="splide__slide">
+            <img src="{{ image.src | image_url: width: 200 }}" alt="{{ image.alt | escape }}" data-image-id="{{ image.id }}" width="200" height="200">
+          </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+    {%- endif -%}
+  </div>
+
+  <div class="rtnu-grid__right">
+    <p class="rtnu-product__price">{{ product.price | money_without_trailing_zeros }}</p>
+    {% if product.description != blank %}
+    <div class="rtnu-product__description">
+      {{ product.description }}
+    </div>
+    {% endif %}
+
+    {%- form 'product', product, data-productid: product.id, id: product_form_id, class: 'GrowAOV-Form rtnu-product__form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+      <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ product.selected_or_first_available_variant.id }}">
+      <input type='hidden' name='quantity' value='1'>
+
+     <div class="rtnu-product__form-actions">
+        {% comment %} Show product variants if any {% endcomment %}
+        {% if product.variants.size > 1 %}
+        <div id="{{ product_form_id }}-rtnu-product-variants" class="rtnu-product__variants" data-section="{{ section.id }}">
+          <label class="rtnu-product__form-item-label">Size</label>
+          <select
+            name="id"
+            id="Variants-{{ section.id }}"
+            class="rtnu-product__select"
+            form="{{ product_form_id }}"
+          >
+            {%- for variant in product.variants -%}
+              <option
+                {% if variant == product.selected_or_first_available_variant %}
+                  selected="selected"
+                {% endif %}
+                {% if variant.inventory_policy == "continue" %}
+                {% elsif variant.available == false %}
+                  disabled
+                {% endif %}
+                value="{{ variant.id }}"
+              >
+                {{ variant.title }}
+              </option>
+            {%- endfor -%}
+          </select>
+        </div>
+        {% endif %}
+
+        {% if section.settings.product_lightbox_image != blank %}
+          <a href="{{ section.settings.product_lightbox_image | image_url }}" data-fancybox class="rtnu-product__info-lightbox rtnu-product__info-lightbox--mobile">Sizing Guide</a>
+        {% endif %}
+
+        <div class="rtnu-product__quantity" data-section="{{ section.id }}"">
+          <label class="rtnu-product__form-item-label">Quantity</label>
+
+          <div class="rtnu-product__quantity-selector">
+            <button class="rtnu-product__minus-btn" type="button" onclick="decrementValue()">-</button>
+            <input class="rtnu-product__count" type="text" id="quantity" value="1">
+            <button class="rtnu-product__plus-btn" type="button" onclick="incrementValue()">+</button>
+          </div>
+        </div>
+
+        {% if section.settings.product_lightbox_image != blank %}
+          <a href="{{ section.settings.product_lightbox_image | image_url }}" data-fancybox class="rtnu-product__info-lightbox rtnu-product__info-lightbox--desktop">Sizing Guide</a>
+        {% endif %}
+
+        <script>
+          function incrementValue()
+          {
+              var value = parseInt(document.getElementById('quantity').value, 10);
+              value = isNaN(value) ? 0 : value;
+              value++;
+              document.getElementById('quantity').value = value;
+              document.querySelector('[name="quantity"]').value = value;
+          }
+
+          function decrementValue()
+          {
+              var value = parseInt(document.getElementById('quantity').value, 10);
+              if (value > 1) {
+                value--;
+              }
+              document.getElementById('quantity').value = value;
+              document.querySelector('[name="quantity"]').value = value;
+          }
+        </script>
+      </div>
+
+      <div class="rtnu-product__form-checkout">
+        <button class="rtnu-product__form-submit wayfx-btn{% if current_variant.inventory_policy == "continue" %}{% elsif current_variant.available == false %} wayfx-btn--disabled{% endif %}" {% if current_variant.inventory_policy == "continue" %}{% elsif current_variant.available == false %}disabled{% endif %}>
+          {% if current_variant.available == false %}Sold Out{% else %}Add to cart{% endif %}
+        </button>
+
+        <div class="rtnu-product__note">
+          <p>This item ships separately from supplements.</p>
+        </div>
+
+        <div class="rtnu-product__form-extras">
+          <div class="rtnu-returns">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12.9" viewBox="0 0 20 12.9"><path fill="#8f5121" d="M17.9 1v4.4H4l3.8-3.9L6.3 0 0 6.4 6.3 13l1.5-1.6L4 7.5h16V1.1Z" data-name="Icon ionic-md-return-left"/></svg>
+            <p>Free & Easy Returns</p>
+          </div>
+          <div class="rtnu-shipping">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16"><path fill="#8f5121" d="M19.5 11H19V7.6a1.5 1.5 0 0 0-.4-1l-3.2-3.2a1.5 1.5 0 0 0-1-.4H13V1.5A1.5 1.5 0 0 0 11.5 0h-8A1.5 1.5 0 0 0 2 1.5V3H.2a.3.3 0 0 0-.2.3v.5a.3.3 0 0 0 .3.2h8.4a.3.3 0 0 1 .3.3v.5a.3.3 0 0 1-.3.2H1.3a.3.3 0 0 0-.3.3v.5a.3.3 0 0 0 .3.2h6.5a.3.3 0 0 1 .2.3v.5a.3.3 0 0 1-.3.2H.3a.3.3 0 0 0-.2.3v.5a.3.3 0 0 0 .3.2h6.5a.3.3 0 0 1 .2.3v.4a.3.3 0 0 1-.3.3H2v4a3 3 0 0 0 6 0h4a3 3 0 0 0 6 0h1.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5ZM5 14.5A1.5 1.5 0 1 1 6.5 13 1.5 1.5 0 0 1 5 14.5Zm10 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5ZM17.5 8H13V4.5h1.4l3.1 3.1Z" data-name="Icon awesome-shipping-fast"/></svg>
+            <p>Free U.S. shipping over $80</p>
+          </div>
+        </div>
+      </div>
+
+    {%- endform -%}
+  </div>
+</section>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (e) => {
+    let productForm = document.querySelector('#{{ product_form_id }}'),
+        currentVariantPrice = '{{ current_variant.price | money_without_trailing_zeros }}',
+        shippingFrequencyDropdown = productForm.querySelector('.rtnu-single-option-selector__dropdown'),
+        subscriptionBenefits = productForm.querySelector('.rtnu-product__subscription-benefits'),
+        productVariantsOptions = productForm.querySelectorAll('.rtnu-product__variants .rtnu-option'),
+        subscriptionPrice = productForm.querySelector('.rtnu-single-option__price--subscription'),
+        onetimePrice = productForm.querySelector('.rtnu-single-option__price--onetime div'),
+        sellingPlan = productForm.querySelector('#{{ product_form_id }}-sellingPlan'),
+        productId = productForm.querySelector('[name="id"]'),
+        sellingPlanOptions = productForm.querySelector('#{{ product_form_id }}-sellingPlanOptions'),
+        carouselSlides = document.querySelectorAll('#pdp-main-carousel .splide__slide'),
+        purchaseSelectorLabel = productForm.querySelectorAll('#{{ product_form_id }}-ProductSelect-option-1 label'),
+        mainSliderSlides = document.querySelectorAll('#pdp-main-carousel .splide__slide'),
+        mainSlider = document.querySelector('#pdp-main-carousel'),
+        mainSliderArrows,
+        mainSliderArrowPrev,
+        currentIndex = 0 + 1,
+        addToCartBtn = document.querySelector('.rtnu-product__form-submit');
+
+    // Product Slider
+    var main = new Splide( '#pdp-main-carousel', {
+      type      : 'slide',
+      rewind    : false,
+      pagination: false,
+      arrows    : false,
+      gap: 16,
+      breakpoints: {
+        768: {
+          gap: 8,
+          pagination: true,
+        },
+        600: {
+          perPage: 1,
+        }
+      }
+    } );
+
+    var thumbnails = new Splide( '#pdp-main-thumbnails', {
+      fixedWidth  : 85,
+      fixedHeight : 85,
+      gap         : 16,
+      rewind      : false,
+      pagination  : false,
+      arrows      : false,
+      isNavigation: true,
+      breakpoints : {
+        900: {
+          fixedWidth  : 64,
+          fixedHeight : 64,
+          perPage     : 3,
+          gap         : 8,
+        },
+        768: {
+          destroy: true,
+        }
+      }
+    });
+
+    main.sync( thumbnails);
+    main.mount();
+    thumbnails.mount();
+
+    const variantsSelect = document.querySelector('.rtnu-product__select');
+
+    variantsSelect.addEventListener("change", (e) => {
+      let variant_id = e.target.value;
+      productId.value = variant_id;
+
+      carouselSlides.forEach((slide, index) => {
+        // get the variant id from the data attribute
+        let variantId = slide.dataset.variant;
+
+        // check if variantId is not empty
+        if (variantId) {
+          // split the variantId string into an array
+          let variantIdArray = variantId.split(',');
+
+          // check if the variantIdArray includes the variant_id
+          if (variantIdArray.includes(variant_id)) {
+            main.go(index);
+          }
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_lightbox_image",
+      "label": "Lightbox Image"
+    }
+  ]
+}
+{% endschema %}

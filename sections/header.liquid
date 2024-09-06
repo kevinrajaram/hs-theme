@@ -1,0 +1,60 @@
+<div class="wayfx-wrapper wayfx-header__wrapper" itemscope itemtype="http://schema.org/WebSite">
+  <div class="wayfx-header__left">
+    <button
+      class="wayfx-header__nav-toggle"
+      aria-expanded="false"
+      aria-controls="wayfxNavigation"
+      type="button"
+    >
+      <svg class="wayfx-header__nav-toggle-open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" width="24">
+        <g fill="{%- if template contains 'warrior' -%}#ffffff{%- else -%}#2D231A{%- endif -%}" fill-rule="evenodd"><rect width="24" height="2" rx="2"/><rect width="24" height="2" y="7" rx="2"/><rect width="24" height="2" y="14" rx="2"/></g>
+      </svg>
+      <svg
+        class="wayfx-header__nav-toggle-close"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 29 29"
+        width="20"
+        height="20"
+      >
+        <g fill="none" fill-rule="evenodd" stroke="{%- if template contains 'warrior' -%}#ffffff{%- else -%}#2D231A{%- endif -%}" stroke-linecap="round" stroke-width="4"><path d="M2.54347826 2.54347826L26.4565217 26.4565217M2 26L26 2"/></g>
+      </svg>
+    </button>
+  </div>
+
+  <div class="wayfx-header__brand" itemscope itemtype="http://schema.org/Organization">
+    <a href="/" itemprop="url">
+      {% include 'svg-heart-and-soil-inline' %}
+    </a>
+  </div>
+
+  <nav class="wayfx-header__nav" id="wayfxNavigation" role="navigation" aria-label="Main navigation">
+    <ul id="wayfx-main-menu" class="wayfx-header__nav-wrapper">
+      {% for link in linklists['wayfx-header'].links %}
+        <li class="wayfx-header__nav-link{% if link.active %} active{% endif %}">
+          {{ link.title | link_to: link.url }}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="wayfx-header__right">
+    <div class="wayfx-header__account">
+      <a href="/a/account">
+        {% include 'svg-customer' %}
+      </a>
+    </div>
+    <div class="wayfx-header__cart">
+      <a href="/cart" class="GrowAOV-Trigger">
+        {% include 'svg-cart' %}
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "header",
+  "class": "wayfx-header"
+}
+{% endschema %}

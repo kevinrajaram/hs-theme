@@ -1,0 +1,265 @@
+{
+  "layout": "paid-lp",
+  "sections": {
+    "header": {
+      "type": "lp-header",
+      "settings": {
+        "title": "Harness the Power of Nature’s Ultimate Multivitamin",
+        "button_url": "#buy-now",
+        "button_text": "Get Beef Organs",
+        "is_external": false
+      }
+    },
+    "main": {
+      "type": "lp-hero",
+      "custom_css": [
+        ".rtnu-lp__hero .rtnu-wrapper {--width: 1200px;}",
+        ".rtnu-lp__hero .rtnu-grid .rtnu-grid__item:first-child {flex: 1 1 600px; max-width: 700px;}"
+      ],
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/hs-lp-bo-hero-bg.webp",
+        "product": "beef-organs",
+        "content": "<h1>HARNESS THE POWER\u2028 OF NATURE’S ULTIMATE\u2028 MULTIVITAMIN<\/h1><p>Beef organs are nutrient-dense and provide a wide array of essential vitamins and minerals. Our Beef Organs supplement is packed with vital nutrients and peptides to support your overall healthy, vitality and energy.<\/p>"
+      }
+    },
+    "42c1429c-ee63-4d5e-b8d2-ae57f8f1d039": {
+      "type": "lp-info-bar",
+      "blocks": {
+        "ffafe796-b740-4155-9c73-75d0aae5a2f5": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Grass-Fed & Finished"
+          }
+        },
+        "2e46e8fb-4c1b-411a-bdfb-805492afa5e2": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Hormone, Antibiotic, Pesticide, and GMO Free"
+          }
+        },
+        "701c3ddb-b256-4633-83d9-ae6eb634f39f": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Additive Free"
+          }
+        },
+        "9db6e645-2ca7-40d6-a75a-75c163489024": {
+          "type": "info-item",
+          "settings": {
+            "text": "Informed Sport Certified"
+          }
+        }
+      },
+      "block_order": [
+        "ffafe796-b740-4155-9c73-75d0aae5a2f5",
+        "2e46e8fb-4c1b-411a-bdfb-805492afa5e2",
+        "701c3ddb-b256-4633-83d9-ae6eb634f39f",
+        "9db6e645-2ca7-40d6-a75a-75c163489024"
+      ],
+      "settings": {
+      }
+    },
+    "363a1aa6-4ede-456c-afde-a767429f2c70": {
+      "type": "lp-organs",
+      "blocks": {
+        "7b35350c-caaf-4353-9b81-b0cd28cdb210": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Liver<\/strong> is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.<\/p>"
+          }
+        },
+        "52ec945a-207e-4162-b021-e2dfd319fd3b": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Heart<\/strong> is one of the best sources of CoQ10, a powerful antioxidant for exercise performance and promoting insulin sensitivity. It’s also rich in Taurine and L-carnitine.<\/p>"
+          }
+        },
+        "2efb5b38-7761-4617-b1d4-70ac23bef135": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Pancreas<\/strong> contains enzymes such as amylase, lipase, and trypsin, as well as B5, B12, and selenium to support digestion and the gut microbiome.<\/p>"
+          }
+        },
+        "78de8ef6-e402-4e1e-8a68-7adef03da345": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Spleen<\/strong> has high levels of heme iron, the most bioavailable form of iron, to support the nervous system and immune health. It is also rich in niacin and selenium.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7b35350c-caaf-4353-9b81-b0cd28cdb210",
+        "52ec945a-207e-4162-b021-e2dfd319fd3b",
+        "2efb5b38-7761-4617-b1d4-70ac23bef135",
+        "78de8ef6-e402-4e1e-8a68-7adef03da345"
+      ],
+      "settings": {
+        "content": "<h2>UNLOCK THE POWER OF ORGANS<\/h2><p>Beef organs are the most nutrient-dense and bioavailable foods on the planet. By incorporating these potent sources of essential nutrients into your diet, you can finally address lingering nutrient inadequacies and deficiencies, paving the way for a remarkable transformation in how you feel and function.<\/p>",
+        "organs_image": "shopify:\/\/shop_images\/hs-lp-bo-organs.webp",
+        "background_color": "#c89966",
+        "text_color": "#f7ecde",
+        "bullet_color": "#8a6a48",
+        "bullet_color_active": "#a65316"
+      }
+    },
+    "110cefad-19d4-4cbc-8800-6a0f1c132ee4": {
+      "type": "lp-benefits",
+      "settings": {
+        "product": "beef-organs",
+        "image": "shopify:\/\/shop_images\/hs-lp-bo-benefits.webp",
+        "title": "Daily Benefits",
+        "button_text": "Buy Now",
+        "button_link": "#buy-now"
+      }
+    },
+    "b4d26ab3-4895-4da0-a8e4-23b357c9716c": {
+      "type": "lp-reviews",
+      "blocks": {
+        "028dcde3-782c-4030-9a4c-27206e0b77f8": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Life changing...<\/h3><p>“I have been taking the beef organs for about a year now. I started to notice changes after about 3 weeks of taking them. Energy went up big time and has stayed up, my gut health has improved, I am more mentally clear, I have less pain, increased stamina and overall better health all around. I ditched all my other synthetic vitamins. I am a costumer for life!”<\/p>",
+            "name": "Maria"
+          }
+        },
+        "a4030737-ee20-42b6-84fb-531463655271": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Beef Organs for the win...<\/h3><p>“I have been taking Beef Organs for the past year and I am more than happy. For years I was taking handfuls of vitamins and always felt fatigued and frustrated. These are the perfect multivitamin and they help with everything from my energy to my digestion. I always feel off when I don't take them so I know they are working!”<\/p>",
+            "name": "Emma"
+          }
+        },
+        "be28067b-7dda-41ad-97c9-2815101c923d": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Good stuff...<\/h3><p>“I have noticed a difference in how I feel overall. More energy, strength and endurance during workouts. I stopped taking multivitamin since I started with Heart & Soil products... \u2028these are working well for me in workouts and daily life. \u2028I will continue to order.”<\/p>",
+            "name": "Travis"
+          }
+        },
+        "bcede21c-2a0e-4600-9e52-9f78ffe1d242": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>This farmer loves Heart & Soil...<\/h3><p>“I love H&S Beef Organs. I'm a farmer who raises beef cattle but don't like the taste of organ meat, but know how good they are for you. So I love getting them through your supplements with great quality. My wife has even started taking them. Thanks Y'all!”<\/p>",
+            "name": "Jeffrey"
+          }
+        }
+      },
+      "block_order": [
+        "028dcde3-782c-4030-9a4c-27206e0b77f8",
+        "a4030737-ee20-42b6-84fb-531463655271",
+        "be28067b-7dda-41ad-97c9-2815101c923d",
+        "bcede21c-2a0e-4600-9e52-9f78ffe1d242"
+      ],
+      "settings": {
+        "title": "WHAT PEOPLE ARE SAYING..."
+      }
+    },
+    "fe8158b5-a755-458f-9624-910f105ed227": {
+      "type": "lp-product-101",
+      "blocks": {
+        "b6bbd8b4-7462-487e-baff-a304a1e90b78": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>Daily Routine Made Easy<\/strong><\/p><p>\u2028Our freeze-drying process preserves key nutrients in a taste-free capsule that’s easy for anyone to take. Because it’s simply real food, it can be taken with or without a meal.<\/p>"
+          }
+        },
+        "6849c56c-1f28-437b-921f-a0a320a9caee": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>Heart & Soil Standard\u2028<\/strong><\/p><p>Rigorous third-party testing, optimized for athletes (Informed Sport Certified), no junk or fillers, sourced from regenerative farms, and free from pesticides, GMO and antibiotics. <\/p>"
+          }
+        },
+        "068d6d00-822f-4197-8bea-d7ae92031a7d": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>A Powerhouse of Nutrition<\/strong><\/p><p>\u2028Critical nutrients, peptides, and growth factors in one powerful supplement. Improve your overall health, vitality, mood, exercise performance, and energy.<\/p>"
+          }
+        },
+        "29f4fd7c-9105-4aac-8913-06034e65b9b4": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>For Anyone Seeking Radical Health\u2028<\/strong><\/p><p>Optimized for athletes (IS Certified and tested) but accessible to anyone and everyone seeking radical health and vitality. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b6bbd8b4-7462-487e-baff-a304a1e90b78",
+        "6849c56c-1f28-437b-921f-a0a320a9caee",
+        "068d6d00-822f-4197-8bea-d7ae92031a7d",
+        "29f4fd7c-9105-4aac-8913-06034e65b9b4"
+      ],
+      "settings": {
+        "section_heading": "6 CAPSULES A DAY. \u2028<br>REAL FOOD. REAL RESULTS.",
+        "desktop_image": "shopify:\/\/shop_images\/hs-lp-bo-capsule.webp",
+        "mobile_image": "shopify:\/\/shop_images\/hs-lp-product-pill_d422f227-18a1-499e-a9dd-22ba42f81833.webp"
+      }
+    },
+    "8359966d-26ad-4922-8a3b-180fa919d1c2": {
+      "type": "lp-cta-callout",
+      "settings": {
+        "background": "shopify:\/\/shop_images\/hs-lp-bo-cta-callout-bg.webp",
+        "product": "beef-organs",
+        "button_text": "Get Beef Organs",
+        "button_url": "#buy-now"
+      }
+    },
+    "1e747be7-b9d8-48b2-8094-d85cc4c8f910": {
+      "type": "lp-health-experts",
+      "blocks": {
+        "16766dbb-9525-49a6-8e3e-6fd76dcda900": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_content": "<p>“What I have learned from Dr. Paul Saladino has enabled me to fight in my life much harder. Since I began eating organs I feel stronger, I have more energy and I am healthier. Nutrient rich organs will transform how you look and feel, just like they transformed me.”<\/p>",
+            "slider_item_name": "George St. Pierre",
+            "slider_item_title": "UFC HALL OF FAME",
+            "slider_item_image": "shopify:\/\/shop_images\/hs-lp-george.webp"
+          }
+        },
+        "cfa5dc38-8fe7-464c-8514-d67c08c6a967": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_content": "<p>“Personally I really love the Beef Organs blend as an amazing multivitamin for overall health, mood, and energy!”<\/p>",
+            "slider_item_name": "Bethany Hamilton",
+            "slider_item_title": "PRO SURFER, MOTIVATIONAL SPEAKER",
+            "slider_item_image": "shopify:\/\/shop_images\/hss-lp-bethany-hamilton.webp"
+          }
+        },
+        "0e60668b-c50b-4b65-8f12-e1936633f451": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_content": "<p>“Beef organs is nature's ultimate multivitamin. I hear from people every single day that this supplement helps them improve energy, libido and overall kick a**ery in their life.\"<\/p>",
+            "slider_item_name": "Paul Saladino MD",
+            "slider_item_title": "BOARD CERTIFIED MD, HEART & SOIL FOUNDER",
+            "slider_item_image": "shopify:\/\/shop_images\/hs-lp-paul.webp"
+          }
+        }
+      },
+      "block_order": [
+        "16766dbb-9525-49a6-8e3e-6fd76dcda900",
+        "cfa5dc38-8fe7-464c-8514-d67c08c6a967",
+        "0e60668b-c50b-4b65-8f12-e1936633f451"
+      ],
+      "settings": {
+        "section_heading": "RECOMMENDED BY TOP HEALTH EXPERTS, ENTHUSIASTS, AND ATHLETES."
+      }
+    },
+    "2c7f8ae6-ddda-44b8-b666-993d1ab72b26": {
+      "type": "lp-product-selector",
+      "settings": {
+        "product": "beef-organs"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "main",
+    "42c1429c-ee63-4d5e-b8d2-ae57f8f1d039",
+    "363a1aa6-4ede-456c-afde-a767429f2c70",
+    "110cefad-19d4-4cbc-8800-6a0f1c132ee4",
+    "b4d26ab3-4895-4da0-a8e4-23b357c9716c",
+    "fe8158b5-a755-458f-9624-910f105ed227",
+    "8359966d-26ad-4922-8a3b-180fa919d1c2",
+    "1e747be7-b9d8-48b2-8094-d85cc4c8f910",
+    "2c7f8ae6-ddda-44b8-b666-993d1ab72b26"
+  ]
+}

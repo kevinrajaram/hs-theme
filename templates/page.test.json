@@ -1,0 +1,13 @@
+{
+  "layout": "paid-lp",
+  "sections": {
+    "main": {
+      "type": "lp-hero",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

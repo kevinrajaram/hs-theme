@@ -1,0 +1,254 @@
+{
+  "layout": "paid-lp",
+  "sections": {
+    "header": {
+      "type": "lp-header",
+      "settings": {
+        "title": "Reinforce Your Manhood",
+        "button_url": "#buy-now",
+        "button_text": "Get Whole Package",
+        "is_external": false
+      }
+    },
+    "main": {
+      "type": "lp-hero",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/hs-lp-wp-hero-bg.webp",
+        "product": "whole-package",
+        "content": "<h1>REINFORCE YOUR MANHOOD WITH WHOLE PACKAGE<\/h1><p>Beef organs are nutrient-dense and provide a wide array of essential vitamins and minerals. Our Whole Package supplement is packed with vital nutrients and peptides to provide support for exercise performance, hormone production, and sexual health.<\/p>"
+      }
+    },
+    "42c1429c-ee63-4d5e-b8d2-ae57f8f1d039": {
+      "type": "lp-info-bar",
+      "blocks": {
+        "ffafe796-b740-4155-9c73-75d0aae5a2f5": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Grass-Fed & Finished"
+          }
+        },
+        "2e46e8fb-4c1b-411a-bdfb-805492afa5e2": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Hormone, Antibiotic, Pesticide, and GMO Free"
+          }
+        },
+        "701c3ddb-b256-4633-83d9-ae6eb634f39f": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Additive Free"
+          }
+        },
+        "9db6e645-2ca7-40d6-a75a-75c163489024": {
+          "type": "info-item",
+          "settings": {
+            "text": "Informed Sport Certified"
+          }
+        }
+      },
+      "block_order": [
+        "ffafe796-b740-4155-9c73-75d0aae5a2f5",
+        "2e46e8fb-4c1b-411a-bdfb-805492afa5e2",
+        "701c3ddb-b256-4633-83d9-ae6eb634f39f",
+        "9db6e645-2ca7-40d6-a75a-75c163489024"
+      ],
+      "settings": {
+      }
+    },
+    "363a1aa6-4ede-456c-afde-a767429f2c70": {
+      "type": "lp-organs",
+      "blocks": {
+        "7b35350c-caaf-4353-9b81-b0cd28cdb210": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Liver<\/strong> is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.<\/p>"
+          }
+        },
+        "52ec945a-207e-4162-b021-e2dfd319fd3b": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Testicle<\/strong> provides tissue-specific nutrients, proteins, and peptides—like activin, inhibin, and epidermal growth factor—all of which play a vital role in the formation of our sex hormones, reproductive cells, and fertility. <\/p>"
+          }
+        },
+        "2efb5b38-7761-4617-b1d4-70ac23bef135": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Whole Blood Extract<\/strong> includes red and white blood cells, platelets, and plasma. Each contains critical nutrients such as electrolytes, iron, Vitamin D, and hormones that help regulate inflammation and the production of healthy blood.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7b35350c-caaf-4353-9b81-b0cd28cdb210",
+        "52ec945a-207e-4162-b021-e2dfd319fd3b",
+        "2efb5b38-7761-4617-b1d4-70ac23bef135"
+      ],
+      "settings": {
+        "content": "<h2>UNLOCK THE POWER OF ORGANS<\/h2><p>Beef organs are the most nutrient-dense and bioavailable foods on the planet. By incorporating these potent sources of essential nutrients into your diet, you can finally address lingering nutrient inadequacies and deficiencies, paving the way for a remarkable transformation in how you feel and function.<\/p>",
+        "organs_image": "shopify:\/\/shop_images\/hs-lp-wp-organs.webp",
+        "background_color": "#4170b6",
+        "text_color": "#f7ecde",
+        "bullet_color": "#2d538b",
+        "bullet_color_active": "#ffffff"
+      }
+    },
+    "110cefad-19d4-4cbc-8800-6a0f1c132ee4": {
+      "type": "lp-benefits",
+      "settings": {
+        "product": "whole-package",
+        "image": "shopify:\/\/shop_images\/hs-lp-wp-benefits.webp",
+        "title": "Daily Benefits",
+        "button_text": "Buy Now",
+        "button_link": "#buy-now"
+      }
+    },
+    "b4d26ab3-4895-4da0-a8e4-23b357c9716c": {
+      "type": "lp-reviews",
+      "blocks": {
+        "028dcde3-782c-4030-9a4c-27206e0b77f8": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Amazing stuff...<\/h3><p>“I have introduced whole package to my daily routine and I have noticed my libido has gone up and I feel more energetic. I ended up ordering beef organs, skin and nails and the warrior. I combine, mix and matching them to take 6 pill total a day with my breakfast complementing my diet. Loving the animal based journey, can’t stop talking about it to my friends.”<\/p>",
+            "name": "Rafael"
+          }
+        },
+        "a4030737-ee20-42b6-84fb-531463655271": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Profoundly effective...<\/h3><p>This stuff will change your life! After taking whole package supplements (for 4+ months) my body has greatly improved. I have new levels of strength and endurance, along with muscle size and vascularity increases! My libido is through the roof and my energy levels have improved immensely... it’s nothing short of miraculous!<\/p>",
+            "name": "Charles"
+          }
+        },
+        "be28067b-7dda-41ad-97c9-2815101c923d": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Must have for men’s health...<\/h3><p>“I can’t not express how great this product has been! Have been taking whole package for about a month now and it has been a great addition to my daily routine and health. If your a middle aged man looking to improve your health it would be a mistake to not add this into your regimen.”<\/p>",
+            "name": "Zach"
+          }
+        },
+        "bcede21c-2a0e-4600-9e52-9f78ffe1d242": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Better mood...<\/h3><p>Since starting these supplements, along with feeling better physically, I’ve also noticed having a better frame of mind. At work or just dealing with the kids I just have a general clearer picture. Hard to explain but I feel great... mixed with meats, dairy and exercise I’ve never felt better.<\/p>",
+            "name": "Richard"
+          }
+        }
+      },
+      "block_order": [
+        "028dcde3-782c-4030-9a4c-27206e0b77f8",
+        "a4030737-ee20-42b6-84fb-531463655271",
+        "be28067b-7dda-41ad-97c9-2815101c923d",
+        "bcede21c-2a0e-4600-9e52-9f78ffe1d242"
+      ],
+      "settings": {
+        "title": "WHAT PEOPLE ARE SAYING..."
+      }
+    },
+    "fe8158b5-a755-458f-9624-910f105ed227": {
+      "type": "lp-product-101",
+      "blocks": {
+        "b6bbd8b4-7462-487e-baff-a304a1e90b78": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>Daily Routine Made Easy<\/strong><\/p><p>\u2028Our freeze-drying process preserves key nutrients in a taste-free capsule that’s easy for anyone to take. Because it’s simply real food, it can be taken with or without a meal.<\/p>"
+          }
+        },
+        "068d6d00-822f-4197-8bea-d7ae92031a7d": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>Heart & Soil Standard\u2028<\/strong><\/p><p>Rigorous third-party testing. No junk or fillers, sourced from regenerative farms, and free from pesticides, GMO and antibiotics. <\/p>"
+          }
+        },
+        "6849c56c-1f28-437b-921f-a0a320a9caee": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>A Powerhouse of Nutrition\u2028<\/strong><\/p><p>Critical nutrients, peptides, and growth factors in one powerful supplement. Improve your overall health, vitality, mood, exercise performance, and energy.<\/p>"
+          }
+        },
+        "ad5994f7-6267-4062-92d2-7648da363bdf": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>For Anyone Seeking Radical Health\u2028<\/strong><\/p><p>Accessible to anyone and everyone seeking radical health and vitality. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b6bbd8b4-7462-487e-baff-a304a1e90b78",
+        "068d6d00-822f-4197-8bea-d7ae92031a7d",
+        "6849c56c-1f28-437b-921f-a0a320a9caee",
+        "ad5994f7-6267-4062-92d2-7648da363bdf"
+      ],
+      "settings": {
+        "section_heading": "6 CAPSULES A DAY.\u2028 <br>REAL FOOD. REAL RESULTS.",
+        "desktop_image": "shopify:\/\/shop_images\/hs-lp-wp-capsules.webp",
+        "mobile_image": "shopify:\/\/shop_images\/hs-lp-product-pill_d422f227-18a1-499e-a9dd-22ba42f81833.webp"
+      }
+    },
+    "8359966d-26ad-4922-8a3b-180fa919d1c2": {
+      "type": "lp-cta-callout",
+      "settings": {
+        "background": "shopify:\/\/shop_images\/hs-lp-wp-cta-callout-bg.webp",
+        "product": "whole-package",
+        "button_text": "Get Whole Package",
+        "button_url": "#buy-now"
+      }
+    },
+    "1e747be7-b9d8-48b2-8094-d85cc4c8f910": {
+      "type": "lp-health-experts",
+      "blocks": {
+        "16766dbb-9525-49a6-8e3e-6fd76dcda900": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_content": "<p>“What I have learned from Dr. Paul Saladino has enabled me to fight in my life much harder. Since I began eating organs I feel stronger, I have more energy and I am healthier. Nutrient rich organs will transform how you look and feel, just like they transformed me.”<\/p>",
+            "slider_item_name": "George St. Pierre",
+            "slider_item_title": "UFC HALL OF FAME",
+            "slider_item_image": "shopify:\/\/shop_images\/hs-lp-george.webp"
+          }
+        },
+        "cfa5dc38-8fe7-464c-8514-d67c08c6a967": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_content": "<p>“Heart & Soil is a must! Organ meats are nutrient dense. Easiest way to get the benefits of liver. Sourced from regenerative farming.”<\/p>",
+            "slider_item_name": "JP Sears",
+            "slider_item_title": "COMEDIAN, HEALTH ENTHUSIAST",
+            "slider_item_image": "shopify:\/\/shop_images\/hs-lp-jp-sears.webp"
+          }
+        },
+        "0e60668b-c50b-4b65-8f12-e1936633f451": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_content": "<p>“This is one of our most popular supplements at Heart & Soil. Including organs in your diet will definitely improve the overall quality of your life.”<\/p>",
+            "slider_item_name": "Paul Saladino MD",
+            "slider_item_title": "BOARD CERTIFIED MD, HEART & SOIL FOUNDER",
+            "slider_item_image": "shopify:\/\/shop_images\/hs-lp-paul.webp"
+          }
+        }
+      },
+      "block_order": [
+        "16766dbb-9525-49a6-8e3e-6fd76dcda900",
+        "cfa5dc38-8fe7-464c-8514-d67c08c6a967",
+        "0e60668b-c50b-4b65-8f12-e1936633f451"
+      ],
+      "settings": {
+        "section_heading": "RECOMMENDED BY TOP HEALTH EXPERTS, ENTHUSIASTS, AND ATHLETES."
+      }
+    },
+    "2c7f8ae6-ddda-44b8-b666-993d1ab72b26": {
+      "type": "lp-product-selector",
+      "settings": {
+        "product": "whole-package"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "main",
+    "42c1429c-ee63-4d5e-b8d2-ae57f8f1d039",
+    "363a1aa6-4ede-456c-afde-a767429f2c70",
+    "110cefad-19d4-4cbc-8800-6a0f1c132ee4",
+    "b4d26ab3-4895-4da0-a8e4-23b357c9716c",
+    "fe8158b5-a755-458f-9624-910f105ed227",
+    "8359966d-26ad-4922-8a3b-180fa919d1c2",
+    "1e747be7-b9d8-48b2-8094-d85cc4c8f910",
+    "2c7f8ae6-ddda-44b8-b666-993d1ab72b26"
+  ]
+}

@@ -1,0 +1,24 @@
+<div class="wayfx-wrapper">
+    <div class="wayfx-grid">
+        <div class="wayfx-grid__item">
+            <h2 class="wayfx-product__infobar__title">{{ product.title }}</h2>
+            {%- if template contains 'warrior' -%}
+            <p>Maximize Your Performance, Strength & Recovery</p>
+            {%- endif -%}
+            <div class="wayfx-product__infobar__reviews-widget"{%- if template contains 'warrior' -%}style="display: none"{%- endif -%}>
+                <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" data-product-type="{{product.type}}" data-product-title="{{product.title}}" style="display: inline-block;">{{ product.metafields.stamped.badge }}</span>
+            </div>
+        </div>
+        <div class="wayfx-grid__item">
+            <a href="#wayfx-product" class="wayfx-btn" role="button">Buy Now</a>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Product Infobar",
+        "tag": "section",
+        "class": "wayfx-product__infobar"
+    }
+{% endschema %}

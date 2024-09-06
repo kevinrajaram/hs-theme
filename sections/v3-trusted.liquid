@@ -1,0 +1,42 @@
+{%- liquid
+  assign image = 'Paul-pdp-2.jpg' | asset_img_url: 'grande'
+  assign heading = 'Trusted'
+  assign description = 'Heart & Soil was founded by Paul Saladino, MD. He’s helped tens of thousands of people reclaim their health through an animal-based diet. He pours his heart into Heart & Soil. You’ll feel the difference.'
+  assign description2 = 'Formulated by Dr. Paul Saladino aka Carnivore MD. He’s helped thousands of people reclaim their health. He’s Heart & Soil’s founder and a practicing doctor.'
+-%}
+<section class="rtnu-pdp-trusted">
+  <div class="rtnu-wrapper">
+    <div class="rtnu-grid">
+      <div class="rtnu-grid__item rtnu-grid__item--image">
+        <img src="{{ image }}" alt="" loading="lazy" width="545" height="600" />
+      </div>
+      <div class="rtnu-grid__item rtnu-grid__item--content">
+        {%- if heading -%}
+          <h2>{{ heading }}</h2>
+        {%- endif -%}
+        {% if product.handle == 'her-package' %}
+          {%- if description2 -%}
+            <p>{{ description2 }}</p>
+          {%- endif -%}
+        {% else %}
+          {%- if description -%}
+            <p>{{ description }}</p>
+          {%- endif -%}
+        {% endif %}
+
+        <a href="https://heartandsoil.co/our-story/" class="wayfx-btn">Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "PDP Trusted",
+    "presets": [
+      {
+        "name": "PDP Trusted",
+        "category": "General"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,10 @@
+.git/*
+.gitignore
+.idea
+node_modules/
+package-lock.json
+package.json
+webpack.mix.js
+mix-manifest.json
+README.md
+src/*

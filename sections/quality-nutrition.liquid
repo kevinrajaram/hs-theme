@@ -1,0 +1,45 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Quality nutrition
+-------------------------------------------------------------------------------
+Usage
+{% section 'quality-nutrition' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+<section class="rtnu-quality-nutrition">
+  <div class="rtnu-wrapper">
+    <h2>PREMIUM QUALITY NUTRITION</h2>
+    <p>Only the highest quality, regeneratively farmed, thoroughly tested, organ meats available go into Heart & Soil. 60-Day money-back guarantee!</p>
+
+    <ul role="list">
+      <li>
+        <img src="{{ 'hs-quality-nutrition-icon-1.webp' | asset_url }}" alt="" aria-hidden="true" width="180" height="180" loading="lazy">
+        <p>Additive Free: No stearates, lubricants, binders, fillers</p>
+      </li>
+      <li>
+        <img src="{{ 'hs-quality-nutrition-icon-2.webp' | asset_url }}" alt="" aria-hidden="true" width="180" height="180" loading="lazy">
+        <p>100% hormone, antibiotic, pesticide, and GMO free</p>
+      </li>
+      <li>
+        <img src="{{ 'hs-quality-nutrition-icon-3.webp' | asset_url }}" alt="" aria-hidden="true" width="180" height="180" loading="lazy">
+        <p>100% bioavailable nutrients sourced from regenerative farms</p>
+      </li>
+      <li>
+        <img src="{{ 'hs-quality-nutrition-icon-4.webp' | asset_url }}" alt="" aria-hidden="true" width="180" height="180" loading="lazy">
+        <p>Sourced from high quality grass-fed and finished cattle</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Quality nutrition",
+  "presets": [
+    {
+      "name": "Quality nutrition"
+    }
+  ]
+}
+{% endschema %}

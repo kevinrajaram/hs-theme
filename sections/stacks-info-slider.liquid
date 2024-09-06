@@ -1,0 +1,91 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Stacks info slider
+-------------------------------------------------------------------------------
+Usage
+{% section 'stacks-info-slider' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+
+<section class="rtnu-info-slider">
+  {% if section.settings.content != blank %}
+    <div class="rtnu-info-slider__top">{{ section.settings.content }}</div>
+  {% endif %}
+  <div id="rtnu-info-slider" class="splide" aria-label="info carousel"
+  >
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for block in section.blocks %}
+        <li class="splide__slide" {{ block.shopify_attributes }}>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.content }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (e) => {
+    var pdpTestimonials = new Splide( '#rtnu-info-slider', {
+      type      : 'slide',
+      pagination: true,
+      arrows    : true,
+      perPage   : 3,
+      gap: 24,
+      breakpoints: {
+        800: {
+          perPage: 2,
+          focus: 'center',
+          trimSpace: false,
+        },
+        600: {
+          perPage: 1,
+          gap: 12,
+          arrows: false,
+        }
+      }
+    });
+
+    pdpTestimonials.mount();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Info slider",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider",
+      "name": "Slider item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Info slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,77 @@
+{% comment %}
+-------------------------------------------------------------------------------
+NYNY Shop
+-------------------------------------------------------------------------------
+Usage
+{% section 'nyny-shop' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign title = section.settings.title
+  assign description = section.settings.description
+  assign products = section.settings.products
+  assign item_property = section.settings.item_property
+%}
+
+<section class="rtnu-nyny__shop" id="shop">
+  <div class="rtnu-wrapper">
+    {% if title != blank %}
+      <h2>{{ title }}</h2>
+    {% endif %}
+    {% if description != blank %}
+      {{ description }}
+    {% endif %}
+
+    {% if products != blank %}
+      <ul class="rtnu-nyny__products">
+      {% for product in products %}
+        <li>
+          {% render 'product-card',
+            product: product,
+            property: true,
+            propertyName: item_property
+          %}
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "NYNY Shop",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "UNLOCK THE POWER OF ORGANS"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Beef organs are the most nutrient-dense and bioavailable foods on the planet. By incorporating these potent sources of essential nutrients into your diet, you can finally address lingering nutrient inadequacies and deficiencies, paving the way for a remarkable transformation in how you feel and function.</p>"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Products"
+    },
+    {
+      "type": "text",
+      "id": "item_property",
+      "label": "Product Source",
+      "default": "nyny",
+      "info": "Set the item property to identify which page the products are being added from. This value will be set on a hidden property called _landing_source."
+    }
+  ],
+  "presets": [
+    {
+      "name": "NYNY Shop"
+    }
+  ]
+}
+{% endschema %}

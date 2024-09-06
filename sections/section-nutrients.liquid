@@ -1,0 +1,165 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Section Nutrients
+-------------------------------------------------------------------------------
+Usage
+{% section 'section-nutrients' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign nutrients_to_show = section.settings.nutrients_to_show
+  assign show_toggle = false
+
+  for block in section.blocks
+    if forloop.index >= nutrients_to_show
+      assign show_toggle = true
+      break
+    endif
+  endfor
+
+  assign section_image = section.settings.section_image
+  assign section_title = section.settings.section_title
+  assign section_description = section.settings.section_description
+  assign nutrients_toggle_label = section.settings.nutrients_toggle_label
+  assign nutrients_toggle_label_hide = section.settings.nutrients_toggle_label_hide
+%}
+
+<section class="rtnu-pdp-nutrients rtnu-section-nutrients {% if section_image != blank %}rtnu-pdp-nutrients--has-image{% endif %}">
+  <div class="rtnu-wrapper">
+    {% if section_image != blank %}
+    <div class="rtnu-pdp-nutrients__section-image">
+      {{ section_image | image_url: height: 783 | image_tag: height: 392, alt: product.title }}
+    </div>
+    {% endif %}
+
+    {% if section_title != blank %}
+    <h2>{{ section_title }}</h2>
+    {% endif %}
+    {% if section_description != blank %}
+      {{ section_description }}
+    {% endif %}
+
+    {% if section.blocks != blank %}
+      <div class="rtnu-grid rtnu-parent-display">
+        {% for block in section.blocks %}
+          {% if forloop.index == nutrients_to_show %}
+            {% break %}
+          {% endif %}
+          <div class="rtnu-grid__item rtnu-product__nutrient" {{ block.shopify_attributes }}>
+            <div class="rtnu-product__nutrient-icon">
+              <img loading="lazy" alt="" aria-hidden="true" src="{{ block.settings.nutrient_icon }}" />
+            </div>
+            <h3>{{ block.settings.title }}</h3>
+            {{ block.settings.nutrient_description }}
+          </div>
+        {% endfor %}
+
+        {% for block in section.blocks %}
+          {% if forloop.index < nutrients_to_show %}
+            {% continue %}
+          {% endif %}
+          <div class="rtnu-grid__item rtnu-product__nutrient rtnu-reveal-item rtnu-hidden" {{ block.shopify_attributes }}>
+            <div class="rtnu-product__nutrient-icon">
+              <img loading="lazy" alt="" aria-hidden="true" src="{{ block.settings.nutrient_icon }}" />
+            </div>
+            <h3>{{ block.settings.title }}</h3>
+            {{ block.settings.nutrient_description }}
+          </div>
+        {% endfor %}
+
+        {% if show_toggle %}
+          <button class="rtnu-reveal-btn" id="Show-More-1">
+            <span class="rtnu-label-reveal rtnu-label-text">{{ nutrients_toggle_label }} <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none" viewBox="0 0 25 24"><path fill="#F7ECDE" d="M6.42203 7.00308 12.5008 13.08l6.0787-6.07692 2.6119 2.61-8.6906 8.69062-8.69065-8.69062 2.61188-2.61Z"/></svg></span>
+            <span class="rtnu-label-hide rtnu-label-text rtnu-hidden">{{ nutrients_toggle_label_hide }} <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none" viewBox="0 0 25 24"><path fill="currentColor" d="m18.578 18.3037-6.0788-6.0769-6.07873 6.0769-2.61188-2.61 8.69061-8.69062 8.6906 8.69062-2.6118 2.61Z"/></svg></span>
+          </button>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<div style="display: none;" id="peptide">
+	<h2>What are Peptides?</h2>
+	<p>Peptides are a smaller version of proteins. Like proteins, peptides are made of amino acids. And amino acids play a vital role in almost every system in the human body.</p>
+  <p>By taking the peptides found in our supplements, you can:</p>
+  <ul>
+    <li>{% include 'svg-hs-time' %} Slow down the aging process</li>
+    <li>{% include 'svg-hs-prevent-bone-loss' %} Prevent age-related bone loss</li>
+    <li>{% include 'svg-hs-reduce-inflammation' %} Reduce inflammation</li>
+    <li>{% include 'svg-hs-strength' %} Build strength and muscle mass</li>
+    <li>{% include 'svg-hs-lower-blood-pressure' %} Lower blood pressure</li>
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Product Nutrients",
+  "limit": 1,
+  "settings":[
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Image"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "POWERFUL NUTRIENTS"
+    },
+    {
+      "type": "richtext",
+      "id": "section_description",
+      "label": "Section Description"
+    },
+    {
+      "type": "number",
+      "id": "nutrients_to_show",
+      "label": "Nutrients toggle start",
+      "default": 3,
+      "info": "Choose a number greater than what you want to show initially. The rest will be hidden behind a toggle button."
+    },
+    {
+      "type": "text",
+      "id": "nutrients_toggle_label",
+      "label": "Nutrients toggle label",
+      "default": "See all"
+    },
+    {
+      "type": "text",
+      "id": "nutrients_toggle_label_hide",
+      "label": "Nutrients toggle label hide",
+      "default": "Hide all"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nutrient",
+      "name": "Nutrient",
+      "settings": [
+        {
+          "type": "url",
+          "id": "nutrient_icon",
+          "label": "Icon URL"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "nutrient_description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Nutrients"
+    }
+  ]
+}
+{% endschema %}

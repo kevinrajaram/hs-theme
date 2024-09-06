@@ -1,0 +1,79 @@
+{%- liquid
+    assign subheading = product.metafields.sf_basics.subheading
+    assign heading_1 = 'Instructions'
+    assign description_1 = product.metafields.sf_basics.instructions
+    assign heading_2 = 'Benefits'
+    assign description_2 = product.metafields.sf_basics.benefits
+    assign heading_3 = 'Quality'
+    assign description_3 = product.metafields.sf_basics.quality
+    assign heading_4 = 'Dietary'
+    assign description_4 = product.metafields.sf_basics.dietary
+-%}
+
+<div class="wayfx-wrapper">
+    {% include 'svg-hs-bull-horn' %}
+    {% if template == 'product.hp-vip' or template == 'product.hp-new' %}
+    <h2>{{ product.title }} 101</h2>
+    {% else %}
+    <h2>Basics of {{ product.title }}</h2>
+    {% endif %}
+    {%- if subheading -%}
+    <p>{{ subheading }}</p>
+    {%- endif -%}
+
+
+    <ul class="wayfx-product__basics-list">
+        {%- if description_1 -%}
+        <li class="wayfx-product__basics-list-item wayfx-product__basics--open">
+            <div class="wayfx-product__basics__heading">
+                {% include 'svg-hs-introduction' %}
+                <h3>{{ heading_1 }}</h3>
+            </div>
+            <div class="wayfx-product__basics__content opened">
+                {{ description_1 }}
+            </div>
+        </li>
+        {%- endif -%}
+        {%- if description_2 -%}
+        <li class="wayfx-product__basics-list-item">
+            <div class="wayfx-product__basics__heading">
+                {% include 'svg-hs-benefits' %}
+                <h3>{{ heading_2 }}</h3>
+            </div>
+            <div class="wayfx-product__basics__content">
+                {{ description_2 }}
+            </div>
+        </li>
+        {%- endif -%}
+        {%- if description_3 -%}
+        <li class="wayfx-product__basics-list-item">
+            <div class="wayfx-product__basics__heading">
+                {% include 'svg-hs-quality' %}
+                <h3>{{ heading_3 }}</h3>
+            </div>
+            <div class="wayfx-product__basics__content">
+                {{ description_3 }}
+            </div>
+        </li>
+        {%- endif -%}
+        {%- if description_4 -%}
+        <li class="wayfx-product__basics-list-item">
+            <div class="wayfx-product__basics__heading">
+                {% include 'svg-hs-dietary' %}
+                <h3>{{ heading_4 }}</h3>
+            </div>
+            <div class="wayfx-product__basics__content">
+                {{ description_4 }}
+            </div>
+        </li>
+        {%- endif -%}
+    </ul>
+</div>
+
+{% schema %}
+    {
+        "name": "Product Basics",
+        "tag": "section",
+        "class": "wayfx-product__basics"
+    }
+{% endschema %}

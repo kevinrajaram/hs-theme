@@ -1,0 +1,224 @@
+{%- capture mobile_filter_actions -%}
+    <button class="wayfx-btn wayfx-btn--outline wayfx-collection__clear-filters" type="button">Clear All</button>
+    <button class="wayfx-btn wayfx-collection__filter-close" type="button">Done</button>
+{%- endcapture -%}
+<aside class="wayfx-collection__sidebar">
+  <div class="wayfx-collection__sidebar-header wayfx-collection__sidebar-header--mobile">
+    <button class="wayfx-collection__filter-close" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12">
+        <path fill="#2d231a" d="M8 10.517L6.415 12 0 6l6.415-6L8 1.483 3.17 6z"/>
+      </svg>
+    </button>
+    <div class="wayfx-collection__sidebar-title">Filter Products</div>
+  </div>
+  <div class="wayfx-collection__sidebar-filters">
+    {% comment %}
+      <div class="wayfx-collection__filter-actions wayfx-collection__filter-actions--top">
+          {{ mobile_filter_actions }}
+      </div>
+    {% endcomment %}
+    <div class="wayfx-collection__option-sort">
+      <div class="form-horizontal">
+        <label for="SortByMobile">{{ 'collections.sorting.title' | t }}:</label>
+        <select name="SortByMobile" id="SortByMobile">
+          <option value="manual">
+            {{ 'collections.sorting.featured' | t }}
+          </option>
+          <option value="best-selling">
+            {{ 'collections.sorting.best_selling' | t }}
+          </option>
+          <option value="title-ascending">
+            {{ 'collections.sorting.az' | t }}
+          </option>
+          <option value="title-descending">
+            {{ 'collections.sorting.za' | t }}
+          </option>
+          <option value="price-ascending">
+            {{ 'collections.sorting.price_ascending' | t }}
+          </option>
+          <option value="price-descending">
+            {{ 'collections.sorting.price_descending' | t }}
+          </option>
+          <option value="created-descending">
+            {{ 'collections.sorting.date_descending' | t }}
+          </option>
+          <option value="created-ascending">
+            {{ 'collections.sorting.date_ascending' | t }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="wayfx-collection__sidebar-flex">
+      <div class="wayfx-collection__sidebar-block">
+        <h3 class="h3">Filter Products</h3>
+        <ul class="wayfx-filter wayfx-filter--type">
+          {%- assign filters = 'Allergies | Anemia | Autoimmune Issues | Becoming Superhuman | Bone And Joint Health | Digestive Health | Energy | Exercise Performance | Exercise Recovery | Female Fertility Libido | Hair Skin Nails | Heart Health | Histamine Intolerance | Immune Support | Male Fertility Libido | Mood | Prenatal Health | Sleep | Stress Support | Thyroid Health | Warrior | Weight Loss'
+            | split: '| '
+          -%}
+          {%- for filter in filters -%}
+            <li>
+              <label
+                for="filter-{{ filter | handleize }}"
+                class="wayfx-filter-option wayfx-filter-type wayfx-filter-type--{{ filter | handleize }}"
+                tabindex="0"
+              >
+                <input
+                  id="filter-{{ filter | handleize }}"
+                  data-id="{{ filter | handleize }}"
+                  data-type="goal"
+                  type="checkbox"
+                  role="checkbox"
+                  aria-checked="false"
+                  aria-labelledby="{{ filter }}"
+                >
+                <span class="checkbox"></span>
+                <span class="text">{{ filter }}</span>
+              </label>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+    <div class="wayfx-collection__filter-actions wayfx-collection__filter-actions--bottom">
+      {{ mobile_filter_actions }}
+    </div>
+    <div class="wayfx-collection__sidebar-header wayfx-collection__sidebar-header--desktop">
+      <span class="wayfx-collection__clear-filters">Clear Filters</span>
+    </div>
+  </div>
+</aside>
+
+<script>
+  const wayfxResetButton = document.querySelector(
+      '.wayfx-collection__clear-filters',
+    ),
+    wayfxCloseFilters = document.querySelector(
+      '.wayfx-collection__filter-close',
+    ),
+    wayfxFilterSidebar = document.querySelector('.wayfx-collection__sidebar');
+
+  document.querySelectorAll('.wayfx-filter-option').forEach((filterOption) => {
+    filterOption.addEventListener('click', function () {
+      const wayfxFilters = document.querySelectorAll(
+          '.wayfx-filter-option input:checked',
+        ),
+        wayfxProducts = document.querySelectorAll('.wayfx-product__item');
+      wayfxProducts.forEach((product) => (product.style.display = ''));
+      if (wayfxFilters.length === 0) return filterCount();
+      const wayfxFilterValues = Array.from(wayfxFilters).map(
+        (o) => o.dataset.id,
+      );
+      wayfxFilters.forEach((filter) => {
+        const filterType = filter.dataset.type;
+        Array.from(wayfxProducts)
+          .filter((product) => {
+            const wayfxCurrentFilter = product.dataset[filterType];
+            if (wayfxCurrentFilter.includes(',')) {
+              let wayfxCurrentItems = wayfxCurrentFilter.split(','),
+                hit = wayfxCurrentItems.some((m) =>
+                  wayfxFilterValues.includes(m),
+                );
+              return !hit;
+            } else {
+              return !wayfxFilterValues.includes(wayfxCurrentFilter);
+            }
+          })
+          .forEach((product) => (product.style.display = 'none'));
+      });
+      filterCount();
+    });
+  });
+
+  wayfxCloseFilters.addEventListener('click', function () {
+    wayfxFilterSidebar.style.display = 'none';
+    wayfxFilterSidebar.classList.remove('wayfx-collection__sidebar--active');
+  });
+
+  wayfxResetButton.addEventListener('click', function () {
+    resetFilters();
+  });
+
+  function resetFilters() {
+    const wayfxFilters = document.querySelectorAll(
+        '.wayfx-filter-option input:checked',
+      ),
+      wayfxProducts = document.querySelectorAll('.wayfx-product__item');
+    wayfxFilters.forEach((filter) => {
+      filter.checked = false;
+    });
+    wayfxProducts.forEach((product) => (product.style.display = ''));
+    filterCount();
+  }
+
+  function activeFilterCount() {
+    const wayfxFilters = document.querySelectorAll(
+        '.wayfx-filter-option input:checked',
+      ),
+      wayfxActiveFiltersWrapper = document.querySelector(
+        '.wayfx-collection__filter-count',
+      ),
+      wayfxActiveFiltersCount = wayfxFilters.length;
+    wayfxActiveFiltersWrapper.textContent = `(${wayfxActiveFiltersCount})`;
+    if (wayfxActiveFiltersCount > 0) {
+      wayfxResetButton.style.display = '';
+    } else {
+      wayfxResetButton.style.display = 'none';
+      wayfxActiveFiltersWrapper.textContent = '';
+    }
+  }
+
+  function filterCount() {
+    const wayfxTotalContainer = document.querySelector(
+        '.wayfx-collection__total',
+      ),
+      wayfxProducts = document.querySelectorAll('.wayfx-product__item'),
+      wayfxFilters = document.querySelectorAll(
+        '.wayfx-filter-option input:checked',
+      ),
+      wayfxActiveFilters = wayfxFilters.length;
+
+    let wayfxProductTotal = Array.from(wayfxProducts).reduce(
+      (count, product) => {
+        return count + (product.style.display !== 'none' ? 1 : 0);
+      },
+      0,
+    );
+
+    wayfxResetButton.style.display = wayfxActiveFilters > 0 ? '' : 'none';
+
+    const noResultsElement = document.querySelector(
+      '.wfx-collection__no-results',
+    );
+    if (noResultsElement) {
+      noResultsElement.style.display = wayfxProductTotal > 0 ? 'none' : '';
+    }
+
+    // wayfxTotalContainer.textContent = `${wayfxProductTotal} Product${wayfxProductTotal === 1 ? '' : 's'}`;
+
+    activeFilterCount();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    [
+      'Weight Loss',
+      'Immune Support',
+      'Hair, Skin & Nails',
+      'Energy',
+      'Digestive Health',
+      'Heart Health',
+    ].forEach((filter) => {
+      if (
+        urlParams.has(`filter=${filter.toLowerCase().replace(/\s+/g, '-')}`)
+      ) {
+        document
+          .querySelector(
+            `.wayfx-filter-type--${filter
+              .toLowerCase()
+              .replace(/\s+/g, '-')} input`,
+          )
+          .click();
+      }
+    });
+  });
+</script>

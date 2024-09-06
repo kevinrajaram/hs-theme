@@ -1,0 +1,47 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Stacks newsletter
+-------------------------------------------------------------------------------
+Usage
+{% section 'stacks-newsletter' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign sectionImage = section.settings.image
+%}
+
+<section class="rtnu-newsletter-subscribe">
+  <div class="rtnu-wrapper">
+    <div class="wayfx-grid">
+      <div class="wayfx-grid__item">
+        <p class="lead">Get weekly health insights delivered to your inbox so you can radically improve your health</p>
+        <p>Join {{ settings.klaviyo_subscriber_count }} Subscribers</p>
+        <div class="klaviyo-form-S7DCge"></div>
+        <div class="klaviyo-form-U64gsN"></div>
+      </div>
+
+      <div class="wayfx-grid__item">
+        <img src="{{ sectionImage | image_url: height: 648 }}" alt="" aria-hidden="true" height="324" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Stacks newsletter",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stacks newsletter"
+    }
+  ]
+}
+{% endschema %}

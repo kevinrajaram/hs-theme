@@ -1,0 +1,269 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign subscription_product = product.metafields.subscriptions
+  assign subscription_variant_id = product.selected_or_first_available_variant.metafields.subscriptions.discount_variant_id
+  assign discount_percentage = subscription_product.discount_percentage | round: 2
+  assign discount_floor = subscription_product.discount_percentage | floor
+  if discount_percentage == discount_floor
+      assign discount_percentage = discount_floor
+  endif
+
+  assign plan_id = current_variant.selling_plan_allocations[0].selling_plan.id
+  assign plan_percentage = current_variant.selling_plan_allocations[0].selling_plan.price_adjustments[0].value
+  assign plan_percentage_decimal = plan_percentage | times: 1.0 | divided_by: 100
+  assign plan_discount = current_variant.price | times: plan_percentage_decimal
+  assign plan_price = current_variant.price | minus: plan_discount
+  assign selected_plan_discount = current_variant.price | times: plan_percentage_decimal
+  assign selected_plan_price = current_variant.price | minus: selected_plan_discount
+
+
+  assign sold_out = true
+  if current_variant.available
+      assign sold_out = false
+  endif
+  assign product_size = product.metafields.sf_product_hero.product_size
+-%}
+
+<div class="wayfx-wrapper">
+  <div class="wayfx-grid">
+      <div class="wayfx-grid__item mobile-only wayfx-product__details">
+          <h1 class="wayfx-product__title"><img loading="lazy" src="{{ 'gsp-logo.png' | asset_img_url: '68x' }}" alt="Georges St-Pierre" width="68" height="68"> {{ product.title }}</h1>
+          <div class="wayfx-product__actions">
+              <p class="wayfx-product__size">{{ product_size }}</p>
+              <div class="wayfx-product__reviews-widget">
+                  <a href="#reviews">
+                      <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" data-product-type="{{product.type}}" data-product-title="{{product.title}}" style="display: inline-block;">{{ product.metafields.stamped.badge }}</span>
+                  </a>
+              </div>
+          </div>
+      </div>
+      <div class="wayfx-grid__left wayfx-product__photos">
+        <div class="wayfx-product__photos--featured">
+          {%- for image in product.images -%}
+              <div {% if image.attached_to_variant? %}data-variant="{{ image.variants | map: 'id' | join: ',' }}"{% endif %}>
+                <a href="{{ image.src | image_url: width: 2000 }}" data-fancybox="wayfx-pdp-media"><img class="slider-nav-image" loading="lazy" src="{{ image.src | img_url: '1200x1200' }}" alt="{{ image.alt | escape }}" data-image-id="{{ image.id }}"></a>
+              </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="wayfx-product__photos-group">
+          <div class="wayfx-product__photos--thumbnails-warrior">
+            {%- for image in product.images -%}
+                <div class="wayfx-product__photos--thumbnail">
+                  <img loading="lazy" src="{{ image.src | image_url: width: 400 }}" alt="{{ image.alt | escape }}" data-image-id="{{ image.id }}" width="200">
+                </div>
+            {%- endfor -%}
+          </div>
+          <div class="what-is-warrior what-is-warrior--mobile" style="--warrior-bg: url('{{ 'what-is-warrior-mobile.jpg' | asset_img_url: '700x' }}')">
+            <a href="https://www.youtube.com/watch?v=dUNw2EVfrGA" data-fancybox>
+              <svg width="57" height="57" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28.3997.399902C12.9588.399902.399658 12.959.399658 28.3999c0 15.4409 12.559142 28 28.000042 28 15.4409 0 28-12.5591 28-28S43.8406.399902 28.3997.399902ZM21.0953 40.5738V16.226L41.791 28.3999 21.0953 40.5738Z" fill="#DA1921"/></svg>
+              Why take <br>warrior?
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wayfx-grid__right wayfx-product__details" id="wayfx-product">
+          <div class="desktop-only">
+              <h1 class="wayfx-product__title"><img loading="lazy" src="{{ 'gsp-logo.png' | asset_img_url: '68x' }}" alt="Georges St-Pierre" width="68" height="68"> {{ product.title }}</h1>
+              <div class="wayfx-product__actions">
+                <div class="wayfx-product__reviews-widget">
+                    <a href="#reviews">
+                        <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" data-product-type="{{product.type}}" data-product-title="{{product.title}}" style="display: inline-block;">{{ product.metafields.stamped.badge }}</span>
+                    </a>
+                </div>
+                  <p class="wayfx-product__size">{{ product_size }}</p>
+              </div>
+          </div>
+          <div class="wayfx-product__description">
+              <h2>Maximize Your Performance, Strength & Recovery</h2>
+              <p>From one of the greatest pound-for-pound MMA fighters of all time, comes the greatest pound-for-pound supplement: WARRIOR.</p>
+              <ul>
+                <li>
+                  <div class="text">2 POWERFUL ORGANS, 12+ POWERFUL NUTRIENTS</div>
+                </li>
+                <li>
+                  <div class="text">100% Grass-fed & Grass-finished Heart & Liver</div>
+                </li>
+                <li>
+                  <div class="text">FOUNDATIONAL SUPPORT FOR ALL WARRIORS</div>
+                </li>
+              </ul>
+          </div>
+
+          <div class="wayfx-product-form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+              <link itemprop="availability"
+                      href="http://schema.org/{%- if product.available -%}InStock{%- else -%}OutOfStock{%- endif -%}">
+              <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm" class="GrowAOV-Form" data-productid="{{product.id}}">
+              {% if plan_id %}
+                <div class="wayfx-product-form__item">
+                    <label class="wayfx-product-form__item-label visually-hidden">Subscribe</label>
+                    <fieldset class="single-option-radio" name="type" id="ProductSelect-option-1">
+                        <div class="single-option-radio__group">
+                            <div>
+                                <input checked type="radio"
+                                        value="{{ product.selected_or_first_available_variant.id }}"
+                                        name="id"
+                                        class="single-option-selector__radio single-option--purchaseType single-option--purchaseType-subscription"
+                                        id="purchaseType--subscription">
+                                <label for="purchaseType--subscription" class="purchaseType-subscription selected">
+                                    <p>Subscribe &amp; Save <small>Monthly Subscription. Change or Cancel Anytime</small></p>
+                                  {%- if routes.root_url == '/' -%}
+                                    <span class="single-option-radio__price">{{ selected_plan_price | money }}</span>
+                                  {%- else -%}
+                                    <span class="single-option-radio__price" style="white-space: nowrap">{{ selected_plan_price | money_with_currency }}</span>
+                                  {%- endif -%}
+                                </label>
+                                <div class="single-option-selector__dropdown">
+                                  <div class="wayfx-product-form__item-label">Deliver every</div>
+                                  <div class="single-option-selector__select">
+                                    <select name="selling_plan">
+                                      {%- for allocation in current_variant.selling_plan_allocations -%}
+                                          <option value="{{ allocation.selling_plan.id }}">{{ allocation.selling_plan.name | replace: "Delivers every", "" }}</option>
+                                      {%- endfor -%}
+                                    </select>
+                                  </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="radio"
+                                        value="{{ product.selected_or_first_available_variant.id }}"
+                                        name="id"
+                                        class="single-option-selector__radio single-option--purchaseType single-option--purchaseType-one-time"
+                                        id="purchaseType--one-time">
+                                <label for="purchaseType--one-time" class="purchaseType-one-time">
+                                    <p>One Time Purchase</p>
+                                    {%- if routes.root_url == '/' -%}
+                                      <span class="single-option-radio__price" itemprop="price" content="{{ current_variant.price | remove:"00" }}">{{ current_variant.price | money }}</span>
+                                    {%- else -%}
+                                       <span class="single-option-radio__price" style="white-space: nowrap" itemprop="price" content="{{ current_variant.price | remove:"00" }}">{{ current_variant.price | money_with_currency }}</span>
+                                    {%- endif -%}
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+              {%- else -%}
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+              {%- endif -%}
+
+                <div class="wayfx-product-form__item">
+                  {% comment %} <div class="wayfx-product-form__item-group">
+                      <span class="visually-hidden">{%- if subscription_id -%}{{ current_variant.metafields.subscriptions.discount_variant_price | times: 100 | money }}{%- else -%}{{ current_variant.price | money }}{%- endif -%}</span>
+                      <p id="ProductPrice" itemprop="price" content="{{ current_variant.price | money }}">
+                      {%- if subscription_id -%}{{ current_variant.metafields.subscriptions.discount_variant_price | times: 100 | money }}{%- else -%}{{ current_variant.price | money }}{%- endif -%}
+                      </p>
+                      <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+                      <p id="ComparePrice">{%- if subscription_id -%}{{ current_variant.price | money_without_trailing_zeros }}{%- else -%}{{ current_variant.compare_at_price | money_without_trailing_zeros }}{%- endif -%}</p>
+                  </div> {% endcomment %}
+                  <div class="wayfx-product-form__item-group">
+                      <div class="product-single__quantity">
+                        <label for="Quantity" class="quantity-selector visually-hidden">Quantity</label>
+                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                        <input type='text' name='quantity' id="quantity" value='1' min="1" class='qty' />
+                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                      </div>
+                      <button type="submit" name="add" id="rtnu-add-to-cart" class="wayfx-btn {% if sold_out %} wayfx-btn__sold-out{% endif %}" {% if sold_out %}disabled{% endif %}>
+                          <span id="AddToCartText">{%- if sold_out -%}Sold Out{%- else -%}Add to Cart{%- endif -%}</span>
+                      </button>
+                  </div>
+                </div>
+              </form>
+          </div>
+          {%- if routes.root_url == '/' -%}
+            <p class="wayfx-easy-returns">{% render 'svg-shipping-box' %} Free Shipping for orders over $80</p>
+          {%- endif -%}
+      </div>
+  </div>
+  <div class="what-is-warrior what-is-warrior--desktop" style="--warrior-bg: url('{{ 'what-is-warrior.jpg' | asset_img_url: '1224x' }}')">
+    <a href="https://www.youtube.com/watch?v=dUNw2EVfrGA" data-fancybox>
+      <svg width="57" height="57" viewBox="0 0 57 57" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28.3997.399902C12.9588.399902.399658 12.959.399658 28.3999c0 15.4409 12.559142 28 28.000042 28 15.4409 0 28-12.5591 28-28S43.8406.399902 28.3997.399902ZM21.0953 40.5738V16.226L41.791 28.3999 21.0953 40.5738Z" fill="#DA1921"/></svg>
+      Why take warrior?
+    </a>
+  </div>
+</div>
+
+{% schema %}
+  {
+      "name": "Warrior Hero",
+      "tag": "section",
+      "class": "wayfx-product__hero"
+  }
+{% endschema %}
+
+{% if plan_id %}
+  <script>
+    $("#ProductSelect-option-1 label").on('click', function () {
+      var $this = $(this),
+          is_subscription = false;
+
+      if($this.hasClass("purchaseType-subscription")) {
+          is_subscription = true;
+      }
+
+      if(is_subscription) {
+          $(".single-option-selector__dropdown select").attr('name', 'selling_plan');
+          $(".single-option-selector__dropdown").show();
+      } else {
+          $(".single-option-selector__dropdown select").attr('name', '');
+          $(".single-option-selector__dropdown").hide();
+      }
+
+      $("#ProductSelect-option-1 label").removeClass('selected');
+      $this.addClass('selected');
+      $(this).closest('input').prop( "checked", true );
+
+    });
+  </script>
+
+  <style>
+   .single-option-selector__dropdown {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      padding-left: 36px;
+    }
+
+    .single-option-selector__dropdown .wayfx-product-form__item-label {
+      font-size: 0.95rem;
+      margin-right: 5px;
+    }
+
+    .single-option-selector__select {
+      width: 100%;
+      max-width: 100px;
+      border: 1px solid #2e2e2e;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-top: 0 !important;
+      cursor: pointer;
+      line-height: 1.1;
+      background-color: #000;
+      background-image: url("data:image/svg+xml,%3Csvg width='17' height='11' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.406.992L.992 2.406l8.004 8.004 8.006-7.898-1.404-1.424L9.004 7.59z' fill='%232e2e2e' fill-rule='nonzero'/%3E%3C/svg%3E%0A");
+      background-position: right 10px center;
+      background-repeat: no-repeat;
+      background-size: auto 9px;
+    }
+
+    .single-option-selector__dropdown select {
+      appearance: none;
+      background-color: transparent;
+      border: none;
+      padding: 6px 10px;
+      margin: 0;
+      width: 100%;
+      font-family: inherit;
+      font-size: inherit;
+      cursor: inherit;
+      line-height: inherit;
+      outline: none;
+      -webkit-appearance: none;
+      color: white
+    }
+
+    .single-option-selector__dropdown select::-ms-expand {
+      display: none;
+    }
+  </style>
+{% endif %}

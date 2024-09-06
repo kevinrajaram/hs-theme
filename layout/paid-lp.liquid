@@ -1,0 +1,98 @@
+<!doctype html>
+<!--
+  --
+
+  WW      WW   AAA   YY   YY FFFFFFF XX    XX
+  WW      WW  AAAAA  YY   YY FF       XX  XX
+  WW   W  WW AA   AA  YYYYY  FFFF      XXXX
+    WW WWW WW AAAAAAA   YYY   FF       XX  XX
+    WW   WW  AA   AA   YYY   FF      XX    XX
+
+  Ecommerce Pros at [https://wayfx.com]
+
+  --
+-->
+<html lang="en">
+  <head>
+    <!-- Google Optimize -->
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-547RS9G"></script>
+    {% include 'friendbuy' %}
+
+    <meta name="google-site-verification" content="NhUacuWncFuQl8UY9h2jWL-wc6vU37R0audj1A8xCiE">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {{ page_title }}
+      {% if current_tags -%}
+        {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+      {%- endif %}
+      {% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}
+      {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    {%- include 'social-meta-tags' -%}
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}">
+    {%- include 'header-scripts' -%}
+    {{- 'lp.css' | asset_url | stylesheet_tag -}}
+    {{ content_for_header }}
+    {%- include 'oldIE-js' -%}
+    {% render 'minmaxify-head' %}
+    <meta name="facebook-domain-verification" content="jb38zgi56bgn4v5gp98pxg4nhlie81">
+
+    <!-- Twitter conversion tracking base code -->
+    <script>
+      !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+      },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+      a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+      twq('config','ofhms');
+    </script>
+    <!-- End Twitter conversion tracking base code -->
+  </head>
+  <body
+    id="{{ page_title | handle }}"
+    class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}"
+  >
+    <!-- Gorgias Chat Widget Start -->
+    <script
+      id="gorgias-chat-widget-install-v2"
+      src="https://config.gorgias.chat/gorgias-chat-bundle-loader.js?applicationId=10522"
+    ></script>
+    <script id="gorgias-chat-shopify-install">
+      !(function (_) {
+        (_.SHOPIFY_PERMANENT_DOMAIN = '{{shop.permanent_domain}}'),
+          (_.SHOPIFY_CUSTOMER_ID = '{{customer.id}}'),
+          (_.SHOPIFY_CUSTOMER_EMAIL = '{{customer.email}}');
+      })(window || {});
+    </script>
+    <!-- Gorgias Chat Widget End -->
+
+    <!-- Stamped - Begin script -->
+    <script
+      async
+      type="text/javascript"
+      id="stamped-script-widget"
+      data-api-key="pubkey-AoI1OXh6K1Q27G9hQ0OQ5pcmvc6PHg"
+      src="https://cdn1.stamped.io/files/widget.min.js"
+    ></script>
+    <!-- Stamped - End script -->
+
+    <main role="main" class="rtnu-lp">
+      {{ content_for_layout }}
+    </main>
+    {%- section 'lp-footer' -%}
+
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+
+    {% comment %}Override GrowLTV linear background on slider bullets{% endcomment %}
+    <style>
+      .swiper-pagination-bullets {
+        background: transparent !important;
+      }
+    </style>
+  </body>
+</html>

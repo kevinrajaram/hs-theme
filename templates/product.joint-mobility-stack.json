@@ -1,0 +1,448 @@
+{
+  "wrapper": "div.rtnu-product.rtnu-product--stacks",
+  "sections": {
+    "main": {
+      "type": "stacks-product-hero",
+      "settings": {
+        "health_goal_icon": "shopify:\/\/shop_images\/icon_dbaea68a-9a4e-4fdb-ad4f-5461be576c22.webp",
+        "health_goal_name": "MOBILITY & JOINT HEALTH"
+      }
+    },
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f": {
+      "type": "stacks-info-slider",
+      "blocks": {
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed": {
+          "type": "slider",
+          "settings": {
+            "title": "Joint Tissue Regeneration",
+            "content": "Harnessing peptides and growth factors for vital tissue repair, fostering rejuvenated cartilage and stronger joint structure."
+          }
+        },
+        "0f205c3c-978b-481d-a59c-0169348245b9": {
+          "type": "slider",
+          "settings": {
+            "title": "Full-Spectrum Collagen",
+            "content": "Diverse collagen types fortify tendons, ligaments, and cartilage, ensuring optimal joint function and long-lasting resilience."
+          }
+        },
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8": {
+          "type": "slider",
+          "settings": {
+            "title": "Accelerated Recovery & Healing",
+            "content": "Promote faster recovery from joint injuries, with stem cells and nutrients targeting tissue repair and regeneration."
+          }
+        },
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d": {
+          "type": "slider",
+          "settings": {
+            "title": "Anti-inflammatory Omega Support",
+            "content": "Omega-3 fatty acids, EPA & DHA, nurture joint health, reducing inflammation for improved mobility."
+          }
+        },
+        "239c9e6f-1fa5-4e66-8452-5200464f2fbd": {
+          "type": "slider",
+          "settings": {
+            "title": "Proactive Joint Protection",
+            "content": "Glycosaminoglycans and proteoglycans act as joint shock absorbers, reducing friction, ensuring fluid movement, and resisting compressive loads."
+          }
+        }
+      },
+      "block_order": [
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed",
+        "0f205c3c-978b-481d-a59c-0169348245b9",
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8",
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d",
+        "239c9e6f-1fa5-4e66-8452-5200464f2fbd"
+      ],
+      "settings": {
+        "content": "<h2>IS THE JOINT & MOBILITY STACK FOR ME?<\/h2><p>This stack is specifically formulated for those prioritizing joint health and mobility, including longevity and recovering from injury.<\/p>"
+      }
+    },
+    "f831964f-d20b-465b-a97f-35ec2a2b059d": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote1_b9887b42-bfb3-4d82-b27a-7b0c7fa3c400.webp",
+        "quote": "I feel less pain in my joints\nand more energy.",
+        "author": "Marlene B.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291": {
+      "type": "stacks-include",
+      "blocks": {
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "joint-strength-repair",
+            "supporting_product_description": "<p><a href=\"\/products\/joint-strength-repair\" title=\"Joint Strength & Repair\">Joint Strength & Repair<\/a> is formulated with essential nutrients and peptides to support strong, healthy, and mobile joints.<\/p>"
+          }
+        },
+        "38fa66bc-0ff1-49fe-8ae3-79f75382a13e": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "skin-hair-nails",
+            "supporting_product_description": "<p><a href=\"\/products\/skin-hair-nails\" title=\"Skin, Hair & Nails\">Skin, Hair & Nails<\/a> is packed with vital nutrients and peptides to support healthy (and beautiful) skin, hair, and nails. Become more radiant!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9",
+        "38fa66bc-0ff1-49fe-8ae3-79f75382a13e"
+      ],
+      "settings": {
+        "primary_product": "bone-marrow-liver",
+        "primary_product_description": "<p><a href=\"\/products\/bone-marrow-liver\" title=\"Bone Marrow & Liver\">Bone Marrow & Liver<\/a> is the foundational supplement included in the <strong>Mobility & Joint Stack<\/strong>. It provides unique and essential support found in grass-fed and grass-finished bone marrow and liver. <\/p>",
+        "organ_nutrient_image": "shopify:\/\/shop_images\/organs_3cfae912-dcff-4c5e-8a6d-c234dbe58375.webp",
+        "organ_nutrients": "joint_mobility_stack"
+      }
+    },
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20": {
+      "type": "cta-callout",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote2_f5413158-bebc-4fc8-be27-68a370a7def6.webp",
+        "title": "POWERFUL JOINT NUTRITION"
+      }
+    },
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0": {
+      "type": "section-nutrients",
+      "blocks": {
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/bone-marrow.png?v=1620677352",
+            "title": "Red and yellow bone marrow",
+            "nutrient_description": "<p>Abundant in peptides, growth factors, and stem cells to promote and support the formation of red blood cells, cartilage cells (chondrocytes), bone cells (osteocytes, osteoblast & osteoclasts), and other vital tissues found throughout the body.<\/p>"
+          }
+        },
+        "123de7f8-30c5-442b-ae1e-a418685e0920": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Essential fatty acids including omega-3 fatty acids, EPA & DHA",
+            "nutrient_description": "<p>Play a critical role in the immune system, brain and cardiovascular health, as well as muscle recovery.<\/p>"
+          }
+        },
+        "0d1d6ef5-5681-4e91-b3b0-5a5b6ba84a4f": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Alkylglycerols",
+            "nutrient_description": "<p>Support the immune system and formation of red blood cells, white blood cells, and platelets.<\/p>"
+          }
+        },
+        "28494759-a804-4629-bb6f-8f05ba161182": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Adiponectin",
+            "nutrient_description": "<p>Peptide hormone shown to support immune, metabolic, and cardiovascular health.<\/p>"
+          }
+        },
+        "b859de23-7dc4-420f-8aa0-4063022bb758": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/tissue.png?v=1620677831",
+            "title": "Tissue-specific proteins, hormones, growth factors, and peptides such as bovine cathelicidins",
+            "nutrient_description": "<p>Show broad antimicrobial activity and are involved in the immune response.<\/p>"
+          }
+        },
+        "eeada152-9062-4ff1-a975-92948b99d5c9": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamins A, D, E, K2",
+            "nutrient_description": "<p>Get these vitamins in a super bioavailable form that play critical roles in overall immune and bone health.<\/p>"
+          }
+        },
+        "83c8f98e-fd41-4720-828e-95d34260b2f2": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin, folate, B12, and choline",
+            "nutrient_description": "<p>Essential for red blood cell formation, as well as immune, brain, reproductive, and cardiovascular health.<\/p>"
+          }
+        },
+        "c6753f34-5cbc-46cf-9153-c09abe4c5ce1": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Copper, biotin, and CoQ10",
+            "nutrient_description": "<p>Crucial for metabolism, mood, and energy, as well as the health of skin, hair, and nails.<\/p>"
+          }
+        },
+        "8844b0e3-511a-4240-ba9d-8d5f5acc7916": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as LEAP-2. This peptide is involved in immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "baaad8ae-bd72-499c-80ea-19008a2b621b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Hepcidin <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>A peptide directly involved in iron metabolism as well as the innate immune response.<\/p>"
+          }
+        },
+        "9e221d4a-acc2-4e89-a66c-31f7f11d7126": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Ergothioneine <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>An amino acid found in liver, kidney, and bone marrow found to support detoxification and longevity pathways.<\/p>"
+          }
+        },
+        "54c01687-2a5f-4268-9b4f-4b6067160e3e": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-1.png?v=1694638036",
+            "title": "Full-spectrum collagen (Type I-VI & IX-XI)",
+            "nutrient_description": "<p>Bovine-derived collagen is critical in supporting and maintaining the overall health of your joints, tendons, and cartilage.<\/p>"
+          }
+        },
+        "bff6963c-d3e6-43b7-9494-c7e0afe11c65": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-2.png?v=1694638036",
+            "title": "Glucosamine",
+            "nutrient_description": "<p>Glucosamine plays a critical role in nourishing and protecting joints, essential for function and resilience.<\/p>"
+          }
+        },
+        "a9593d43-2f29-4290-bbd1-10fdbc6c9150": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-1.png?v=1694638036",
+            "title": "Chondroitin Sulfate",
+            "nutrient_description": "<p>Provides resistance to compression and acts as shock absorbers in joints. <\/p>"
+          }
+        },
+        "c3134d48-f880-4358-8369-b49c33d2b035": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-3.png?v=1694638036",
+            "title": "Trachea and Scapula Cartilage",
+            "nutrient_description": "<p>Promotes wound healing and tissue repair better than other cartilage sources.<\/p>"
+          }
+        },
+        "a72c4431-2f23-4516-a46b-2467b7d53f7d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-4.png?v=1694638036",
+            "title": "Glycine",
+            "nutrient_description": "<p>A crucial amino acid that supports collagen production, stimulation, and acts as a natural moisturizing factor, enhancing tissue repair.<\/p>"
+          }
+        },
+        "227343dc-7497-4c71-aea2-7b20be32eb25": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-5.png?v=1694638036",
+            "title": "Chondrocytes",
+            "nutrient_description": "<p>Essential for the building and maintenance of cartilage structure.<\/p>"
+          }
+        },
+        "ddcc4716-ea42-4188-a9af-eaa034f79775": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-6.png?v=1694638036",
+            "title": "Proteoglycans",
+            "nutrient_description": "<p>Molecules in cartilage that resist compression and act as joint shock absorbers.<\/p>"
+          }
+        },
+        "3ed22037-7df7-480d-a8d4-602ea75e9670": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-4.png?v=1694638036",
+            "title": "Peptides, Growth Factors, and Stem Cells",
+            "nutrient_description": "<p>Promote and support the formation of red blood cells, chondrocytes (cartilage cells), osteocytes, osteoblasts, and osteoclasts (bone cells).<\/p>"
+          }
+        },
+        "632e67d0-f3a4-4bb8-a5b0-d2ea33c8cd4d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-3.png?v=1694638036",
+            "title": "Transforming Growth Factor-Beta (TGF-β)",
+            "nutrient_description": "<p>A multifunctional cytokine critical for cartilage formation and maintenance.<\/p>"
+          }
+        },
+        "81f7547b-7d59-4b53-90e4-6f87262703a5": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-1.png?v=1694638036",
+            "title": "Activin A",
+            "nutrient_description": "<p>Essential for the regulation of cartilage metabolism and joint inflammation.<\/p>"
+          }
+        },
+        "1330dbee-233d-422f-8fd4-a2a31865ad56": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hs-bone-joint-icon-2.png?v=1694638036",
+            "title": "Cartilage-Inducing Factor A",
+            "nutrient_description": "<p>Promotes the differentiation of mesenchymal stem cells into chondrocytes, cells essential for cartilage formation and maintenance.<\/p>"
+          }
+        },
+        "66dbf8d8-139b-4602-bd31-f5ba271896d3": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/skin-health.png?v=1620679722",
+            "title": "Fat-soluble Vitamins A & E",
+            "nutrient_description": "<p>Necessary for optimal skin health, protection against dryness, and wound healing.<\/p>"
+          }
+        },
+        "81194333-d374-4893-b56f-534009fba0fa": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hair.png?v=1620680125",
+            "title": "Biotin",
+            "nutrient_description": "<p>Protects cells from damage and water loss as well as improves moisture retention for our skin, hair, and nails.<\/p>"
+          }
+        },
+        "eecbd609-6094-478a-8898-7e7f9f2e2572": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hyaluronic-acid.png?v=1620680310",
+            "title": "Hyaluronan (Hyaluronic Acid)",
+            "nutrient_description": "<p>Controls tissue hydration, mediates repair processes, protects and lubricates soft tissues.<\/p>"
+          }
+        },
+        "28e230c4-4d75-46e6-b8cf-c48b3822a7c1": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/elastic.png?v=1620680519",
+            "title": "Elastin",
+            "nutrient_description": "<p>Promotes strength, firmness, and elasticity of our skin.<\/p>"
+          }
+        },
+        "ad8ee41f-6d43-4e7a-ba63-365bebbccb5d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/skin-health.png?v=1620679722",
+            "title": "Glycosaminoglycans",
+            "nutrient_description": "<p>Crucial for maintenance, regeneration, and regulation of our cells that comprise our skin, hair, and nails.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b",
+        "123de7f8-30c5-442b-ae1e-a418685e0920",
+        "0d1d6ef5-5681-4e91-b3b0-5a5b6ba84a4f",
+        "28494759-a804-4629-bb6f-8f05ba161182",
+        "b859de23-7dc4-420f-8aa0-4063022bb758",
+        "eeada152-9062-4ff1-a975-92948b99d5c9",
+        "83c8f98e-fd41-4720-828e-95d34260b2f2",
+        "c6753f34-5cbc-46cf-9153-c09abe4c5ce1",
+        "8844b0e3-511a-4240-ba9d-8d5f5acc7916",
+        "baaad8ae-bd72-499c-80ea-19008a2b621b",
+        "9e221d4a-acc2-4e89-a66c-31f7f11d7126",
+        "54c01687-2a5f-4268-9b4f-4b6067160e3e",
+        "bff6963c-d3e6-43b7-9494-c7e0afe11c65",
+        "a9593d43-2f29-4290-bbd1-10fdbc6c9150",
+        "c3134d48-f880-4358-8369-b49c33d2b035",
+        "a72c4431-2f23-4516-a46b-2467b7d53f7d",
+        "227343dc-7497-4c71-aea2-7b20be32eb25",
+        "ddcc4716-ea42-4188-a9af-eaa034f79775",
+        "3ed22037-7df7-480d-a8d4-602ea75e9670",
+        "632e67d0-f3a4-4bb8-a5b0-d2ea33c8cd4d",
+        "81f7547b-7d59-4b53-90e4-6f87262703a5",
+        "1330dbee-233d-422f-8fd4-a2a31865ad56",
+        "66dbf8d8-139b-4602-bd31-f5ba271896d3",
+        "81194333-d374-4893-b56f-534009fba0fa",
+        "eecbd609-6094-478a-8898-7e7f9f2e2572",
+        "28e230c4-4d75-46e6-b8cf-c48b3822a7c1",
+        "ad8ee41f-6d43-4e7a-ba63-365bebbccb5d"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/products_557fd6b2-125e-43d1-949f-11bbcb650dae.webp",
+        "section_title": "POWERFUL NUTRIENTS",
+        "section_description": "<p>The combined power of Bone Marrow & Liver, Joint Strength & Repair, and Skin, Hair & Nails includes vital and potent essential nutrients.<\/p>",
+        "nutrients_to_show": 4,
+        "nutrients_toggle_label": "See all",
+        "nutrients_toggle_label_hide": "Hide all"
+      }
+    },
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote3_517b42a8-8dae-430f-88c0-bbd083411f0c.webp",
+        "quote": "I feel fantastic. Super energized, up earlier, and ready to go.",
+        "author": "Anthony M.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "eea55346-a86c-4541-b71b-025a444a41b6": {
+      "type": "minimal-pdp-selector",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-selector_4f74a23d-2ba4-46a5-8ea7-6e0da6bc6e36.webp"
+      }
+    },
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975": {
+      "type": "product-101",
+      "settings": {
+        "title": "HEART & SOIL 101",
+        "instructions": "<p>Take 6 capsules, once daily, of each supplement. If you’re new to taking organ supplements, start with 1-2 capsules of each daily for the first week before increasing by one capsule daily. Consistent long-term use provides the best results. <\/p>",
+        "benefits": "<p>Our Joint & Mobility Health Stack provides fundamental nutritional support for bulletproof joints and unbreakable bones.<\/p>",
+        "quality": "<p>Rigorous third-party testing by independent labs during and after manufacturing. Quality and purity information can be provided upon request.<\/p>",
+        "dietary": "<p>100% additive, hormone, allergen, antibiotic, pesticide, and GMO-free. Freeze-dried. Pure nose-to-tail nourishment. <\/p>"
+      }
+    },
+    "b900e9cc-d623-4714-b778-12299998a7cd": {
+      "type": "section-faq",
+      "blocks": {
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5": {
+          "type": "faq",
+          "settings": {
+            "title": "Who should take the Joint & Mobility Stack?",
+            "answer": "<p>This stack is ideal if you want to prioritize joint health and mobility, including longevity and recovering from injury.<\/p>"
+          }
+        },
+        "837f8262-9dca-4dab-81ec-522d36ddfe35": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking all three supplements together?",
+            "answer": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides, and Essential Fatty Acids that support the joints, tendons, and cartilage.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5",
+        "837f8262-9dca-4dab-81ec-522d36ddfe35"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356": {
+      "type": "v3-reviews",
+      "settings": {
+        "title": "CUSTOMER REVIEWS"
+      }
+    },
+    "why": {
+      "type": "v3-why",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "stacks-newsletter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-newsletter.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f",
+    "f831964f-d20b-465b-a97f-35ec2a2b059d",
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291",
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20",
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0",
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92",
+    "eea55346-a86c-4541-b71b-025a444a41b6",
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975",
+    "b900e9cc-d623-4714-b778-12299998a7cd",
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356",
+    "why",
+    "newsletter"
+  ]
+}

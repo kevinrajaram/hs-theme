@@ -1,0 +1,23 @@
+{% render 'preorder-now-collection-item', product: product %}
+<div class="wayfx-product" itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="brand" content="Heart&Soil">
+  <meta itemprop="name" content="{{ product.title }}">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {% section 'product-hero' %}
+  {% if product.metafields.sf_testimonials.testimonial_1_message != blank %}
+  {% section 'product-social-proof' %}
+  {% endif %}
+  {% section 'product-basics' %}
+  {% section 'product-trusted' %}
+  {% section 'product-nutrients' %}
+  {% section 'product-cta' %}
+  {% section 'product-reviews' %}
+  {% section 'product-why-hs' %}
+  {% section 'product-infobar' %}
+</div>
+
+{% include 'klaviyo-viewed-product' %}
+{% include 'klaviyo-oos' %}

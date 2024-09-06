@@ -1,0 +1,606 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Stacks organ nutrients
+-------------------------------------------------------------------------------
+Description
+This snippet accepts a stack and renders the organ nutrients in an accordion
+-------------------------------------------------------------------------------
+Accepts
+- stack: the passed in stack to render
+-------------------------------------------------------------------------------
+Usage
+{% render 'stacks-organ-nutrients', stack: '' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+<div class="rtnu-stacks__organ-nutrients">
+  <div class="rtnu-stacks__organ-nutrients-title">Organ Nutrients</div>
+  <div class="rtnu__accordion">
+    {% if stack == 'thyroid_health_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Heart</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Heart is one of the best sources of CoQ10, a powerful antioxidant for exercise performance and promoting insulin sensitivity. It’s also rich in Taurine which supports brain and cardiovascular health, and L-carnitine which decreases oxidative stress, and supports metabolic function and muscle recovery.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Pancreas</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Pancreas contains enzymes such as amylase, lipase, and trypsin, as well as B5, B12, and selenium to support digestion and the gut microbiome.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Spleen</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Spleen has high levels of heme iron, the most bioavailable form of iron, to support the nervous system and immune health. It is also rich in niacin, which is crucial for metabolic health, and selenium, a key player in thyroid function.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Kidney</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Kidney contains high levels of vitamin B2 and the mineral selenium, which is required for optimal immune function, helps decrease oxidative stress, and is even associated with the prevention of certain cancers.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'stress_support_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Brain</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Brain contains phosphatidylserine, which helps support healthy responses to mental and physical stress and cognitive function in aging individuals, those with early dementia, and ADHD. Another critical nutrient from this organ is Brain-Derived Neurotrophic Factor (BDNF). This growth factor helps promote the health of cells and neurons, ensuring optimal protection and communication to our nervous tissue—vital for memory and cognition.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Bone Marrow</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Bone marrow is vital for immune function and wound healing. The fat tissue in bone marrow contains adiponectin, a hormone that supports insulin sensitivity, reduces the risk of conditions such as diabetes and obesity-related cancers, and promotes metabolic and cardiovascular health. Additionally, bone marrow provides the compound glucosamine, which plays an important role in supporting cartilage, joints, and skin. Last but not least, it is a rich source of fatty acids to aid in boosting energy and mood as well as building bones.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'female_vitality_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Reproductive Organs: Ovary, Uterus, Fallopian Tubes</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>There is a long tradition of supplementation with female reproductive organs to support these structures and their functions in the body. These organs are rich in peptides, growth factors, enzymes, and micronutrients to maintain hormone balance and keep the reproductive system healthy.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Spleen</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Spleen has high levels of heme iron, the most bioavailable form of iron, to support the nervous system and immune health. It is also rich in niacin, which is crucial for metabolic health, and selenium, a key player in thyroid function.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Kidney</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Kidney contains high levels of vitamin B2 and the mineral selenium, which is required for optimal immune function, helps decrease oxidative stress, and is even associated with the prevention of certain cancers.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'prenatal_health_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Brain</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Brain contains phosphatidylserine, which helps support healthy responses to mental and physical stress and cognitive function in aging individuals, those with early dementia, and ADHD. Another critical nutrient from this organ is Brain-Derived Neurotrophic Factor (BDNF). This growth factor helps promote the health of cells and neurons, ensuring optimal protection and communication to our nervous tissue—vital for memory and cognition.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Bone Marrow</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Bone marrow is vital for immune function and wound healing. The fat tissue in bone marrow contains adiponectin, a hormone that supports insulin sensitivity, reduces the risk of conditions such as diabetes and obesity-related cancers, and promotes metabolic and cardiovascular health. Additionally, bone marrow provides the compound glucosamine, which plays an important role in supporting cartilage, joints, and skin. Last but not least, it is a rich source of fatty acids to aid in boosting energy and mood as well as building bones.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'energy_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Heart</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Heart is one of the best sources of CoQ10, a powerful antioxidant for exercise performance and promoting insulin sensitivity. It’s also rich in Taurine which supports brain and cardiovascular health, and L-carnitine which decreases oxidative stress, and supports metabolic function and muscle recovery.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'warrior_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Heart</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Heart is one of the best sources of CoQ10, a powerful antioxidant for exercise performance and promoting insulin sensitivity. It’s also rich in Taurine which supports brain and cardiovascular health, and L-carnitine which decreases oxidative stress, and supports metabolic function and muscle recovery.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'male_fertility_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Testicle</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Testicle provides tissue-specific nutrients, proteins, and peptides—like activin, inhibin, and epidermal growth factor—all of which play a vital role in the formation of our sex hormones, reproductive cells, and fertility. Testicles are also a rich source of selenium, which is a crucial mineral that serves as a fundamental link between sperm quality and male fertility and is required for the formation of sperm, testicular maturation, and testosterone biosynthesis.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Whole Blood Extract</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Whole Blood Extract includes red and white blood cells, platelets, and plasma. Each of these contains critical, life-sustaining nutrients such as electrolytes, iron, Vitamin D, and hormones that help regulate inflammation and the production of healthy blood.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'exercise_performance_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Heart</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Heart is one of the best sources of CoQ10, a powerful antioxidant for exercise performance and promoting insulin sensitivity. It’s also rich in Taurine which supports brain and cardiovascular health, and L-carnitine which decreases oxidative stress, and supports metabolic function and muscle recovery.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'exercise_recovery_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Heart</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Heart is one of the best sources of CoQ10, a powerful antioxidant for exercise performance and promoting insulin sensitivity. It’s also rich in Taurine which supports brain and cardiovascular health, and L-carnitine which decreases oxidative stress, and supports metabolic function and muscle recovery.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'skin_hair_nails_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Cartilage</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Cartilage is rich in collagen protein to promote joint integrity, skin elasticity, and nail strength. Collagen contains hyaluronic acid that controls tissue hydration, mediates repair processes, and protects and lubricates soft tissues. Also in cartilage are proteoglycans, which are helpful for wound healing and stimulating the hair follicle growth cycle as well as maintaining optimal skin homeostasis with aging.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Bone Marrow</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Bone marrow is vital for immune function and wound healing. The fat tissue in bone marrow contains adiponectin, a hormone that supports insulin sensitivity, reduces the risk of conditions such as diabetes and obesity-related cancers, and promotes metabolic and cardiovascular health. Additionally, bone marrow provides the compound glucosamine, which plays an important role in supporting cartilage, joints, and skin. Last but not least, it is a rich source of fatty acids to aid in boosting energy and mood as well as building bones.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'fat_loss_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Suet</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Suet is derived from the fat surrounding the kidneys and organs in cattle. It contains saturated fats such as stearic acid, which play a vital role in the health of our mitochondria. It and other fatty acids in suet are satiating, aid in appetite regulation, and lead to a reduction in visceral adipose tissue. Further, they contribute to cognitive, hormonal, and cardiovascular health.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'digestive_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Tripe (Stomach)</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Tripe is a robust source of the mineral manganese, and dietary manganese can decrease intestinal permeability and enhance microbiota composition.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Pancreas</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Pancreas contains enzymes such as amylase, lipase, and trypsin, as well as B5, B12, and selenium to support digestion and the gut microbiome.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Intestines</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Intestines are rich in a wide range of peptides, enzymes, vitamins and minerals that support optimal gut health and digestion. Their mucosal lining contains compounds aiding in nutrient absorption and barrier protection.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Spleen</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Spleen has high levels of heme iron, the most bioavailable form of iron, to support the nervous system and immune health. It is also rich in niacin, which is crucial for metabolic health, and selenium, a key player in thyroid function.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'allergies_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Thymus</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Thymus extracts contain hormones like thymopoietin and thymulin that can safeguard the body from the development of cancer, allergies, rheumatoid arthritis, and other autoimmune disorders by enhancing cell functioning.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Lung</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Lung is rich in vitamin B12, which acts as an immunomodulator for cell immunity. It also contains antimicrobial peptides that have been shown to improve immune health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Spleen</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Spleen has high levels of heme iron, the most bioavailable form of iron, to support the nervous system and immune health. It is also rich in niacin, which is crucial for metabolic health, and selenium, a key player in thyroid function.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Kidney</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Kidney contains high levels of vitamin B2 and the mineral selenium, which is required for optimal immune function, helps decrease oxidative stress, and is even associated with the prevention of certain cancers.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'heart_health_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Heart</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Heart is one of the best sources of CoQ10, a powerful antioxidant for exercise performance and promoting insulin sensitivity. It’s also rich in Taurine which supports brain and cardiovascular health, and L-carnitine which decreases oxidative stress, and supports metabolic function and muscle recovery.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'histamine_intolerance_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Thymus</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Thymus extracts contain hormones like thymopoietin and thymulin that can safeguard the body from the development of cancer, allergies, rheumatoid arthritis, and other autoimmune disorders by enhancing cell functioning.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Lung</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Lung is rich in vitamin B12, which acts as an immunomodulator for cell immunity. It also contains antimicrobial peptides that have been shown to improve immune health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Spleen</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Spleen has high levels of heme iron, the most bioavailable form of iron, to support the nervous system and immune health. It is also rich in niacin, which is crucial for metabolic health, and selenium, a key player in thyroid function.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Kidney</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Kidney contains high levels of vitamin B2 and the mineral selenium, which is required for optimal immune function, helps decrease oxidative stress, and is even associated with the prevention of certain cancers.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'mood_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Brain</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Brain contains phosphatidylserine, which helps support healthy responses to mental and physical stress and cognitive function in aging individuals, those with early dementia, and ADHD. Another critical nutrient from this organ is Brain-Derived Neurotrophic Factor (BDNF). This growth factor helps promote the health of cells and neurons, ensuring optimal protection and communication to our nervous tissue—vital for memory and cognition.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Bone Marrow</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Bone marrow is vital for immune function and wound healing. The fat tissue in bone marrow contains adiponectin, a hormone that supports insulin sensitivity, reduces the risk of conditions such as diabetes and obesity-related cancers, and promotes metabolic and cardiovascular health. Additionally, bone marrow provides the compound glucosamine, which plays an important role in supporting cartilage, joints, and skin. Last but not least, it is a rich source of fatty acids to aid in boosting energy and mood as well as building bones.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'immune_support_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Thymus</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Thymus extracts contain hormones like thymopoietin and thymulin that can safeguard the body from the development of cancer, allergies, rheumatoid arthritis, and other autoimmune disorders by enhancing cell functioning.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Lung</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Lung is rich in vitamin B12, which acts as an immunomodulator for cell immunity. It also contains antimicrobial peptides that have been shown to improve immune health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Spleen</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Spleen has high levels of heme iron, the most bioavailable form of iron, to support the nervous system and immune health. It is also rich in niacin, which is crucial for metabolic health, and selenium, a key player in thyroid function.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Kidney</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Kidney contains high levels of vitamin B2 and the mineral selenium, which is required for optimal immune function, helps decrease oxidative stress, and is even associated with the prevention of certain cancers.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'anemia_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Whole Blood Extract</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Whole Blood Extract includes red and white blood cells, platelets, and plasma. Each of these contains critical, life-sustaining nutrients such as electrolytes, iron, Vitamin D, and hormones that help regulate inflammation and the production of healthy blood.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Spleen</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Spleen has high levels of heme iron, the most bioavailable form of iron, to support the nervous system and immune health. It is also rich in niacin, which is crucial for metabolic health, and selenium, a key player in thyroid function.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'autoimmune_issues_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Thymus</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Thymus extracts contain hormones like thymopoietin and thymulin that can safeguard the body from the development of cancer, allergies, rheumatoid arthritis, and other autoimmune disorders by enhancing cell functioning.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Lung</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Lung is rich in vitamin B12, which acts as an immunomodulator for cell immunity. It also contains antimicrobial peptides that have been shown to improve immune health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Spleen</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Spleen has high levels of heme iron, the most bioavailable form of iron, to support the nervous system and immune health. It is also rich in niacin, which is crucial for metabolic health, and selenium, a key player in thyroid function.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Kidney</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Kidney contains high levels of vitamin B2 and the mineral selenium, which is required for optimal immune function, helps decrease oxidative stress, and is even associated with the prevention of certain cancers.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'joint_mobility_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Bone Marrow</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Bone marrow is vital for immune function and wound healing. The fat tissue in bone marrow contains adiponectin, a hormone that supports insulin sensitivity, reduces the risk of conditions such as diabetes and obesity-related cancers, and promotes metabolic and cardiovascular health. Additionally, bone marrow provides the compound glucosamine, which plays an important role in supporting cartilage, joints, and skin. Last but not least, it is a rich source of fatty acids to aid in boosting energy and mood as well as building bones.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    {% endif %}
+    {% if stack == 'sleep_stack' %}
+    <div class="rtnu__accordion-item is-open">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="true">
+        <span>Cartilage</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Cartilage is rich in collagen protein to promote joint integrity, skin elasticity, and nail strength. Collagen contains hyaluronic acid that controls tissue hydration, mediates repair processes, and protects and lubricates soft tissues. Also in cartilage are proteoglycans, which are helpful for wound healing and stimulating the hair follicle growth cycle as well as maintaining optimal skin homeostasis with aging.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Liver</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Liver is the single most nutritious natural food on the planet, both in terms of density and variety. It is incredibly rich in vitamins, minerals, peptides and enzymes to support immune, reproductive, digestive, musculoskeletal, and nervous health.</p>
+      </div>
+    </div>
+    <div class="rtnu__accordion-item">
+      <button class="rtnu__accordion-item-toggle" aria-expanded="false">
+        <span>Bone Marrow</span>
+      </button>
+      <div class="rtnu__accordion-item-content">
+        <p>Bone marrow is vital for immune function and wound healing. The fat tissue in bone marrow contains adiponectin, a hormone that supports insulin sensitivity, reduces the risk of conditions such as diabetes and obesity-related cancers, and promotes metabolic and cardiovascular health. Additionally, bone marrow provides the compound glucosamine, which plays an important role in supporting cartilage, joints, and skin. Last but not least, it is a rich source of fatty acids to aid in boosting energy and mood as well as building bones.</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>

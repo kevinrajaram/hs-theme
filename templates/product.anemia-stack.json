@@ -1,0 +1,421 @@
+{
+  "wrapper": "div.rtnu-product.rtnu-product--stacks",
+  "sections": {
+    "main": {
+      "type": "stacks-product-hero",
+      "settings": {
+        "health_goal_icon": "shopify:\/\/shop_images\/icon_8302b894-4961-4bd7-a7f7-ef69891468e8.webp",
+        "health_goal_name": "ANEMIA SUPPORT"
+      }
+    },
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f": {
+      "type": "stacks-info-slider",
+      "blocks": {
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed": {
+          "type": "slider",
+          "settings": {
+            "title": "Boost Iron Stores",
+            "content": "Contains liver, blood, and spleen – nature's unrivaled sources of bioavailable Heme Iron for unmatched absorption and vitality."
+          }
+        },
+        "0f205c3c-978b-481d-a59c-0169348245b9": {
+          "type": "slider",
+          "settings": {
+            "title": "Combat Fatigue",
+            "content": "Boosting baseline energy levels, this stack alleviates fatigue commonly linked to low iron, invigorating you from within."
+          }
+        },
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8": {
+          "type": "slider",
+          "settings": {
+            "title": "Superior Iron Utilization",
+            "content": "Integrating iron's natural co-factors like copper, enhances iron uptake and its benefits."
+          }
+        },
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d": {
+          "type": "slider",
+          "settings": {
+            "title": "Improve Red Blood Cells",
+            "content": "Providing essential nutrients, including Riboflavin, Folate, B12, and Choline that are pivotal for healthy red blood cell development."
+          }
+        },
+        "240708b8-03b3-4b45-8a28-1c148f00ca30": {
+          "type": "slider",
+          "settings": {
+            "title": "Bioavailable Nutrients",
+            "content": "Highly bioavailable micronutrients from natural sources deliver superior absorption, maximizing nutrient utilization for optimal benefits."
+          }
+        }
+      },
+      "block_order": [
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed",
+        "0f205c3c-978b-481d-a59c-0169348245b9",
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8",
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d",
+        "240708b8-03b3-4b45-8a28-1c148f00ca30"
+      ],
+      "settings": {
+        "content": "<h2>IS THE ANEMIA STACK FOR ME?<\/h2><p>This stack is ideal for those struggling with iron deficiencies, including iron deficiency anemia. It offers comprehensive nutritional support to replenish and rejuvenate from within.<\/p>"
+      }
+    },
+    "f831964f-d20b-465b-a97f-35ec2a2b059d": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote1_c22b95ee-75a4-4f14-9f52-9a8bc5757296.webp",
+        "quote": "4 months. No longer on thyroid meds after 15 years. Sleeping like a champ. Changed my life...",
+        "author": "Adam E.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291": {
+      "type": "stacks-include",
+      "blocks": {
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "beef-organs",
+            "supporting_product_description": "<p><a href=\"\/products\/beef-organs\" title=\"Beef Organs\">Beef Organs<\/a> includes liver, heart, pancreas, spleen, and kidney. It is nature's ultimate multivitamin. Foundational support for overall health, vitality, and energy.<\/p>"
+          }
+        },
+        "38fa66bc-0ff1-49fe-8ae3-79f75382a13e": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "bone-marrow-liver",
+            "supporting_product_description": "<p><a href=\"\/products\/bone-marrow-liver\" title=\"Bone Marrow & Liver\">Bone Marrow & Liver<\/a> is packed with vital nutrients and peptides to provide support for bone and tissue repair, skin health, and better mood.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9",
+        "38fa66bc-0ff1-49fe-8ae3-79f75382a13e"
+      ],
+      "settings": {
+        "primary_product": "lifeblood",
+        "primary_product_description": "<p><a href=\"\/products\/lifeblood\" title=\"Lifeblood\">Lifeblood<\/a> is the foundational supplement included in the <strong>Anemia Stack<\/strong>. It provides unique and essential support found in grass-fed and finished whole blood extract, spleen and liver. These powerful organs include 12+ powerful nutrients to help reach your goals.<\/p>",
+        "organ_nutrient_image": "shopify:\/\/shop_images\/organs_c1caa1fb-7971-4cc8-9cee-ac8e6d7ef80c.webp",
+        "organ_nutrients": "anemia_stack"
+      }
+    },
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20": {
+      "type": "cta-callout",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote2_78fcc679-3acb-4d44-9841-f2832a00a2a7.webp",
+        "title": "UNMATCHED SOURCE OF IRON"
+      }
+    },
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0": {
+      "type": "section-nutrients",
+      "blocks": {
+        "d5551ecb-86b5-44af-b6bb-d1b71e3f4be0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Red Blood cells, White Blood Cells and Platelets",
+            "nutrient_description": "<p>Involved in oxygen transport, the immune response, and wound healing.<\/p>"
+          }
+        },
+        "19dba8ff-97ef-481e-a846-473872f085fb": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin, Folate, B12 and Choline",
+            "nutrient_description": "<p>Essential for red blood cell formation, as well as immune, brain, reproductive, and cardiovascular health.<\/p>"
+          }
+        },
+        "f3948235-f8c5-4f1b-b953-3d0075b76111": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamin D",
+            "nutrient_description": "<p>Crucial for immune, metabolic, and bone health.<\/p>"
+          }
+        },
+        "0d0eda59-f0b3-4430-8413-4e74b07f532a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Heme Iron",
+            "nutrient_description": "<p>Crucial for brain health, energy and athletic performance, as well as immune function.<\/p>"
+          }
+        },
+        "96ff48e7-7b8e-465b-946b-f862c9fa06c0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Copper, Biotin and CoQ10",
+            "nutrient_description": "<p>Crucial for overall metabolism, mood, and energy, as well as health of skin, hair, and nails.<\/p>"
+          }
+        },
+        "62e64628-b78e-4618-9eb5-2e3c3e77e99a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamins A, E, K2",
+            "nutrient_description": "<p>In super bioavailable forms. These vitamins play critical roles in overall immune and bone health.<\/p>"
+          }
+        },
+        "ce4a56e7-ad24-404b-9e01-28fccb1d7caa": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-thyroid.png?v=1617911399",
+            "title": "Selenium",
+            "nutrient_description": "<p>A critical mineral for thyroid function (iodothyronine deiodinanses) and immune health\/antioxidant defense (glutathione peroxidase, thioredoxin reductase).<\/p>"
+          }
+        },
+        "5e816eaf-bb1b-4c7a-ac8e-f072de2f95b9": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Splenin, Tuftsin and Splenopentin <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Peptides found exclusively in splenic tissue which enhance immune function.<\/p>"
+          }
+        },
+        "09e3cad3-e8f1-46c6-856e-3c54ce113af9": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as LEAP-2, an antimicrobial peptide also involved in the immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "364a70f1-6722-45de-854c-cfaa68fff165": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Immune Proteins",
+            "nutrient_description": "<p>Immunoglobulins involved in defense against viruses and bacteria.<\/p>"
+          }
+        },
+        "94e4efc5-6671-47c0-abe3-35bdf3120424": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Ergothioneine <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>An amino acid in liver, kidney, and bone marrow found to support detoxification and longevity pathways.<\/p>"
+          }
+        },
+        "8211406f-40ea-42ec-a047-7b64e0e50273": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Hepcidin <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>A peptide directly involved in iron metabolism as well as the innate immune response.<\/p>"
+          }
+        },
+        "d6345190-041b-4c82-a8d5-fa266e98c001": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-enzyme.png?v=1617656604",
+            "title": "Lipase, Protease, and Amylase",
+            "nutrient_description": "<p>Enzymes to help break down macronutrients like fat, protein and carbohydrates.<\/p>"
+          }
+        },
+        "cd226f13-cad2-42e4-ba71-cd0ee29cb263": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Colipase, Trypsin, and Pancreatic Peptide",
+            "nutrient_description": "<p>Support the activation of enzymes needed to break down protein and help with food allergies by improving digestion.<\/p>"
+          }
+        },
+        "c0f14c21-0a98-4e88-ba40-b6d12f02ecd6": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "Anserine, Carnosine, Taurine, and L-carnitine",
+            "nutrient_description": "<p>Supports brain, immune, and cardiovascular health, as well as muscle recovery.<\/p>"
+          }
+        },
+        "3a90e4cd-7308-4808-be56-a80a67b9db32": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-kidney.png?v=1617911399",
+            "title": "Kidney-specific <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Reduce the concentration of oxalates in the urine and calcium deposits in the renal tissue, as well as preventing free-radical induced damage.<\/p>"
+          }
+        },
+        "b2155cdb-c6e8-4fb2-acfb-77df563c235d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Dwarf Open Reading Frame <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as DWORF, this peptide improves cardiac function and contractility.<\/p>"
+          }
+        },
+        "d5fe9138-5234-4e88-9619-bf30fb1fa46a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Niacin",
+            "nutrient_description": "<p>A B3 vitamin essential for cardiovascular health, mood, cognition, and energy.<\/p>"
+          }
+        },
+        "fe857d87-83b3-4ca4-8e86-f7a8a259f49c": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Gastrin-releasing <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as GRP, this peptide is found in pancreatic tissue and supports digestive processes by stimulating the release of enzymes, bicarbonate, and fluids.<\/p>"
+          }
+        },
+        "ae1a3806-7b60-4048-9e9f-563914b2a643": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/bone-marrow.png?v=1620677352",
+            "title": "Red and yellow bone marrow",
+            "nutrient_description": "<p>Abundant in peptides, growth factors, and stem cells to promote and support the formation of red blood cells, cartilage cells (chondrocytes), bone cells (osteocytes, osteoblast & osteoclasts), and other vital tissues found throughout the body.<\/p>"
+          }
+        },
+        "7dc762c0-f1e6-45de-9be0-60e44ceb381e": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Essential fatty acids including omega-3 fatty acids, EPA & DHA",
+            "nutrient_description": "<p>Play a critical role in the immune system, brain and cardiovascular health, as well as muscle recovery.<\/p>"
+          }
+        },
+        "e2ef2b3f-fc23-4f9c-8e2e-d30102f6012b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Alkylglycerols",
+            "nutrient_description": "<p>Support the immune system and formation of red blood cells, white blood cells, and platelets.<\/p>"
+          }
+        },
+        "9ecf4548-8f12-478a-905f-f3fd4847e4e6": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Adiponectin",
+            "nutrient_description": "<p>Peptide hormone shown to support immune, metabolic, and cardiovascular health.<\/p>"
+          }
+        },
+        "ba86ec54-6b69-4438-b9cf-3d192d628916": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/tissue.png?v=1620677831",
+            "title": "Tissue-specific proteins, hormones, growth factors, and peptides such as bovine cathelicidins",
+            "nutrient_description": "<p>Show broad antimicrobial activity and are involved in the immune response.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "d5551ecb-86b5-44af-b6bb-d1b71e3f4be0",
+        "19dba8ff-97ef-481e-a846-473872f085fb",
+        "f3948235-f8c5-4f1b-b953-3d0075b76111",
+        "0d0eda59-f0b3-4430-8413-4e74b07f532a",
+        "96ff48e7-7b8e-465b-946b-f862c9fa06c0",
+        "62e64628-b78e-4618-9eb5-2e3c3e77e99a",
+        "ce4a56e7-ad24-404b-9e01-28fccb1d7caa",
+        "5e816eaf-bb1b-4c7a-ac8e-f072de2f95b9",
+        "09e3cad3-e8f1-46c6-856e-3c54ce113af9",
+        "364a70f1-6722-45de-854c-cfaa68fff165",
+        "94e4efc5-6671-47c0-abe3-35bdf3120424",
+        "8211406f-40ea-42ec-a047-7b64e0e50273",
+        "d6345190-041b-4c82-a8d5-fa266e98c001",
+        "cd226f13-cad2-42e4-ba71-cd0ee29cb263",
+        "c0f14c21-0a98-4e88-ba40-b6d12f02ecd6",
+        "3a90e4cd-7308-4808-be56-a80a67b9db32",
+        "b2155cdb-c6e8-4fb2-acfb-77df563c235d",
+        "d5fe9138-5234-4e88-9619-bf30fb1fa46a",
+        "fe857d87-83b3-4ca4-8e86-f7a8a259f49c",
+        "ae1a3806-7b60-4048-9e9f-563914b2a643",
+        "7dc762c0-f1e6-45de-9be0-60e44ceb381e",
+        "e2ef2b3f-fc23-4f9c-8e2e-d30102f6012b",
+        "9ecf4548-8f12-478a-905f-f3fd4847e4e6",
+        "ba86ec54-6b69-4438-b9cf-3d192d628916"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/products_89b0d5ca-8ebd-44b6-926e-8d2bd16188d2.webp",
+        "section_title": "POWERFUL NUTRIENTS",
+        "section_description": "<p>The combined power of Lifeblood, Beef Organs, and Bone Marrow & Liver includes vital and \u2028potent essential nutrients.<\/p>",
+        "nutrients_to_show": 4,
+        "nutrients_toggle_label": "See all",
+        "nutrients_toggle_label_hide": "Hide all"
+      }
+    },
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote3_daa58697-766e-40a0-9127-89d060f227aa.webp",
+        "quote": "My energy has never been steadier and my overall well being has never been better.",
+        "author": "Mike P.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "eea55346-a86c-4541-b71b-025a444a41b6": {
+      "type": "minimal-pdp-selector",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-selector_097d4e12-7da0-48ac-8133-ec268cdf4e3c.webp"
+      }
+    },
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975": {
+      "type": "product-101",
+      "settings": {
+        "title": "HEART & SOIL 101",
+        "instructions": "<p>Take 6 capsules, once daily, of each supplement. If you’re new to taking organ supplements, start with 1-2 capsules of each daily for the first week before increasing by one capsule daily. Consistent long-term use provides the best results. <\/p>",
+        "benefits": "<p>Our Anemia Stack aims to optimize red blood cell formation, improve low iron, boost baseline \u2028energy levels, eliminate fatigue.<\/p>",
+        "quality": "<p>Rigorous third-party testing by independent labs during and after manufacturing. Quality and purity information can be provided upon request.<\/p>",
+        "dietary": "<p>100% additive, hormone, allergen, antibiotic, pesticide, and GMO-free. Freeze-dried. Pure nose-to-tail nourishment. <\/p>"
+      }
+    },
+    "b900e9cc-d623-4714-b778-12299998a7cd": {
+      "type": "section-faq",
+      "blocks": {
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5": {
+          "type": "faq",
+          "settings": {
+            "title": "Who should take the Anemia Stack?",
+            "answer": "<p>If you are looking for comprehensive nutritional support for iron deficiencies including iron deficiency anemia, then this stack is for you.<\/p>"
+          }
+        },
+        "837f8262-9dca-4dab-81ec-522d36ddfe35": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking all three supplements together?",
+            "answer": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides, and Essential Fatty Acids that support optimal iron stores and red blood cell health.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5",
+        "837f8262-9dca-4dab-81ec-522d36ddfe35"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356": {
+      "type": "v3-reviews",
+      "settings": {
+        "title": "CUSTOMER REVIEWS"
+      }
+    },
+    "why": {
+      "type": "v3-why",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "stacks-newsletter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-newsletter_370c59e0-9cda-4b88-afa4-8948b656e7e7.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f",
+    "f831964f-d20b-465b-a97f-35ec2a2b059d",
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291",
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20",
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0",
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92",
+    "eea55346-a86c-4541-b71b-025a444a41b6",
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975",
+    "b900e9cc-d623-4714-b778-12299998a7cd",
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356",
+    "why",
+    "newsletter"
+  ]
+}

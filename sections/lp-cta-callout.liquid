@@ -1,0 +1,63 @@
+{% comment %}
+-------------------------------------------------------------------------------
+LP CTA Callout
+-------------------------------------------------------------------------------
+Usage
+{% section 'lp-cta-callout' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign background = section.settings.background
+  assign ctaProduct = section.settings.product
+  assign ctaProductAccent = ctaProduct.metafields.rtnu.hero_accent_color
+  if ctaProduct.handle == 'beef-organs'
+    assign ctaProductAccent = "#A65316"
+  endif
+  assign button_text = section.settings.button_text
+  assign button_url = section.settings.button_url
+%}
+
+<section class="rtnu-lp__cta-callout">
+  {{ background | image_url: width: 2800 | image_tag: class: 'rtnu-lp__cta-callout-bg' }}
+
+  <div class="rtnu-wrapper">
+    <a href="{{ button_url }}" class="rtnu-btn" style="--accent: {{ ctaProductAccent }};">{{ button_text }}</a>
+    <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ ctaProduct.id }}" data-product-sku="{{ ctaProduct.handle }}" data-product-type="{{ctaProduct.type}}" data-product-title="{{ctaProduct.title}}" style="display: inline-block;">{{ ctaProduct.metafields.stamped.badge }}</span>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LP CTA Callout",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Background Image"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Select a product to pull reviews data."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "info": "Use #buy-now to scroll to the buy now section."
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP CTA Callout"
+    }
+  ]
+}
+{% endschema %}

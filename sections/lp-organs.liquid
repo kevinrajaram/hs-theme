@@ -1,0 +1,112 @@
+{% comment %}
+-------------------------------------------------------------------------------
+LP Organs
+-------------------------------------------------------------------------------
+Usage
+{% section 'lp-organs' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign content = section.settings.content
+  assign organs_image = section.settings.organs_image
+  assign background_color = section.settings.background_color
+  assign text_color = section.settings.text_color
+  assign bullet_color = section.settings.bullet_color
+  assign bullet_color_active = section.settings.bullet_color_active
+%}
+
+<section class="rtnu-lp__organs">
+  <div class="rtnu-wrapper">
+    {% if content != blank %}
+    <div class="rtnu-lp__organs-content">
+      {{ content }}
+
+      {% if organs_image != blank %}
+      <div class="rtnu-lp__organs-image">
+        <img src="{{ organs_image | image_url: height: 380 }}" alt="{{ organs_image.alt }}" height="190" loading="lazy">
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+  {% if section.blocks.size > 0 %}
+  <div class="rtnu-lp__organs-slider-wrapper" style="--bg: {{ background_color }};--text-color: {{ text_color }};--bullet-bg: {{ bullet_color }};--bullet-active-bg: {{ bullet_color_active }}">
+    <div class="splide rtnu-lp__organs-slider" data-splide='{"fixedWidth": "384px"}' role="group" aria-label="Organ descriptions slider">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+          <li class="splide__slide" {{ block.shopify_attributes }}>
+            {{ block.settings.organ_info_desc }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "LP Organs",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "organs_image",
+      "label": "Organs Image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Organs Info Background Color",
+      "default": "#C89966"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Organs Info Text Color",
+      "default": "#F7ECDE"
+    },
+    {
+      "type": "color",
+      "id": "bullet_color",
+      "label": "Organs Info Bullet Color",
+      "default": "#8A6A48",
+      "info": "If original color is needed, use #8A6A48"
+    },
+    {
+      "type": "color",
+      "id": "bullet_color_active",
+      "label": "Organs Info Bullet Active Color",
+      "default": "#A65316",
+      "info": "If original color is needed, use #A65316"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "organ_info",
+      "name": "Organ Info",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "organ_info_desc",
+          "label": "Organ Info Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Organs"
+    }
+  ]
+}
+{% endschema %}

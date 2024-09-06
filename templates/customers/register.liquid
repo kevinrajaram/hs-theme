@@ -1,0 +1,25 @@
+<section class="wayfx-account wayfx-account__login">
+    <div class="wayfx-wrapper">
+      <div class="wayfx-account__tabs">
+        <div data-tab="login" class="wayfx-account__tab selected">Customer Login</div>
+        <div data-tab="register" class="wayfx-account__tab">Create Account</div>
+      </div>
+      <div class="wayfx-grid">
+        <div class="wayfx-grid__item wayfx-login-form__wrapper">
+            <div class="wayfx-login-form">{% include 'login-form' %}</div>
+        </div>
+        <div class="wayfx-grid__item wayfx-register-form__wrapper">
+            <div class="wayfx-register-form">{% include 'register-form' %}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <style type="text/css">
+      @media all and (max-width: 1023px) {
+          .wayfx-block__login-form {
+              display: none;
+          }
+      }
+  </style>

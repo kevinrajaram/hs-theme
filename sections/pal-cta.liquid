@@ -1,0 +1,151 @@
+{% comment %}
+  -------------------------------------------------------------------------------
+  PAL CTA
+  -------------------------------------------------------------------------------
+  Usage
+  {% section 'pal-cta' %}
+  -------------------------------------------------------------------------------
+{% endcomment %}
+
+{% assign product = section.settings.product %}
+
+<section class="rtnu-pal__cta">
+  <div class="rtnu-wrapper">
+    <div class="rtnu-pal__cta-header">
+      <p class="kicker">FROM FARM TO CAPSULE</p>
+      <h2>PURE AMERICAN LIVER</h2>
+    </div>
+
+    <div class="rtnu-grid">
+      <div class="rtnu-grid__item">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0317/9898/4835/files/hs-pal-bottle-trimmed.png?v=1715621059"
+          aria-hidden="false"
+          alt=""
+          width="370"
+          height="612"
+          loading="lazy"
+        >
+      </div>
+      <div class="rtnu-grid__item">
+        <div class="rtnu-pal__cta-header">
+          <p class="kicker">FROM FARM TO CAPSULE</p>
+          <h2>PURE AMERICAN LIVER</h2>
+        </div>
+
+        <ul>
+          <li>
+            <div class="icon">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0317/9898/4835/files/icon-made-in-usa-lighter-min.png?v=1715619109"
+                aria-hidden="true"
+                alt=""
+                width="114"
+                height="114"
+                loading="lazy"
+              >
+            </div>
+            <div class="text">
+              <h3>100% American Beef</h3>
+              <p>
+                Pure American Liver is 100% sourced from grass-fed and
+                pasture-raised cattle on American family farms.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="icon">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0317/9898/4835/files/icon-superfood-lighter-min.png?v=1715619110"
+                aria-hidden="true"
+                alt=""
+                width="114"
+                height="114"
+                loading="lazy"
+              >
+            </div>
+            <div class="text">
+              <h3>Nature's Superfood</h3>
+              <p>
+                Rich in vitamins, minerals, peptides, and enzymes to support
+                your daily energy, strength, and vitality.
+              </p>
+            </div>
+          </li>
+          <li>
+            <div class="icon">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0317/9898/4835/files/icon-bio-avail-lighter-min.png?v=1715619110"
+                aria-hidden="true"
+                alt=""
+                width="114"
+                height="114"
+                loading="lazy"
+              >
+            </div>
+            <div class="text">
+              <h3>Bioavailable Nutrition</h3>
+              <p>
+                Freeze-dried to ensure all nutrients are retained in their
+                natural form with maximum bioavailability.
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        {% form 'product', product, class: 'rtnu-pal__cta-form' %}
+          <input
+            type="hidden"
+            name="id"
+            value="{{ product.variants.first.id }}"
+          >
+          <input type="hidden" name="quantity" value="1">
+
+          <button type="submit" name="add" class="wayfx-btn">
+            Add to Cart
+          </button>
+          <div class="rtnu-pal__cta-form-extras">
+            <div class="rtnu-returns">
+              <p>Free 60-day returns</p>
+            </div>
+            <div class="rtnu-shipping">
+              <p>Free U.S. shipping over $80</p>
+            </div>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="splide rtnu-pal__cta-scroller">
+  <div class="splide__track">
+    <ul class="splide__list">
+      <li class="splide__slide">PURE AMERICAN LIVER</li>
+      <li class="splide__slide">100% AMERiCAN BEEF</li>
+      <li class="splide__slide">PURE AMERICAN LIVER</li>
+      <li class="splide__slide">100% AMERiCAN BEEF</li>
+      <li class="splide__slide">PURE AMERICAN LIVER</li>
+      <li class="splide__slide">100% AMERiCAN BEEF</li>
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PAL - CTA",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Select the product for the Add to Cart button."
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAL - CTA"
+    }
+  ]
+}
+{% endschema %}

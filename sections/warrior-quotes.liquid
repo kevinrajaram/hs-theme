@@ -1,0 +1,94 @@
+<div class="wayfx-wrapper">
+  <h2>WARRIOR WILL TRANSFORM HOW YOU LOOK AND FEEL</h2>
+  <div class="swiper warrior-quotes-slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <blockquote>
+          <p>"Boy, you can feel some primal vigor from this. It feels like it gives me a drive I didn't know I had!"</p>
+          <cite>
+            <img loading="lazy" src="{{ 'warrior-trevorm.png' | asset_img_url: '288x' }}" alt="Trevor M." width="144" height="144">
+            <span>Trevor M. <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22"><path fill="#D1171E" d="m11 .916016 2.0625 2.292814 2.9786-.91781.6875 2.98031 2.9803.6875-.9178 2.97859 2.2928 2.06248-2.2928 2.0625.9178 2.9786-2.9803.6875-.6875 2.9803-2.9786-.9178L11 21.0838 8.93748 18.791l-2.97859.9178-.6875-2.9803-2.98031-.6875.91781-2.9786-2.292813-2.0625L3.20889 8.93742l-.91781-2.97859 2.98031-.6875.6875-2.98031 2.97859.91781L11 .916016Z"/><path fill="#E3F2FD" d="M15.8589 6.69092 9.62496 12.9248l-2.56609-2.5661-1.28391 1.2822 3.85 3.85 7.51614-7.51608-1.2822-1.2839Z"/></svg></span>
+          </cite>
+        </blockquote>
+      </div>
+      <div class="swiper-slide">
+        <blockquote>
+          <p>“Definitely comes with side effects, but the good ones!!!”</p>
+          <cite>
+            <img loading="lazy" src="{{ 'warrior-ryan.png' | asset_img_url: '288x' }}" alt="Ryan" width="144" height="144">
+            <span>Ryan <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22"><path fill="#D1171E" d="m11 .916016 2.0625 2.292814 2.9786-.91781.6875 2.98031 2.9803.6875-.9178 2.97859 2.2928 2.06248-2.2928 2.0625.9178 2.9786-2.9803.6875-.6875 2.9803-2.9786-.9178L11 21.0838 8.93748 18.791l-2.97859.9178-.6875-2.9803-2.98031-.6875.91781-2.9786-2.292813-2.0625L3.20889 8.93742l-.91781-2.97859 2.98031-.6875.6875-2.98031 2.97859.91781L11 .916016Z"/><path fill="#E3F2FD" d="M15.8589 6.69092 9.62496 12.9248l-2.56609-2.5661-1.28391 1.2822 3.85 3.85 7.51614-7.51608-1.2822-1.2839Z"/></svg></span>
+          </cite>
+        </blockquote>
+      </div>
+      <div class="swiper-slide">
+        <blockquote>
+          <p>“I'm living my life again. I have energy. I'm focused. Killing it at the gym. I'm MOTIVATED again.”</p>
+          <cite>
+            <img loading="lazy" src="{{ 'warrior-trevorm.png' | asset_img_url: '288x' }}" alt="Wyatt" width="144" height="144">
+            <span>Wyatt <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 22 22"><path fill="#D1171E" d="m11 .916016 2.0625 2.292814 2.9786-.91781.6875 2.98031 2.9803.6875-.9178 2.97859 2.2928 2.06248-2.2928 2.0625.9178 2.9786-2.9803.6875-.6875 2.9803-2.9786-.9178L11 21.0838 8.93748 18.791l-2.97859.9178-.6875-2.9803-2.98031-.6875.91781-2.9786-2.292813-2.0625L3.20889 8.93742l-.91781-2.97859 2.98031-.6875.6875-2.98031 2.97859.91781L11 .916016Z"/><path fill="#E3F2FD" d="M15.8589 6.69092 9.62496 12.9248l-2.56609-2.5661-1.28391 1.2822 3.85 3.85 7.51614-7.51608-1.2822-1.2839Z"/></svg></span>
+          </cite>
+        </blockquote>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  (function () {
+      'use strict';
+      // breakpoint where swiper will be destroyed
+      // and switches to a dual-column layout
+      const breakpoint = window.matchMedia('(min-width: 768px)');
+    
+      // keep track of swiper instances to destroy later
+      let warriorQuotes;
+    
+      const breakpointChecker = function () {
+          // if larger viewport and multi-row layout needed
+          if (breakpoint.matches === true) {
+      
+              // clean up old instances and inline styles when available
+              if (warriorQuotes !== undefined) warriorQuotes.destroy(true, true);
+      
+              // or/and do nothing
+              return;
+      
+              // else if a small viewport and single column layout needed
+          } else if (breakpoint.matches === false) {
+              // fire small viewport version of swiper
+              return enableSwiper();
+          }
+      };
+    
+      const enableSwiper = function () {
+          warriorQuotes = new Swiper('.warrior-quotes-slider', {
+              slidesPerView: "auto",
+              centeredSlides: true,
+              grabCursor: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              }
+          });
+      };
+    
+      // keep an eye on viewport size changes
+      breakpoint.addListener(breakpointChecker);
+    
+      // kickstart
+      breakpointChecker();
+    
+  })(); /* IIFE end */
+</script>
+
+{% schema %}
+  {
+    "name": "Warrior Quotes",
+    "class": "wayfx-warrior__quotes",
+    "tag": "section",
+    "settings": [
+    
+    ]
+  }
+{% endschema %}

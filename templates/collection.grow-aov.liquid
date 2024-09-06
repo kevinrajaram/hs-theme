@@ -1,0 +1,44 @@
+{%- layout none -%}
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    {% render 'stacks-redirect' %}
+<script>
+  // Get the current URL
+  const currentUrl = new URL(window.location.href);
+
+  // Prepare the base URL for redirection
+  let baseUrl = '/a/collections/products';
+  let addedParam = false;  // Flag to track if we've added a special parameter
+
+  // Check for specific conditions and modify the baseUrl accordingly
+  if (currentUrl.searchParams.has('layout') && currentUrl.searchParams.get('layout') === 'subscriptions') {
+    baseUrl += '?subscriptions=true';
+    addedParam = true;
+  } else if (currentUrl.searchParams.has('filter') && currentUrl.searchParams.get('filter') === 'stacks') {
+    baseUrl += '?filters=stacks';
+    addedParam = true;
+  }
+
+  // Create a new URL object for the redirection target
+  const newUrl = new URL(baseUrl, window.location.origin);
+
+  // Append the existing search parameters from the current URL to the new URL
+  currentUrl.searchParams.forEach((value, key) => {
+    // Check if the key is one of the special parameters and if it has already been added
+    if (!((key === 'layout' && value === 'subscriptions' && addedParam) || 
+          (key === 'filter' && value === 'stacks' && addedParam))) {
+      // Add each search parameter to the new URL, avoid overwriting if already set
+      if (!newUrl.searchParams.has(key)) {
+        newUrl.searchParams.set(key, value);
+      }
+    }
+  });
+
+  // Perform the redirection
+  window.location.href = newUrl.href;
+</script>
+
+  </head>
+  <body></body>
+</html>

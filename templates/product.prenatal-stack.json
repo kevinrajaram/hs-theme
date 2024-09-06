@@ -1,0 +1,474 @@
+{
+  "wrapper": "div.rtnu-product.rtnu-product--stacks",
+  "sections": {
+    "main": {
+      "type": "stacks-product-hero",
+      "settings": {
+        "health_goal_icon": "shopify:\/\/shop_images\/prenatal-icon.webp",
+        "health_goal_name": "PRENATAL HEALTH"
+      }
+    },
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f": {
+      "type": "stacks-info-slider",
+      "blocks": {
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed": {
+          "type": "slider",
+          "settings": {
+            "title": "Healthy Fetal Development",
+            "content": "Ensure robust neural connections and growth with vital nutrients supporting brain, nerve, and tissue formation for your growing baby."
+          }
+        },
+        "0f205c3c-978b-481d-a59c-0169348245b9": {
+          "type": "slider",
+          "settings": {
+            "title": "Boost Iron Stores",
+            "content": "Optimize iron stores during pregnancy, supporting oxygen delivery and overall vitality for mother and baby."
+          }
+        },
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8": {
+          "type": "slider",
+          "settings": {
+            "title": "Support Hormonal Health",
+            "content": "Maintain optimal hormone balance, aiding both mother's well-being and baby's growth during the critical prenatal phase."
+          }
+        },
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d": {
+          "type": "slider",
+          "settings": {
+            "title": "Enhance Nutrient Delivery",
+            "content": "Highly bioavailable micronutrients from natural sources deliver superior absorption, ensuring maximum benefits for you and your baby."
+          }
+        },
+        "ca7a3726-cb34-4bb5-ae7f-d4f858665f34": {
+          "type": "slider",
+          "settings": {
+            "title": "Improve Mood & Mental Clarity",
+            "content": "Stay sharp, positive, and resilient with nutrients designed to boost mood, focus, and reduce stress."
+          }
+        }
+      },
+      "block_order": [
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed",
+        "0f205c3c-978b-481d-a59c-0169348245b9",
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8",
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d",
+        "ca7a3726-cb34-4bb5-ae7f-d4f858665f34"
+      ],
+      "settings": {
+        "content": "<h2>IS THE PRENATAL STACK FOR ME?<\/h2><p>Ideal for expectant mothers who want the best for their growing child, this stack delivers tailored nutrition to support baby and you during these precious nine months.<\/p>"
+      }
+    },
+    "f831964f-d20b-465b-a97f-35ec2a2b059d": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote_c8ca9492-29d3-4e7d-8472-f59c7be1bd18.webp",
+        "quote": "Had an incredible pregnancy so far...\u2028I refer it to everyone expecting!",
+        "author": "Elizabeth F.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291": {
+      "type": "stacks-include",
+      "blocks": {
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "fire-starter",
+            "supporting_product_description": "<p><a href=\"\/products\/fire-starter\" title=\"Firestarter\">Firestarter<\/a> includes suet (perinephric kidney fat) and helps to increase energy, improve exercise performance, mood, insulin sensitivity, and mitochondrial fat burning.<\/p>"
+          }
+        },
+        "b9211051-928d-4ac9-b4ae-83a9559406eb": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "beef-organs",
+            "supporting_product_description": "<p><a href=\"\/products\/beef-organs\" title=\"Beef Organs\">Beef Organs<\/a> includes liver, heart, pancreas, spleen, and kidney. It is nature's ultimate multivitamin. Foundational support for overall health, vitality, and energy.<\/p>"
+          }
+        },
+        "3db480b4-8ae0-44d1-b992-24acbf2f09e4": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "lifeblood",
+            "supporting_product_description": "<p>Lifeblood includes whole blood extract, spleen, and liver. Improve your cardiovascular health. Targeted support to improve iron stores, oxygen delivery, and endurance.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9",
+        "b9211051-928d-4ac9-b4ae-83a9559406eb",
+        "3db480b4-8ae0-44d1-b992-24acbf2f09e4"
+      ],
+      "settings": {
+        "primary_product": "mood-memory-brain",
+        "primary_product_description": "<p><a href=\"\/products\/mood-memory-brain\" title=\"Mood, Memory & Brain\">Mood Memory & Brai<\/a>n is packed with critical nutrients and peptides to provide strategic support for better learning, focus, mood, as well as mental acuity. It includes grass-fed and finished brain, bone marrow, and liver and stimulates healthy neural connections.<\/p>",
+        "organ_nutrient_image": "shopify:\/\/shop_images\/ingredients_0b50716f-29aa-4a19-afb7-350022a08bd8.webp",
+        "organ_nutrients": "prenatal_health_stack"
+      }
+    },
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20": {
+      "type": "cta-callout",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote2_dc390479-cbb6-4b23-a2e3-f948ddb2823d.webp",
+        "title": "NOURISH YOU AND YOUR BABY"
+      }
+    },
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0": {
+      "type": "section-nutrients",
+      "blocks": {
+        "b3900aeb-ae6e-4f78-b02f-6cadbec27e66": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Phosphatidylserine",
+            "nutrient_description": "<p>A phospholipid found robustly in brain and nervous tissue essential for stress management, working memory, and optimal cognitive performance.<\/p>"
+          }
+        },
+        "be001deb-8b14-44bb-9e68-934e50a0f85d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Sphingolipids",
+            "nutrient_description": "<p>A special type of lipid (fat) found abundantly in brain and nervous tissue provides physical and chemical stability, resistance, as well as supports proper nerve cell performance and communication.<\/p>"
+          }
+        },
+        "ed378596-c7f3-41fa-b5f0-b27a47680ccc": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Brain-derived neurotrophic factor (BDNF)",
+            "nutrient_description": "<p>A critical growth factor found in brain to enhance nerve cell health, communication, synaptic transmission, and protection. Low BDNF has been identified in many neurodegenerative disease states.<\/p>"
+          }
+        },
+        "4cd18098-c143-46ed-9c58-9b8e9140db8b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hormones.png?v=1620697854",
+            "title": "DHA\/EPA",
+            "nutrient_description": "<p>Essential omega-3 fatty acids found robustly beef (bovine) brain critical for focus as well as moderating inflammation associated with anxiousness, depressiveness, and other mood-related symptoms.<\/p>"
+          }
+        },
+        "f7e302b5-9aed-4ba7-980c-cc9aedcf8ae7": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Choline",
+            "nutrient_description": "<p>Essential for the synthesis and release of neurotransmitters, such as acetylcholine, which is necessary for memory, cognition, mood stability, muscle control, and much more.<\/p>"
+          }
+        },
+        "981582c8-2759-45ac-ac50-f14c5b7bad4a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "B12",
+            "nutrient_description": "<p>A critical B vitamin for overall nerve health, neurotransmitter synthesis, mood, cognition, and energy.<\/p>"
+          }
+        },
+        "ef28f9e4-053c-4b51-b0d1-aa0e8f7f4f26": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Folate (B9)",
+            "nutrient_description": "<p>An essential B vitamin to support optimal repair and growth of nerve cells as well as neurotransmitter synthesis.<\/p>"
+          }
+        },
+        "156fb764-7229-4e8e-916e-104645e3de86": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin (B2)",
+            "nutrient_description": "<p>A crucial B vitamin required for myelin sheath synthesis—insulating layer surrounding nerve cells—to allow for proper transmission and communication between nervous tissue.<\/p>"
+          }
+        },
+        "fbd33620-be26-4df2-9a75-9c6cd4587a0b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Pantothenic Acid (B5)",
+            "nutrient_description": "<p>A key vitamin required for the synthesis of coenzyme A (CoA). Beyond its role in cell metabolism, CoA contributes to the synthesis of cholesterol, amino acids, phospholipids, neurotransmitters, and steroid hormones.<\/p>"
+          }
+        },
+        "f942a1ca-a19f-4ff1-92cd-00d6d48ad6aa": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-thyroid.png?v=1617911399",
+            "title": "Selenium",
+            "nutrient_description": "<p>An important mineral strongly involved in antioxidant defense activity as well as inflammation moderation which serves to improve brain health.<\/p>"
+          }
+        },
+        "ef1867ea-8bf6-4b34-9cfa-330c3c2f2618": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Stearic Acid",
+            "nutrient_description": "<p>A crucial fatty acid that turns on mitochondrial fat-burning cells to help with weight and energy.<\/p>"
+          }
+        },
+        "aa571888-f42e-46ed-a462-a85219ef87e9": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Essential fatty acids",
+            "nutrient_description": "<p>Support immune and cardiovascular health, as well as healthy weight management.<\/p>"
+          }
+        },
+        "0081a815-71df-49c6-93ef-63b92fda6138": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Copper, Biotin, and CoQ10",
+            "nutrient_description": "<p>Crucial for metabolism, mood, and energy, as well as the health of skin, hair, and nails.<\/p>"
+          }
+        },
+        "1338b283-bc5e-46ac-824d-d557822f04fc": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-enzyme.png?v=1617656604",
+            "title": "Lipase, Protease, and Amylase",
+            "nutrient_description": "<p>Enzymes to help break down macronutrients like fat, protein and carbohydrates.<\/p>"
+          }
+        },
+        "2a1a5be0-eaba-4096-a0ee-d167c11632cc": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Colipase, Trypsin, and Pancreatic <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Support the activation of enzymes needed to break down protein and help with food allergies by improving digestion.<\/p>"
+          }
+        },
+        "dfd05670-7f90-4c42-ac97-c2897d267dcd": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin, Folate, B12, and Choline",
+            "nutrient_description": "<p>Essential for red blood cell formation, brain, reproductive, and cardiovascular health.<\/p>"
+          }
+        },
+        "24fa118c-17b0-4b27-8ce0-c635260773ac": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "Anserine, Carnosine, Taurine, and L-carnitine",
+            "nutrient_description": "<p>Supports brain, immune, and cardiovascular health, as well as muscle recovery.<\/p>"
+          }
+        },
+        "7de82503-063f-4c73-b2e8-6b28c1fce0b5": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Ergothioneine <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>An amino acid found in liver, kidney, and bone marrow found to support detoxification and longevity pathways.<\/p>"
+          }
+        },
+        "04bea7b9-1999-41e4-bbc1-dd2f26f0771b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamins A, D, E, K2",
+            "nutrient_description": "<p>Get these vitamins in a super bioavailable form that play critical roles in overall immune and bone health.<\/p>"
+          }
+        },
+        "a2b44721-1f38-42b8-9fba-efcaac1405a1": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as LEAP-2. This peptide is involved in immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "5f587801-1abe-4586-bd52-59bd1702dc24": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Hepcidin <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>A peptide directly involved in iron metabolism as well as the innate immune response.<\/p>"
+          }
+        },
+        "b2d63c20-dcca-4187-9b9d-82a47285c258": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-kidney.png?v=1617911399",
+            "title": "Kidney-specific <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Reduce the concentration of oxalates in the urine and calcium deposits in the renal tissue, as well as preventing free-radical induced damage.<\/p>"
+          }
+        },
+        "0842a8e0-307a-4d20-b46b-25f6c4d62f71": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Dwarf Open Reading Frame <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as DWORF, this peptide improves cardiac function and contractility.<\/p>"
+          }
+        },
+        "fd25c3dd-fce3-451b-badc-18056b91c691": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Heme Iron",
+            "nutrient_description": "<p>Crucial for brain health, energy, and exercise performance, as well as immune function.<\/p>"
+          }
+        },
+        "4983a2a5-e29d-45d1-9eb6-34c69424cba7": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Niacin",
+            "nutrient_description": "<p>A B3 vitamin essential for cardiovascular health, mood, cognition, and energy.<\/p>"
+          }
+        },
+        "c665f0ba-9ae3-4e7a-baa0-cbe055de3763": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Splenin, Tuftsin, and Splenopentin <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Exclusively found in splenic tissue which enhances immune function.<\/p>"
+          }
+        },
+        "4be3486a-a59f-494e-a221-df8db8e83b66": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Gastrin-releasing <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as GRP, this peptide is found in pancreatic tissue and supports digestive processes by stimulating the release of enzymes, bicarbonate, and fluids.<\/p>"
+          }
+        },
+        "903a7b75-3936-4794-8198-57530bd794c0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Red Blood cells, White Blood Cells and Platelets",
+            "nutrient_description": "<p>Involved in oxygen transport, the immune response, and wound healing.<\/p>"
+          }
+        },
+        "00e4f1a1-fe22-4e33-8e09-a8e5cdf91b78": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Immune Proteins",
+            "nutrient_description": "<p>Immunoglobulins involved in defense against viruses and bacteria.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b3900aeb-ae6e-4f78-b02f-6cadbec27e66",
+        "be001deb-8b14-44bb-9e68-934e50a0f85d",
+        "ed378596-c7f3-41fa-b5f0-b27a47680ccc",
+        "4cd18098-c143-46ed-9c58-9b8e9140db8b",
+        "f7e302b5-9aed-4ba7-980c-cc9aedcf8ae7",
+        "981582c8-2759-45ac-ac50-f14c5b7bad4a",
+        "ef28f9e4-053c-4b51-b0d1-aa0e8f7f4f26",
+        "156fb764-7229-4e8e-916e-104645e3de86",
+        "fbd33620-be26-4df2-9a75-9c6cd4587a0b",
+        "f942a1ca-a19f-4ff1-92cd-00d6d48ad6aa",
+        "ef1867ea-8bf6-4b34-9cfa-330c3c2f2618",
+        "aa571888-f42e-46ed-a462-a85219ef87e9",
+        "0081a815-71df-49c6-93ef-63b92fda6138",
+        "1338b283-bc5e-46ac-824d-d557822f04fc",
+        "2a1a5be0-eaba-4096-a0ee-d167c11632cc",
+        "dfd05670-7f90-4c42-ac97-c2897d267dcd",
+        "24fa118c-17b0-4b27-8ce0-c635260773ac",
+        "7de82503-063f-4c73-b2e8-6b28c1fce0b5",
+        "04bea7b9-1999-41e4-bbc1-dd2f26f0771b",
+        "a2b44721-1f38-42b8-9fba-efcaac1405a1",
+        "5f587801-1abe-4586-bd52-59bd1702dc24",
+        "b2d63c20-dcca-4187-9b9d-82a47285c258",
+        "0842a8e0-307a-4d20-b46b-25f6c4d62f71",
+        "fd25c3dd-fce3-451b-badc-18056b91c691",
+        "4983a2a5-e29d-45d1-9eb6-34c69424cba7",
+        "c665f0ba-9ae3-4e7a-baa0-cbe055de3763",
+        "4be3486a-a59f-494e-a221-df8db8e83b66",
+        "903a7b75-3936-4794-8198-57530bd794c0",
+        "00e4f1a1-fe22-4e33-8e09-a8e5cdf91b78"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/products_8380f096-1f07-45d5-9739-308d888376bb.webp",
+        "section_title": "POWERFUL NUTRIENTS",
+        "section_description": "<p>The combined power of Mood, Memory & Brain, Firestarter, Lifeblood, and Beef Organs  include essential nutrients.<\/p>",
+        "nutrients_to_show": 4,
+        "nutrients_toggle_label": "See all",
+        "nutrients_toggle_label_hide": "Hide all"
+      }
+    },
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote3_091d495b-3c8e-4f7b-8e15-a115dc119eb6.webp",
+        "quote": "I feel great, my hormones are in check, \u2028and it’s just an incredible product.",
+        "author": "Kimberlie M.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "eea55346-a86c-4541-b71b-025a444a41b6": {
+      "type": "minimal-pdp-selector",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-selector.webp"
+      }
+    },
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975": {
+      "type": "product-101",
+      "settings": {
+        "title": "HEART & SOIL 101",
+        "instructions": "<p>Take 6 capsules, once daily, of each supplement. If you’re new to taking organ supplements, start with 1-2 capsules of each daily for the first week before increasing by one capsule daily. Consistent long-term use provides the best results. <\/p>",
+        "benefits": "<p>Our Prenatal Health Stack aims to offer bioavailable nutrient support to an expecting mother.<\/p>",
+        "quality": "<p>Rigorous third-party testing by independent labs during and after manufacturing. Quality and purity information can be provided upon request.<\/p>",
+        "dietary": "<p>100% additive, hormone, allergen, antibiotic, pesticide, and GMO-free. Freeze-dried. Pure nose-to-tail nourishment. <\/p>"
+      }
+    },
+    "b900e9cc-d623-4714-b778-12299998a7cd": {
+      "type": "section-faq",
+      "blocks": {
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5": {
+          "type": "faq",
+          "settings": {
+            "title": "Who should take the Prenatal Health Stack?",
+            "answer": "<p>This stack is intended for expectant mothers who want holistic nutritional support for them and their baby during pregnancy.<\/p>"
+          }
+        },
+        "837f8262-9dca-4dab-81ec-522d36ddfe35": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking all three supplements together?",
+            "answer": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides, and Essential Fatty Acids that support healthy fetal development, hormone function, and overall vitality during pregnancy.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5",
+        "837f8262-9dca-4dab-81ec-522d36ddfe35"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356": {
+      "type": "v3-reviews",
+      "settings": {
+        "title": "CUSTOMER REVIEWS"
+      }
+    },
+    "why": {
+      "type": "v3-why",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "stacks-newsletter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-newsletter_bd1f0511-2c20-40d3-aeac-bf61565f99d4.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f",
+    "f831964f-d20b-465b-a97f-35ec2a2b059d",
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291",
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20",
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0",
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92",
+    "eea55346-a86c-4541-b71b-025a444a41b6",
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975",
+    "b900e9cc-d623-4714-b778-12299998a7cd",
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356",
+    "why",
+    "newsletter"
+  ]
+}

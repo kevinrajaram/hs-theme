@@ -1,0 +1,176 @@
+{
+  "current": {
+    "checkout_logo_image": "shopify:\/\/shop_images\/hs-logo_a94a70cd-269b-4b0a-a024-fce4f57c84d8.png",
+    "checkout_logo_size": "small",
+    "checkout_sidebar_background_color": "#f9ebdc",
+    "checkout_accent_color": "#994e0e",
+    "checkout_button_color": "#994e0e",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show_announcement": false,
+          "text": "Announce something here",
+          "link": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "product-hero": {
+        "type": "product-hero",
+        "settings": {
+        }
+      },
+      "product-basics": {
+        "type": "product-basics",
+        "settings": {
+        }
+      },
+      "product-trusted": {
+        "type": "product-trusted",
+        "settings": {
+        }
+      },
+      "product-nutrients": {
+        "type": "product-nutrients",
+        "settings": {
+        }
+      },
+      "product-cta": {
+        "type": "product-cta",
+        "settings": {
+        }
+      },
+      "product-reviews": {
+        "type": "product-reviews",
+        "settings": {
+        }
+      },
+      "product-why-hs": {
+        "type": "product-why-hs",
+        "settings": {
+        }
+      },
+      "product-infobar": {
+        "type": "product-infobar",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      },
+      "header-v2": {
+        "type": "header-v2",
+        "settings": {
+        }
+      },
+      "footer-v2": {
+        "type": "footer-v2",
+        "settings": {
+        }
+      },
+      "lp-header": {
+        "type": "lp-header",
+        "settings": {
+          "title": "Enhance Your Female Health.",
+          "button_url": "#",
+          "button_text": "Get Her Package 2",
+          "is_external": false
+        }
+      },
+      "lp-footer": {
+        "type": "lp-footer",
+        "settings": {
+        }
+      },
+      "header-v3": {
+        "type": "header-v3",
+        "settings": {
+        }
+      },
+      "ab30stack-product-hero": {
+        "type": "ab30stack-product-hero",
+        "settings": {
+        }
+      },
+      "ab30stack-quote": {
+        "type": "ab30stack-quote",
+        "settings": {
+        }
+      },
+      "ab30stack-testimonials": {
+        "type": "ab30stack-testimonials",
+        "settings": {
+        }
+      },
+      "ab30stack-info": {
+        "type": "ab30stack-info",
+        "settings": {
+        }
+      },
+      "ab30stack-quote-2": {
+        "type": "ab30stack-quote-2",
+        "settings": {
+        }
+      },
+      "cta-callout-2": {
+        "type": "cta-callout-2",
+        "custom_css": [
+          ".rtnu-cta-callout-2 .rtnu-btn {--bg: #e07738; --bg-hover: #B2673A;}"
+        ],
+        "settings": {
+          "background_image": "shopify:\/\/shop_images\/hs-firestarter-cta-bg.webp",
+          "background_image_mobile": "shopify:\/\/shop_images\/hs-firestarter-cta-bg-mobile.webp",
+          "title": "<p>Don’t miss this limited time offer for a <strong>FREE $20 GIFT CARD<\/strong> with purchase!<\/p>",
+          "button_text": "Add to cart",
+          "button_url": "#wayfx-product-form-ab30stack-product-hero"
+        }
+      },
+      "moneyback-guarantee": {
+        "type": "moneyback-guarantee",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "3acfba32-89f3-4377-ae20-cbb9abc48475": {
+        "type": "shopify:\/\/apps\/order-limits-minmaxify\/blocks\/app-embed-block\/3acfba32-89f3-4377-ae20-cbb9abc48475",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "4572831902393536971": {
+        "type": "shopify:\/\/apps\/boost-ai-growth-tools\/blocks\/app-embed-block\/e7b2cc5f-5936-40f5-ae5e-9fc8e18c3f35",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "15685250022964305326": {
+        "type": "shopify:\/\/apps\/elevar-conversion-tracking\/blocks\/dataLayerEmbed\/bc30ab68-b15c-4311-811f-8ef485877ad6",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "17174303574952363282": {
+        "type": "shopify:\/\/apps\/fondue-cashback-promotions\/blocks\/caseback-embed\/dcfd972d-99c5-4526-b55b-2d76e990dec8",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  }
+}

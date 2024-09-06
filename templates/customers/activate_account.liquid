@@ -1,0 +1,25 @@
+<section class="wayfx-account">
+    <div class="wayfx-account__login">
+        <div class="wayfx-wrapper">
+            <h2>{{ 'customer.activate_account.title' | t }}</h2>
+            <div class="form-vertical wayfx-register-form">
+                <p>{{ 'customer.activate_account.subtext' | t }}</p>
+                {% form 'activate_customer_password' %}
+                    {{ form.errors | default_errors }}
+                    <div class="wayfx-form__group">
+                        <label for="CustomerPassword" class="visually-hidden">{{ 'customer.activate_account.password' | t }}</label>
+                        <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full" placeholder="{{ 'customer.activate_account.password' | t }}">
+                    </div>
+                    <div class="wayfx-form__group">
+                        <label for="CustomerPasswordConfirmation" class="visually-hidden">{{ 'customer.activate_account.password_confirm' | t }}</label>
+                        <input type="password" value="" name="customer[password_confirmation]" id="CustomerPasswordConfirmation" class="input-full" placeholder="{{ 'customer.activate_account.password_confirm' | t }}">
+                    </div>
+                    <div class="wayfx-form__group">
+                        <button type="submit" class="wayfx-btn">{{ 'customer.activate_account.submit' | t }}</button>
+                        <button type="submit" class="wayfx-btn wayfx-btn--outline" name="decline">{{ 'customer.activate_account.cancel' | t }}</button>
+                    </div>
+                {% endform %}
+            </div>
+        </div>
+    </div>
+</section>

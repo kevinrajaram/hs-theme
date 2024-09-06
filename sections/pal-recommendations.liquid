@@ -1,0 +1,84 @@
+{% comment %}
+  -------------------------------------------------------------------------------
+  PAL Recommendations
+  -------------------------------------------------------------------------------
+  Usage
+  {% section 'pal-recommendations' %}
+  -------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign products = section.settings.product_list
+%}
+
+<section class="rtnu-pal__recommendations">
+  <h2>YOU MIGHT ALSO LIKE</h2>
+
+  <div
+    class="splide rtnu-pal__recommendations-slider"
+    role="group"
+    aria-label="Recommendations"
+  >
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for product in products %}
+          <li class="splide__slide">
+            <div class="rtnu-pal__recommendations-item">
+              <a
+                href="{{ product.url }}"
+                class="rtnu-pal__recommendations-item-image"
+              >
+                <img
+                  src="{{ product.featured_image.src | image_url: width: 348 }}"
+                  alt="{{ product.title }}"
+                  width="174"
+                  height="246"
+                  loading="lazy"
+                >
+              </a>
+              <h3>
+                <a
+                  href="{{ product.url }}"
+                >
+                  {{- product.title -}}
+                </a>
+              </h3>
+              <p>{{ product.metafields.rtnu.recommendation_description }}</p>
+
+              {% form 'product', product %}
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ product.selected_or_first_available_variant.id }}"
+                >
+                <input type="hidden" value="1" name="quantity">
+                <button type="submit" name="add" class="wayfx-btn">
+                  Add to cart
+                </button>
+              {% endform %}
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PAL - Recommendations",
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Products",
+      "limit": 3
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAL - Recommendations"
+    }
+  ]
+}
+{% endschema %}

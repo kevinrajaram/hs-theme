@@ -1,0 +1,54 @@
+<section class="rtnu-connect">
+  <div class="wayfx-wrapper">
+    <div class="rtnu-connect__content">
+      {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | image_url }}" alt="" loading="lazy" width="{{ section.settings.image.width | divided_by: 2 }}" height="{{ section.settings.image.height | divided_by: 2 }}">
+      {% endif %}
+
+      <h2>{{ section.settings.title }}</h2>
+      <p>{{ section.settings.description }}</p>
+      <a href="{{ section.settings.button_url }}" class="wayfx-btn">{{ section.settings.button_text }}</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Connect with Us",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Have us help you get started"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Connect with our Health Success Team today for personalized guidance and support."
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "Connect with Us"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Connect with Us",
+        "category": "general"
+      }
+    ]
+  }
+{% endschema %}

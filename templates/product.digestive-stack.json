@@ -1,0 +1,485 @@
+{
+  "wrapper": "div.rtnu-product.rtnu-product--stacks",
+  "sections": {
+    "main": {
+      "type": "stacks-product-hero",
+      "settings": {
+        "health_goal_icon": "shopify:\/\/shop_images\/icon_30f23ece-2ca3-4dcf-b308-29fd7fb58647.webp",
+        "health_goal_name": "DIGESTIVE HEALTH"
+      }
+    },
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f": {
+      "type": "stacks-info-slider",
+      "blocks": {
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed": {
+          "type": "slider",
+          "settings": {
+            "title": "Optimize Gut Health",
+            "content": "Essential peptides and nutrients to support fundamental healing pathways within the gut."
+          }
+        },
+        "0f205c3c-978b-481d-a59c-0169348245b9": {
+          "type": "slider",
+          "settings": {
+            "title": "Improve Digestion",
+            "content": "Contains Gastrin-releasing Peptide which supports efficient digestion by stimulating the release of enzymes, bicarbonate, and fluids."
+          }
+        },
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8": {
+          "type": "slider",
+          "settings": {
+            "title": "Reduce Inflammation & Bloating",
+            "content": "Rich in beneficial peptides, minerals and growth factors which support your gut's integrity, addressing inflammation and reducing the discomfort of bloating."
+          }
+        },
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d": {
+          "type": "slider",
+          "settings": {
+            "title": "Bioavailable Nutrients",
+            "content": "Highly bioavailable micronutrients from natural sources deliver superior absorption, maximizing nutrient utiilization for optimal gut and digestive health."
+          }
+        }
+      },
+      "block_order": [
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed",
+        "0f205c3c-978b-481d-a59c-0169348245b9",
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8",
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d"
+      ],
+      "settings": {
+        "content": "<h2>IS THE DIGESTIVE STACK FOR ME?<\/h2><p>This stack is ideal for those seeking to optimize gut and digestive health, and provides comprehensive nutritional support for a strong and healthy gut.<\/p>"
+      }
+    },
+    "f831964f-d20b-465b-a97f-35ec2a2b059d": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote1_f14fb961-547a-4ba0-8ebb-8723a891a7be.webp",
+        "quote": "I can tell a huge difference in my digestion and in the amount of energy\u2028I have throughout the day.",
+        "author": "Janine H.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291": {
+      "type": "stacks-include",
+      "blocks": {
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "grass-fed-colostrum",
+            "supporting_product_description": "<p><a href=\"\/products\/grass-fed-colostrum\" title=\"Grass-Fed Colostrum\">Grass-Fed Colostrum<\/a> includes grass-fed and finished colostrum.  It provides support for gut healing, exercise recovery, and immune function.<\/p>"
+          }
+        },
+        "b9211051-928d-4ac9-b4ae-83a9559406eb": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "histamine-immune",
+            "supporting_product_description": "<p><a href=\"\/products\/histamine-immune\" title=\"Histamine & Immune\">Histamine & Immune<\/a> includes thymus, lung, spleen, liver, and kidney and helps to stimulate your immune fighting cells to defeat viruses and pathogens.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9",
+        "b9211051-928d-4ac9-b4ae-83a9559406eb"
+      ],
+      "settings": {
+        "primary_product": "gut-digestion",
+        "primary_product_description": "<p><a href=\"\/products\/gut-digestion\" title=\"Gut & Digestion\">Gut & Digestion<\/a> is the foundational supplement included in the <strong>Digestive Stack<\/strong>. It provides unique and essential support found in grass-fed and grass-finished tripe (stomach), intestines, pancreas, liver, and spleen.<\/p>",
+        "organ_nutrient_image": "shopify:\/\/shop_images\/organs_ef7fa660-b631-4464-ab15-271c58ed97cf.webp",
+        "organ_nutrients": "digestive_stack"
+      }
+    },
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20": {
+      "type": "cta-callout",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote2_5edd7bab-fb7d-434d-bbfd-e5ed2670aef0.webp",
+        "title": "REVITALIZE YOUR GUT"
+      }
+    },
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0": {
+      "type": "section-nutrients",
+      "blocks": {
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Alpha defensins 5 and 6",
+            "nutrient_description": "<p>Antimicrobial peptides involved in the immune response.<\/p>"
+          }
+        },
+        "5b4602fc-7eac-4bf4-8b24-763a14a9fcfc": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Gastrin-releasing <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as GPR, this peptide is found in pancreatic tissue and supports digestive processes by stimulating the release of enzymes, bicarbonate, and fluids.<\/p>"
+          }
+        },
+        "dc4d7427-a8b6-4fc8-9f4f-b1a4f57b94e2": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/mineral.png?v=1620678987",
+            "title": "Manganese",
+            "nutrient_description": "<p>A vital mineral involved in antioxidant defense (Super Oxide Dismutase), thyroid function, bone health, blood sugar regulation, as well as wound healing and collagen production.<\/p>"
+          }
+        },
+        "21e1658c-d7fd-49c4-87e6-c13fbfdcc6f3": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-thyroid.png?v=1617911399",
+            "title": "Selenium",
+            "nutrient_description": "<p>A critical mineral for thyroid function (iodothyronine deiodinanses) and immune health\/antioxidant defense (glutathione peroxidase, thioredoxin reductase).<\/p>"
+          }
+        },
+        "0ddf1246-f1cc-4cd3-8668-9b0fb8cb71ce": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "B12",
+            "nutrient_description": "<p>Necessary for proper cell division, red blood cell production, neurotransmitter formation, and optimal exercise performance.<\/p>"
+          }
+        },
+        "2d90c7ca-d482-42f0-b19f-7309205c7ad8": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Hepcidin <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>A peptide directly involved in iron metabolism as well as the innate immune response.<\/p>"
+          }
+        },
+        "40dd011f-a38a-474f-8225-3af410e8d06f": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Splenin, Tuftsin and Splenopentin <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Exclusively found in splenic tissue which enhances immune function.<\/p>"
+          }
+        },
+        "2d32c33c-f32a-4832-9d5b-92f1263f3b52": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Ergothioneine <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>An amino acid found in liver, kidney, and bone marrow found to support detoxification and longevity pathways.<\/p>"
+          }
+        },
+        "12f81200-76e8-45b6-b42a-06288b795b49": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as LEAP-2. This peptide is involved in immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "6ea00511-b2d9-4bcc-a011-74c7e633146c": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Niacin",
+            "nutrient_description": "<p>A B3 vitamin essential for cardiovascular health, mood, cognition, and energy.<\/p>"
+          }
+        },
+        "93f98bb0-9fb2-40e7-a3de-c91f343d3c46": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Copper, biotin, and CoQ10",
+            "nutrient_description": "<p>Crucial for metabolism, mood, and energy, as well as the health of skin, hair, and nails.<\/p>"
+          }
+        },
+        "04c3908b-1c05-4eb9-af16-d4c04dc43eb0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin, folate, and choline",
+            "nutrient_description": "<p>Essential for red blood cell formation, brain, reproductive, and cardiovascular health.<\/p>"
+          }
+        },
+        "a5a6dbe2-4640-4c51-a194-3e3b0ecee8a4": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamins A, D, E, K2",
+            "nutrient_description": "<p>Get these vitamins in a super bioavailable form that play critical roles in overall immune and bone health.<\/p>"
+          }
+        },
+        "4f1cefc1-4371-4255-b03d-92baeaee7b4f": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-enzyme.png?v=1617656604",
+            "title": "Lipase, Protease, and Amylase",
+            "nutrient_description": "<p>Enzymes to help break down macronutrients like fat, protein and carbohydrates.<\/p>"
+          }
+        },
+        "a71ff97b-d619-4e7c-8064-88d5d9a1055d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Colipase, Trypsin, and Pancreatic Peptide",
+            "nutrient_description": "<p>Support the activation of enzymes needed to break down protein and help with food allergies by improving digestion.<\/p>"
+          }
+        },
+        "350b17f6-567d-4974-88b6-c228f537ed6e": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Immunoglobulins (IgA, IgG, IgM, IgD, IgE)",
+            "nutrient_description": "<p>Antibodies that play an integral role in immune defense mechanisms.<\/p>"
+          }
+        },
+        "81c82f9a-3b40-47a0-943a-e59e4cba26bd": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/cartilage.png?v=1620678403",
+            "title": "Transforming Growth Factors - Alpha & Beta (TGF-a & b)",
+            "nutrient_description": "<p>Stimulates growth and differentiation of various connective tissue, including bone and cartilage, and is crucial for wound healing, gut healing, as well as DNA synthesis and repair.<\/p>"
+          }
+        },
+        "f57b2263-4a6c-474b-b672-e914a5ab7b23": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Proline-rich Polypeptides (PRPs), like Colostrinin",
+            "nutrient_description": "<p>Crucial for thymus gland support (command center for immune defense), growth and differentiation of B lymphocytes, and modulating the immune response.<\/p>"
+          }
+        },
+        "5b969208-2342-4b06-8ed7-44fc85b66dcd": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/metabolism.png?v=1620679600",
+            "title": "Insulin-like Growth Factor- I & II (IGF-I & -II)",
+            "nutrient_description": "<p>Found abundantly in colostrum and helps balance blood sugar, increase HDL, build lean muscle, and aids in the metabolism of protein, fat, and carbs.<\/p>"
+          }
+        },
+        "de5185be-02df-4b94-8053-2cc160aed378": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Lactoferrin",
+            "nutrient_description": "<p>Crucial iron-binding protein which helps starve bacteria of iron needed to reproduce and modulates a powerful immune response to invading organisms.<\/p>"
+          }
+        },
+        "5e5978aa-7c48-4016-aefc-cc6e73693f0f": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/skin-health.png?v=1620679722",
+            "title": "Epithelial Growth Factor (EGF)",
+            "nutrient_description": "<p>Crucial for skin health and wound healing.<\/p>"
+          }
+        },
+        "d0564375-21de-4859-8b1f-4fb8d7d14409": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune-cells.svg?v=1676480431",
+            "title": "Colony-stimulating Factor-1 (macrophage colony-stimulating factor)",
+            "nutrient_description": "<p>Stimulates stem cells to differentiate into macrophages — immune cells that \"eat\" or clean up dead pathogens\/debris from inflammation and infection.<\/p>"
+          }
+        },
+        "a1ad7382-a4ca-4d6b-9459-4e7e0a5da534": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune-cells.svg?v=1676480431",
+            "title": "Cytokines, Interleukins, Interferons, and Lymphokines",
+            "nutrient_description": "<p>Cell signaling molecules crucial for balancing inflammation and boosting T cell activity as well as the production of antibodies. These communication molecules have been identified as important molecules for treatment of cancer, pain, and various diseases.<\/p>"
+          }
+        },
+        "635af8ef-9d48-4992-a628-dc73c87aff93": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Lactalbumins",
+            "nutrient_description": "<p>Identified through research to induce selective apoptosis (cell death) of cancer cells and highly effective against various viruses.<\/p>"
+          }
+        },
+        "3fe607f9-8d7f-453d-a4d0-406b91e530d2": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Thymopoietin and Thymulin",
+            "nutrient_description": "<p>Essential peptides for immune cell programming and activation of the immune system.<\/p>"
+          }
+        },
+        "5f44188b-f30b-41ea-bde6-df807a086987": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Diamine Oxidase (DAO)",
+            "nutrient_description": "<p>Supports overall immune health, histamine metabolism, and digestion.<\/p>"
+          }
+        },
+        "e5ff470a-86a4-44aa-9f19-56f3337d361f": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Thymosin fraction 5 and thymosin alpha-1",
+            "nutrient_description": "<p>Peptides that are potent stimulators of the immune system and enhance immune cell functioning.<\/p>"
+          }
+        },
+        "f7241bdd-3a18-4164-9015-729a9b5315dd": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/pipituary-gland.png?v=1620679181",
+            "title": "Thymosin beta-4",
+            "nutrient_description": "<p>Important peptide in stimulating pituitary hormones essential for reproductive function.<\/p>"
+          }
+        },
+        "a37a5dbd-bf7c-43db-b034-f1e187b0f95c": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Thymic humoral factor",
+            "nutrient_description": "<p>Increases the immune response, especially to viruses.<\/p>"
+          }
+        },
+        "94d9e834-820c-4c9f-92dd-715349b12c12": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-kidney.png?v=1617911399",
+            "title": "Kidney-specific peptides",
+            "nutrient_description": "<p>Reduce the concentration of oxalates in the urine and calcium deposits in the renal tissue, as well as preventing free-radical induced damage.<\/p>"
+          }
+        },
+        "fe609dfb-58ec-4be6-b2cc-77166b36ad4a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/antimicrobial.png?v=1620679265",
+            "title": "Bovine Beta-Defensins and Cathelicidins",
+            "nutrient_description": "<p>Peptides known to have broad antimicrobial roles in the body.<\/p>"
+          }
+        },
+        "76592adc-9339-4772-8f68-2a9714fe30f0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Heme iron",
+            "nutrient_description": "<p>Crucial for brain health, energy, and exercise performance, as well as immune function.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b",
+        "5b4602fc-7eac-4bf4-8b24-763a14a9fcfc",
+        "dc4d7427-a8b6-4fc8-9f4f-b1a4f57b94e2",
+        "21e1658c-d7fd-49c4-87e6-c13fbfdcc6f3",
+        "0ddf1246-f1cc-4cd3-8668-9b0fb8cb71ce",
+        "2d90c7ca-d482-42f0-b19f-7309205c7ad8",
+        "40dd011f-a38a-474f-8225-3af410e8d06f",
+        "2d32c33c-f32a-4832-9d5b-92f1263f3b52",
+        "12f81200-76e8-45b6-b42a-06288b795b49",
+        "6ea00511-b2d9-4bcc-a011-74c7e633146c",
+        "93f98bb0-9fb2-40e7-a3de-c91f343d3c46",
+        "04c3908b-1c05-4eb9-af16-d4c04dc43eb0",
+        "a5a6dbe2-4640-4c51-a194-3e3b0ecee8a4",
+        "4f1cefc1-4371-4255-b03d-92baeaee7b4f",
+        "a71ff97b-d619-4e7c-8064-88d5d9a1055d",
+        "350b17f6-567d-4974-88b6-c228f537ed6e",
+        "81c82f9a-3b40-47a0-943a-e59e4cba26bd",
+        "f57b2263-4a6c-474b-b672-e914a5ab7b23",
+        "5b969208-2342-4b06-8ed7-44fc85b66dcd",
+        "de5185be-02df-4b94-8053-2cc160aed378",
+        "5e5978aa-7c48-4016-aefc-cc6e73693f0f",
+        "d0564375-21de-4859-8b1f-4fb8d7d14409",
+        "a1ad7382-a4ca-4d6b-9459-4e7e0a5da534",
+        "635af8ef-9d48-4992-a628-dc73c87aff93",
+        "3fe607f9-8d7f-453d-a4d0-406b91e530d2",
+        "5f44188b-f30b-41ea-bde6-df807a086987",
+        "e5ff470a-86a4-44aa-9f19-56f3337d361f",
+        "f7241bdd-3a18-4164-9015-729a9b5315dd",
+        "a37a5dbd-bf7c-43db-b034-f1e187b0f95c",
+        "94d9e834-820c-4c9f-92dd-715349b12c12",
+        "fe609dfb-58ec-4be6-b2cc-77166b36ad4a",
+        "76592adc-9339-4772-8f68-2a9714fe30f0"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/products_73c04ecd-f71d-4ecb-97c1-3873b968eeec.webp",
+        "section_title": "POWERFUL NUTRIENTS",
+        "section_description": "<p>The combined power of Gut & Digestion, Grass-Fed Colostrum, and Histamine & Immune\u2028includes essential nutrients.<\/p>",
+        "nutrients_to_show": 4,
+        "nutrients_toggle_label": "See all",
+        "nutrients_toggle_label_hide": "Hide all"
+      }
+    },
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote3_d380b434-249d-4843-9d7d-e48226f77b29.webp",
+        "quote": "I can feel my entire system getting a reboot from these amazing supplements.",
+        "author": "Jaclyn F.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "eea55346-a86c-4541-b71b-025a444a41b6": {
+      "type": "minimal-pdp-selector",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-selector_10aede01-cd73-4d26-8fe7-4501e8ca0f7f.webp"
+      }
+    },
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975": {
+      "type": "product-101",
+      "settings": {
+        "title": "HEART & SOIL 101",
+        "instructions": "<p>Take 6 capsules, once daily, of each supplement. If you’re new to taking organ supplements, start with 1-2 capsules of each daily for the first week before increasing by one capsule daily. Consistent long-term use provides the best results. <\/p>",
+        "benefits": "<p>Our Digestive Stack aims to optimize gut and digestive health, and provides comprehensive nutritional support for a strong and healthy gut.<\/p>",
+        "quality": "<p>Rigorous third-party testing by independent labs during and after manufacturing. Quality and purity information can be provided upon request.<\/p>",
+        "dietary": "<p>100% additive, hormone, allergen, antibiotic, pesticide, and GMO-free. Freeze-dried. Pure nose-to-tail nourishment. <\/p>"
+      }
+    },
+    "b900e9cc-d623-4714-b778-12299998a7cd": {
+      "type": "section-faq",
+      "blocks": {
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5": {
+          "type": "faq",
+          "settings": {
+            "title": "Who should take the Digestive Stack?",
+            "answer": "<p>This stack is ideal for anyone struggling with gastrointestinal and digestive issues, providing comprehensive nutritional support for a strong and healthy gut.<\/p>"
+          }
+        },
+        "837f8262-9dca-4dab-81ec-522d36ddfe35": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking all three supplements together?",
+            "answer": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides, and Essential Fatty Acids that rejuvenate your gut, supporting both digestive function and a healthy immune response.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5",
+        "837f8262-9dca-4dab-81ec-522d36ddfe35"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356": {
+      "type": "v3-reviews",
+      "settings": {
+        "title": "CUSTOMER REVIEWS"
+      }
+    },
+    "why": {
+      "type": "v3-why",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "stacks-newsletter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-newsletter_7587fd2b-b97c-46ba-b4e9-0e98e7dd9ce3.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f",
+    "f831964f-d20b-465b-a97f-35ec2a2b059d",
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291",
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20",
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0",
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92",
+    "eea55346-a86c-4541-b71b-025a444a41b6",
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975",
+    "b900e9cc-d623-4714-b778-12299998a7cd",
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356",
+    "why",
+    "newsletter"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "sections": {
+    "main": {
+      "type": "fd-hero",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/hs-fd-hero-bg.min.jpg",
+        "background_image_mobile": "shopify:\/\/shop_images\/hs-fd-hero-bg-mobile.min.jpg",
+        "subheading": "FATHER'S DAY EXCLUSIVE OFFER",
+        "heading": "RADICAL DADS DESERVE RADICAL HEALTH",
+        "description": "<p>This Father's Day, introduce dad to Radical Health! With vital nutrients to support his natural vitality and vigor, our <strong>Whole Package<\/strong> supplement is a gift all fathers will be stoked about.<\/p>",
+        "product": "whole-package",
+        "product_image": "shopify:\/\/shop_images\/hs-fd-hero-product.min.png"
+      }
+    },
+    "5bc40da1-a175-4fdf-986c-88f57cc27615": {
+      "type": "fd-benefits",
+      "blocks": {
+        "cb675e80-40a8-4017-a195-16ded40dad06": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/hs-fd-icon-1.png",
+            "name": "Natural Testosterone and Androgen Metabolites"
+          }
+        },
+        "ba12fbdd-c262-4092-ae0e-e976d5214b17": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/hs-fd-icon-2.png",
+            "name": "Essential <br>Fatty Acids"
+          }
+        },
+        "5ac59a62-cc34-4347-adc5-f9c6d029877d": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/hs-fd-icon-3.png",
+            "name": "Activin and<br> Inhibin"
+          }
+        },
+        "c1fb81fb-dd29-49e0-8f04-85bf170763c8": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/hs-fd-icon-4.png",
+            "name": "Epidermal\u2028 <br>Growth Factor"
+          }
+        }
+      },
+      "block_order": [
+        "cb675e80-40a8-4017-a195-16ded40dad06",
+        "ba12fbdd-c262-4092-ae0e-e976d5214b17",
+        "5ac59a62-cc34-4347-adc5-f9c6d029877d",
+        "c1fb81fb-dd29-49e0-8f04-85bf170763c8"
+      ],
+      "settings": {
+        "heading": "Whole Package Benefits",
+        "content": "<p><strong>Whole Package<\/strong> is packed with vital nutrients to support natural testosterone production for healthy aging and quality of life. It also supports energy production for improved muscle performance, cognition, and blood flow.<\/p>"
+      }
+    },
+    "66d8fddc-fa90-4e03-9426-a4cbf0f27a1b": {
+      "type": "fd-testimonials",
+      "blocks": {
+        "c6ca82d4-1e79-43f2-a397-4cef1faa0abb": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "“Since I began taking Whole Package both \u2028my energy and \u2028performance have\u2028 increased.”\u2028",
+            "name": "Michael Metoyer",
+            "image": "shopify:\/\/shop_images\/hs-michael.jpg"
+          }
+        },
+        "b7790719-acab-4598-9e3a-bbf60ea47b22": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "“I’m 56 outside, \u2028but feel 26 inside!”",
+            "name": "Joe Lawrence",
+            "image": "shopify:\/\/shop_images\/hs-joe.jpg"
+          }
+        },
+        "fa426bdd-ae3a-4f1b-b1dd-bffa474efe06": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial": "“Looking for a 405\u2028 deadlift. Don’t bet against me!”",
+            "name": "“Old Man Jack” John Pelcher",
+            "image": "shopify:\/\/shop_images\/hs-john.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "c6ca82d4-1e79-43f2-a397-4cef1faa0abb",
+        "b7790719-acab-4598-9e3a-bbf60ea47b22",
+        "fa426bdd-ae3a-4f1b-b1dd-bffa474efe06"
+      ],
+      "settings": {
+        "description": "<p>Wether he's a charmer, teacher, hero or rebel, <strong>Whole Package<\/strong> has everything needed to support the dad you love!<\/p>"
+      }
+    },
+    "0da99569-13c7-4717-9908-3fb8310029de": {
+      "type": "fd-cta",
+      "settings": {
+      }
+    },
+    "6cb4d1c3-a684-4736-9b39-2ccb1b7ef6f1": {
+      "type": "fd-info",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "5bc40da1-a175-4fdf-986c-88f57cc27615",
+    "66d8fddc-fa90-4e03-9426-a4cbf0f27a1b",
+    "0da99569-13c7-4717-9908-3fb8310029de",
+    "6cb4d1c3-a684-4736-9b39-2ccb1b7ef6f1"
+  ]
+}

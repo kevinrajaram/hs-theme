@@ -1,0 +1,103 @@
+<section class="rtnu-shop-by">
+  <div class="wayfx-wrapper">
+
+    <div class="rtnu-shop-by__header">
+      <h2>{{ section.settings.section_title }}</h2>
+      {% if section.settings.section_link != blank %}
+      <a href="{{ section.settings.section_link }}">{{ section.settings.section_link_text }}</a>
+      {% endif %}
+    </div>
+
+    <div class="rtnu-grid">
+      {% for block in section.blocks %}
+        {% liquid
+          assign hg_image = block.settings.hg_image
+          assign hg_title = block.settings.hg_title
+          assign hg_description = block.settings.hg_description
+          assign hg_link = block.settings.hg_link
+          assign hg_title_color = block.settings.hg_title_color
+        %}
+        <div class="rtnu-grid__item">
+          <a href="{{ hg_link }}">
+            <img src="{{ hg_image | image_url: width: 564 }}" alt="{{ hg_title }}" width="282" height="248" loading="lazy">
+            <h3 style="color: {{ hg_title_color }}">{{ hg_title }}</h3>
+            <p>{{ hg_description }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.section_link != blank %}
+    <div class="rtnu-shop-by__footer">
+      <a href="{{ section.settings.section_link }}" class="wayfx-btn wayfx-btn--outline">{{ section.settings.section_link_text }}</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Shop by health goals",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title",
+        "default": "Shop by health goals"
+      },
+      {
+        "type": "url",
+        "id": "section_link",
+        "label": "Section Link"
+      },
+      {
+        "type": "text",
+        "id": "section_link_text",
+        "label": "Section Link Text",
+        "default": "Shop All Health Goals"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "health_goal",
+        "name": "Health Goal",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "hg_image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "hg_title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "hg_description",
+            "label": "Description"
+          },
+          {
+            "type": "url",
+            "id": "hg_link",
+            "label": "Link to health goal"
+          },
+          {
+            "type": "color",
+            "id": "hg_title_color",
+            "label": "Title Color",
+            "default": "#ffffff"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop by health goals",
+        "category": "general"
+      }
+    ]
+  }
+{% endschema %}

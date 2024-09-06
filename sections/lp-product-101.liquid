@@ -1,0 +1,88 @@
+{% comment %}
+-------------------------------------------------------------------------------
+LP Product 101
+-------------------------------------------------------------------------------
+Usage
+{% section 'lp-product-101' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign section_heading = section.settings.section_heading
+  assign desktop_image = section.settings.desktop_image
+  assign mobile_image = section.settings.mobile_image
+%}
+
+<section class="rtnu-lp__101">
+  <div class="rtnu-wrapper">
+    {% if section_heading != blank %}
+    <h2>{{ section_heading }}</h2>
+    {% endif %}
+
+    {% if desktop_image != blank %}
+    <div class="rtnu-lp__101-desktop">
+      {{ desktop_image | image_url: width: 2400 | image_tag }}
+    </div>
+    {% endif %}
+
+    {% if desktop_image != blank %}
+    <div class="rtnu-lp__101-mobile">
+      {{ mobile_image | image_url: width: 600 | image_tag }}
+    </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+    <ul>
+      {% for block in section.blocks %}
+      <li>
+        {{ block.settings.info }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LP Product 101",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "6 CAPSULES A DAY. <br>REAL FOOD. REAL RESULTS."
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image",
+      "info": "This is the full image with text exported from design."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image",
+      "info": "This is image that will be used on mobile. Likely thr circular pill image by itself."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Info",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "info",
+          "label": "Info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Product 101"
+    }
+  ]
+}
+{% endschema %}

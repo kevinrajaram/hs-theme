@@ -1,0 +1,96 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Product 101
+-------------------------------------------------------------------------------
+Usage
+{% section 'product-101' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{%- liquid
+  assign title = section.settings.title
+  assign instructions = section.settings.instructions
+  assign benefits = section.settings.benefits
+  assign quality = section.settings.quality
+  assign dietary = section.settings.dietary
+-%}
+
+<section class="rtnu-pdp-101">
+  <div class="rtnu-wrapper">
+    <h2>{{ title }}</h2>
+
+    <ul class="rtnu-pdp-101__list">
+      <li class="rtnu-pdp-101__list-item">
+          <div class="rtnu-pdp-101__list-icon">
+            <img src="{{ '101-icon-1.png' | asset_img_url: '163x' }}" alt="" width="81" height="72" loading="lazy">
+          </div>
+
+          <h3>How to Use</h3>
+          {{ instructions }}
+      </li>
+      <li class="rtnu-pdp-101__list-item">
+          <div class="rtnu-pdp-101__list-icon">
+            <img src="{{ '101-icon-2.png' | asset_img_url: '180x' }}" alt="" width="90" height="80" loading="lazy">
+          </div>
+
+          <h3>Benefits</h3>
+          {{ benefits }}
+      </li>
+      <li class="rtnu-pdp-101__list-item">
+          <div class="rtnu-pdp-101__list-icon">
+            <img src="{{ '101-icon-3.png' | asset_img_url: '102x' }}" alt="" width="50" height="92" loading="lazy">
+          </div>
+
+          <h3>Quality</h3>
+          {{ quality }}
+      </li>
+      <li class="rtnu-pdp-101__list-item">
+          <div class="rtnu-pdp-101__list-icon">
+            <img src="{{ '101-icon-4.png' | asset_img_url: '206x' }}" alt="" width="103" height="62" loading="lazy">
+          </div>
+
+          <h3>Dietary</h3>
+          {{ dietary }}
+      </li>
+    </ul>
+  </div>
+</section >
+
+{% schema %}
+{
+  "name": "Product 101",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "HEART & SOIL 101"
+    },
+    {
+      "type": "richtext",
+      "id": "instructions",
+      "label": "How to Use"
+    },
+    {
+      "type": "richtext",
+      "id": "benefits",
+      "label": "Benefits"
+    },
+    {
+      "type": "richtext",
+      "id": "quality",
+      "label": "Quality"
+    },
+    {
+      "type": "richtext",
+      "id": "dietary",
+      "label": "Dietary"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product 101"
+    }
+  ]
+}
+{% endschema %}

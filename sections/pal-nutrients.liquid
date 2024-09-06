@@ -1,0 +1,84 @@
+{% comment %}
+  -------------------------------------------------------------------------------
+  PAL nutrients
+  -------------------------------------------------------------------------------
+  Usage
+  {% section 'pal-nutrients' %}
+  -------------------------------------------------------------------------------
+{% endcomment %}
+
+<section class="rtnu-pal__nutrients">
+  {% if section.settings.section_title != blank %}
+    <h2>{{ section.settings.section_title }}</h2>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <div
+      class="splide rtnu-pal__nutrients-slider"
+      role="group"
+      aria-label="{{ section.settings.section_title }}"
+    >
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            {% liquid
+              assign icon = block.settings.icon
+              assign title = block.settings.title
+              assign description = block.settings.description
+            %}
+            <li class="splide__slide" {{ block.shopify_attributes }}>
+              <div class="icon">
+                {{ icon }}
+              </div>
+              <p class="title">{{ title }}</p>
+              {{ description }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "PAL Nutrients",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "CRITICAL NUTRIENTS, PEPTIDESAND GROWTH FACTORS IN ONE POWERFUL SUPPLEMENT"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nutrient",
+      "name": "Nutrient",
+      "settings": [
+        {
+          "type": "html",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Raw SVG code recommended"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PAL Nutrients"
+    }
+  ]
+}
+{% endschema %}

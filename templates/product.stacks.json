@@ -1,0 +1,386 @@
+{
+  "wrapper": "div.rtnu-product.rtnu-product--stacks",
+  "sections": {
+    "main": {
+      "type": "stacks-product-hero",
+      "settings": {
+        "health_goal_icon": "shopify:\/\/shop_images\/thyroid-health-icon.webp",
+        "health_goal_name": "Thyroid Health"
+      }
+    },
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f": {
+      "type": "stacks-info-slider",
+      "blocks": {
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed": {
+          "type": "slider",
+          "settings": {
+            "title": "Supports Thyroid Function",
+            "content": "Rich in selenium and manganese, supporting essential thyroid functions and overall health."
+          }
+        },
+        "0f205c3c-978b-481d-a59c-0169348245b9": {
+          "type": "slider",
+          "settings": {
+            "title": "Regulates Hormonal Balance",
+            "content": "Vital minerals and peptides work in unison to support thyroid and metabolic hormones, ensuring equilibrium and optimal health."
+          }
+        },
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8": {
+          "type": "slider",
+          "settings": {
+            "title": "Boosts Energy Levels",
+            "content": "Sourced from nature's multivitamin, ensuring vitality, mood enhancement, and reduced fatigue."
+          }
+        },
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d": {
+          "type": "slider",
+          "settings": {
+            "title": "Mitochondrial Fat Burning",
+            "content": "Stearic Acid stimulates mitochondrial cells, accelerating the body's natural processes to burn fat more efficiently."
+          }
+        }
+      },
+      "block_order": [
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed",
+        "0f205c3c-978b-481d-a59c-0169348245b9",
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8",
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d"
+      ],
+      "settings": {
+        "content": "<h2>IS THE THYROID HEALTH STACK FOR ME?<\/h2><p>This stack is intended for those seeking to prioritize their thyroid health and function, and overcome thyroid-related challenges. The unique combination of organs within this powerful stack strategically supports optimal thyroid health and functioning.<\/p>"
+      }
+    },
+    "f831964f-d20b-465b-a97f-35ec2a2b059d": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/thyroid-stack-quote-bg.webp",
+        "quote": "I’m no longer on thyroid meds after 15 years. Sleeping like a champ. Changed my life...",
+        "author": "Adam E.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291": {
+      "type": "stacks-include",
+      "blocks": {
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "gut-digestion",
+            "supporting_product_description": "<p><a href=\"\/products\/gut-digestion\" title=\"Gut & Digestion\">Gut & Digestion<\/a> includes tripe (stomach), intestines, pancreas, liver, and spleen. It provide strategic support \u2028for gut inflammation and digestion.<\/p>"
+          }
+        },
+        "b9211051-928d-4ac9-b4ae-83a9559406eb": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "fire-starter",
+            "supporting_product_description": "<p><a href=\"\/products\/fire-starter\" title=\"Firestarter\">Firestarter<\/a> includes suet (perinephric kidney fat) and helps to increase energy, improve exercise performance, mood, insulin sensitivity, and mitochondrial fat burning.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9",
+        "b9211051-928d-4ac9-b4ae-83a9559406eb"
+      ],
+      "settings": {
+        "primary_product": "beef-organs",
+        "primary_product_description": "<p><a href=\"\/products\/beef-organs\" title=\"Beef Organs\">Beef Organs<\/a> is the foundational supplement included in the <strong>Thyroid Health Stack<\/strong>. It provides unique and essential support found in grass-fed and grass-finished heart, liver, pancreas, spleen, and kidney.<\/p>",
+        "organ_nutrient_image": "shopify:\/\/shop_images\/thyroid-organs.webp",
+        "organ_nutrients": "thyroid_health_stack"
+      }
+    },
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20": {
+      "type": "cta-callout",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/thyroid-cta-bg.webp",
+        "title": "NOURISH YOUR THYROID"
+      }
+    },
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0": {
+      "type": "section-nutrients",
+      "blocks": {
+        "b3900aeb-ae6e-4f78-b02f-6cadbec27e66": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Copper, Biotin, and CoQ10",
+            "nutrient_description": "<p>Crucial for metabolism, mood, and energy, as well as the health of skin, hair, and nails.<\/p>"
+          }
+        },
+        "be001deb-8b14-44bb-9e68-934e50a0f85d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-enzyme.png?v=1617656604",
+            "title": "Lipase, Protease, and Amylase",
+            "nutrient_description": "<p>Enzymes to help break down macronutrients like fat, protein and carbohydrates.<\/p>"
+          }
+        },
+        "ed378596-c7f3-41fa-b5f0-b27a47680ccc": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Colipase, Trypsin, and Pancreatic Peptide",
+            "nutrient_description": "<p>Support the activation of enzymes needed to break down protein and help with food allergies by improving digestion.<\/p>"
+          }
+        },
+        "4cd18098-c143-46ed-9c58-9b8e9140db8b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin, Folate, B12, and Choline",
+            "nutrient_description": "<p>Essential for red blood cell formation, brain, reproductive, and cardiovascular health.<\/p><p><\/p>"
+          }
+        },
+        "bdec9c63-c562-4f0c-9ae8-6b45207ebfe4": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "Anserine, Carnosine, Taurine, and L-carnitine",
+            "nutrient_description": "<p>Supports brain, immune, and cardiovascular health, as well as muscle recovery.<\/p>"
+          }
+        },
+        "b2ca7004-6ab7-4ce1-a70a-c01ba9732eff": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Ergothioneine <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>An amino acid found in liver, kidney, and bone marrow found to support detoxification and longevity pathways.<\/p>"
+          }
+        },
+        "df0e207b-5838-4372-8010-16866616b603": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamins A, D, E, K2",
+            "nutrient_description": "<p>Get these vitamins in a super bioavailable form that play critical roles in overall immune and bone health.<\/p>"
+          }
+        },
+        "cd69a2ed-88b7-47c1-bf84-7182af7bdb74": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as LEAP-2. This peptide is involved in immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "67c59cdf-d2d2-43b3-b331-389a474f7d1d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Hepcidin <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>A peptide directly involved in iron metabolism as well as the innate immune response.<\/p>"
+          }
+        },
+        "2b59d14b-47fb-41c1-9b9d-4e4c1bd27f0d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-kidney.png?v=1617911399",
+            "title": "Kidney-specific <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Reduce the concentration of oxalates in the urine and calcium deposits in the renal tissue, as well as preventing free-radical induced damage.<\/p>"
+          }
+        },
+        "8add78b8-5059-4f0f-9912-4190e2dc43b0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Dwarf Open Reading Frame <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as DWORF, this peptide improves cardiac function and contractility.<\/p>"
+          }
+        },
+        "3cdc7488-660b-4d30-94d2-3eb6b70b54e8": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "B12",
+            "nutrient_description": "<p>Necessary for proper cell division, red blood cell production, neurotransmitter formation, and optimal exercise performance.<\/p>"
+          }
+        },
+        "3752bfd2-7b23-45af-8c42-dce5d8020ac5": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-thyroid.png?v=1617911399",
+            "title": "Selenium",
+            "nutrient_description": "<p>A critical mineral for thyroid function (iodothyronine deiodinanses) and immune health\/antioxidant defense (glutathione peroxidase, thioredoxin reductase).<\/p>"
+          }
+        },
+        "feb12967-d67e-4637-b301-0ad681b75de7": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Heme Iron",
+            "nutrient_description": "<p>Crucial for brain health, energy, and exercise performance, as well as immune function.<\/p>"
+          }
+        },
+        "832d58b5-d2cf-4b15-94f9-a7d1751ec187": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Niacin",
+            "nutrient_description": "<p>A B3 vitamin essential for cardiovascular health, mood, cognition, and energy.<\/p>"
+          }
+        },
+        "cd1d674b-ff74-461e-88a4-40fe0b96cf23": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Splenin, Tuftsin, and Splenopentin <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Exclusively found in splenic tissue which enhances immune function.<\/p>"
+          }
+        },
+        "fa8b27e0-f35c-42f9-a19f-10ecfa4cccb3": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Gastrin-releasing <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as GRP, this peptide is found in pancreatic tissue and supports digestive processes by stimulating the release of enzymes, bicarbonate, and fluids.<\/p>"
+          }
+        },
+        "6550bdc7-971e-43f0-882e-f2c4e95b5007": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Alpha defensins 5 and 6",
+            "nutrient_description": "<p>Antimicrobial peptides involved in the immune response.<\/p>"
+          }
+        },
+        "c4180d00-bc72-4fcd-a934-40548963cd81": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/mineral.png?v=1620678987",
+            "title": "Manganese",
+            "nutrient_description": "<p>A vital mineral involved in antioxidant defense (Super Oxide Dismutase), thyroid function, bone health, blood sugar regulation, as well as wound healing and collagen production.<\/p>"
+          }
+        },
+        "09786ce0-4358-44b4-916d-bee57b97684b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Stearic Acid",
+            "nutrient_description": "<p>A crucial fatty acid that turns on mitochondrial fat-burning cells to help with weight and energy.<\/p>"
+          }
+        },
+        "d2313b10-08af-4130-a921-f83be9473ae4": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Essential fatty acids",
+            "nutrient_description": "<p>Support immune and cardiovascular health, as well as healthy weight management.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b3900aeb-ae6e-4f78-b02f-6cadbec27e66",
+        "be001deb-8b14-44bb-9e68-934e50a0f85d",
+        "ed378596-c7f3-41fa-b5f0-b27a47680ccc",
+        "4cd18098-c143-46ed-9c58-9b8e9140db8b",
+        "bdec9c63-c562-4f0c-9ae8-6b45207ebfe4",
+        "b2ca7004-6ab7-4ce1-a70a-c01ba9732eff",
+        "df0e207b-5838-4372-8010-16866616b603",
+        "cd69a2ed-88b7-47c1-bf84-7182af7bdb74",
+        "67c59cdf-d2d2-43b3-b331-389a474f7d1d",
+        "2b59d14b-47fb-41c1-9b9d-4e4c1bd27f0d",
+        "8add78b8-5059-4f0f-9912-4190e2dc43b0",
+        "3cdc7488-660b-4d30-94d2-3eb6b70b54e8",
+        "3752bfd2-7b23-45af-8c42-dce5d8020ac5",
+        "feb12967-d67e-4637-b301-0ad681b75de7",
+        "832d58b5-d2cf-4b15-94f9-a7d1751ec187",
+        "cd1d674b-ff74-461e-88a4-40fe0b96cf23",
+        "fa8b27e0-f35c-42f9-a19f-10ecfa4cccb3",
+        "6550bdc7-971e-43f0-882e-f2c4e95b5007",
+        "c4180d00-bc72-4fcd-a934-40548963cd81",
+        "09786ce0-4358-44b4-916d-bee57b97684b",
+        "d2313b10-08af-4130-a921-f83be9473ae4"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/thyroid-stack-accent.webp",
+        "section_title": "POWERFUL NUTRIENTS",
+        "section_description": "<p>The combined power of Beef Organs, Gut & Digestion, and Firestarter\u2028 <br\/>includes vital and potent essential nutrients.<\/p>",
+        "nutrients_to_show": 4,
+        "nutrients_toggle_label": "See all",
+        "nutrients_toggle_label_hide": "Hide all"
+      }
+    },
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/thyroid-stack-quote-bg-2.webp",
+        "quote": "I feel AMAZING! I can tell the difference in my energy level and I overall just feel GREAT!",
+        "author": "Krsta C.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "eea55346-a86c-4541-b71b-025a444a41b6": {
+      "type": "minimal-pdp-selector",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/thyroid-stack-accent-light.webp"
+      }
+    },
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975": {
+      "type": "product-101",
+      "settings": {
+        "title": "HEART & SOIL 101",
+        "instructions": "<p>Take 6 capsules, once daily, of each supplement. If you’re new to taking organ supplements, start with 1-2 capsules of each daily for the first week before increasing by one capsule daily. Consistent long-term use provides the best results. <\/p>",
+        "benefits": "<p>Our Thyroid Health Stack aims to optimize red blood cell formation, improve low iron, boost baseline \u2028energy levels, eliminate fatigue.<\/p>",
+        "quality": "<p>Rigorous third-party testing by independent labs during and after manufacturing. Quality and purity information can be provided upon request.<\/p>",
+        "dietary": "<p>100% additive, hormone, allergen, antibiotic, pesticide, and GMO-free. Freeze-dried. Pure nose-to-tail nourishment. <\/p>"
+      }
+    },
+    "9e627642-7727-40e0-8679-928efd44497d": {
+      "type": "section-faq",
+      "blocks": {
+        "06cc2af4-a783-4f13-88b5-751e848c1210": {
+          "type": "faq",
+          "settings": {
+            "title": "Who should take the Thyroid Health Stack?",
+            "answer": "<p>This stack is intended for those seeking to prioritize their thyroid health and function, and overcome thyroid-related challenges. <\/p>"
+          }
+        },
+        "95f8ffaf-fb52-4dd4-b221-663c53bf5236": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking all three supplements together?",
+            "answer": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides, and Essential Fatty Acids that support thyroid health and function.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "06cc2af4-a783-4f13-88b5-751e848c1210",
+        "95f8ffaf-fb52-4dd4-b221-663c53bf5236"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "6b047bb0-c91d-4897-b8dc-dfed4188b81c": {
+      "type": "v3-reviews",
+      "settings": {
+        "title": "CUSTOMER REVIEWS"
+      }
+    },
+    "why": {
+      "type": "v3-why",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "stacks-newsletter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/thyroid-newsletter.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f",
+    "f831964f-d20b-465b-a97f-35ec2a2b059d",
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291",
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20",
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0",
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92",
+    "eea55346-a86c-4541-b71b-025a444a41b6",
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975",
+    "9e627642-7727-40e0-8679-928efd44497d",
+    "6b047bb0-c91d-4897-b8dc-dfed4188b81c",
+    "why",
+    "newsletter"
+  ]
+}

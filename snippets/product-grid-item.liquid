@@ -1,0 +1,194 @@
+{%- liquid
+  assign on_sale = false
+  assign sold_out = true
+  if product.available
+    assign sold_out = false
+  endif
+  assign filters = 'Allergies | Anemia | Autoimmune Issues | Becoming Superhuman | Bone And Joint Health | Digestive Health | Energy | Exercise Performance | Exercise Recovery | Female Fertility Libido | Hair Skin Nails | Heart Health | Histamine Intolerance | Immune Support | Male Fertility Libido | Mood | Prenatal Health | Sleep | Stress Support | Thyroid Health | Warrior | Weight Loss' | split: ' | '
+  assign product_subtitle = product.description
+
+  assign product_image = product.metafields.rtnu.collection_image.value | default: product.featured_image
+
+  assign qtyMin = product.selected_or_first_available_variant.quantity_rule.min | default: 1
+  assign qtyMax = product.selected_or_first_available_variant.quantity_rule.max
+  assign increment = product.selected_or_first_available_variant.quantity_rule.increment
+
+  assign form_id = 'product-form-' | append: product.id
+-%}
+
+{%- capture product_filter -%}
+	{%- for filter in filters -%}
+		{%- assign handle_filter = filter | handleize -%}
+		{%- if product.tags contains handle_filter -%}
+			{{ filter | handleize }},
+		{%- endif -%}
+	{%- endfor -%}
+{%- endcapture -%}
+
+<div class="wayfx-product__item" data-goal="{{ product_filter }}">
+  <div class="visually-hidden">{{ product_filter }}</div>
+
+  <a class="wayfx-product__item-image" href="{{ product.url }}">
+    <img
+      class="lazyload"
+      data-src="{{ product_image.src | image_url: width: 700 }}"
+      alt="{{ product_image.alt | escape }}"
+      width="{{ product_image.width }}"
+      height="{{ product_image.height }}"
+    >
+  </a>
+
+  <div class="wayfx-product__item-content">
+    <div class="wayfx-product__item-reviews">
+      <span
+        class="stamped-product-reviews-badge stamped-main-badge"
+        data-id="{{ product.id }}"
+        data-product-sku="{{ product.handle }}"
+        data-product-type="{{product.type}}"
+        data-product-title="{{product.title}}"
+        style="display: inline-block;"
+      >
+        {{- product.metafields.stamped.badge -}}
+      </span>
+    </div>
+
+    <a href="{{ product.url }}" class="wayfx-product__item-title">
+      {{ product.title }}
+    </a>
+
+    <p class="wayfx-product__item-subtitle">
+      {{ product_subtitle | strip_html | truncate: 100 }}
+    </p>
+
+    <p class="wayfx-product__item-price">{{ product.price | money }}</p>
+  </div>
+
+  {% form 'product', product, class: 'wayfx-product__item-form', id: form_id %}
+    <div>
+      <input
+        type="hidden"
+        name="id"
+        value="{{ product.selected_or_first_available_variant.id }}"
+      >
+      <div class="wayfx-product__item-qty">
+        <label for="quantity" class="visually-hidden">Quantity</label>
+        <button
+          type="button"
+          class="wayfx-product__item-qty-btn wayfx-btn"
+          onclick="this.parentNode.querySelector('input[type=number]').stepDown({{ increment }});"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+          </svg>
+        </button>
+        <input
+          type="number"
+          name="quantity"
+          value="{{ qtyMin }}"
+          step="{{ increment }}"
+          min="{{ qtyMin }}"
+          max="{{ qtyMax }}"
+        >
+        <button
+          type="button"
+          class="wayfx-product__item-qty-btn wayfx-btn"
+          onclick="this.parentNode.querySelector('input[type=number]').stepUp({{ increment }});"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+        </button>
+      </div>
+      <button
+        type="submit"
+        name="add"
+        class="wayfx-product__item-add-to-cart wayfx-btn"
+      >
+        <span class="rtnu-product__form-submit-price">Add to Cart</span>
+        <span class="rtnu-product__form-submit-status">Added to Cart</span>
+        <span class="rtnu-product__form-submit-limit"
+          >Maximum Quantity Reached</span
+        >
+      </button>
+    </div>
+    <div class="rtnu-product__form-notice"></div>
+  {% endform %}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let formId = document.querySelector('#{{ form_id }}'),
+      productId = formId?.querySelector('input[name="id"]'),
+      addToCartBtn = formId?.querySelector('.wayfx-product__item-add-to-cart'),
+      formQty = formId?.querySelector('.wayfx-product__item-qty'),
+      formPrice = formId?.querySelector('.rtnu-product__form-submit-price'),
+      formStatus = formId?.querySelector('.rtnu-product__form-submit-status');
+
+    addToCartBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      let formData = {
+        items: [
+          {
+            id: productId.value,
+            quantity: formId.querySelector('input[name="quantity"]').value,
+          },
+        ],
+        sections: 'cart-count',
+      };
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === 422) {
+            let formNotice = formId.querySelector(
+              '.rtnu-product__form-submit-limit',
+            );
+            addToCartBtn.pointerEvents = 'none';
+            addToCartBtn.setAttribute('disabled', 'disabled');
+            formQty.style.display = 'none';
+            formNotice.style.opacity = '1';
+            formPrice.style.opacity = '0';
+            formStatus.style.opacity = '0';
+          } else {
+            formPrice.style.opacity = '0';
+            formStatus.style.opacity = '1';
+
+            setTimeout(() => {
+              formPrice.style.opacity = '1';
+              formStatus.style.opacity = '0';
+            }, 2000);
+
+            let cartCount = document.querySelectorAll(
+              '.rtnu-header__cart-count',
+            );
+
+            cartCount.forEach((count) => {
+              count.outerHTML = data.sections['cart-count'];
+            });
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    });
+  });
+</script>

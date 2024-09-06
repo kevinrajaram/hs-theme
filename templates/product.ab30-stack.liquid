@@ -1,0 +1,36 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide-core.min.css"
+>
+<script
+  src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"
+  defer
+></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+  rel="stylesheet"
+>
+
+<div class="wayfx-product" itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="brand" content="Heart&Soil">
+  <meta itemprop="name" content="{{ product.title }}">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta
+    itemprop="image"
+    content="{{ product.featured_image.src | image_url: width: 600 }}"
+  >
+
+  {% section 'ab30stack-product-hero' %}
+  {% section 'ab30stack-quote' %}
+  {% section 'ab30stack-testimonials' %}
+  {% section 'ab30stack-info' %}
+  {% section 'ab30stack-quote-2' %}
+  {% section 'ab30stack-callout' %}
+  {% section 'cta-callout-2' %}
+  {% section 'moneyback-guarantee' %}
+</div>
+
+{% include 'klaviyo-viewed-product' %}
+{% include 'klaviyo-oos' %}

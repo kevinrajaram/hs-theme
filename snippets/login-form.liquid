@@ -1,0 +1,214 @@
+<script src="https://cdn.lr-in-prod.com/LogRocket.min.js" crossorigin="anonymous"></script>
+<script>
+window.LogRocket && window.LogRocket.init('luna-login-2/luna-login-2', {
+  network: {
+     requestSanitizer: request => {
+       if (request.url.toLowerCase().indexOf('/auth') !== -1) {
+        request.body = null;
+      }
+      return request
+     },
+   },
+})
+</script>
+
+<div class="note form-success" id="ResetSuccess" style="display:none;">
+    {{ 'customer.recover_password.success' | t }}
+</div>
+
+{%- if request.path contains '/account/invalid_token' -%}
+  	<div id="luna-notice" style="background: #ec8d71;">
+      This activation link has expired. Please <a href="#recover" id="RecoverPassword"><strong>click here</strong></a> and enter your e-mail address to receive a new activation link.
+	</div>
+{%- else -%}
+	<div id="luna-notice" style="display: none;"></div>
+{%- endif -%}
+
+<div id="CustomerLoginForm">
+    {% form 'customer_login', class: 'luna-form' %}
+        <h2>Customer Login</h2>
+        {%- if request.path contains '/login' -%}
+    		{{ form.errors | default_errors }}
+		{%- endif -%}
+        <div class="wayfx-form__group">
+            <label for="CustomerEmail" class="visually-hidden">{{ 'customer.login.email' | t }}</label>
+            <input autofocus type="email" name="customer[email]" id="CustomerEmail" required class="input-full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off" autofocus>
+        </div>
+        <div class="wayfx-form__group">
+            <label for="CustomerPassword" class="visually-hidden">{{ 'customer.login.password' | t }}</label>
+            <input type="password" value="" name="customer[password]" id="CustomerPassword" required class="input-full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.login.password' | t }}">
+        </div>
+        <div class="wayfx-form__group">
+          <button id="luna-login" type="submit" class="wayfx-btn">
+            <span id="luna-login-loader" class="loader" style="display: none;">
+              <svg class="circular-loader" viewBox="25 25 50 50" >
+                <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#fff" stroke-width="5" />
+              </svg>
+            </span>
+            <span id="luna-login-text" class="luna-login__text">
+              {{ 'customer.login.sign_in' | t }}
+            </span>
+          </button>
+        </div>
+  		{%- unless request.path contains '/account/invalid_token' -%}
+          <div class="wayfx-form__group">
+              <a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
+          </div>
+  		{%- endunless -%}
+    	<input type="hidden" name="return_to" value="" />
+  		<input type="hidden" name="return_url" value="" />
+    {% endform %}
+
+</div>
+
+<div id="RecoverPasswordForm" class="wayfx-recoverpassword-form" style="display: none;">
+    <h2>{{ 'customer.recover_password.title' | t }}</h2>
+    <p>{{ 'customer.recover_password.subtext' | t }}</p>
+    <div class="form-vertical">
+        {% form 'recover_customer_password', id: 'customer_recover', class: 'luna-form' %}
+            {{ form.errors | default_errors }}
+            {% if form.posted_successfully? %}
+                {% assign resetPassword = true %}
+            {% endif %}
+
+            <div class="wayfx-form__group">
+                <label for="RecoverEmail" class="visually-hidden">{{ 'customer.recover_password.email' | t }}</label>
+                <input type="email" value="" name="email" id="RecoverEmail" class="input-full" placeholder="{{ 'customer.recover_password.email' | t }}" autocorrect="off" autocapitalize="off">
+            </div>
+            <div class="wayfx-form__group">
+              <button id="luna-recover" type="submit" class="wayfx-btn">
+                <span id="luna-recover-loader" class="loader" style="display: none;">
+                  <svg class="circular-loader" viewBox="25 25 50 50">
+                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#fff" stroke-width="5" />
+                  </svg>
+                </span>
+                <span id="luna-recover-text" class="luna-login__text">
+                  {{ 'customer.recover_password.submit' | t }}
+                </span>
+              </button>
+            </div>
+            <div class="wayfx-form__group">
+                <button type="button" id="HideRecoverPasswordLink" class="wayfx-text-link">{{ 'customer.recover_password.cancel' | t }}</button>
+            </div>
+        {% endform %}
+    </div>
+</div>
+
+<style>
+  @-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+  @keyframes rotate { 100% { -webkit-transform: rotate(360deg);  transform: rotate(360deg); } }
+  @-webkit-keyframes dash { 0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 89,200; stroke-dashoffset: -35; } 100% { stroke-dasharray: 89,200; stroke-dashoffset: -124; } }
+  @keyframes dash { 0% { stroke-dasharray: 1,200; stroke-dashoffset: 0; } 50% { stroke-dasharray: 89,200; stroke-dashoffset: -35; } 100% { stroke-dasharray: 89,200; stroke-dashoffset: -124; } }
+  #luna-login.disabled, #luna-recover.disabled {pointer-events: none;}
+  #luna-login-loader, #luna-recover-loader {background: transparent;overflow: hidden; position: relative; margin: 0 auto; width: 27px; height: 27px;}
+  #luna-login-loader:before, #luna-recover-loader:before {content: ''; display: block; padding-top: 100%;}
+  #luna-login-loader .circular-loader, #luna-recover-loader .circular-loader {-webkit-animation: rotate 2s linear infinite;animation: rotate 2s linear infinite;height: 100%;-webkit-transform-origin: center center;-ms-transform-origin: center center;transform-origin: center center; width: 100%;position: absolute;top: 0;left: 0;margin: auto;}
+  #luna-login-loader .loader-path, #luna-recover-loader .loader-path {stroke-dasharray: 150,200;stroke-dashoffset: -10;-webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite; animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;stroke-linecap: round;}
+  #luna-notice {background: #c5ecb7; padding: 13px 14px; border-radius: 9px; font-size: 17px; margin-bottom: 24px; color: #000; line-height: 1.2;}
+</style>
+
+<script>
+  let luna_notice = document.getElementById("luna-notice");
+
+  document.getElementById("RecoverPassword").onclick = function() {
+  	luna_notice.style.display = "none";
+  };
+
+  if(document.getElementById("HideRecoverPasswordLink") !== null) {
+      document.getElementById("HideRecoverPasswordLink").onclick = function() {
+        {%- if request.path contains '/account/invalid_token' -%}
+        	luna_notice.style.display = "block";
+        {%- else -%}
+        	luna_notice.style.display = "none";
+        {%- endif -%}
+      };
+  }
+
+  document.querySelectorAll(".luna-form").forEach((e) => {
+    e.onsubmit = async function(event) {
+      let luna_id = e.getAttribute('id') !== null ? e.getAttribute('id') : '';
+      if (!luna_id) {
+        e.submit();
+      }
+      event.preventDefault();
+
+      let luna_email = luna_id === 'customer_login' ? document.getElementById("CustomerEmail") : document.getElementById("RecoverEmail"),
+          luna_button_loader = luna_id === 'customer_login' ? document.getElementById("luna-login-loader") : document.getElementById("luna-recover-loader"),
+          luna_button = luna_id === 'customer_login' ? document.getElementById("luna-login") : document.getElementById("luna-recover"),
+          luna_button_text = luna_id === 'customer_login' ? document.getElementById("luna-login-text") : document.getElementById("luna-recover-text"),
+          luna_return_url = document.querySelector("[name='return_url']"),
+          luna_return_to = document.querySelector("[name='return_to']");
+
+      const email = luna_email.value;
+      const password = luna_id === 'customer_login' ? document.getElementById("CustomerPassword").value : "";
+
+      if (luna_id === 'customer_login' && (email === '' || password === '')) {
+        luna_notice.style.background = "#ec8d71";
+        luna_notice.innerHTML = "Please enter your email address and password.";
+        luna_notice.style.display = "block";
+        return false;
+      }
+
+      if (luna_id === 'customer_recover' && email === '') {
+        luna_notice.style.background = "#ec8d71";
+        luna_notice.innerHTML = "Please enter your email address.";
+        luna_notice.style.display = "block";
+        return false;
+      }
+
+      window.LogRocket.identify('luna-login-2/luna-login-2', {
+        email: email
+      });
+
+      luna_button_text.style.display = "none";
+      luna_button_loader.style.display = "block";
+      luna_button.classList.add("disabled");
+
+      await fetch('https://luna-api.web.app/auth', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "email": email,
+          "password": password,
+          "shop": "{{ shop.permanent_domain }}"
+        })
+      })
+      .then(res => res.json())
+      .then(response => {
+        if (response.status === 'activated_account') {
+          luna_button_loader.style.display = "none";
+          luna_button_text.style.display = "block";
+          luna_button.classList.remove("disabled");
+          e.submit();
+        } else if (response.status === 'activation_sent') {
+          luna_notice.style.background = "#c5ecb7";
+          luna_notice.innerHTML = "Your account needs activation in order to view or make changes to your account. <strong>We’ve sent you an email to finish activating your account.</strong>";
+        } else if (response.status === 'invalid') {
+          luna_notice.style.background = "#ec8d71";
+          luna_notice.innerHTML = luna_id === 'customer_login' ? "Invalid email or password." : "This account does not exist.";
+        }
+
+        if (response.status === 'activation_sent' || response.status === 'invalid') {
+          luna_button_loader.style.display = "none";
+          luna_button_text.style.display = "block";
+          luna_button.classList.remove("disabled");
+          luna_notice.style.display = "block";
+        } else {
+          luna_return_to.value = `/a/account/login?token=${response.accessToken}&shop={{ shop.permanent_domain }}&expires=${Math.floor(new Date(response.expiresAt).getTime() / 1000)}`;
+          luna_return_url.value = `/a/account/login?token=${response.accessToken}&shop={{ shop.permanent_domain }}&expires=${Math.floor(new Date(response.expiresAt).getTime() / 1000)}`;
+          e.submit();
+        }
+      }).catch(error => {
+        console.log(error);
+        luna_notice.style.background = "#ec8d71";
+        luna_button_loader.style.display = "none";
+        luna_button_text.style.display = "block";
+        luna_button.classList.remove("disabled");
+        luna_notice.innerHTML = "An error occurred. Please try again.";
+        luna_notice.style.display = "block";
+      });
+    }
+  });
+</script>

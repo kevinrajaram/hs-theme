@@ -1,0 +1,67 @@
+{% comment %}
+  -------------------------------------------------------------------------------
+  Product card
+  -------------------------------------------------------------------------------
+  Description
+  Describe the Product card
+  -------------------------------------------------------------------------------
+  Accepts
+  - product: Object - The product object
+  - property: Boolean - Determines if the product is to have a property
+  - propertyName: String - The property name
+  -------------------------------------------------------------------------------
+  Usage
+  {% render 'product-card', product: product %}
+  -------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign productImage = product.metafields.sf_cta_block.product_image
+  assign productAccent = product.metafields.rtnu.hero_accent_color
+  assign shortDescription = product.metafields.rtnu.lp_short_description
+%}
+
+<div class="rtnu-product-card" style="--accent: {{ productAccent }}">
+  {% render 'product-accent-shape', color: productAccent %}
+  <a href="{{ product.url }}" class="rtnu-product-card__image">
+    <img src="{{ productImage }}" alt="{{ product.title }}" width="118" height="215" loading="lazy">
+  </a>
+  <div class="rtnu-product-card__content">
+    <a href="{{ product.url |  append: '#reviews' }}"
+      ><span
+        class="stamped-product-reviews-badge stamped-main-badge"
+        data-id="{{ product.id }}"
+        data-product-sku="{{ product.handle }}"
+        data-product-type="{{product.type}}"
+        data-product-title="{{product.title}}"
+        style="display: inline-block;"
+      >
+        {{- product.metafields.stamped.badge -}}
+      </span></a
+    >
+    <h3>
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h3>
+
+    {% if shortDescription != blank %}
+      <p>{{ shortDescription }}</p>
+    {% endif %}
+
+    {%- form 'product', product, class: 'rtnu-product-card__form' -%}
+      <input type="hidden" value="{{ product.selected_or_first_available_variant.id }}" name="id">
+      <input type="hidden" name="quantity" value="1">
+
+      <input type="hidden" name="properties[_nyny]" value="true">
+      {% if property == true %}
+        <input type="hidden" name="properties[_landing_source]" value="{{ propertyName }}">
+      {% endif %}
+
+      <button type="submit" class="rtnu-btn">
+        <span>{{ product.price | money_without_trailing_zeros }}</span>
+        Add
+      </button>
+    {%- endform -%}
+
+    <small>+ FREE Bottle of Firestarter!</small>
+  </div>
+</div>

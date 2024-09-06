@@ -1,0 +1,259 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Stacks include
+-------------------------------------------------------------------------------
+Usage
+{% section 'stacks-include' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign primary_product = section.settings.primary_product
+  assign primary_product_color = primary_product.metafields.rtnu.hero_accent_color
+  assign primart_product_accent_image = primary_product.metafields.rtnu.accent_image
+  assign primary_product_description = section.settings.primary_product_description
+  assign organ_nutrient_image = section.settings.organ_nutrient_image
+  assign organ_nutrients = section.settings.organ_nutrients
+%}
+
+<section class="rtnu-stacks__include">
+  <div class="rtnu-wrapper">
+    <h2>WHAT'S IN THE STACK?</h2>
+
+    {{ organ_nutrients }}
+
+    <div class="rtnu-stacks__include--primary" style="--accent: {{ primary_product_color }};">
+      <div class="accent-image">{{ primart_product_accent_image | image_url: height: 691 | image_tag }}</div>
+      <div class="left-content">
+        {{ organ_nutrient_image | image_url: width: 412 | image_tag }}
+      </div>
+      <div class="right-content">
+        <div class="rtnu-stacks__include-head">
+          <div class="number">1</div>
+          <div class="info">
+            <span>Primary</span>
+            <h3>{{ primary_product.title }}</h3>
+          </div>
+        </div>
+
+        <div class="rtnu-stacks__include-description">
+          {{ primary_product_description }}
+        </div>
+
+        {% render 'stacks-organ-nutrients', stack: organ_nutrients %}
+
+        <a href="{{ primary_product.url }}" class="wayfx-btn wayfx-btn--outline">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="splide rtnu-stacks__include-slider" aria-label="Stack supporting products">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for block in section.blocks %}
+          {% liquid
+            assign supporting_product = block.settings.supporting_product
+            assign supporting_product_color = supporting_product.metafields.rtnu.hero_accent_color
+            assign supporting_product_accent_image = supporting_product.metafields.rtnu.accent_image
+            assign supporting_product_description = block.settings.supporting_product_description
+            assign index = forloop.index | plus: 1
+          %}
+        <li class="splide__slide rtnu-stacks__include--supporting" {{ block.shopify_attributes }} style="--accent: {{ supporting_product_color }}">
+          <div class="accent-image">{{ supporting_product_accent_image | image_url: height: 440 | image_tag }}</div>
+
+          <div class="rtnu-stacks__include-head">
+            <div class="number">{{ index }}</div>
+            <div class="info">
+              <span>Supporting</span>
+              <h3>{{ supporting_product.title }}</h3>
+            </div>
+          </div>
+
+          <div class="rtnu-stacks__include-description">
+            {{ supporting_product_description }}
+          </div>
+
+          <a href="{{ supporting_product.url }}" class="wayfx-btn wayfx-btn--outline">View Details</a>
+
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (e) => {
+    var stackSupportingProducts = new Splide( '.rtnu-stacks__include-slider', {
+      type      : 'slide',
+      pagination: true,
+      arrows    : true,
+      perPage   : 2,
+      omitEnd: true,
+      gap: 24,
+      breakpoints: {
+        800: {
+          perPage: 1,
+          focus: 'center',
+          trimSpace: false,
+        },
+        600: {
+          arrows: false,
+          gap: 12,
+          fixedWidth: '329px',
+        }
+      }
+    });
+
+    stackSupportingProducts.mount();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Stacks Include",
+  "settings":[
+    {
+      "type": "header",
+      "content": "Primary Product"
+    },
+    {
+      "type": "product",
+      "id": "primary_product",
+      "label": "Product",
+      "info": "This will be used to pull the title, and accent image via metafields from the product."
+    },
+    {
+      "type": "richtext",
+      "id": "primary_product_description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Organ Nutrients"
+    },
+    {
+      "type": "image_picker",
+      "id": "organ_nutrient_image",
+      "label": "Image",
+      "info": "This image will be displayed to the left of the organ nutrients accordion."
+    },
+    {
+      "type": "select",
+      "id": "organ_nutrients",
+      "label": "Product Stack",
+      "info": "Choose the current stack. Based on selection, the organ nutrients will be displayed in the accordion.",
+      "options": [
+        {
+          "label": "Thyroid Health Stack",
+          "value": "thyroid_health_stack"
+        },
+        {
+          "label": "Stress Support Stack",
+          "value": "stress_support_stack"
+        },
+        {
+          "label": "Female Vitality Stack",
+          "value": "female_vitality_stack"
+        },
+        {
+          "label": "Prenatal Health Stack",
+          "value": "prenatal_health_stack"
+        },
+        {
+          "label": "Energy Stack",
+          "value": "energy_stack"
+        },
+        {
+          "label": "WARRIOR Stack",
+          "value": "warrior_stack"
+        },
+        {
+          "label": "Male Fertility Stack",
+          "value": "male_fertility_stack"
+        },
+        {
+          "label": "Exercise Performance Stack",
+          "value": "exercise_performance_stack"
+        },
+        {
+          "label": "Exercise Recovery Stack",
+          "value": "exercise_recovery_stack"
+        },
+        {
+          "label": "Skin, Hair & Nails Stack",
+          "value": "skin_hair_nails_stack"
+        },
+        {
+          "label": "Fat Loss Stack",
+          "value": "fat_loss_stack"
+        },
+        {
+          "label": "Digestive Stack",
+          "value": "digestive_stack"
+        },
+        {
+          "label": "Allergies Stack",
+          "value": "allergies_stack"
+        },
+        {
+          "label": "Heart Health Stack",
+          "value": "heart_health_stack"
+        },
+        {
+          "label": "Histamine Intolerance Stack",
+          "value": "histamine_intolerance_stack"
+        },
+        {
+          "label": "Mood Stack",
+          "value": "mood_stack"
+        },
+        {
+          "label": "Immune Support Stack",
+          "value": "immune_support_stack"
+        },
+        {
+          "label": "Anemia Stack",
+          "value": "anemia_stack"
+        },
+        {
+          "label": "Autoimmune Issues Stack",
+          "value": "autoimmune_issues_stack"
+        },
+        {
+          "label": "Joint & Mobility Stack",
+          "value": "joint_mobility_stack"
+        },
+        {
+          "label": "Sleep Stack",
+          "value": "sleep_stack"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Supporting Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "supporting_product",
+          "label": "Product",
+          "info": "This will be used to pull the title, and accent image via metafields from the product."
+        },
+        {
+          "type": "richtext",
+          "id": "supporting_product_description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stacks Include"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,430 @@
+{
+  "wrapper": "div.rtnu-product.rtnu-product--stacks",
+  "sections": {
+    "main": {
+      "type": "stacks-product-hero",
+      "settings": {
+        "health_goal_icon": "shopify:\/\/shop_images\/icon_145fe903-b0ff-48c9-b056-61c047a8ca17.webp",
+        "health_goal_name": "SKIN, HAIR, & NAILS HEALTH"
+      }
+    },
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f": {
+      "type": "stacks-info-slider",
+      "blocks": {
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed": {
+          "type": "slider",
+          "settings": {
+            "title": "Skin Rejuvenation & Hydration",
+            "content": "Boost collagen production, reduce inflammation, and enhance moisture retention for radiant and youthful skin."
+          }
+        },
+        "0f205c3c-978b-481d-a59c-0169348245b9": {
+          "type": "slider",
+          "settings": {
+            "title": "Hair Growth & Vitality",
+            "content": "Fortify your strands with essential nutrients for thicker hair, minimizing breakage, and promoting natural shine."
+          }
+        },
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8": {
+          "type": "slider",
+          "settings": {
+            "title": "Nail Strength & Health",
+            "content": "Eliminate brittleness and promote nail growth with bioavailable nutrients, ensuring robust and healthy nails."
+          }
+        },
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d": {
+          "type": "slider",
+          "settings": {
+            "title": "Anti-Inflammation & Immune Support",
+            "content": "Combat skin inflammation and boost immune function with essential peptides and fatty acids, promoting overall well-being."
+          }
+        },
+        "d3b9ef4a-3d6b-4326-a77e-6a727b83b671": {
+          "type": "slider",
+          "settings": {
+            "title": "Enhanced Nutrient Delivery",
+            "content": "Nourish your beauty from the inside out, with highly bioavailable micronutrients critical for skin, hair, and nail health."
+          }
+        }
+      },
+      "block_order": [
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed",
+        "0f205c3c-978b-481d-a59c-0169348245b9",
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8",
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d",
+        "d3b9ef4a-3d6b-4326-a77e-6a727b83b671"
+      ],
+      "settings": {
+        "content": "<h2>IS THE SKIN, HAIR & NAILS STACK FOR ME?<\/h2><p>This stack is tailor-made for those who understand that true beauty begins from within,\u2028delivering vital nutrients to enhance your natural radiance.<\/p>"
+      }
+    },
+    "f831964f-d20b-465b-a97f-35ec2a2b059d": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote1_16d429c1-d0ec-41dc-9766-9c7486001778.webp",
+        "quote": "My hair and nails feel and look better, thicker, and stronger after only one month.",
+        "author": "Jaclyn F.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291": {
+      "type": "stacks-include",
+      "blocks": {
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "gut-digestion",
+            "supporting_product_description": "<p><a href=\"\/products\/gut-digestion\" title=\"Gut & Digestion\">Gut & Digestion<\/a> includes tripe (stomach), intestines, pancreas, liver, and spleen. It provide strategic support\u2028for gut inflammation and digestion.<\/p>"
+          }
+        },
+        "b9211051-928d-4ac9-b4ae-83a9559406eb": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "fire-starter",
+            "supporting_product_description": "<p><a href=\"\/products\/fire-starter\" title=\"Firestarter\">Firestarter<\/a> includes suet (perinephric kidney fat) and helps to increase energy, improve exercise performance, mood, insulin sensitivity, and mitochondrial fat burning.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9",
+        "b9211051-928d-4ac9-b4ae-83a9559406eb"
+      ],
+      "settings": {
+        "primary_product": "skin-hair-nails",
+        "primary_product_description": "<p><a href=\"\/products\/skin-hair-nails\" title=\"Skin, Hair & Nails\">Skin, Hair & Nails<\/a> is packed with vital nutrients and peptides to support healthy (and beautiful) skin, hair, and nails. Grass-fed & finished cartilage, liver, and bone marrowstimulate collagen production and reduce inflammation.<\/p>",
+        "organ_nutrient_image": "shopify:\/\/shop_images\/organs_65b358c3-9b7f-47e5-aad4-082a324db195.webp",
+        "organ_nutrients": "skin_hair_nails_stack"
+      }
+    },
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20": {
+      "type": "cta-callout",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/callout.webp",
+        "title": "BECOME MORE RADIANT"
+      }
+    },
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0": {
+      "type": "section-nutrients",
+      "blocks": {
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/collagen.png?v=1620677968",
+            "title": "Full-spectrum collagen (Type I-V & XI)",
+            "nutrient_description": "<p>Bovine-derived collagen is critical in supporting and maintaining the overall health of your joints, skin, hair, and nails.<\/p>"
+          }
+        },
+        "2d63d102-c074-4fb2-a99d-574b19894c27": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/skin-health.png?v=1620679722",
+            "title": "Fat-soluble Vitamins A & E",
+            "nutrient_description": "<p>Necessary for optimal skin health, protection against dryness, and wound healing.<\/p>"
+          }
+        },
+        "25be7b9a-2589-49c6-8e08-f11b0305eb97": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/collagen.png?v=1620677968",
+            "title": "Glycine",
+            "nutrient_description": "<p>A crucial amino acid that supports collagen production, stimulation, and acts as a natural moisturizing factor.<\/p>"
+          }
+        },
+        "1c88ac88-138e-4386-ab15-f963ad37e3c6": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hair.png?v=1620680125",
+            "title": "Biotin",
+            "nutrient_description": "<p>Protects cells from damage and water loss as well as improves moisture retention for our skin, hair, and nails.<\/p>"
+          }
+        },
+        "fcadabbb-a5c5-419b-a609-c6850f8685ba": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hyaluronic-acid.png?v=1620680310",
+            "title": "Hyaluronan (Hyaluronic Acid)",
+            "nutrient_description": "<p>Controls tissue hydration, mediates repair processes, protects and lubricates soft tissues.<\/p>"
+          }
+        },
+        "648e3bfd-eade-4985-874e-d08dfa4135ea": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin, Folate, B12, and Choline",
+            "nutrient_description": "<p>Essential for structural integrity of skin, hair, and nails, reducing inflammation, and collagen production.<\/p>"
+          }
+        },
+        "92a377c3-04e2-4486-84b5-0742870492b0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/skin-health.png?v=1620679722",
+            "title": "Proteoglycan",
+            "nutrient_description": "<p>Essential for structural development, organization, hydration, and functional properties of the skin.<\/p>"
+          }
+        },
+        "dde9e7b9-218a-4c67-b69d-ec8923fc4af8": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/omega-3.png?v=1620680452",
+            "title": "Essential fatty acids including omega-3 fatty acids, EPA & DHA",
+            "nutrient_description": "<p>Play a critical role in the immune system, nourishing skin cells, as well as reducing inflammation.<\/p>"
+          }
+        },
+        "250e0b7f-3e53-4aec-b6ca-9a865d3e7eb0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/elastic.png?v=1620680519",
+            "title": "Elastin",
+            "nutrient_description": "<p>Promotes strength, firmness, and elasticity of our skin.<\/p>"
+          }
+        },
+        "00291316-7f0c-40fb-8bf5-782b249703d8": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/skin-health.png?v=1620679722",
+            "title": "Glycosaminoglycans",
+            "nutrient_description": "<p>Crucial for maintenance, regeneration, and regulation of our cells that comprise our skin, hair, and nails.<\/p>"
+          }
+        },
+        "0c488b7b-7f0b-497c-bba2-38a7e8c501f2": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/bone-marrow.png?v=1620677352",
+            "title": "Red and Yellow Bone Marrow",
+            "nutrient_description": "<p>Abundant in peptides, growth factors, and stem cells to promote and support the formation of red blood cells, cartilage cells (chondrocytes), bone cells (osteocytes, osteoblast & osteoclasts), and other vital tissues found throughout the body.<\/p>"
+          }
+        },
+        "3b53331e-d63e-4dfe-852e-5a408bdd2048": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Alpha defensins 5 and 6",
+            "nutrient_description": "<p>Antimicrobial peptides involved in the immune response.<\/p>"
+          }
+        },
+        "35d75399-8e13-42ba-8168-9f83597aa33a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Gastrin-releasing <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as GPR, this peptide is found in pancreatic tissue and supports digestive processes by stimulating the release of enzymes, bicarbonate, and fluids.<\/p>"
+          }
+        },
+        "1b6e4b3d-9741-4110-a1e1-2cff9d7bc043": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/mineral.png?v=1620678987",
+            "title": "Manganese",
+            "nutrient_description": "<p>A vital mineral involved in antioxidant defense (Super Oxide Dismutase), thyroid function, bone health, blood sugar regulation, as well as wound healing and collagen production.<\/p>"
+          }
+        },
+        "bc7221e1-4257-4e5a-a420-08c79854c0be": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-thyroid.png?v=1617911399",
+            "title": "Selenium",
+            "nutrient_description": "<p>A critical mineral for thyroid function (iodothyronine deiodinanses) and immune health\/antioxidant defense (glutathione peroxidase, thioredoxin reductase).<\/p>"
+          }
+        },
+        "b51b5bb4-7933-4481-9da0-d6e85c6c9f79": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Hepcidin <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>A peptide directly involved in iron metabolism as well as the innate immune response.<\/p>"
+          }
+        },
+        "57171f0f-0300-4846-9336-92252ef002db": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Splenin, Tuftsin and Splenopentin <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Exclusively found in splenic tissue which enhances immune function.<\/p>"
+          }
+        },
+        "1c6b09cf-c813-4bab-a817-e4b6ddf3435a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Ergothioneine <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>An amino acid found in liver, kidney, and bone marrow found to support detoxification and longevity pathways.<\/p>"
+          }
+        },
+        "d08afe95-3255-4133-adf9-89435c4037d0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as LEAP-2. This peptide is involved in immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "4c2b176c-0146-488a-9d7e-ea0c71c08b9e": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Niacin",
+            "nutrient_description": "<p>A B3 vitamin essential for cardiovascular health, mood, cognition, and energy.<\/p>"
+          }
+        },
+        "007644e5-606d-45de-9c5f-0305743c1f89": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Copper and CoQ10",
+            "nutrient_description": "<p>Crucial for metabolism, mood, and energy, as well as the health of skin, hair, and nails.<\/p>"
+          }
+        },
+        "66dec2d4-cf84-4aa2-a7a5-e75e56a71bbe": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamins A, D, E, K2",
+            "nutrient_description": "<p>Get these vitamins in a super bioavailable form that play critical roles in overall immune and bone health.<\/p>"
+          }
+        },
+        "de4563a9-f6d8-4cd2-a9dc-e968c235595a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-enzyme.png?v=1617656604",
+            "title": "Lipase, Protease, and Amylase",
+            "nutrient_description": "<p>Enzymes to help break down macronutrients like fat, protein and carbohydrates.<\/p>"
+          }
+        },
+        "ca70210a-9c3e-4779-b930-5c2bd7ff7758": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Colipase, Trypsin, and Pancreatic Peptide",
+            "nutrient_description": "<p>Support the activation of enzymes needed to break down protein and help with food allergies by improving digestion.<\/p>"
+          }
+        },
+        "a7c7b1cf-9443-4c8a-aa3a-3884480e0b41": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Stearic Acid",
+            "nutrient_description": "<p>A crucial fatty acid that turns on mitochondrial fat-burning cells to help with weight and energy.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b",
+        "2d63d102-c074-4fb2-a99d-574b19894c27",
+        "25be7b9a-2589-49c6-8e08-f11b0305eb97",
+        "1c88ac88-138e-4386-ab15-f963ad37e3c6",
+        "fcadabbb-a5c5-419b-a609-c6850f8685ba",
+        "648e3bfd-eade-4985-874e-d08dfa4135ea",
+        "92a377c3-04e2-4486-84b5-0742870492b0",
+        "dde9e7b9-218a-4c67-b69d-ec8923fc4af8",
+        "250e0b7f-3e53-4aec-b6ca-9a865d3e7eb0",
+        "00291316-7f0c-40fb-8bf5-782b249703d8",
+        "0c488b7b-7f0b-497c-bba2-38a7e8c501f2",
+        "3b53331e-d63e-4dfe-852e-5a408bdd2048",
+        "35d75399-8e13-42ba-8168-9f83597aa33a",
+        "1b6e4b3d-9741-4110-a1e1-2cff9d7bc043",
+        "bc7221e1-4257-4e5a-a420-08c79854c0be",
+        "b51b5bb4-7933-4481-9da0-d6e85c6c9f79",
+        "57171f0f-0300-4846-9336-92252ef002db",
+        "1c6b09cf-c813-4bab-a817-e4b6ddf3435a",
+        "d08afe95-3255-4133-adf9-89435c4037d0",
+        "4c2b176c-0146-488a-9d7e-ea0c71c08b9e",
+        "007644e5-606d-45de-9c5f-0305743c1f89",
+        "66dec2d4-cf84-4aa2-a7a5-e75e56a71bbe",
+        "de4563a9-f6d8-4cd2-a9dc-e968c235595a",
+        "ca70210a-9c3e-4779-b930-5c2bd7ff7758",
+        "a7c7b1cf-9443-4c8a-aa3a-3884480e0b41"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/products_98641526-c844-40ed-8e96-acb26f35bdc3.webp",
+        "section_title": "POWERFUL NUTRIENTS",
+        "section_description": "<p>The combined power of Skin, Hair & Nails, Gut & Digestion, and Firestarter includes vital and potent essential nutrients.<\/p>",
+        "nutrients_to_show": 4,
+        "nutrients_toggle_label": "See all",
+        "nutrients_toggle_label_hide": "Hide all"
+      }
+    },
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote2_2e824de2-8380-48de-a164-5eac536051df.webp",
+        "quote": "...helped tremendously, and I have seen major \u2028growth and strength in my nails. My skin is definitely clearer.",
+        "author": "Kristi R.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "eea55346-a86c-4541-b71b-025a444a41b6": {
+      "type": "minimal-pdp-selector",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/selector-products_be3d0eba-56e0-4b8a-880e-821e19c9938f.webp"
+      }
+    },
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975": {
+      "type": "product-101",
+      "settings": {
+        "title": "HEART & SOIL 101",
+        "instructions": "<p>Take 6 capsules, once daily, of each supplement. If you’re new to taking organ supplements, start with 1-2 capsules of each daily for the first week before increasing by one capsule daily. Consistent long-term use provides the best results. <\/p>",
+        "benefits": "<p>The unique combination of organs within this stack provides synergistic support towards healthier hair, skin, and nails.<\/p>",
+        "quality": "<p>Rigorous third-party testing by independent labs during and after manufacturing. Quality and purity information can be provided upon request.<\/p>",
+        "dietary": "<p>100% additive, hormone, allergen, antibiotic, pesticide, and GMO-free. Freeze-dried. Pure nose-to-tail nourishment. <\/p>"
+      }
+    },
+    "b900e9cc-d623-4714-b778-12299998a7cd": {
+      "type": "section-faq",
+      "blocks": {
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5": {
+          "type": "faq",
+          "settings": {
+            "title": "Who should take the Skin, Hair & Nails Stack?",
+            "answer": "<p>This stack is intended for those seeking comprehensive nutritional support to nourish their beauty from the inside out.<\/p>"
+          }
+        },
+        "837f8262-9dca-4dab-81ec-522d36ddfe35": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking all three supplements together?",
+            "answer": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides, and Essential Fatty Acids that support optimal skin, hair and nail health.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5",
+        "837f8262-9dca-4dab-81ec-522d36ddfe35"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356": {
+      "type": "v3-reviews",
+      "settings": {
+        "title": "CUSTOMER REVIEWS"
+      }
+    },
+    "why": {
+      "type": "v3-why",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "stacks-newsletter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/newsletter-products_764a7649-4bee-4365-8c84-e7c25db49823.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f",
+    "f831964f-d20b-465b-a97f-35ec2a2b059d",
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291",
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20",
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0",
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92",
+    "eea55346-a86c-4541-b71b-025a444a41b6",
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975",
+    "b900e9cc-d623-4714-b778-12299998a7cd",
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356",
+    "why",
+    "newsletter"
+  ]
+}

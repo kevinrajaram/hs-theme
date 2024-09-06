@@ -1,0 +1,67 @@
+{%- liquid
+    assign testimonial_text_1 = product.metafields.sf_testimonials.testimonial_1_message
+    assign testimonial_image_1 = product.metafields.sf_testimonials.testimonial_1_image
+    assign testimonial_name_1 = product.metafields.sf_testimonials.testimonial_1_name
+    assign testimonial_text_2 = product.metafields.sf_testimonials.testimonial_2_message
+    assign testimonial_image_2 = product.metafields.sf_testimonials.testimonial_2_image
+    assign testimonial_name_2 = product.metafields.sf_testimonials.testimonial_2_name
+    assign testimonial_text_3 = product.metafields.sf_testimonials.testimonial_3_message
+    assign testimonial_image_3 = product.metafields.sf_testimonials.testimonial_3_image
+    assign testimonial_name_3 = product.metafields.sf_testimonials.testimonial_3_name
+    assign testimonial_text_4 = product.metafields.sf_testimonials.testimonial_4_message
+    assign testimonial_image_4 = product.metafields.sf_testimonials.testimonial_4_image
+    assign testimonial_name_4 = product.metafields.sf_testimonials.testimonial_4_name
+-%}
+<div class="wayfx-wrapper">
+    <div class="wayfx-social-proof__slider">
+        {%- if testimonial_text_1 -%}
+        <div class="wayfx-social-proof__slide">
+            <blockquote>
+                <p>{{ testimonial_text_1 }}</p>
+                <cite><strong>{{ testimonial_name_1 }}</strong> <span>{% include 'svg-verified-badge' %} Verified Buyer</span></cite>
+            </blockquote>
+            <img class="lazyload" data-src="{{ testimonial_image_1 }}" alt=""/>
+        </div>
+        {%- endif -%}
+        {%- if testimonial_text_2 -%}
+            <div class="wayfx-social-proof__slide">
+                <blockquote>
+                    <p>{{ testimonial_text_2 }}</p>
+                    {%- if testimonial_name_2 -%}
+                    <cite><strong>{{ testimonial_name_2 }}</strong> <span>{% include 'svg-verified-badge' %} Verified Buyer</span></cite>
+                    {%- endif -%}
+                </blockquote>
+                <img class="lazyload" data-src="{{ testimonial_image_2 }}" alt=""/>
+            </div>
+        {%- endif -%}
+        {%- if testimonial_text_3 -%}
+            <div class="wayfx-social-proof__slide">
+                <blockquote>
+                    <p>{{ testimonial_text_3 }}</p>
+                    <cite><strong>{{ testimonial_name_3 }}</strong> <span>{% include 'svg-verified-badge' %} Verified Buyer</span></cite>
+                </blockquote>
+                <img class="lazyload" data-src="{{ testimonial_image_3 }}" alt=""/>
+            </div>
+        {%- endif -%}
+        {%- if testimonial_text_4 -%}
+            <div class="wayfx-social-proof__slide">
+                <blockquote>
+                    <p>{{ testimonial_text_4 }}</p>
+                    <cite><strong>{{ testimonial_name_4 }}</strong> {% include 'svg-verified-badge' %} Verified Buyer</cite>
+                </blockquote>
+                <img class="lazyload" data-src="{{ testimonial_image_4 }}" alt=""/>
+            </div>
+        {%- endif -%}
+    </div>
+    <div class="wayfx-social-proof__slider-controls">
+        <button class="wayfx-slider-previous-arrow"><svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 20C0 8.97079 8.97079 0 20 0C31.0292 0 40 8.97079 40 20C40 31.0292 31.0292 40 20 40C8.97079 40 0 31.0292 0 20ZM11.6644 20.8696H30.4348C30.9171 20.8696 31.3043 20.4789 31.3043 20C31.3043 19.5211 30.9171 19.1304 30.4348 19.1304H11.6644L17.1365 13.6583C17.4762 13.3186 17.4762 12.7683 17.1365 12.4287C16.7969 12.089 16.2466 12.089 15.9069 12.4287L8.95041 19.3852C8.86889 19.4667 8.80774 19.5618 8.76359 19.6671C8.67527 19.8811 8.67527 20.1189 8.76359 20.3329C8.80774 20.4382 8.86889 20.5333 8.95041 20.6148L15.9069 27.5713C16.0768 27.7412 16.2976 27.8261 16.5217 27.8261C16.7459 27.8261 16.9667 27.7412 17.1365 27.5713C17.4762 27.2317 17.4762 26.6814 17.1365 26.3417L11.6644 20.8696Z" fill="#B09F8C"/></svg></button>
+        <button class="wayfx-slider-next-arrow"><svg class="next-arrow" width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M40 20C40 8.97079 31.0292 0 20 0C8.97079 0 0 8.97079 0 20C0 31.0292 8.97079 40 20 40C31.0292 40 40 31.0292 40 20ZM28.3356 20.8696H9.56522C9.08288 20.8696 8.69565 20.4789 8.69565 20C8.69565 19.5211 9.08288 19.1304 9.56522 19.1304H28.3356L22.8635 13.6583C22.5238 13.3186 22.5238 12.7683 22.8635 12.4287C23.2031 12.089 23.7534 12.089 24.0931 12.4287L31.0496 19.3852C31.1311 19.4667 31.1923 19.5618 31.2364 19.6671C31.3247 19.8811 31.3247 20.1189 31.2364 20.3329C31.1923 20.4382 31.1311 20.5333 31.0496 20.6148L24.0931 27.5713C23.9232 27.7412 23.7024 27.8261 23.4783 27.8261C23.2541 27.8261 23.0333 27.7412 22.8635 27.5713C22.5238 27.2317 22.5238 26.6814 22.8635 26.3417L28.3356 20.8696Z" fill="#B09F8C"/></svg></button>
+    </div>
+</div>
+{% schema %}
+    {
+        "name": "Social Proof",
+        "tag": "section",
+        "class": "wayfx-social-proof"
+    }
+{% endschema %}

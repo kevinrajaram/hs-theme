@@ -1,0 +1,23 @@
+{%- liquid
+  assign image = 'Paul-pdp-2.jpg' | asset_img_url: 'grande'
+  assign heading = 'Trusted'
+  assign description = "Heart & Soil was founded by Paul Saladino, MD (aka Carnivore MD). He’s helped tens of thousands of people reclaim their health through an animal-based diet. He pours his heart into Heart & Soil. You'll feel the difference."
+-%}
+<div class="wayfx-wrapper">
+  <div class="wayfx-grid">
+      <div class="wayfx-grid__item wayfx-product__trusted-image">
+          <img src="{{ image }}" alt="" />
+      </div>
+      <div class="wayfx-grid__item wayfx-product__trusted-content">
+        <h2>{{ heading }}</h2>
+        <p>{{ description }}</p>
+      </div>
+  </div>
+</div>
+{% schema %}
+  {
+      "name": "Trusted",
+      "tag": "section",
+      "class": "wayfx-product__trusted"
+  }
+{% endschema %}

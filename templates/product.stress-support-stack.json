@@ -1,0 +1,476 @@
+{
+  "wrapper": "div.rtnu-product.rtnu-product--stacks",
+  "sections": {
+    "main": {
+      "type": "stacks-product-hero",
+      "settings": {
+        "health_goal_icon": "shopify:\/\/shop_images\/icon.webp",
+        "health_goal_name": "STRESS SUPPORT"
+      }
+    },
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f": {
+      "type": "stacks-info-slider",
+      "blocks": {
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed": {
+          "type": "slider",
+          "settings": {
+            "title": "Improve Stress Resilience",
+            "content": "Contains brain-specific nutrients, including phosphatidylserine and sphingolipids, which boost brain resilience while under stress."
+          }
+        },
+        "0f205c3c-978b-481d-a59c-0169348245b9": {
+          "type": "slider",
+          "settings": {
+            "title": "Supports Mood Stability",
+            "content": "Essential omega-3 fatty acids, DHA\/EPA, and other fatty acids aim to nurture brain health, moderating inflammation linked to mood imbalances and fostering mental tranqulity."
+          }
+        },
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8": {
+          "type": "slider",
+          "settings": {
+            "title": "Enhances Cognitive Performance",
+            "content": "Integrating B vitamins, choline, and essential minerals for neurotransmitter synthesis, ensuring mood stability, cognitive strength, and stress adaptability."
+          }
+        },
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d": {
+          "type": "slider",
+          "settings": {
+            "title": "Bioavailable Nutrients",
+            "content": "Highly bioavailable micronutrients from natural sources deliver superior absorption, maximizing nutrient utilization for optimal benefits."
+          }
+        }
+      },
+      "block_order": [
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed",
+        "0f205c3c-978b-481d-a59c-0169348245b9",
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8",
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d"
+      ],
+      "settings": {
+        "content": "<h2>IS THE STRESS SUPPORT STACK FOR ME?<\/h2><p>This stack is intended for those seeking nutritional support to increase stress resilience, calm the mind, and cultivate a brighter, more optimistic view.<\/p>"
+      }
+    },
+    "f831964f-d20b-465b-a97f-35ec2a2b059d": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote.webp",
+        "quote": "I recover faster from daily stresses and my mind seems more ready for the day.",
+        "author": "Andrew H.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291": {
+      "type": "stacks-include",
+      "blocks": {
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "bone-marrow-liver",
+            "supporting_product_description": "<p><a href=\"\/products\/bone-marrow-liver\" title=\"Bone Marrow & Liver\">Bone Marrow & Liver<\/a> is packed with vital nutrients and peptides to provide support for bone and tissue repair, skin health, and better mood.<\/p>"
+          }
+        },
+        "b9211051-928d-4ac9-b4ae-83a9559406eb": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "histamine-immune",
+            "supporting_product_description": "<p><a href=\"\/products\/histamine-immune\" title=\"Histamine & Immune\">Histamine & Immune<\/a> provides strategic immune support, and helps to stimulate your immune fighting cells to defeat viruses and pathogens. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9",
+        "b9211051-928d-4ac9-b4ae-83a9559406eb"
+      ],
+      "settings": {
+        "primary_product": "mood-memory-brain",
+        "primary_product_description": "<p><a href=\"\/products\/mood-memory-brain\" title=\"Mood, Memory & Brain\">Mood Memory & Brain<\/a> is packed with critical nutrients and peptides to provide strategic support for better learning, focus, mood, as well as mental acuity. It includes grass-fed and finished brain, bone marrow, and liver and stimulates healthy neural connections.<\/p>",
+        "organ_nutrient_image": "shopify:\/\/shop_images\/stress-organs.webp",
+        "organ_nutrients": "stress_support_stack"
+      }
+    },
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20": {
+      "type": "cta-callout",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/stress-cta-bg.webp",
+        "title": "NATURE'S ANTIDOTE TO MODERN STRESS"
+      }
+    },
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0": {
+      "type": "section-nutrients",
+      "blocks": {
+        "b3900aeb-ae6e-4f78-b02f-6cadbec27e66": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Phosphatidylserine",
+            "nutrient_description": "<p>A phospholipid found robustly in brain and nervous tissue essential for stress management, working memory, and optimal cognitive performance.<\/p>"
+          }
+        },
+        "be001deb-8b14-44bb-9e68-934e50a0f85d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Sphingolipids",
+            "nutrient_description": "<p>A special type of lipid (fat) found abundantly in brain and nervous tissue provides physical and chemical stability, resistance, as well as supports proper nerve cell performance and communication.<\/p>"
+          }
+        },
+        "ed378596-c7f3-41fa-b5f0-b27a47680ccc": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Brain-derived neurotrophic factor (BDNF)",
+            "nutrient_description": "<p>A critical growth factor found in brain to enhance nerve cell health, communication, synaptic transmission, and protection. Low BDNF has been identified in many neurodegenerative disease states.<\/p>"
+          }
+        },
+        "4cd18098-c143-46ed-9c58-9b8e9140db8b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hormones.png?v=1620697854",
+            "title": "DHA\/EPA",
+            "nutrient_description": "<p>Essential omega-3 fatty acids found robustly beef (bovine) brain critical for focus as well as moderating inflammation associated with anxiousness, depressiveness, and other mood-related symptoms.<\/p>"
+          }
+        },
+        "f7e302b5-9aed-4ba7-980c-cc9aedcf8ae7": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Choline",
+            "nutrient_description": "<p>Essential for the synthesis and release of neurotransmitters, such as acetylcholine, which is necessary for memory, cognition, mood stability, muscle control, and much more.<\/p>"
+          }
+        },
+        "981582c8-2759-45ac-ac50-f14c5b7bad4a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "B12",
+            "nutrient_description": "<p>A critical B vitamin for overall nerve health, neurotransmitter synthesis, mood, cognition, and energy.<\/p>"
+          }
+        },
+        "ef28f9e4-053c-4b51-b0d1-aa0e8f7f4f26": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Folate (B9)",
+            "nutrient_description": "<p>An essential B vitamin to support optimal repair and growth of nerve cells as well as neurotransmitter synthesis.<\/p>"
+          }
+        },
+        "156fb764-7229-4e8e-916e-104645e3de86": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin (B2)",
+            "nutrient_description": "<p>A crucial B vitamin required for myelin sheath synthesis—insulating layer surrounding nerve cells—to allow for proper transmission and communication between nervous tissue.<\/p>"
+          }
+        },
+        "fbd33620-be26-4df2-9a75-9c6cd4587a0b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Pantothenic Acid (B5)",
+            "nutrient_description": "<p>A key vitamin required for the synthesis of coenzyme A (CoA). Beyond its role in cell metabolism, CoA contributes to the synthesis of cholesterol, amino acids, phospholipids, neurotransmitters, and steroid hormones.<\/p>"
+          }
+        },
+        "f942a1ca-a19f-4ff1-92cd-00d6d48ad6aa": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-thyroid.png?v=1617911399",
+            "title": "Selenium",
+            "nutrient_description": "<p>An important mineral strongly involved in antioxidant defense activity as well as inflammation moderation which serves to improve brain health.<\/p>"
+          }
+        },
+        "7a7386f0-9e9f-4b0c-8de9-fc3e2651f1f1": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Copper",
+            "nutrient_description": "<p>A crucial mineral for brain development during fetal and post-natal growth, as well as maintenance of brain and nerve health throughout life, including effective antioxidant defense.<\/p>"
+          }
+        },
+        "cc7c9fe7-c106-4fc1-a3b7-23dfe99ea441": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/bone-marrow.png?v=1620677352",
+            "title": "Red and yellow bone marrow",
+            "nutrient_description": "<p>Abundant in peptides, growth factors, and stem cells to promote and support the formation of red blood cells, cartilage cells (chondrocytes), bone cells (osteocytes, osteoblast & osteoclasts), and other vital tissues found throughout the body.<\/p>"
+          }
+        },
+        "b1b09528-c5db-4229-95bc-cbff58e085cb": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Essential fatty acids including omega-3 fatty acids, EPA & DHA",
+            "nutrient_description": "<p>Play a critical role in the immune system, brain and cardiovascular health, as well as muscle recovery.<\/p>"
+          }
+        },
+        "3dd070cb-6ed7-4b51-9957-713793633239": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Alkylglycerols",
+            "nutrient_description": "<p>Support the immune system and formation of red blood cells, white blood cells, and platelets.<\/p>"
+          }
+        },
+        "da132fa0-eccd-438f-8d30-53f2323c64e4": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Adiponectin",
+            "nutrient_description": "<p>Peptide hormone shown to support immune, metabolic, and cardiovascular health.<\/p>"
+          }
+        },
+        "6bb7c700-76ff-436b-8f72-8faa3079802c": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/tissue.png?v=1620677831",
+            "title": "Tissue-specific proteins, hormones, growth factors, and peptides such as bovine cathelicidins",
+            "nutrient_description": "<p>Show broad antimicrobial activity and are involved in the immune response.<\/p>"
+          }
+        },
+        "82cca796-4c86-4430-bcfd-92d2153f4384": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamins A, D, E, K2",
+            "nutrient_description": "<p>Get these vitamins in a super bioavailable form that play critical roles in overall immune and bone health.<\/p>"
+          }
+        },
+        "c4ff696d-e0d1-4538-ad8b-88338842d9ad": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin, folate, B12",
+            "nutrient_description": "<p>Essential for red blood cell formation, as well as immune, brain, reproductive, and cardiovascular health.<\/p>"
+          }
+        },
+        "18c99b6a-5596-4dd0-afc6-8aa5e106f289": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial Peptide",
+            "nutrient_description": "<p>Also known as LEAP-2. This peptide is involved in immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "235c5591-121c-4563-b4e4-8681b183d2d3": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Hepcidin <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>A peptide directly involved in iron metabolism as well as the innate immune response.<\/p>"
+          }
+        },
+        "c7bb8908-0183-45cc-8cea-d7feb333eb1d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Thymopoietin and Thymulin",
+            "nutrient_description": "<p>Essential peptides for immune cell programming and activation of the immune system<\/p>"
+          }
+        },
+        "4e5461e1-8d7d-466e-bbf1-d350b85eb992": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-digestion.png?v=1617656604",
+            "title": "Diamine Oxidase (DAO)",
+            "nutrient_description": "<p>Supports overall immune health, histamine metabolism, and digestion.<\/p>"
+          }
+        },
+        "3baf8c64-32c7-4fc1-a88e-73ac999ed714": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Thymosin fraction 5 and thymosin alpha-1",
+            "nutrient_description": "<p>Peptides that are potent stimulators of the immune system and enhance immune cell functioning.<\/p>"
+          }
+        },
+        "28d2744a-a237-4e04-a429-179972f1bfbb": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as LEAP-2. This peptide is involved in immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "30defd9f-6375-46d2-b58a-710f93b24d03": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/pipituary-gland.png?v=1620679181",
+            "title": "Thymosin beta-4",
+            "nutrient_description": "<p>Important peptide in stimulating pituitary hormones essential for reproductive function.<\/p>"
+          }
+        },
+        "dff3f47e-75d3-4cce-92d3-1fabd7ba841c": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Thymic humoral factor",
+            "nutrient_description": "<p>Increases the immune response, especially to viruses.<\/p>"
+          }
+        },
+        "ea1a8a60-28d0-423e-ac09-605e9cde3ab6": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-kidney.png?v=1617911399",
+            "title": "Kidney-specific <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Reduce the concentration of oxalates in the urine and calcium deposits in the renal tissue, as well as preventing free-radical induced damage.<\/p>"
+          }
+        },
+        "00e13b1c-b8d0-47ed-9ccc-570b4cae3413": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/antimicrobial.png?v=1620679265",
+            "title": "Bovine Beta-Defensins and Cathelicidins",
+            "nutrient_description": "<p>Peptides known to have broad antimicrobial roles in the body.<\/p>"
+          }
+        },
+        "72d58a7a-abb3-4eb5-b7c9-d381a6bd6d47": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Splenin, Tuftsin and Splenopentin <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Peptides exclusively found in splenic tissue which enhance immune function.<\/p>"
+          }
+        },
+        "bec6d96c-6272-4ded-a9e0-2dd3595cdf6a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-thyroid.png?v=1617911399",
+            "title": "Heme iron",
+            "nutrient_description": "<p>A critical mineral for thyroid function (iodothyronine deiodinanses) and immune health\/antioxidant defense (glutathione peroxidase, thioredoxin reductase).<\/p>"
+          }
+        },
+        "b8895cd7-df28-4ce8-b2aa-2c0d74dcd186": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Ergothioneine <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>An amino acid found in liver, kidney, and bone marrow found to support detoxification and longevity pathways.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b3900aeb-ae6e-4f78-b02f-6cadbec27e66",
+        "be001deb-8b14-44bb-9e68-934e50a0f85d",
+        "ed378596-c7f3-41fa-b5f0-b27a47680ccc",
+        "4cd18098-c143-46ed-9c58-9b8e9140db8b",
+        "f7e302b5-9aed-4ba7-980c-cc9aedcf8ae7",
+        "981582c8-2759-45ac-ac50-f14c5b7bad4a",
+        "ef28f9e4-053c-4b51-b0d1-aa0e8f7f4f26",
+        "156fb764-7229-4e8e-916e-104645e3de86",
+        "fbd33620-be26-4df2-9a75-9c6cd4587a0b",
+        "f942a1ca-a19f-4ff1-92cd-00d6d48ad6aa",
+        "7a7386f0-9e9f-4b0c-8de9-fc3e2651f1f1",
+        "cc7c9fe7-c106-4fc1-a3b7-23dfe99ea441",
+        "b1b09528-c5db-4229-95bc-cbff58e085cb",
+        "3dd070cb-6ed7-4b51-9957-713793633239",
+        "da132fa0-eccd-438f-8d30-53f2323c64e4",
+        "6bb7c700-76ff-436b-8f72-8faa3079802c",
+        "82cca796-4c86-4430-bcfd-92d2153f4384",
+        "c4ff696d-e0d1-4538-ad8b-88338842d9ad",
+        "18c99b6a-5596-4dd0-afc6-8aa5e106f289",
+        "235c5591-121c-4563-b4e4-8681b183d2d3",
+        "c7bb8908-0183-45cc-8cea-d7feb333eb1d",
+        "4e5461e1-8d7d-466e-bbf1-d350b85eb992",
+        "3baf8c64-32c7-4fc1-a88e-73ac999ed714",
+        "28d2744a-a237-4e04-a429-179972f1bfbb",
+        "30defd9f-6375-46d2-b58a-710f93b24d03",
+        "dff3f47e-75d3-4cce-92d3-1fabd7ba841c",
+        "ea1a8a60-28d0-423e-ac09-605e9cde3ab6",
+        "00e13b1c-b8d0-47ed-9ccc-570b4cae3413",
+        "72d58a7a-abb3-4eb5-b7c9-d381a6bd6d47",
+        "bec6d96c-6272-4ded-a9e0-2dd3595cdf6a",
+        "b8895cd7-df28-4ce8-b2aa-2c0d74dcd186"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/stress-stack-accent.webp",
+        "section_title": "POWERFUL NUTRIENTS",
+        "section_description": "<p>The combined power of Mood, Memory & Brain, Bone Marrow & Liver, and Histamine & Immune includes vital and potent essential nutrients.<\/p>",
+        "nutrients_to_show": 4,
+        "nutrients_toggle_label": "See all",
+        "nutrients_toggle_label_hide": "Hide all"
+      }
+    },
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/stress-support-quote.webp",
+        "quote": "Definitely feel more calm in stressful situations after taking them for a few weeks.",
+        "author": "Chantu C.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "eea55346-a86c-4541-b71b-025a444a41b6": {
+      "type": "minimal-pdp-selector",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/stress-selector-accent.webp"
+      }
+    },
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975": {
+      "type": "product-101",
+      "settings": {
+        "title": "HEART & SOIL 101",
+        "instructions": "<p>Take 6 capsules, once daily, of each supplement. If you’re new to taking organ supplements, start with 1-2 capsules of each daily for the first week before increasing by one capsule daily. Consistent long-term use provides the best results. <\/p>",
+        "benefits": "<p>The strategic combination of organs within this stack uniquely combats the dopamine-rich and stressful modern life.<\/p>",
+        "quality": "<p>Rigorous third-party testing by independent labs during and after manufacturing. Quality and purity information can be provided upon request.<\/p>",
+        "dietary": "<p>100% additive, hormone, allergen, antibiotic, pesticide, and GMO-free. Freeze-dried. Pure nose-to-tail nourishment. <\/p>"
+      }
+    },
+    "b900e9cc-d623-4714-b778-12299998a7cd": {
+      "type": "section-faq",
+      "blocks": {
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5": {
+          "type": "faq",
+          "settings": {
+            "title": "Who should take the Stress Support Stack?",
+            "answer": "<p>This stack is intended for those seeking comprehensive nutritional support to counteract the high-stress, dopamine-rich environment of today. It's designed to reduce anxiety and stress while promoting a more positive and balanced outlook.<\/p>"
+          }
+        },
+        "837f8262-9dca-4dab-81ec-522d36ddfe35": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking all three supplements together?",
+            "answer": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides, and Essential Fatty Acids that support stress resilience.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5",
+        "837f8262-9dca-4dab-81ec-522d36ddfe35"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356": {
+      "type": "v3-reviews",
+      "settings": {
+        "title": "CUSTOMER REVIEWS"
+      }
+    },
+    "why": {
+      "type": "v3-why",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "stacks-newsletter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/stress-newsletter_01b63742-02ee-4113-893e-a2fe18fc339b.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f",
+    "f831964f-d20b-465b-a97f-35ec2a2b059d",
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291",
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20",
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0",
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92",
+    "eea55346-a86c-4541-b71b-025a444a41b6",
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975",
+    "b900e9cc-d623-4714-b778-12299998a7cd",
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356",
+    "why",
+    "newsletter"
+  ]
+}

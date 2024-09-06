@@ -1,0 +1,57 @@
+<section class="rtnu-shop-by">
+  <div class="rtnu-wrapper">
+
+    <div class="rtnu-shop-by__header">
+      <h2>Shop by health goals</h2>
+      <a href="https://shop.heartandsoil.co/collections/build-your-stack?filter=stacks">Shop all Health Goals</a>
+    </div>
+
+    <div class="rtnu-grid">
+      <div class="rtnu-grid__item">
+        <a href="https://shop.heartandsoil.co/collections/build-your-stack?layout=bundles&selected=8">
+          <img src="{{ 'hs-hg-energy.min.png' | asset_img_url: '564x' }}" alt="Energy" width="282" height="248" loading="lazy">
+          <h3 style="color: #3484ff">Energy</h3>
+          <p>Improve your overall health, vitality, and performance.</p>
+        </a>
+      </div>
+      <div class="rtnu-grid__item">
+        <a href="https://shop.heartandsoil.co/collections/build-your-stack?layout=bundles&selected=1">
+          <img src="{{ 'hs-hg-weight-loss.min.png' | asset_img_url: '564x' }}" alt="Weight Loss" width="282" height="248" loading="lazy">
+          <h3 style="color: #eb7617">Weight Loss</h3>
+          <p>Provide strategic support for eliminating unwanted fat.</p>
+        </a>
+      </div>
+      <div class="rtnu-grid__item">
+        <a href="https://shop.heartandsoil.co/collections/build-your-stack?layout=bundles&selected=15">
+          <img src="{{ 'hs-hg-mood.min.png' | asset_img_url: '564x' }}" alt="Mood" width="282" height="248" loading="lazy">
+          <h3 style="color: #f53891">Mood</h3>
+          <p>Support proper neurotransmitter synthesis and balance.</p>
+        </a>
+      </div>
+      <div class="rtnu-grid__item">
+        <a href="https://shop.heartandsoil.co/collections/build-your-stack?layout=bundles&selected=16">
+          <img src="{{ 'hs-hg-immune-support-2.png' | asset_img_url: '564x' }}" alt="Immune Support" width="282" height="248" loading="lazy">
+          <h3 style="color: #eeb60a">Immune Support</h3>
+          <p>Fortify your immune system, and strengthen your defenses.</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="rtnu-shop-by__footer">
+      <a href="https://shop.heartandsoil.co/collections/build-your-stack?layout=bundles" class="wayfx-btn wayfx-btn--outline">Shop all health goals</a>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Shop by health goals",
+    "presets": [
+      {
+        "name": "PDP Shop by",
+        "category": "general"
+      }
+    ]
+  }
+{% endschema %}

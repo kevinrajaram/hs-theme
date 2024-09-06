@@ -1,0 +1,37 @@
+<div class="wayfx-account__header">
+  {% if customer.first_name != blank %}
+  <div class="wayfx-account__hero">
+    <div class="wayfx-container">
+      <h1>Welcome back, <wbr>{{ customer.first_name }}</h1>
+    </div>
+  </div>
+  {% endif %}
+  <div class="wayfx-account__header__menu-trigger">
+    <span class="text">
+      {%- if template == 'customers/account' or  template == 'customers/order' -%}Orders{%- endif -%}
+      {%- if template == 'customers/addresses' -%}Shipping Addresses{%- endif -%}
+    </span>
+    <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 8" width="13" height="8"><path d="M1.504 0L6.4 4.945 11.296 0 12.8 1.522 6.4 8 0 1.522z" fill="#FFE4D2" fill-rule="nonzero"/></svg></span>
+  </div>
+  <div class="wayfx-account__header__links">
+    <ul class="wayfx-list-nostyle">
+      <li><a href="/account"{% if template == 'customers/account' or  template == 'customers/order' %} class="current"{% endif %}>Orders</a></li>
+      {% if customer.metafields.subscriptions.customer_string %}
+      <li><a href="/tools/recurring/login/">Manage Subscriptions</a></li>
+      {% endif %}
+      {% if customer.default_address.address1 != blank %}
+      <li><a href="/account/addresses"{% if template == 'customers/addresses' %} class="current"{% endif %}>Shipping Addresses</a></li>
+      {%- endif -%}
+      <li><a href="http://heartandsoil.co/contact-us">Get Help</a></li>
+      <li><a href="/account/logout" id="wayfx-logout">Log out</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $(document).on("click", ".wayfx-account__header__menu-trigger", function () {
+      $(".wayfx-account__header__links").slideToggle();
+    });
+  });
+</script>

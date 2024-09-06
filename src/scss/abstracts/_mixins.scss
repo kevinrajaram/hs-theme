@@ -1,0 +1,38 @@
+@mixin bp($point) {
+
+    $mobile: "(max-width: 480px)";
+    $mobile-large: "(max-width: 600px)";
+    $tablet: "(max-width: 768px)";
+    $tablet-large: "(max-width: 900px)";
+    $desktop: "(max-width: 1280px)";
+    $desktop-large: "(max-width: 1600px)";
+
+    @if $point == lg-xl {
+      @media #{$desktop-large} { @content; }
+    }
+    @else if $point == lg {
+      @media #{$desktop} { @content; }
+    }
+    @else if $point == md-xl {
+      @media #{$tablet-large} { @content; }
+    }
+    @else if $point == md {
+      @media #{$tablet} { @content; }
+    }
+    @else if $point == sm-xl {
+      @media #{$mobile-large}  { @content; }
+    }
+    @else if $point == sm {
+      @media #{$mobile}  { @content; }
+    }
+  }
+
+  @function calculateRem($size) {
+    $remSize: calc($size / 16px);
+    @return #{$remSize}rem;
+  }
+
+  @mixin fontSize($size) {
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
+  }

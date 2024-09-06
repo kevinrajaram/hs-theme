@@ -1,0 +1,16 @@
+{%- layout none -%}
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    {% render 'stacks-redirect' %}
+    <script>
+      const currentUrl = window.location.href;
+      if (currentUrl.includes('/pages/merchandise/items')) {
+        window.location.href = '/a/collections/products?filters=merch';
+      } else {
+        window.location.href = '/a/collections/products';
+      }
+    </script>
+  </head>
+  <body class="grow-aov-template"></body>
+</html>

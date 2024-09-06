@@ -1,0 +1,33 @@
+{% if product.handle == 'free-firestarter' %}
+  <script>window.location = '/products/fire-starter';</script>
+{% else %}
+<div class="rtnu-product" itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="brand" content="Heart&Soil">
+  <meta itemprop="name" content="{{ product.title }}">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | image_url: width: 600 }}">
+
+  {% liquid
+    assign iscSectionSwitch = product.metafields.sf_isc.enable_section
+    section 'v3-product-hero'
+    section 'v3-testimonials'
+    if iscSectionSwitch == 1
+      section 'v3-informed-sport-certified'
+    endif
+    section 'v3-benefits'
+    section 'v3-pdp-nutrients'
+    section 'v3-product-101'
+    section 'v3-trusted'
+    section 'v3-reviews'
+    section 'v3-why'
+    section 'v3-shop-by-health-goals'
+    section 'v3-pdp-connect'
+    section 'newsletter-subscribe'
+    section 'v3-product-infobar'
+  %}
+</div>
+
+{% include 'klaviyo-viewed-product' %}
+{% include 'klaviyo-oos' %}
+
+{% endif %}

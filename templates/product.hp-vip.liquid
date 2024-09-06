@@ -1,0 +1,30 @@
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<div class="wayfx-product" itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="brand" content="Heart&Soil">
+  <meta itemprop="name" content="{{ product.title }}">
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {% section 'hp-product-hero' %}
+  {% section 'hp-social-proof' %}
+  {% if product.metafields.sf_testimonials.testimonial_1_message != blank %}
+  {% section 'product-social-proof' %}
+  {% endif %}
+  {% section 'product-cta' %}
+  {% section 'product-nutrients' %}
+  {% section 'product-basics' %}
+  {% section 'product-trusted' %}
+  {% section 'product-reviews' %}
+  {% section 'product-why-hs' %}
+</div>
+
+
+
+{% include 'klaviyo-viewed-product' %}
+{% include 'klaviyo-oos' %}

@@ -1,0 +1,105 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Fd testimonials
+-------------------------------------------------------------------------------
+Usage
+{% section 'fd-testimonials' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+<section class="rtnu-fd-testimonials">
+  <div class="rtnu-wrapper">
+    <div class="rtnu-fd-testimonials__description">{{ section.settings.description }}</div>
+
+    <div class="splide" aria-label="Whole Package Customer Testimonials" id="whole-package-testimonials">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide" {{ block.shopify_attributes }}>
+              <div class="rtnu-fd-testimonials__testimonial">
+                <div class="content">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="137" height="22" fill="none" viewBox="0 0 137 22"><path fill="#FFA221" d="m12.3436.461422 2.5011 7.140868 7.8148.08725c.6725.00755.9509.83388.4115 1.22062l-6.2697 4.49994 2.3288 7.1946c.2001.6191-.528 1.1292-1.077.7542l-6.375-4.3599-6.37585 4.359c-.54807.375-1.27709-.1359-1.077-.7542l2.32886-7.1945L.284377 8.90932C-.254992 8.52258.0233917 7.69625.695863 7.6887l7.814767-.08725L11.0117.460583c.2158-.614088 1.1171-.614088 1.3319.000839Z"/><path fill="#FFA221" d="m40.7452.4613 2.5011 7.14087 7.8148.08725c.6725.00755.9509.83388.4115 1.22062L45.2029 13.41l2.3288 7.1946c.2001.6191-.528 1.1291-1.077.7541l-6.375-4.3598-6.3758 4.359c-.5481.375-1.2771-.1359-1.077-.7542l2.3288-7.1945-6.2697-4.5c-.5394-.38674-.261-1.21307.4115-1.22062l7.8147-.08725L39.4133.460461c.2158-.614088 1.1171-.614088 1.3319.000839Z"/><path fill="#FFA221" d="m69.1658.4613 2.5011 7.14087 7.8148.08725c.6725.00755.9509.83388.4115 1.22062L73.6235 13.41l2.3288 7.1946c.2001.6191-.528 1.1291-1.077.7541l-6.375-4.3598-6.3758 4.359c-.5481.375-1.2771-.1359-1.077-.7542l2.3288-7.1945-6.2697-4.5c-.5394-.38674-.261-1.21307.4115-1.22062l7.8147-.08725L67.8339.460461c.2158-.614088 1.1171-.614088 1.3319.000839Z"/><path fill="#FFA221" d="m97.5864.4613 2.5016 7.14087 7.814.08725c.673.00755.951.83388.412 1.22062l-6.27 4.49996 2.329 7.1946c.2.6191-.528 1.1291-1.077.7541l-6.3751-4.3598-6.3759 4.359c-.548.375-1.277-.1359-1.077-.7542l2.3289-7.1945-6.2697-4.5c-.5394-.38674-.261-1.21307.4115-1.22062l7.8147-.08725L96.2545.460461c.2158-.614088 1.117-.614088 1.3319.000839Z"/><path fill="#FFA221" d="m125.988.4613 2.501 7.14087 7.815.08725c.672.00755.951.83388.411 1.22062L130.446 13.41l2.328 7.1946c.201.6191-.528 1.1291-1.077.7541l-6.375-4.3598-6.375 4.359c-.548.375-1.277-.1359-1.077-.7542l2.328-7.1945-6.269-4.5c-.54-.38674-.261-1.21307.411-1.22062l7.815-.08725 2.501-7.140869c.216-.614088 1.117-.614088 1.332.000839Z"/></svg>
+                  <p>{{ block.settings.testimonial }}</p>
+                  <span>{{ block.settings.name }}</span>
+                </div>
+
+                <div class="image">
+                  {{ block.settings.image | image_url: width: 568 | image_tag }}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (e) => {
+    var wpTestimonials = new Splide( '#whole-package-testimonials', {
+      type      : 'slide',
+      pagination: true,
+      arrows    : false,
+      drag:     false,
+      perPage   : 2,
+      gap: 24,
+      drag:     true,
+      breakpoints: {
+        800: {
+          perPage: 2,
+          focus: 'center',
+          trimSpace: false,
+        },
+        600: {
+          perPage: 1,
+          gap: 12,
+        }
+      }
+    });
+
+    wpTestimonials.mount();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FD testimonials",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Wether he's a charmer, teacher, hero or rebel, Whole Package has everything needed to support the dad you love!</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "testimonial",
+          "label": "Testimonial"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FD testimonials"
+    }
+  ]
+}
+{% endschema %}

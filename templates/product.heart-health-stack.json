@@ -1,0 +1,448 @@
+{
+  "wrapper": "div.rtnu-product.rtnu-product--stacks",
+  "sections": {
+    "main": {
+      "type": "stacks-product-hero",
+      "settings": {
+        "health_goal_icon": "shopify:\/\/shop_images\/icon_ec865867-1ab0-4063-9c46-0e1cb8c7be2a.webp",
+        "health_goal_name": "HEART HEALTH"
+      }
+    },
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f": {
+      "type": "stacks-info-slider",
+      "blocks": {
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed": {
+          "type": "slider",
+          "settings": {
+            "title": "Improve Vascular Integrity",
+            "content": "Essential fatty acids and peptides fortify blood vessels, ensuring robust cardiovascular integrity for optimal heart health."
+          }
+        },
+        "0f205c3c-978b-481d-a59c-0169348245b9": {
+          "type": "slider",
+          "settings": {
+            "title": "Support Red Blood Cell Formation",
+            "content": "Riboflavin, Folate, B12, and Choline ensure optimal red blood cell synthesis, enhancing oxygen transport for efficient metabolism."
+          }
+        },
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8": {
+          "type": "slider",
+          "settings": {
+            "title": "Boost Energy",
+            "content": "CoQ10, L-Carnitine, and Heme Iron elevate ATP production, supporting sustained energy and vibrant vitality."
+          }
+        },
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d": {
+          "type": "slider",
+          "settings": {
+            "title": "Optimize Endurance",
+            "content": "Taurine, Creatine, and Riboflavin amplify muscle function, ensuring prolonged exercise capacity and peak cardiovascular performance."
+          }
+        },
+        "d3b9ef4a-3d6b-4326-a77e-6a727b83b671": {
+          "type": "slider",
+          "settings": {
+            "title": "Bioavailable Nutrients",
+            "content": "Highly bioavailable micronutrients from natural sources deliver superior absorption, maximizing nutrient utiilization and subsequent health benefits."
+          }
+        }
+      },
+      "block_order": [
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed",
+        "0f205c3c-978b-481d-a59c-0169348245b9",
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8",
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d",
+        "d3b9ef4a-3d6b-4326-a77e-6a727b83b671"
+      ],
+      "settings": {
+        "content": "<h2>IS THE HEART HEALTH STACK FOR ME?<\/h2><p>For those committed to nurturing their heart health, this stack offers a natural approach to fortifying your cardiovascular system.<\/p>"
+      }
+    },
+    "f831964f-d20b-465b-a97f-35ec2a2b059d": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote1_a4fb49ba-fd1f-492e-8f49-b5091c62dc59.webp",
+        "quote": "My energy has never been steadier \u2028and my overall well being has never been better.",
+        "author": "Mike P.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291": {
+      "type": "stacks-include",
+      "blocks": {
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "lifeblood",
+            "supporting_product_description": "<p><a href=\"\/products\/lifeblood\" title=\"Lifeblood\">Lifeblood<\/a> is packed with vital nutrients and peptides to improve iron stores, oxygen delivery, and endurance. Support a healthy cardiovascular system.<\/p>"
+          }
+        },
+        "b9211051-928d-4ac9-b4ae-83a9559406eb": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "bone-marrow-liver",
+            "supporting_product_description": "<p><a href=\"\/products\/bone-marrow-liver\" title=\"Bone Marrow & Liver\">Bone Marrow & Liver<\/a> is packed with vital nutrients and peptides to provide support for bone and tissue repair, skin health, and better mood.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9",
+        "b9211051-928d-4ac9-b4ae-83a9559406eb"
+      ],
+      "settings": {
+        "primary_product": "warrior",
+        "primary_product_description": "<p><a href=\"\/products\/warrior\" title=\"WARRIOR\">Warrior<\/a> is the foundational supplement included in the <strong>Heart Health Stack<\/strong>. It provides unique and essential support found in grass-fed and grass-finished heart and liver. These powerful organs include 12+ powerful nutrients to help reach your goals.<\/p>",
+        "organ_nutrient_image": "shopify:\/\/shop_images\/organs_2e0a4cc9-6427-44ad-be36-9791fb947bb1.webp",
+        "organ_nutrients": "heart_health_stack"
+      }
+    },
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20": {
+      "type": "cta-callout",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote2_739168b0-20dc-4a03-9427-4df38e646ddf.webp",
+        "title": "NOURISH YOUR HEART"
+      }
+    },
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0": {
+      "type": "section-nutrients",
+      "blocks": {
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "CoQ10",
+            "nutrient_description": "<p>Heart is nature's richest source of CoQ10, a nutrient shown to improve mitochondrial function and energy production, and to enhance exercise performance.<\/p>"
+          }
+        },
+        "45673f75-8b24-4441-acaf-5fcc9679cd8b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Anserine & Carnosine",
+            "nutrient_description": "<p>Two amino acids which are effective in reducing muscle fatigue and improving antioxidant activity.<\/p>"
+          }
+        },
+        "3e757c20-d263-464b-b803-1fb3ba98fcd4": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Taurine",
+            "nutrient_description": "<p>Improves muscle function and exercise performance through the reduction of reactive oxygen species. Is also a powerful antioxidant in muscle tissue and improves insulin sensitivity.<\/p>"
+          }
+        },
+        "0395f105-2364-4c4f-bdbb-a8cf46169ad2": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "Creatine",
+            "nutrient_description": "<p>Heart is one of nature's richest sources of this nutrient, which is crucial for muscle growth and recovery, and essential for energy production in the muscles.<\/p>"
+          }
+        },
+        "435d86d4-42c3-4201-a768-92005acc0837": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "L-Carnitine",
+            "nutrient_description": "<p>Required to produce energy (ATP) in the muscles, and to protect against muscle damage. Improves sport and gym performance in elite athletes.<\/p>"
+          }
+        },
+        "6352e672-d36d-4b67-90d1-6624f29a2d18": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamin A",
+            "nutrient_description": "<p>Essential for muscle growth and recovery; protein synthesis and testosterone production.<\/p>"
+          }
+        },
+        "18cce20b-6d60-4125-b908-c6c7ab63c570": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Vitamin K2",
+            "nutrient_description": "<p>Improves cardiac output, exercise performance, muscle cell growth, and bone density.<\/p>"
+          }
+        },
+        "6005a1ae-5d3f-4773-8bb5-bceb71fb15cf": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin",
+            "nutrient_description": "<p>Critical for post-exercise recovery, specifically muscle pain and soreness. Also required for energy production at a cellular level.<\/p>"
+          }
+        },
+        "d2b39bb7-b42e-4812-9b66-065e4a47c7f0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "Folate (B9) & B12",
+            "nutrient_description": "<p>Essential for red blood cell production to support energy production, and exercise performance. Also needed for muscle growth and repair.<\/p>"
+          }
+        },
+        "8d30547f-668d-4428-86f7-b14943662041": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Choline",
+            "nutrient_description": "<p>A key nutrient involved in muscle neurotransmitter synthesis.<\/p>"
+          }
+        },
+        "6a803c39-3cf1-4fd7-a304-bd2d30a36f55": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Glutamine",
+            "nutrient_description": "<p>A crucial amino acid required to speed up muscle recovery and reduce delayed-onset muscle soreness.<\/p>"
+          }
+        },
+        "ab17d187-da53-4819-abb5-f3333031b513": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Iron",
+            "nutrient_description": "<p>A critical trace mineral required for red blood cell formation and the repair of muscle tissue.<\/p>"
+          }
+        },
+        "9ac15616-6973-499d-8077-38a668064e80": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Red Blood cells, White Blood Cells and Platelets",
+            "nutrient_description": "<p>Involved in oxygen transport, the immune response, and wound healing.<\/p>"
+          }
+        },
+        "d702496d-c939-493a-afa6-1629b75de696": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamin D",
+            "nutrient_description": "<p>Crucial for immune, metabolic, and bone health.<\/p>"
+          }
+        },
+        "a2c90b36-3a4e-45b7-93bc-9c6a14c40377": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Heme Iron",
+            "nutrient_description": "<p>Crucial for brain health, energy and athletic performance, as well as immune function.<\/p>"
+          }
+        },
+        "a94fb6d5-569c-4350-a3c9-462b8ecbff3d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Copper, Biotin",
+            "nutrient_description": "<p>Crucial for overall metabolism, mood, and energy, as well as health of skin, hair, and nails.<\/p>"
+          }
+        },
+        "2b0ee48b-6170-44ff-8d9d-ef007d21be5f": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-thyroid.png?v=1617911399",
+            "title": "Selenium",
+            "nutrient_description": "<p>A critical mineral for thyroid function (iodothyronine deiodinanses) and immune health\/antioxidant defense (glutathione peroxidase, thioredoxin reductase).<\/p>"
+          }
+        },
+        "3bc488e6-8e7a-419c-b970-f1425cb61bbc": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Splenin, Tuftsin and Splenopentin <a data-fancybox href=\"#peptide\">Peptides<\/a>",
+            "nutrient_description": "<p>Peptides found exclusively in splenic tissue which enhance immune function.<\/p>"
+          }
+        },
+        "e95f6167-c705-448d-86a1-728ab1baab0e": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>Also known as LEAP-2, an antimicrobial peptide also involved in the immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "74dbdb5b-c663-4dba-a265-9106177e4a5a": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Immune Proteins",
+            "nutrient_description": "<p>Immunoglobulins involved in defense against viruses and bacteria.<\/p>"
+          }
+        },
+        "b57217b3-e981-4597-9cdd-25353338d6cf": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Ergothioneine <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>An amino acid in liver, kidney, and bone marrow found to support detoxification and longevity pathways.<\/p>"
+          }
+        },
+        "033b2a0a-f5d0-475b-a709-3b4dde35c1e8": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Hepcidin <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>A peptide directly involved in iron metabolism as well as the innate immune response.<\/p>"
+          }
+        },
+        "02d09257-7dbd-4220-a2b8-18018fcd70f3": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/bone-marrow.png?v=1620677352",
+            "title": "Red and yellow bone marrow",
+            "nutrient_description": "<p>Abundant in peptides, growth factors, and stem cells to promote and support the formation of red blood cells, cartilage cells (chondrocytes), bone cells (osteocytes, osteoblast & osteoclasts), and other vital tissues found throughout the body.<\/p>"
+          }
+        },
+        "ea5eb45f-62d8-4ccd-a75a-85a90a5b85f0": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Essential fatty acids including omega-3 fatty acids, EPA & DHA",
+            "nutrient_description": "<p>Play a critical role in the immune system, brain and cardiovascular health, as well as muscle recovery.<\/p>"
+          }
+        },
+        "8fcc566d-c260-482e-b832-6cf9854e7141": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Alkylglycerols",
+            "nutrient_description": "<p>Support the immune system and formation of red blood cells, white blood cells, and platelets.<\/p>"
+          }
+        },
+        "add9c3bf-20a1-446d-90a3-7d37f0c83045": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/immune.png?v=1620677674",
+            "title": "Adiponectin",
+            "nutrient_description": "<p>Peptide hormone shown to support immune, metabolic, and cardiovascular health.<\/p>"
+          }
+        },
+        "0814f8af-d01b-44fe-abbe-9cf2f7a17fed": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/tissue.png?v=1620677831",
+            "title": "Tissue-specific proteins, hormones, growth factors, and peptides such as bovine cathelicidins",
+            "nutrient_description": "<p>Show broad antimicrobial activity and are involved in the immune response.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b",
+        "45673f75-8b24-4441-acaf-5fcc9679cd8b",
+        "3e757c20-d263-464b-b803-1fb3ba98fcd4",
+        "0395f105-2364-4c4f-bdbb-a8cf46169ad2",
+        "435d86d4-42c3-4201-a768-92005acc0837",
+        "6352e672-d36d-4b67-90d1-6624f29a2d18",
+        "18cce20b-6d60-4125-b908-c6c7ab63c570",
+        "6005a1ae-5d3f-4773-8bb5-bceb71fb15cf",
+        "d2b39bb7-b42e-4812-9b66-065e4a47c7f0",
+        "8d30547f-668d-4428-86f7-b14943662041",
+        "6a803c39-3cf1-4fd7-a304-bd2d30a36f55",
+        "ab17d187-da53-4819-abb5-f3333031b513",
+        "9ac15616-6973-499d-8077-38a668064e80",
+        "d702496d-c939-493a-afa6-1629b75de696",
+        "a2c90b36-3a4e-45b7-93bc-9c6a14c40377",
+        "a94fb6d5-569c-4350-a3c9-462b8ecbff3d",
+        "2b0ee48b-6170-44ff-8d9d-ef007d21be5f",
+        "3bc488e6-8e7a-419c-b970-f1425cb61bbc",
+        "e95f6167-c705-448d-86a1-728ab1baab0e",
+        "74dbdb5b-c663-4dba-a265-9106177e4a5a",
+        "b57217b3-e981-4597-9cdd-25353338d6cf",
+        "033b2a0a-f5d0-475b-a709-3b4dde35c1e8",
+        "02d09257-7dbd-4220-a2b8-18018fcd70f3",
+        "ea5eb45f-62d8-4ccd-a75a-85a90a5b85f0",
+        "8fcc566d-c260-482e-b832-6cf9854e7141",
+        "add9c3bf-20a1-446d-90a3-7d37f0c83045",
+        "0814f8af-d01b-44fe-abbe-9cf2f7a17fed"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/products_ebb9a04f-bc57-4a44-8ec1-49882d4892a4.webp",
+        "section_title": "POWERFUL NUTRIENTS",
+        "section_description": "<p>The combined power of Warrior, Lifeblood, and Bone Marrow & Liver includes vital and potent essential nutrients.<\/p>",
+        "nutrients_to_show": 4,
+        "nutrients_toggle_label": "See all",
+        "nutrients_toggle_label_hide": "Hide all"
+      }
+    },
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote3_e8ac3afd-fb2d-4e44-85e9-ca9e9a2c6927.webp",
+        "quote": "I’m firing on all cylinders! Feeling great and starting to lean out with muscle mass.",
+        "author": "Mylon M.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "eea55346-a86c-4541-b71b-025a444a41b6": {
+      "type": "minimal-pdp-selector",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-selector_85ce80e7-d593-432f-8ceb-2576547e35fb.webp"
+      }
+    },
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975": {
+      "type": "product-101",
+      "settings": {
+        "title": "HEART & SOIL 101",
+        "instructions": "<p>Take 6 capsules, once daily, of each supplement. If you’re new to taking organ supplements, start with 1-2 capsules of each daily for the first week before increasing by one capsule daily. Consistent long-term use provides the best results. <\/p>",
+        "benefits": "<p>Our Heart Health Stack aims to enhance cardiovascular health, supporting a strong and healthy heart.<\/p>",
+        "quality": "<p>Rigorous third-party testing by independent labs during and after manufacturing. Quality and purity information can be provided upon request.<\/p>",
+        "dietary": "<p>100% additive, hormone, allergen, antibiotic, pesticide, and GMO-free. Freeze-dried. Pure nose-to-tail nourishment. <\/p>"
+      }
+    },
+    "b900e9cc-d623-4714-b778-12299998a7cd": {
+      "type": "section-faq",
+      "blocks": {
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5": {
+          "type": "faq",
+          "settings": {
+            "title": "Who should take the Heart Health Stack?",
+            "answer": "<p>This stack is ideal for anyone looking for comprehensive nutritional support for optimal heart health.<\/p>"
+          }
+        },
+        "837f8262-9dca-4dab-81ec-522d36ddfe35": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking all three supplements together?",
+            "answer": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides and Essential Fatty Acids that support cardiovascular health.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5",
+        "837f8262-9dca-4dab-81ec-522d36ddfe35"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356": {
+      "type": "v3-reviews",
+      "settings": {
+        "title": "CUSTOMER REVIEWS"
+      }
+    },
+    "why": {
+      "type": "v3-why",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "stacks-newsletter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/products-newsletter_28946dd5-03bc-4558-808f-7159d6ccc124.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f",
+    "f831964f-d20b-465b-a97f-35ec2a2b059d",
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291",
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20",
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0",
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92",
+    "eea55346-a86c-4541-b71b-025a444a41b6",
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975",
+    "b900e9cc-d623-4714-b778-12299998a7cd",
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356",
+    "why",
+    "newsletter"
+  ]
+}

@@ -1,0 +1,37 @@
+{%- liquid
+  assign main_heading = 'Why Heart &amp; Soil'
+  assign description = ''
+  assign video_url = 'https://www.youtube.com/watch?v=7R17G5-xcKA'
+  assign video_cover = 'hs-why-video-cover.jpg' | asset_img_url: 'original'
+  assign sub_heading = 'Want to keep researching?'
+-%}
+<div class="rtnu-wrapper">
+  {%- if main_heading -%}
+      <h2>{{ main_heading }}</h2>
+  {%- endif -%}
+  {%- if description -%}
+      <p>{{ description }}</p>
+  {%- endif -%}
+  <div class="wayfx-video-wrapper">
+      <a href="{{ video_url }}" data-fancybox data-width="1280" data-height="720">
+          <div class="video-play-trigger">
+              {% include 'svg-hs-play-icon' %}
+              <span>Watch our video</span>
+          </div>
+          <img class="lazyload" data-src="{{ video_cover }}" alt="{{ heading }}">
+      </a>
+  </div>
+  <h3>{{ sub_heading }}</h3>
+  <div class="wayfx-grid">
+      {% comment %} <div class="wayfx-grid__item"><a href="#">{% include 'svg-hs-product-guide' %} <span>{{ product.title }} Product Guide</span></a></div> {% endcomment %}
+      <div class="wayfx-grid__item"><a href="https://faq.heartandsoil.co/en-US"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path fill="#A65316" d="M20 10c0 5.513-4.487 10-10 10-1.59108 0-3.1695-.3851-4.58323-1.1148l-3.82822 1.0692c-.11148.0304-.22296.0456-.33697.0456-.326827 0-.646057-.1292-.884212-.3674-.31923-.3192-.4408414-.7854-.31923-1.2186L1.1173 14.5858C.385103 13.1695 0 11.5936 0 10 0 4.48695 4.48695 0 10 0c5.513 0 10 4.48695 10 10Zm-9.2501 1.7507c0-.7702.3775-1.1224.8995-1.6114.6004-.56241 1.3503-1.26167 1.3503-2.63993 0-1.65442-1.3453-2.99975-2.9997-2.99975-1.65442 0-2.99975 1.34533-2.99975 2.99975 0 .4155.33443.74993.74994.74993.41551 0 .74994-.33443.74994-.74993 0-.82595.67393-1.49988 1.49987-1.49988.8259 0 1.4999.67393 1.4999 1.49988 0 .69419-.3015 1.00836-.8766 1.54547-.6106.57259-1.37324 1.28456-1.37324 2.70586 0 .413.33443.7499.74994.7499.4155 0 .7499-.3369.7499-.7499ZM10 13.4989c-.55232 0-1.00076.4484-1.00076 1.0007 0 .5523.44844 1.0008 1.00076 1.0008.5523 0 1.0008-.4485 1.0008-1.0008 0-.5523-.4485-1.0007-1.0008-1.0007Z"/></svg> <span>Frequently Asked Questions</span></a></div>
+  </div>
+</div>
+
+{% schema %}
+  {
+      "name": "Why Heart & Soil",
+      "tag": "section",
+      "class": "wayfx-product__why-hs rtnu-pdp-why"
+  }
+{% endschema %}

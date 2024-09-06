@@ -1,0 +1,510 @@
+{% comment %}
+-------------------------------------------------------------------------------
+Minimal pdp selector
+-------------------------------------------------------------------------------
+Usage
+{% section 'minimal-pdp-selector' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign id = '#shopify-section-' | append: section.id
+  assign LPProduct = section.settings.product
+  assign customCarouselImage = LPProduct.metafields.rtnu.carousel_custom_image
+  assign product_form_id = 'wayfx-product-form-' | append: section.id
+  assign current_variant = LPProduct.selected_or_first_available_variant | default: LPProduct.variants.first
+  assign subscription_product = LPProduct.metafields.subscriptions
+  assign subscription_variant_id = LPProduct.selected_or_first_available_variant.metafields.subscriptions.discount_variant_id
+  assign discount_percentage = subscription_product.discount_percentage | round: 2
+  assign discount_floor = subscription_product.discount_percentage | floor
+
+  if discount_percentage == discount_floor
+    assign discount_percentage = discount_floor
+  endif
+
+  assign plan_id = current_variant.selling_plan_allocations[0].selling_plan.id
+  assign plan_percentage = current_variant.selling_plan_allocations[0].selling_plan.price_adjustments[0].value
+  assign plan_percentage_decimal = plan_percentage | times: 1.0 | divided_by: 100
+  assign plan_discount = current_variant.price | times: plan_percentage_decimal
+  assign plan_price = current_variant.price | minus: plan_discount
+  assign selected_plan_discount = current_variant.price | times: plan_percentage_decimal
+  assign selected_plan_price = current_variant.price | minus: selected_plan_discount
+
+  assign sold_out = true
+  if current_variant.available
+    assign sold_out = false
+  endif
+%}
+
+<section class="rtnu-lp__selector" id="buy-now">
+  <div class="rtnu-wrapper">
+    <div class="rtnu-grid">
+      <div class="rtnu-grid__item">
+        {%- if LPProduct.media.size > 0 -%}
+          <section
+            id="pdp-main-carousel"
+            class="splide rtnu-product__main-image"
+            aria-label="PDP main carousel"
+          >
+            <div class="splide__track">
+              <ul class="splide__list">
+                {%- if customCarouselImage != blank -%}
+                  <li class="splide__slide">
+                    <a href="{{ customCarouselImage | image_url: width: 1200 }}" data-fancybox>
+                      <img
+                        src="{{ customCarouselImage | image_url: width: 1200 }}"
+                        alt="{{ LPProduct.title | escape }}"
+                        width="600"
+                        height="600"
+                      >
+                    </a>
+                  </li>
+                {%- endif -%}
+                {%- for image in LPProduct.images -%}
+                  {%- if customCarouselImage != blank and forloop.first -%}
+                    {%- continue -%}
+                  {%- endif -%}
+                  <li
+                    class="splide__slide"
+                    {% if image.attached_to_variant? %}
+                      data-variant="{{ image.variants | map: 'id' | join: ',' }}"
+                    {% endif %}
+                  >
+                    <a href="{{ image.src | image_url: width: 1200 }}" data-fancybox>
+                      <img
+                        src="{{ image.src | image_url: width: 1200 }}"
+                        alt="{{ image.alt | escape }}"
+                        data-image-id="{{ image.id }}"
+                        width="600"
+                        height="600"
+                      >
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          </section>
+          <div class="rtnu-product__thumbails splide" id="pdp-main-thumbnails" aria-label="PDP main carousel thumbnails">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {%- if customCarouselImage != blank -%}
+                  <li class="splide__slide">
+                    <img
+                      src="{{ customCarouselImage | image_url: width: 200 }}"
+                      alt="{{ LPProduct.title | escape }}"
+                      width="200"
+                      height="200"
+                    >
+                  </li>
+                {%- endif -%}
+                {%- for image in LPProduct.images -%}
+                  {%- if customCarouselImage != blank and forloop.first -%}
+                    {%- continue -%}
+                  {%- endif -%}
+                  <li class="splide__slide">
+                    <img
+                      src="{{ image.src | image_url: width: 200 }}"
+                      alt="{{ image.alt | escape }}"
+                      data-image-id="{{ image.id }}"
+                      width="200"
+                      height="200"
+                    >
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="rtnu-grid__item">
+        {%- form 'product',
+          LPProduct,
+          data-productid: LPProduct.id,
+          id: product_form_id,
+          class: 'GrowAOV-Form rtnu-product__form',
+          novalidate: 'novalidate',
+          data-type: 'add-to-cart-form'
+        -%}
+          <input
+            type="hidden"
+            name="id"
+            data-productid="{{ LPProduct.id }}"
+            value="{{ LPProduct.selected_or_first_available_variant.id }}"
+          >
+          <input type="hidden" name="selling_plan" id="{{ product_form_id }}-sellingPlan" value="{{ plan_id }}">
+          <input type="hidden" name="quantity" value="1">
+
+          {% comment %} Show product variants if any {% endcomment %}
+          {% if LPProduct.variants.size > 1 %}
+            <div
+              id="{{ product_form_id }}-rtnu-product-variants"
+              class="rtnu-product__variants"
+              data-section="{{ section.id }}"
+            >
+              <fieldset>
+                <legend class="rtnu-product__form-item-label visually-hidden">Size</legend>
+                <div class="rtnu-single-option-radio__flex">
+                  {% for variant in LPProduct.variants %}
+                    {%- liquid
+                      assign plan_discount = variant.price | times: plan_percentage_decimal
+                      assign plan_price = variant.price | minus: plan_discount
+                    -%}
+                    <div class="rtnu-option rtnu-option-{{ variant.id }}{% if LPProduct.type == "Gift Cards" %}{% else %}{% if variant.inventory_quantity <= 0 %} soldout{% endif %}{% endif %}">
+                      <input
+                        type="radio"
+                        {% if variant.compare_at_price > variant.price %}
+                          data-compare-at-price="{{ variant.compare_at_price | money_without_trailing_zeros }}"
+                        {% endif %}
+                        data-id="{{ variant.id }}"
+                        data-price="{{ variant.price | money_without_trailing_zeros }}"
+                        data-sub-price="{{ plan_price | money }}"
+                        data-price-raw="{{ variant.price | money_without_currency }}"
+                        data-sub-price-raw="{{ plan_price | money_without_currency }}"
+                        data-sub-id="{{ variant.selling_plan_allocations[0].selling_plan.id }}"
+                        id="{{ product_form_id }}-{{ variant.id }}"
+                        data-sub-discount="{{ plan_discount | money }}"
+                        value="{{ variant.id }}"
+                        name="id"
+                        data-productid="{{ LPProduct.id }}"
+                        form="{{ product_form_id }}"
+                        {% if variant == LPProduct.selected_or_first_available_variant %}
+                          checked="checked"
+                        {% endif %}
+                        {% if LPProduct.type == 'Gift Cards' %}
+                        {% else %}
+                          {%- if variant.inventory_quantity <= 0 %}disabled{% endif -%}
+                        {% endif %}
+                      >
+                      <label
+                        for="{{ product_form_id }}-{{ variant.id }}"
+                        class="{{ variant.title | downcase | handleize }}"
+                      >
+                        <span class="rtnu-product__form-item-value">{{ variant.title }}</span>
+                      </label>
+                    </div>
+                  {% endfor %}
+                </div>
+              </fieldset>
+            </div>
+          {% endif %}
+
+          <div class="rtnu-product__form-purchase-type">
+            <label for="type" class="rtnu-product__form-item-label visually-hidden">Purchase type</label>
+
+            <fieldset class="rtnu-single-option" name="type" id="{{ product_form_id }}-ProductSelect-option-1">
+              <div class="rtnu-single-option-radio__group">
+                <div class="rtnu-custom-radio rtnu-custom-radio--active">
+                  <input
+                    type="radio"
+                    value="{{ plan_id }}"
+                    name="{{ product_form_id }}-main-subscription"
+                    class="rtnu-single-option-selector__radio rtnu-single-option--purchaseType rtnu-single-option--purchaseType-subscription"
+                    id="{{ product_form_id }}-purchaseType--subscription"
+                    checked
+                    aria-checked="true"
+                  >
+                  <label
+                    for="{{ product_form_id }}-purchaseType--subscription"
+                    class="purchaseType-subscription purchaseType-active"
+                  >
+                    <p>
+                      <span
+                        >Subscribe &amp;&nbsp;<span class="purchaseType-subscription__savings"
+                          >Save <span class="rtnu-subscription-savings">10%</span></span
+                        ></span
+                      >
+                    </p>
+                    <div class="rtnu-single-option__price rtnu-single-option__price--subscription">
+                      {%- if routes.root_url == '/' -%}
+                        <div>{{ selected_plan_price | money }}</div>
+                      {%- else -%}
+                        <div>{{ selected_plan_price | money_with_currency }}</div>
+                      {%- endif -%}
+                    </div>
+                  </label>
+
+                  <div class="rtnu-single-option-selector__dropdown">
+                    <div class="rtnu-product__form-item-label">Delivers</div>
+                    <div class="rtnu-single-option-selector__select">
+                      <select id="{{ product_form_id }}-sellingPlanOptions">
+                        {%- for allocation in current_variant.selling_plan_allocations -%}
+                          <option value="{{ allocation.selling_plan.id }}">
+                            {{ allocation.selling_plan.name | replace: 'Delivers every', 'Every' }}
+                          </option>
+                        {%- endfor -%}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="rtnu-custom-radio">
+                  <input
+                    type="radio"
+                    value="{{ LPProduct.selected_or_first_available_variant.id }}"
+                    name="{{ product_form_id }}-main-subscription"
+                    class="rtnu-single-option-selector__radio rtnu-single-option--purchaseType rtnu-single-option--purchaseType-one-time"
+                    id="{{ product_form_id }}-purchaseType--one-time"
+                    aria-checked="false"
+                  >
+                  <label for="{{ product_form_id }}-purchaseType--one-time" class="purchaseType-one-time">
+                    <p>Buy Once</p>
+                    <div class="rtnu-single-option__price rtnu-single-option__price--onetime">
+                      {%- if routes.root_url == '/' -%}
+                        <div>{{ LPProduct.price | money_without_trailing_zeros }}</div>
+                      {%- else -%}
+                        <div>{{ LPProduct.price | money_with_currency }}</div>
+                      {%- endif -%}
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="rtnu-product__form-checkout">
+            <button id="rtnu-add-to-cart" type="submit" class="rtnu-product__form-submit wayfx-btn">Subscribe Now</button>
+
+            <div class="rtnu-product__subscription-benefits">
+              <div class="rtnu-product__subscription-benefit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="#8F5121" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 10s-2-2.7-3.6-4.4A9 9 0 0 0 2 12a9 9 0 0 0 17.6 2.5M21 10V4m0 6h-6"/>
+                </svg>
+                <p>No commitment subscription. Change or cancel anytime.</p>
+              </div>
+              <div class="rtnu-product__subscription-benefit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="#8F5121" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 14.7c0 1.3 1 2.3 2.3 2.3H13a2.5 2.5 0 0 0 0-5h-2a2.5 2.5 0 0 1 0-5h2.2c1.3 0 2.3 1 2.3 2.3M12 5.5V7m0 10v1.5M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0Z"/>
+                </svg>
+                <p>Save 10% (average subscriber saves $180+ per year)</p>
+              </div>
+              <div class="rtnu-product__subscription-benefit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 267.5 267.5">
+                  <path fill="#8F5121" d="M257 100.3c0 .8 0 1.5-.2 2.3l-16.5 66a7.5 7.5 0 0 1-7.3 5.7l-99 .5H35a7.5 7.5 0 0 1-7.3-5.7l-16.5-66.3c-.2-.8-.2-1.5-.2-2.3a15.8 15.8 0 1 1 14.8-2.8l20.6 20.8a28.2 28.2 0 0 0 42.3-2.9l34-45a15.7 15.7 0 0 1 11-26.8 15.8 15.8 0 0 1 11.4 26.6l33.8 45.1a28.1 28.1 0 0 0 42.2 3l20.8-20.7a15.7 15.7 0 1 1 15 2.5zm-18.3 98c0-4.2-3.4-7.6-7.5-7.6h-194a7.5 7.5 0 0 0-7.5 7.6v18c0 4 3.3 7.4 7.5 7.4h194c4.1 0 7.5-3.3 7.5-7.4v-18z"/>
+                </svg>
+                <p>Become a part of our tribe: exclusive content, deals, and more</p>
+              </div>
+            </div>
+
+            {%- if routes.root_url == '/' -%}
+              <div class="rtnu-product__form-extras">
+                <div class="rtnu-returns">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20">
+                    <path fill="#994E0E" d="m6.5625 2.8125-4.375 3.125 4.375 3.125v-6.25ZM2.8125 15l1.5625-.0156v1.9062l-1.5625-.0156V15Zm2.5-.0218 1.875-.0187v1.9562l-1.875-.0187v-1.9188Zm2.8125-.0283 2.1875-.0187v2.0125l-2.1875-.0188v-1.975Z"/><path fill="#994E0E" d="M17.6594 12.8062c-.4907 1.4813-1.5656 2.7407-2.9375 3.4594-.6844.3594-1.4375.5906-2.2063.6625-.1937.0188-.3844.0281-.5781.0281h-.4906l-.1969-.0031v-2.0312l.1969-.0032.4719-.0031c.125-.0031.2531-.0125.3781-.0281.5062-.0563.9937-.2156 1.4375-.4625.8906-.4844 1.5781-1.3281 1.8718-2.2844.3-.9562.2063-2.0312-.2468-2.90935-.4469-.8875-1.25-1.58438-2.1781-1.9-.2313-.08125-.4688-.1375-.7125-.17188-.1188-.01562-.2407-.02812-.3657-.03437-.1218-.00312-.2343-.00312-.4094 0l-1.9187.02187-3.8375.04063v-2.5l3.8375.04062 1.9187.02188c.1469.00312.3532.00625.5501.01875.1968.0125.3937.0375.5875.06875.3906.0625.775.16562 1.1437.30312 1.4844.55 2.7219 1.6875 3.3969 3.10313.6812 1.41875.7812 3.08125.2875 4.56245Z"/>
+                  </svg>
+                  <p>Free & easy returns</p>
+                </div>
+                <div class="rtnu-shipping">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16">
+                    <path fill="#8f5121" d="M19.5 11H19V7.6a1.5 1.5 0 0 0-.4-1l-3.2-3.2a1.5 1.5 0 0 0-1-.4H13V1.5A1.5 1.5 0 0 0 11.5 0h-8A1.5 1.5 0 0 0 2 1.5V3H.2a.3.3 0 0 0-.2.3v.5a.3.3 0 0 0 .3.2h8.4a.3.3 0 0 1 .3.3v.5a.3.3 0 0 1-.3.2H1.3a.3.3 0 0 0-.3.3v.5a.3.3 0 0 0 .3.2h6.5a.3.3 0 0 1 .2.3v.5a.3.3 0 0 1-.3.2H.3a.3.3 0 0 0-.2.3v.5a.3.3 0 0 0 .3.2h6.5a.3.3 0 0 1 .2.3v.4a.3.3 0 0 1-.3.3H2v4a3 3 0 0 0 6 0h4a3 3 0 0 0 6 0h1.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5ZM5 14.5A1.5 1.5 0 1 1 6.5 13 1.5 1.5 0 0 1 5 14.5Zm10 0a1.5 1.5 0 1 1 1.5-1.5 1.5 1.5 0 0 1-1.5 1.5ZM17.5 8H13V4.5h1.4l3.1 3.1Z" data-name="Icon awesome-shipping-fast"/>
+                  </svg>
+                  <p>Free U.S. shipping over $80</p>
+                </div>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (e) => {
+    let productForm = document.querySelector('#{{ product_form_id }}'),
+        currentVariantPrice = '{{ current_variant.price | money_without_trailing_zeros }}',
+        shippingFrequencyDropdown = productForm?.querySelector('.rtnu-single-option-selector__dropdown'),
+        subscriptionBenefits = productForm?.querySelector('.rtnu-product__subscription-benefits'),
+        productVariantsOptions = productForm?.querySelectorAll('.rtnu-product__variants .rtnu-option'),
+        subscriptionPrice = productForm?.querySelector('.rtnu-single-option__price--subscription'),
+        onetimePrice = productForm?.querySelector('.rtnu-single-option__price--onetime div'),
+        sellingPlan = productForm?.querySelector('#{{ product_form_id }}-sellingPlan'),
+        productId = productForm?.querySelector('[name="id"]'),
+        sellingPlanOptions = productForm?.querySelector('#{{ product_form_id }}-sellingPlanOptions'),
+        carouselSlides = document.querySelectorAll('#pdp-main-carousel .splide__slide'),
+        purchaseSelectorLabel = productForm?.querySelectorAll('#{{ product_form_id }}-ProductSelect-option-1 label'),
+        mainSliderSlides = document.querySelectorAll('#pdp-main-carousel .splide__slide'),
+        mainSlider = document.querySelector('#pdp-main-carousel'),
+        mainSliderArrows,
+        mainSliderArrowPrev,
+        currentIndex = 0 + 1,
+        addToCartBtn = document.querySelector('.rtnu-product__form-submit');
+
+    // Product Slider
+    var main = new Splide( mainSlider, {
+      type      : 'slide',
+      rewind    : false,
+      pagination: false,
+      arrows    : false,
+      gap: 16,
+      breakpoints: {
+        980: {
+          gap: 8,
+          pagination: true,
+        },
+        600: {
+          perPage: 1,
+          gap: 8,
+          fixedWidth: 280,
+        }
+      }
+    } );
+    var thumbnails = new Splide( '#pdp-main-thumbnails', {
+      fixedWidth  : 90,
+      fixedHeight : 90,
+      gap         : 16,
+      rewind      : false,
+      pagination  : false,
+      arrows      : false,
+      isNavigation: true,
+      breakpoints : {
+        980: {
+          fixedWidth  : 64,
+          fixedHeight : 64,
+          perPage     : 3,
+          gap         : 8,
+        },
+        768: {
+          destroy: true,
+        }
+      }
+    });
+
+    main.sync( thumbnails);
+    main.mount();
+    thumbnails.mount();
+
+    if (typeof productVariantsOptions !== undefined && productVariantsOptions !== null) {
+      productVariantsOptions?.forEach(variant => {
+        let first_variant_price,
+            variant_raw_price = variant.querySelector("input[type='radio']").dataset.priceRaw,
+            variant_raw_sub_price = variant.querySelector("input[type='radio']").dataset.subPriceRaw,
+            item_count = variant.querySelector("input[type='radio']").dataset.itemCount,
+            single_item_price = variant.querySelector(".rtnu-product__form-item-single-cost-price");
+
+            if (variant.querySelector("input[type='radio']:checked")) {
+          first_variant_price = variant.querySelector("input[type='radio']:checked").dataset.price;
+        }
+
+        // set single item price
+        if (single_item_price !== null && item_count) {
+          single_item_price.innerHTML = "{{ cart.currency.symbol }}" + (variant_raw_price / item_count).toFixed(2);
+        }
+
+        // handle product variant selection
+        variant.addEventListener('change', (e) => {
+          let variant_id = e.target.value,
+              variant_subscription_id = e.target.dataset.subId,
+              variant_price = e.target.dataset.price,
+              variant_subscription_price = e.target.dataset.subPrice,
+              variant_sub_discount = e.target.dataset.subDiscount;
+
+          // Update one time price and subscription price when variant is changed
+          onetimePrice.innerHTML = variant_price;
+          {%- if plan_id -%}
+          subscriptionPrice.querySelector('del').innerHTML = variant_price;
+          subscriptionPrice.querySelector('div').innerHTML = variant_subscription_price;
+          {%- endif -%}
+          productId.value = variant_id;
+
+          // Update carousel slides to match variant
+          carouselSlides.forEach((slide, index) => {
+            let slide_variant_id = slide.dataset.variant;
+
+            if (slide_variant_id !== undefined) {
+              if(variant_id == slide_variant_id) {
+                main.go( index );
+              }
+            }
+          });
+        });
+
+      });
+    }
+
+    // handle purchase type
+    if (typeof purchaseSelectorLabel !== undefined && purchaseSelectorLabel !== null) {
+      purchaseSelectorLabel?.forEach(label => {
+        let labelParent = label.parentNode;
+
+        if (typeof productVariantsOptions !== undefined && productVariantsOptions !== null) {
+          productVariantsOptions?.forEach(variant => {
+            let variant_raw_price = variant.querySelector("input[type='radio']").dataset.priceRaw,
+                variant_raw_sub_price = variant.querySelector("input[type='radio']").dataset.subPriceRaw,
+                item_count = variant.querySelector("input[type='radio']").dataset.itemCount,
+                single_item_price = variant.querySelector(".rtnu-product__form-item-single-cost-price");
+
+            // set single item price on load
+            if(labelParent.classList.contains('rtnu-custom-radio--active') && single_item_price !== null && item_count) {
+              if (label.classList.contains('purchaseType-subscription')) {
+                single_item_price.innerHTML = "{{ cart.currency.symbol }}" + (variant_raw_sub_price / item_count).toFixed(2);
+              } else {
+                single_item_price.innerHTML = "{{ cart.currency.symbol }}" + (variant_raw_price / item_count).toFixed(2);
+              }
+            }
+          });
+        }
+
+
+        label.addEventListener('click', (e) => {
+          let is_subscription;
+          //remove active class from all purchase selector labels and add to clicked label
+          purchaseSelectorLabel?.forEach(i => {
+            i.parentNode.classList.remove('rtnu-custom-radio--active');
+            i.parentNode.querySelector('label').classList.remove('purchaseType-active');
+            i.parentNode.querySelector('input').checked = false;
+            i.parentNode.querySelector('input').setAttribute('aria-checked', 'false');
+          });
+
+          labelParent.classList.add('rtnu-custom-radio--active');
+          labelParent.querySelector('label').classList.add('purchaseType-active');
+          labelParent.querySelector('input').checked = true;
+          labelParent.querySelector('input').setAttribute('aria-checked', 'true');
+
+          if (label.classList.contains('purchaseType-subscription')){
+            is_subscription = true;
+          } else {
+            is_subscription = false;
+          }
+
+          if(is_subscription) {
+            shippingFrequencyDropdown.classList.remove('rtnu-hide');
+            sellingPlan.setAttribute('name', 'selling_plan');
+            addToCartBtn.innerText = "Subscribe Now";
+            subscriptionBenefits.style.display = "flex";
+          } else {
+            shippingFrequencyDropdown.classList.add('rtnu-hide');
+            sellingPlan.setAttribute('name', '');
+            addToCartBtn.innerText = "Add to Cart";
+            subscriptionBenefits.style.display = "none";
+          }
+        });
+      });
+    }
+
+    // handle shipping frequency selection
+    if (typeof sellingPlanOptions !== undefined && sellingPlanOptions !== null) {
+      sellingPlanOptions?.addEventListener('change', (e) => {
+        let shipping_frequency = e.target.value;
+        sellingPlan.value = shipping_frequency;
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "LP PDP Selector",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP PDP Selector"
+    }
+  ]
+}
+{% endschema %}

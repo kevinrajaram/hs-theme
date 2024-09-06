@@ -1,0 +1,145 @@
+$cart_header_bg:       	  #5C6AC4;
+$primary_color:           #008060;
+$accent_color:            #EEC200;
+$upsell_bg_color:         #FBF7ED;
+$border_color:            #B8BFC6;
+$cart_items_background:   #FFFFFF;
+$collection_header_bg:    #FFFFFF;
+$collection_main_bg:      #FFFFFF;
+$text_color:              #000000;
+$icon_color:              '%23A79681';
+$testimonial_bg:          url(https://cdn.shopify.com/s/files/1/0317/9898/4835/files/testimonial.jpg?v=1617119769);
+@function set-color($color,$percentage){@if(lightness($color)<30){@return lighten($color,$percentage);} @else {@return darken($color,$percentage);}}
+@function opposite-shade($color,$percentage){@if (lightness($color) < 70){@return #fff;} @else {@return #000;}}
+@mixin select-arrow-up($color) {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='11'%3E%3Cpath d='M2.406 10.008L.992 8.594 8.996.59l8.006 7.898-1.404 1.424L9.004 3.41z' fill='#{$color}' fill-rule='nonzero'/%3E%3C/svg%3E%0A")}
+@mixin select-arrow-down($color) {background-image: url("data:image/svg+xml,%3Csvg width='17' height='11' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.406.992L.992 2.406l8.004 8.004 8.006-7.898-1.404-1.424L9.004 7.59z' fill='#{$color}' fill-rule='nonzero'/%3E%3C/svg%3E")}
+@mixin search-icon($color) {background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.27 0C2.818 0 0 2.818 0 6.27c0 3.453 2.818 6.27 6.27 6.27 1.416 0 2.72-.478 3.771-1.275l4.05 4.05a.865.865 0 101.223-1.224l-4.049-4.05a6.225 6.225 0 001.276-3.77C12.54 2.817 9.723 0 6.27 0zm0 1.73a4.527 4.527 0 014.54 4.54c0 1.21-.469 2.301-1.232 3.113a.865.865 0 00-.194.193 4.522 4.522 0 01-3.114 1.235 4.527 4.527 0 01-4.54-4.54A4.527 4.527 0 016.27 1.73z' fill='#{$color}' fill-rule='nonzero'/%3E%3C/svg%3E");}
+$overlay_text_color:      opposite-shade($cart_header_bg, 5%);
+$progress_bar_bg:         set-color($cart_header_bg, 17%);
+$button_bg_color:         $primary_color;
+$button_text_color:       #fff;
+$upsell_text_color:       set-color($upsell_bg_color, 90%);
+$discount_bg_color:       $primary_color;
+$discount_text_color:     $primary_color;
+
+
+#grow-aov-collection .yotpo .yotpo-bottomline .text-m {
+  color: rgba($text_color, 0.7) !important;
+}
+
+#grow-aov-collection .yotpo .yotpo-bottomline .text-m {
+  .yotpo .yotpo-icon-star,
+  .yotpo .yotpo-icon-half-star,
+  .yotpo .yotpo-icon-empty-star {
+    color: $primary_color;
+  }
+}
+
+#grow-aov-collection .yotpo .yotpo-small-box,
+#grow-aov-collection .yotpo .yotpo-regular-small-box,
+#grow-aov-collection .yotpo .yotpo-popup-box-medium,
+#grow-aov-collection .yotpo .yotpo-regular-box {
+  border-color: $border_color;
+}
+
+
+#grow-aov-collection .yotpo .text-m,
+#grow-aov-collection .yotpo .yotpo-main .content-title,
+#grow-aov-collection .yotpo .yotpo-review .yotpo-main .content-title,
+#grow-aov-collection .yotpo .yotpo-comment .yotpo-main .content-title,
+#grow-aov-collection .yotpo .yotpo-question .yotpo-main .content-title,
+#grow-aov-collection .yotpo .yotpo-onsite-upload .yotpo-main .content-title,
+#grow-aov-collection .yotpo .yotpo-review .yotpo-main .content-review,
+#grow-aov-collection .yotpo .yotpo-comment .yotpo-main .content-review,
+#grow-aov-collection .yotpo .yotpo-question .yotpo-main .content-review,
+#grow-aov-collection .yotpo .yotpo-onsite-upload .yotpo-main .content-review,
+#grow-aov-collection .yotpo .yotpo-main .content-review,
+#grow-aov-collection .yotpo .y-label,
+#grow-aov-collection .yotpo span.y-label,
+#grow-aov-collection .yotpo div,
+#grow-aov-collection .yotpo span,
+#grow-aov-collection .yotpo p,
+#grow-aov-collection .yotpo a,
+#grow-aov-collection .yotpo img,
+#grow-aov-collection .yotpo i,
+#grow-aov-collection .yotpo strong,
+#grow-aov-collection .yotpo sup,
+#grow-aov-collection .yotpo ul,
+#grow-aov-collection .yotpo li,
+#grow-aov-collection .yotpo form,
+#grow-aov-collection .yotpo label {
+  color: $text_color !important;
+}
+
+#grow-aov-collection .yotpo .yotpo-bottomline .yotpo-icon-star,
+#grow-aov-collection .yotpo .yotpo-bottomline .yotpo-icon-half-star,
+#grow-aov-collection .yotpo .yotpo-bottomline .yotpo-icon-empty-star,
+#grow-aov-collection .yotpo.yotpo-main-widget .yotpo-label .yotpo-logo-title,
+#grow-aov-collection .yotpo .yotpo-modal-dialog .yotpo-label .yotpo-logo-title,
+#grow-aov-collection .yotpo .font-color-primary,
+#grow-aov-collection .yotpo .yotpo-nav ul
+#grow-aov-collection .yotpo .yotpo-nav-tab.yotpo-active span,
+#grow-aov-collection .yotpo .yotpo-pager .yotpo-page-element.yotpo-active,.yotpo a,
+#grow-aov-collection .yotpo .yotpo-review .yotpo-header .yotpo-header-element .y-label.yotpo-user-name,
+#grow-aov-collection .yotpo .yotpo-comment .yotpo-header .yotpo-header-element .y-label.yotpo-user-name,
+#grow-aov-collection .yotpo .yotpo-question .yotpo-header .yotpo-header-element .y-label.yotpo-user-name,
+#grow-aov-collection .yotpo .yotpo-onsite-upload .yotpo-header .yotpo-header-element .y-label.yotpo-user-name,
+#grow-aov-collection .yotpo .yotpo-review .yotpo-header .yotpo-review-stars .yotpo-icon,
+#grow-aov-collection .yotpo .yotpo-comment .yotpo-header .yotpo-review-stars .yotpo-icon,
+#grow-aov-collection .yotpo .yotpo-question .yotpo-header .yotpo-review-stars .yotpo-icon,
+#grow-aov-collection .yotpo .yotpo-onsite-upload .yotpo-header .yotpo-review-stars .yotpo-icon,
+#grow-aov-collection .yotpo .yotpo-logo-link-new > * {
+  color: $primary_color !important;
+}
+
+#grow-aov-collection .yotpo .yotpo-nav ul .yotpo-nav-tab.yotpo-active .yotpo-nav-wrapper {
+  border-color: $border_color !important;
+}
+
+#grow-aov-collection .yotpo.yotpo-main-widget .yotpo-bottomline.yotpo-bottomline-2-boxes .yotpo-bottomline-box-2 .yotpo-star-distribution .yotpo-star-distribution-content .yotpo-distributions-graphs .yotpo-star-distribution-graph .yotpo-star-distribution-score-wrapper .yotpo-star-distribution-graph-score,
+#grow-aov-collection .yotpo .yotpo-modal-dialog .yotpo-bottomline.yotpo-bottomline-2-boxes .yotpo-bottomline-box-2 .yotpo-star-distribution .yotpo-star-distribution-content .yotpo-distributions-graphs .yotpo-star-distribution-graph .yotpo-star-distribution-score-wrapper .yotpo-star-distribution-graph-score {
+  background-color: $primary_color;
+}
+
+
+.grow-aov-collection__accordion {
+  @include select-arrow-down($icon_color);
+  background-repeat: no-repeat;
+  background-position: top 48px right 16px;
+}
+
+.grow-aov-collection__accordion.grow-aov-collection__accordion--opened {
+  @include select-arrow-up($icon_color);
+}
+
+
+.grow-aov-collection__accordion-value {
+  color: rgba($text_color, 0.8);
+}
+
+.grow-aov-collection__accordion-value a {
+  color: $primary_color;
+  text-decoration: underline;
+}
+
+.grow-aov-collection__accordion-value a:hover {
+  text-decoration: none;
+}
+
+.grow-aov-collection__accordion-value ol li:before {
+  color: $primary_color;
+}
+
+.grow-aov-collection__accordion-value ul li:before {
+  background: $primary_color;
+}
+
+
+.grow-aov-collection__filter-btn.grow-aov-collection__filter-btn--active {
+  color: $primary_color;
+}
+
+.grow-aov-collection__product-image--empty {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.3);
+}

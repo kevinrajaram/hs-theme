@@ -1,0 +1,31 @@
+<script>
+  let redirects = {
+    "/collections/build-your-stack?layout=bundles&selected=1": "/products/fat-loss-stack",
+    "/collections/build-your-stack?layout=bundles&selected=2": "/products/allergies-stack",
+    "/collections/build-your-stack?layout=bundles&selected=3": "/products/anemia-stack",
+    "/collections/build-your-stack?layout=bundles&selected=4": "/products/autoimmune-issues-stack",
+    "/collections/build-your-stack?layout=bundles&selected=6": "/products/joint-mobility-stack",
+    "/collections/build-your-stack?layout=bundles&selected=7": "/products/digestive-stack",
+    "/collections/build-your-stack?layout=bundles&selected=8": "/products/energy-stack",
+    "/collections/build-your-stack?layout=bundles&selected=9": "/products/exercise-performance-stack",
+    "/collections/build-your-stack?layout=bundles&selected=10": "/products/exercise-recovery-stack",
+    "/collections/build-your-stack?layout=bundles&selected=11": "/products/female-vitality-stack",
+    "/collections/build-your-stack?layout=bundles&selected=12": "/products/heart-health-stack",
+    "/collections/build-your-stack?layout=bundles&selected=13": "/products/histamine-intolerance-stack",
+    "/collections/build-your-stack?layout=bundles&selected=14": "/products/male-fertility-stack",
+    "/collections/build-your-stack?layout=bundles&selected=15": "/products/mood-stack",
+    "/collections/build-your-stack?layout=bundles&selected=16": "/products/immune-support-stack",
+    "/collections/build-your-stack?layout=bundles&selected=17": "/products/prenatal-health-stack",
+    "/collections/build-your-stack?layout=bundles&selected=18": "/products/skin-hair-nails-stack",
+    "/collections/build-your-stack?layout=bundles&selected=19": "/products/sleep-stack",
+    "/collections/build-your-stack?layout=bundles&selected=20": "/products/stress-support-stack",
+    "/collections/build-your-stack?layout=bundles&selected=21": "/products/thyroid-health-stack",
+    "/collections/build-your-stack?layout=bundles&selected=22": "/products/warrior-stack",
+  };
+
+  let currentPath = window.location.pathname + window.location.search;
+
+  if (redirects[currentPath]) {
+    window.location.href = redirects[currentPath];
+  }
+</script>

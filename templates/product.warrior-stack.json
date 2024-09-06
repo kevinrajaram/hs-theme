@@ -1,0 +1,430 @@
+{
+  "wrapper": "div.rtnu-product.rtnu-product--stacks",
+  "sections": {
+    "main": {
+      "type": "stacks-product-hero",
+      "settings": {
+        "health_goal_icon": "shopify:\/\/shop_images\/thumb.webp",
+        "health_goal_name": "BECOME A WARRIOR"
+      }
+    },
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f": {
+      "type": "stacks-info-slider",
+      "blocks": {
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed": {
+          "type": "slider",
+          "settings": {
+            "title": "Increase Strength",
+            "content": "Contains Creatine and L-Carnitine, key nutrients that support muscle growth and endurance."
+          }
+        },
+        "0f205c3c-978b-481d-a59c-0169348245b9": {
+          "type": "slider",
+          "settings": {
+            "title": "Boost Energy",
+            "content": "CoQ10, alongside Taurine, enhance cellular energy production, mental clarity, and overall vitality for daily demands."
+          }
+        },
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8": {
+          "type": "slider",
+          "settings": {
+            "title": "Improve Recovery",
+            "content": "Amino acids Anserine and Carnosine play pivotal roles in reducing fatigue, boosting antioxidant activity, and aiding post-exercise recovery."
+          }
+        },
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d": {
+          "type": "slider",
+          "settings": {
+            "title": "Boost Mental Performance",
+            "content": "Choline and Phosphatidylserine work in tandem, optimizing cognition and focus."
+          }
+        },
+        "d3b9ef4a-3d6b-4326-a77e-6a727b83b671": {
+          "type": "slider",
+          "settings": {
+            "title": "Bioavailable Nutrients",
+            "content": "Highly bioavailable micronutrients paired with essential fatty acids deliver superior absorption, maximizing nutrient utilization and overall benefits."
+          }
+        }
+      },
+      "block_order": [
+        "4090296b-759f-4ad8-a5a2-a1f4c47750ed",
+        "0f205c3c-978b-481d-a59c-0169348245b9",
+        "468dd508-ee45-41f8-b1b0-256bb81a73e8",
+        "c5b09d2e-997d-40d5-9fd8-ae1433ace22d",
+        "d3b9ef4a-3d6b-4326-a77e-6a727b83b671"
+      ],
+      "settings": {
+        "content": "<h2>IS THE WARRIOR STACK FOR ME?<\/h2><p>For those who demand an all-encompassing nutritional edge. If you're constantly pushing boundaries, seeking to optimize your strength, energy, and recovery, this stack is for you.<\/p>"
+      }
+    },
+    "f831964f-d20b-465b-a97f-35ec2a2b059d": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote_5b881273-3647-4eb0-b2a8-a714c2c8286f.webp",
+        "quote": "Nutrient rich organs transform how you look and feel, just like they transformed me.",
+        "author": "Georges St-Pierre",
+        "author_title": "UFC Hall of Fame"
+      }
+    },
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291": {
+      "type": "stacks-include",
+      "blocks": {
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "whole-package",
+            "supporting_product_description": "<p><a href=\"\/products\/whole-package\" title=\"Whole Package\">Whole Package<\/a> includes liver, testicle, and whole blood extract. It provide strategic support for reproductive health and performance, blood flow, and hormone health.<\/p>"
+          }
+        },
+        "b9211051-928d-4ac9-b4ae-83a9559406eb": {
+          "type": "product",
+          "settings": {
+            "supporting_product": "mood-memory-brain",
+            "supporting_product_description": "<p><a href=\"\/products\/mood-memory-brain\" title=\"Mood, Memory & Brain\">Mood Memory & Brain<\/a> provides strategic support for better learning, focus, mood, as well as mental acuity. It includes grass-fed and finished brain, bone marrow, and liver and stimulates healthy neural connections.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "5a780bce-acc0-4237-99f3-caf243ebdbf9",
+        "b9211051-928d-4ac9-b4ae-83a9559406eb"
+      ],
+      "settings": {
+        "primary_product": "warrior",
+        "primary_product_description": "<p><a href=\"\/products\/warrior\" title=\"WARRIOR\">Warrior<\/a> is the foundational supplement included in the <strong>Warrior Stack<\/strong>. It provides unique and essential support found in grass-fed and grass-finished heart and liver. These powerful organs include 12+ powerful nutrients to help reach your goals.<\/p>",
+        "organ_nutrient_image": "shopify:\/\/shop_images\/ingredients_5c04d506-ae5d-4d38-9e95-3453d8ab09bb.webp",
+        "organ_nutrients": "warrior_stack"
+      }
+    },
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20": {
+      "type": "cta-callout",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote_2faed819-cb71-4580-967a-1d9cbbfcda91.webp",
+        "title": "UNLEASH YOUR INNER WARRIOR"
+      }
+    },
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0": {
+      "type": "section-nutrients",
+      "blocks": {
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "CoQ10",
+            "nutrient_description": "<p>Heart is nature's richest source of CoQ10, a nutrient shown to improve mitochondrial function and energy production, and to enhance exercise performance.<\/p>"
+          }
+        },
+        "830b2c7c-eab7-44d7-ad2f-0fbc3466e9db": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "Anserine & Carnosine",
+            "nutrient_description": "<p>Two amino acids which are effective in reducing muscle fatigue and improving antioxidant activity.<\/p>"
+          }
+        },
+        "4400b28c-d1f8-4fde-9629-ac3a5ee9e23f": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Taurine",
+            "nutrient_description": "<p>Improves muscle function and exercise performance through the reduction of reactive oxygen species. Is also a powerful antioxidant in muscle tissue and improves insulin sensitivity.<\/p>"
+          }
+        },
+        "e436ff32-3c4e-4bda-9602-24c3f5938185": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "Creatine",
+            "nutrient_description": "<p>Heart is one of nature's richest sources of this nutrient, which is crucial for muscle growth and recovery, and essential for energy production in the muscles.<\/p>"
+          }
+        },
+        "470eac66-6a12-4443-8f81-48b63f281f38": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-muscle.png?v=1617911723",
+            "title": "L-Carnitine",
+            "nutrient_description": "<p>Required to produce energy (ATP) in the muscles, and to protect against muscle damage. Improves sport and gym performance in elite athletes.<\/p>"
+          }
+        },
+        "dd803bf7-4f15-424e-a92b-6e5ca74d0a75": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Choline",
+            "nutrient_description": "<p>A key nutrient involved in muscle neurotransmitter synthesis.<\/p>"
+          }
+        },
+        "cb1c5c80-8693-4d49-b49a-79f1e62b45e2": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Glutamine",
+            "nutrient_description": "<p>A crucial amino acid required to speed up muscle recovery and reduce delayed-onset muscle soreness.<\/p>"
+          }
+        },
+        "8ea614e5-3b66-4014-a753-97eadfebcb02": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Iron",
+            "nutrient_description": "<p>A critical trace mineral required for red blood cell formation and the repair of muscle tissue.<\/p>"
+          }
+        },
+        "45ecc1eb-9073-4922-80fd-38ca26126840": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/fatty-acid.png?v=1620697659",
+            "title": "Essential Fatty Acids",
+            "nutrient_description": "<p>Necessary for optimal reproductive and sexual health.<\/p>"
+          }
+        },
+        "7f90615d-078c-4217-bfd4-88691d38eb3f": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-thyroid.png?v=1617911399",
+            "title": "Selenium",
+            "nutrient_description": "<p>A critical mineral for thyroid function (iodothyronine deiodinanses) and immune health\/antioxidant defense (glutathione peroxidase, thioredoxin reductase).<\/p>"
+          }
+        },
+        "392be9c1-c10c-4983-8bb2-45898913ce77": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/blood-cells.png?v=1620677474",
+            "title": "Red Blood Cells, White Blood Cells, and Platelets",
+            "nutrient_description": "<p>Involved in oxygen transport, the immune response, and wound healing.<\/p>"
+          }
+        },
+        "33c62d15-0af8-461b-8e5c-ce53c74978d9": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hormones.png?v=1620697854",
+            "title": "Activin and inhibin",
+            "nutrient_description": "<p>Involved in the formation of sex hormones, reproductive cells, as well as the sex glands and organs.<\/p>"
+          }
+        },
+        "8d4318db-d539-4b5f-b1c8-a2cdfd9f3bec": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/vascular.png?v=1620697793",
+            "title": "Endothelin",
+            "nutrient_description": "<p>Modulates vascular health, cellular regeneration, and hormone production.<\/p>"
+          }
+        },
+        "7e1b959f-b96c-415d-a28c-ab137ddc0b1b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/sperm.png?v=1620697927",
+            "title": "Epidermal growth factor",
+            "nutrient_description": "<p>Promotes healthy sperm function and motility as well as fertility.<\/p>"
+          }
+        },
+        "f44f51c9-1520-40cd-916f-c38212d3be83": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/zinc-mineral.png?v=1620698006",
+            "title": "Zinc",
+            "nutrient_description": "<p>Essential for healthy testosterone production, sperm quality, and acts as a powerful antioxidant to combat inflammation.<\/p>"
+          }
+        },
+        "82d18f0f-7513-4511-876a-7c31a906d4ff": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Vitamins A, D, E, K2",
+            "nutrient_description": "<p>Get these vitamins in a super bioavailable form that play critical roles in overall immune and bone health.<\/p>"
+          }
+        },
+        "d55f4385-2ac8-48a2-8693-237df3dd5c45": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-heart.png?v=1617656604",
+            "title": "Riboflavin, Folate, B12",
+            "nutrient_description": "<p>Essential for red blood cell formation, brain, reproductive, and cardiovascular health.<\/p>"
+          }
+        },
+        "3ef88527-9b74-4b1f-9fb1-40a71d8fb35d": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-exercise.png?v=1617656604",
+            "title": "Copper, Biotin",
+            "nutrient_description": "<p>Crucial for metabolism, mood, and energy, as well as the health of skin, hair, and nails.<\/p>"
+          }
+        },
+        "888a718b-06c6-4aac-8a2f-11dc2890573c": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-liver.png?v=1617911400",
+            "title": "Liver Expressed Antimicrobial Peptide",
+            "nutrient_description": "<p>Also known as LEAP-2. This peptide is involved in immune response and glucose metabolism.<\/p>"
+          }
+        },
+        "85b3bf05-ccc4-472b-9bcb-0e1971adddf6": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Ergothioneine <a data-fancybox href=\"#peptide\">Peptide<\/a>",
+            "nutrient_description": "<p>An amino acid found in liver, kidney, and bone marrow found to support detoxification and longevity pathways.<\/p>"
+          }
+        },
+        "61951a8d-5150-490a-8320-109efee86332": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-energy.png?v=1617911399",
+            "title": "Phosphatidylserine",
+            "nutrient_description": "<p>A phospholipid found robustly in brain and nervous tissue essential for stress management, working memory, and optimal cognitive performance.<\/p>"
+          }
+        },
+        "7aeffb24-c918-4ce8-ace0-5b4e39d1378b": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-shield.png?v=1617911399",
+            "title": "Sphingolipids",
+            "nutrient_description": "<p>A special type of lipid (fat) found abundantly in brain and nervous tissue provides physical and chemical stability, resistance, as well as supports proper nerve cell performance and communication.<\/p>"
+          }
+        },
+        "fc1a2ec8-fd55-459f-b833-2cbbf5ba6588": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-brain.png?v=1617911399",
+            "title": "Brain-derived neurotrophic factor (BDNF)",
+            "nutrient_description": "<p>A critical growth factor found in brain to enhance nerve cell health, communication, synaptic transmission, and protection. Low BDNF has been identified in many neurodegenerative disease states.<\/p>"
+          }
+        },
+        "b8cd68c8-64cd-4f39-ac8b-2d84da534950": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/hormones.png?v=1620697854",
+            "title": "DHA\/EPA",
+            "nutrient_description": "<p>Essential omega-3 fatty acids found robustly beef (bovine) brain critical for focus as well as moderating inflammation associated with anxiousness, depressiveness, and other mood-related symptoms.<\/p>"
+          }
+        },
+        "7ac4ae32-6c02-48f6-9cea-f9fee3a75632": {
+          "type": "nutrient",
+          "settings": {
+            "nutrient_icon": "https:\/\/cdn.shopify.com\/s\/files\/1\/0317\/9898\/4835\/files\/icon-longevity.png?v=1617656604",
+            "title": "Pantothenic Acid (B5)",
+            "nutrient_description": "<p>A key vitamin required for the synthesis of coenzyme A (CoA). Beyond its role in cell metabolism, CoA contributes to the synthesis of cholesterol, amino acids, phospholipids, neurotransmitters, and steroid hormones.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b60f31ae-1ebd-45d5-ac2d-cc3ad179bb6b",
+        "830b2c7c-eab7-44d7-ad2f-0fbc3466e9db",
+        "4400b28c-d1f8-4fde-9629-ac3a5ee9e23f",
+        "e436ff32-3c4e-4bda-9602-24c3f5938185",
+        "470eac66-6a12-4443-8f81-48b63f281f38",
+        "dd803bf7-4f15-424e-a92b-6e5ca74d0a75",
+        "cb1c5c80-8693-4d49-b49a-79f1e62b45e2",
+        "8ea614e5-3b66-4014-a753-97eadfebcb02",
+        "45ecc1eb-9073-4922-80fd-38ca26126840",
+        "7f90615d-078c-4217-bfd4-88691d38eb3f",
+        "392be9c1-c10c-4983-8bb2-45898913ce77",
+        "33c62d15-0af8-461b-8e5c-ce53c74978d9",
+        "8d4318db-d539-4b5f-b1c8-a2cdfd9f3bec",
+        "7e1b959f-b96c-415d-a28c-ab137ddc0b1b",
+        "f44f51c9-1520-40cd-916f-c38212d3be83",
+        "82d18f0f-7513-4511-876a-7c31a906d4ff",
+        "d55f4385-2ac8-48a2-8693-237df3dd5c45",
+        "3ef88527-9b74-4b1f-9fb1-40a71d8fb35d",
+        "888a718b-06c6-4aac-8a2f-11dc2890573c",
+        "85b3bf05-ccc4-472b-9bcb-0e1971adddf6",
+        "61951a8d-5150-490a-8320-109efee86332",
+        "7aeffb24-c918-4ce8-ace0-5b4e39d1378b",
+        "fc1a2ec8-fd55-459f-b833-2cbbf5ba6588",
+        "b8cd68c8-64cd-4f39-ac8b-2d84da534950",
+        "7ac4ae32-6c02-48f6-9cea-f9fee3a75632"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/warrior-stack.webp",
+        "section_title": "POWERFUL NUTRIENTS",
+        "section_description": "<p>The combined power of Warrior, Whole Package, and Mood Memory & Brain includes vital and \u2028potent essential nutrients.<\/p>",
+        "nutrients_to_show": 4,
+        "nutrients_toggle_label": "See all",
+        "nutrients_toggle_label_hide": "Hide all"
+      }
+    },
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92": {
+      "type": "stacks-callout-quote",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/quote2_803f0f01-14dd-4d31-a264-fbbcf5a92d37.webp",
+        "quote": "After taking Warrior supplement I noticed a significant boost in my workouts. I am able to have a longer workout and with more energy...",
+        "author": "Dragan J.",
+        "author_title": "Verified Customer"
+      }
+    },
+    "eea55346-a86c-4541-b71b-025a444a41b6": {
+      "type": "minimal-pdp-selector",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/selector-products_ab7d9ec8-e39b-48ed-b94e-f9bf815428a5.webp"
+      }
+    },
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975": {
+      "type": "product-101",
+      "settings": {
+        "title": "HEART & SOIL 101",
+        "instructions": "<p>Take 6 capsules, once daily, of each supplement. If you’re new to taking organ supplements, start with 1-2 capsules of each daily for the first week before increasing by one capsule daily. Consistent long-term use provides the best results. <\/p>",
+        "benefits": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides, and Essential Fatty Acids for optimal benefits.<\/p>",
+        "quality": "<p>Rigorous third-party testing by independent labs during and after manufacturing. Quality and purity information can be provided upon request.<\/p>",
+        "dietary": "<p>100% additive, hormone, allergen, antibiotic, pesticide, and GMO-free. Freeze-dried. Pure nose-to-tail nourishment. <\/p>"
+      }
+    },
+    "b900e9cc-d623-4714-b778-12299998a7cd": {
+      "type": "section-faq",
+      "blocks": {
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5": {
+          "type": "faq",
+          "settings": {
+            "title": "Who should take the WARRIOR Stack?",
+            "answer": "<p>This stack is for individuals demanding an all-encompassing nutritional edge. If you're goal is to optimize your strength, energy, and recovery, then this stack is for you!<\/p>"
+          }
+        },
+        "837f8262-9dca-4dab-81ec-522d36ddfe35": {
+          "type": "faq",
+          "settings": {
+            "title": "What are the benefits of taking all three supplements together?",
+            "answer": "<p>The combination of products in this stack work synergistically to deliver a wide range of highly bioavailable Vitamins, Minerals, Peptides, and Essential Fatty Acids for optimal benefits.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "fcd09101-ab7e-45df-b6ea-2402e5f737e5",
+        "837f8262-9dca-4dab-81ec-522d36ddfe35"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356": {
+      "type": "v3-reviews",
+      "settings": {
+        "title": "CUSTOMER REVIEWS"
+      }
+    },
+    "why": {
+      "type": "v3-why",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "stacks-newsletter",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/newsletter-products_425d7572-d5f8-4bfb-96dd-14e32d6edcec.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "2b1d5c31-6ccd-4d13-99fd-9556c861456f",
+    "f831964f-d20b-465b-a97f-35ec2a2b059d",
+    "6d805cbc-5eb5-4958-bbef-9727ca0cf291",
+    "1e72d0af-9ac2-494a-b487-b78b7b4a2c20",
+    "fb1371bf-5d98-4206-adeb-aad30ccd61e0",
+    "079df1fb-c0e0-4c61-ad4c-7937c5ca9a92",
+    "eea55346-a86c-4541-b71b-025a444a41b6",
+    "dfaa915c-03b7-44f0-8ca9-d866c38b8975",
+    "b900e9cc-d623-4714-b778-12299998a7cd",
+    "3b8b3c9d-a30b-406e-b277-ef7c69851356",
+    "why",
+    "newsletter"
+  ]
+}

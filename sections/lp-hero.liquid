@@ -1,0 +1,76 @@
+{% comment %}
+-------------------------------------------------------------------------------
+LP Hero
+-------------------------------------------------------------------------------
+Usage
+{% section 'lp-hero' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign heroBackgroundImage = section.settings.background_image
+  assign heroBackgroundVideo = section.settings.background_video
+  assign heroProduct = section.settings.product
+  assign heroProductFeaturedImage = heroProduct.metafields.sf_cta_block.product_image
+  assign heroContent = section.settings.content
+%}
+
+<section class="rtnu-lp__hero">
+  {% if heroBackgroundVideo != blank %}
+    {{ heroBackgroundVideo | video_tag: autoplay: true, loop: true, controls: false, class: 'rtnu-lp__hero-bg' }}
+  {% else %}
+  {{ heroBackgroundImage | image_url: width: 2800 | image_tag: class: 'rtnu-lp__hero-bg' }}
+  {% endif %}
+
+  <div class="rtnu-wrapper">
+    <div class="rtnu-grid">
+      <div class="rtnu-grid__item">
+        <div class="rtnu-lp__hero-reviews-widget">
+          <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ heroProduct.id }}" data-product-sku="{{ heroProduct.handle }}" data-product-type="{{heroProduct.type}}" data-product-title="{{heroProduct.title}}" style="display: inline-block;">{{ heroProduct.metafields.stamped.badge }}</span>
+        </div>
+        {{ heroContent }}
+        <img src="{{ heroProductFeaturedImage }}" alt="{{ heroProduct.title }}" width="100" height="175" class="rtnu-lp__hero-product-image-mobile">
+        <a href="#buy-now" class="rtnu-btn">Buy now</a>
+      </div>
+      <div class="rtnu-grid__item">
+        <img src="{{ heroProductFeaturedImage }}" alt="{{ heroProduct.title }}" width="485" height="830" class="rtnu-lp__hero-product-image">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "LP Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "video",
+      "id": "background_video",
+      "label": "Background Video",
+      "info": "If you select a background video, the background image will be ignored."
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Select a product to get information from."
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content",
+      "info": "Use h1 for the heading."
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Hero"
+    }
+  ]
+}
+{% endschema %}

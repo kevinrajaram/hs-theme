@@ -1,0 +1,248 @@
+{
+  "layout": "paid-lp",
+  "sections": {
+    "header": {
+      "type": "lp-header",
+      "settings": {
+        "title": "Enhance Your Female Health.",
+        "button_url": "#",
+        "button_text": "Get Her Package",
+        "is_external": false
+      }
+    },
+    "main": {
+      "type": "lp-hero",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/hs-lp-hp-bg-image.webp",
+        "background_video": "shopify:\/\/files\/videos\/42277adb-2be2-408e-ba8b-f8542cf981b9.mp4",
+        "product": "her-package",
+        "content": "<h1>ENHANCE YOUR \u2028FEMALE  HEALTH \u2028WITH HER PACKAGE<\/h1><p>Beef organs are nutrient-dense and provide a wide array of essential vitamins and minerals. Our Her Package supplement is packed with vital nutrients and peptides to support hormonal balance, improve menstrual dysfunction, and increase fertility.<\/p>"
+      }
+    },
+    "42c1429c-ee63-4d5e-b8d2-ae57f8f1d039": {
+      "type": "lp-info-bar",
+      "blocks": {
+        "ffafe796-b740-4155-9c73-75d0aae5a2f5": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Grass-Fed & Finished"
+          }
+        },
+        "2e46e8fb-4c1b-411a-bdfb-805492afa5e2": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Hormone, Antibiotic, Pesticide, and GMO Free"
+          }
+        },
+        "701c3ddb-b256-4633-83d9-ae6eb634f39f": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Additive Free"
+          }
+        },
+        "9db6e645-2ca7-40d6-a75a-75c163489024": {
+          "type": "info-item",
+          "settings": {
+            "text": "Informed Sport Certified"
+          }
+        }
+      },
+      "block_order": [
+        "ffafe796-b740-4155-9c73-75d0aae5a2f5",
+        "2e46e8fb-4c1b-411a-bdfb-805492afa5e2",
+        "701c3ddb-b256-4633-83d9-ae6eb634f39f",
+        "9db6e645-2ca7-40d6-a75a-75c163489024"
+      ],
+      "settings": {
+      }
+    },
+    "363a1aa6-4ede-456c-afde-a767429f2c70": {
+      "type": "lp-organs",
+      "blocks": {
+        "7b35350c-caaf-4353-9b81-b0cd28cdb210": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Liver<\/strong> is one of the most nutrient-dense foods available. It is particularly rich in essential nutrients such as vitamins and minerals. Some of the key nutrients found in beef liver include vitamin A, vitamin B12, vitamin B6, iron, zinc, and folate.<\/p>"
+          }
+        },
+        "52ec945a-207e-4162-b021-e2dfd319fd3b": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Kidneys<\/strong> contain various B vitamins, including B12, riboflavin (B2), and niacin (B3), which play important roles in energy metabolism and overall health. They are also particularly rich in heme iron, which is easily absorbed by the body.<\/p>"
+          }
+        },
+        "2efb5b38-7761-4617-b1d4-70ac23bef135": {
+          "type": "organ_info",
+          "settings": {
+            "organ_info_desc": "<p><strong>Reproductive Organs (Ovary, Uterus and Fallopian Tubes)<\/strong> are a source of various nutrients, including vitamins (such as B vitamins like B12), and minerals (like zinc and selenium).<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7b35350c-caaf-4353-9b81-b0cd28cdb210",
+        "52ec945a-207e-4162-b021-e2dfd319fd3b",
+        "2efb5b38-7761-4617-b1d4-70ac23bef135"
+      ],
+      "settings": {
+        "content": "<h2>UNLOCK THE POWER OF ORGANS<\/h2><p>Beef organs are the most nutrient-dense and bioavailable foods on the planet. By incorporating these potent sources of essential nutrients into your diet, you can finally address lingering nutrient inadequacies and deficiencies, paving the way for a remarkable transformation in how you feel and function.<\/p>",
+        "organs_image": "shopify:\/\/shop_images\/hs-her-package-organs.webp",
+        "background_color": "#8f59a0",
+        "text_color": "#f7ecde",
+        "bullet_color": "#7e4489",
+        "bullet_color_active": "#ffffff"
+      }
+    },
+    "110cefad-19d4-4cbc-8800-6a0f1c132ee4": {
+      "type": "lp-benefits",
+      "settings": {
+        "product": "her-package",
+        "image": "shopify:\/\/shop_images\/hs-lp-her-package.webp",
+        "title": "Daily Benefits",
+        "button_text": "Buy Now",
+        "button_link": "#buy-now"
+      }
+    },
+    "b4d26ab3-4895-4da0-a8e4-23b357c9716c": {
+      "type": "lp-reviews",
+      "blocks": {
+        "028dcde3-782c-4030-9a4c-27206e0b77f8": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Life changing...<\/h3><p>“I have been taking the beef organs for about a year now. I started to notice changes after about 3 weeks of taking them. Energy went up big time and has stayed up, my gut health has improved, I am more mentally clear, I have less pain, increased stamina and overall better health all around. I ditched all my other synthetic vitamins. I am a costumer for life!”<\/p>",
+            "name": "Maria"
+          }
+        },
+        "a4030737-ee20-42b6-84fb-531463655271": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Beef Organs for the win...<\/h3><p>“I have been taking Beef Organs for the past year and I am more than happy. For years I was taking handfuls of vitamins and always felt fatigued and frustrated. These are the perfect multivitamin and they help with everything from my energy to my digestion. I always feel off when I don't take them so I know they are working!”<\/p>",
+            "name": "Emma"
+          }
+        },
+        "be28067b-7dda-41ad-97c9-2815101c923d": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>Good stuff...<\/h3><p>“I have noticed a difference in how I feel overall. More energy, strength and endurance during workouts. I stopped taking multivitamin since I started with Heart & Soil products... \u2028these are working well for me in workouts and daily life. \u2028I will continue to order.”<\/p>",
+            "name": "Travis"
+          }
+        },
+        "bcede21c-2a0e-4600-9e52-9f78ffe1d242": {
+          "type": "review",
+          "settings": {
+            "review": "<h3>This farmer loves Heart & Soil...<\/h3><p>“I love H&S Beef Organs. I'm a farmer who raises beef cattle but don't like the taste of organ meat, but know how good they are for you. So I love getting them through your supplements with great quality. My wife has even started taking them. Thanks Y'all!”<\/p>",
+            "name": "Jeffrey"
+          }
+        }
+      },
+      "block_order": [
+        "028dcde3-782c-4030-9a4c-27206e0b77f8",
+        "a4030737-ee20-42b6-84fb-531463655271",
+        "be28067b-7dda-41ad-97c9-2815101c923d",
+        "bcede21c-2a0e-4600-9e52-9f78ffe1d242"
+      ],
+      "settings": {
+        "title": "WHAT PEOPLE ARE SAYING..."
+      }
+    },
+    "fe8158b5-a755-458f-9624-910f105ed227": {
+      "type": "lp-product-101",
+      "blocks": {
+        "b6bbd8b4-7462-487e-baff-a304a1e90b78": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>Start Slowly for Best Results<\/strong><\/p><p>\u2028Start with one capsule every other day for two full weeks. Then increase by one capsule every two weeks. It’s important to introduce Her Package slowly, because the ingredients can have a powerful effect. Many women feel best taking just one capsule per day indefinitely. <a href=\"https:\/\/heartandsoil.co\/contact-us\/\" title=\"https:\/\/heartandsoil.co\/contact-us\/\">Ask us<\/a> if you need help!<\/p>"
+          }
+        },
+        "068d6d00-822f-4197-8bea-d7ae92031a7d": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>Daily Routine Made Easy<\/strong><\/p><p>\u2028Our freeze-drying process preserves key nutrients in a taste-free capsule that’s easy for anyone to take. Because it’s simply real food, it can be taken with or without a meal.<\/p>"
+          }
+        },
+        "6849c56c-1f28-437b-921f-a0a320a9caee": {
+          "type": "text",
+          "settings": {
+            "info": "<p><strong>Heart & Soil Standard\u2028<\/strong><\/p><p>Rigorous third-party testing and a 60-day satisfaction guarantee. No junk or fillers, sourced from regenerative farms, and free from pesticides, GMO and antibiotics.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "b6bbd8b4-7462-487e-baff-a304a1e90b78",
+        "068d6d00-822f-4197-8bea-d7ae92031a7d",
+        "6849c56c-1f28-437b-921f-a0a320a9caee"
+      ],
+      "settings": {
+        "section_heading": "HER PACKAGE 101<br> \u2028REAL FOOD. REAL RESULTS.",
+        "desktop_image": "shopify:\/\/shop_images\/hs-lp-hp-capsule_a94ed192-ee34-4cbe-998b-7e65df07cf48.webp",
+        "mobile_image": "shopify:\/\/shop_images\/hs-lp-product-pill_d422f227-18a1-499e-a9dd-22ba42f81833.webp"
+      }
+    },
+    "8359966d-26ad-4922-8a3b-180fa919d1c2": {
+      "type": "lp-cta-callout",
+      "settings": {
+        "background": "shopify:\/\/shop_images\/hs-lp-hp-callout-bg.webp",
+        "product": "her-package",
+        "button_text": "Get Her Package",
+        "button_url": "#buy-now"
+      }
+    },
+    "1e747be7-b9d8-48b2-8094-d85cc4c8f910": {
+      "type": "lp-health-experts",
+      "blocks": {
+        "16766dbb-9525-49a6-8e3e-6fd76dcda900": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_content": "<p>“With over two decades of experience in women’s healthcare I’ve had the privilege of witnessing the remarkable impact of nutrient-dense ancestral foods on fertility, healthy pregnancies, and in the postpartum period.”<\/p>",
+            "slider_item_name": "Lindsey Meehleis",
+            "slider_item_title": "MOTHER & TRADITIONAL MIDWIFE",
+            "slider_item_image": "shopify:\/\/shop_images\/hs-lp-lindsey.webp"
+          }
+        },
+        "cfa5dc38-8fe7-464c-8514-d67c08c6a967": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_content": "<p>“When you decide to nourish your body with the most nutrient-rich foods on the planet, you can begin to really thrive, find the energy you need to be there for your loved ones and excel at your daily responsibilities!”<\/p>",
+            "slider_item_name": "Bethany Hamilton",
+            "slider_item_title": "PRO SURFER, MOTIVATIONAL SPEAKER",
+            "slider_item_image": "shopify:\/\/shop_images\/hss-lp-bethany-hamilton.webp"
+          }
+        },
+        "0e60668b-c50b-4b65-8f12-e1936633f451": {
+          "type": "slider_item",
+          "settings": {
+            "slider_item_content": "<p>“Balance your hormones, improve your fertility, and lessen your menstrual irregularities or cramping. Ladies, Her Package \u2028is a gift to you!”<\/p>",
+            "slider_item_name": "Paul Saladino MD",
+            "slider_item_title": "BOARD CERTIFIED MD, HEART & SOIL FOUNDER",
+            "slider_item_image": "shopify:\/\/shop_images\/hs-lp-paul.webp"
+          }
+        }
+      },
+      "block_order": [
+        "16766dbb-9525-49a6-8e3e-6fd76dcda900",
+        "cfa5dc38-8fe7-464c-8514-d67c08c6a967",
+        "0e60668b-c50b-4b65-8f12-e1936633f451"
+      ],
+      "settings": {
+        "section_heading": "RECOMMENDED BY TOP HEALTH EXPERTS, ENTHUSIASTS, AND ATHLETES."
+      }
+    },
+    "2c7f8ae6-ddda-44b8-b666-993d1ab72b26": {
+      "type": "lp-product-selector",
+      "settings": {
+        "product": "her-package"
+      }
+    }
+  },
+  "order": [
+    "header",
+    "main",
+    "42c1429c-ee63-4d5e-b8d2-ae57f8f1d039",
+    "363a1aa6-4ede-456c-afde-a767429f2c70",
+    "110cefad-19d4-4cbc-8800-6a0f1c132ee4",
+    "b4d26ab3-4895-4da0-a8e4-23b357c9716c",
+    "fe8158b5-a755-458f-9624-910f105ed227",
+    "8359966d-26ad-4922-8a3b-180fa919d1c2",
+    "1e747be7-b9d8-48b2-8094-d85cc4c8f910",
+    "2c7f8ae6-ddda-44b8-b666-993d1ab72b26"
+  ]
+}

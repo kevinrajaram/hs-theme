@@ -1,0 +1,179 @@
+{
+  "layout": "nyny",
+  "sections": {
+    "header": {
+      "type": "nyny-header",
+      "settings": {
+        "title": "",
+        "button_url": "",
+        "button_text": "",
+        "is_external": false
+      }
+    },
+    "3701339b-52ba-4013-b94f-e2b491c56135": {
+      "type": "nyny-hero-2",
+      "settings": {
+      }
+    },
+    "37075075-8a78-4329-b1ca-f1f88f0beb55": {
+      "type": "lp-info-bar",
+      "blocks": {
+        "736a04b3-80f1-4327-ad29-fe32bbf505a4": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Grass-Fed & Finished"
+          }
+        },
+        "10ecca02-d1f7-4d19-9fda-399c98924ab4": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Hormone, Antibiotic, Pesticide, GMO Free"
+          }
+        },
+        "ea3b5001-6e0e-46c9-8763-7a5a1ddffa4f": {
+          "type": "info-item",
+          "settings": {
+            "text": "100% Additive Free"
+          }
+        },
+        "dd06a13d-20a0-421e-a3f1-d67ce9c4de22": {
+          "type": "info-item",
+          "settings": {
+            "text": "60-Day Money-Back Guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "736a04b3-80f1-4327-ad29-fe32bbf505a4",
+        "10ecca02-d1f7-4d19-9fda-399c98924ab4",
+        "ea3b5001-6e0e-46c9-8763-7a5a1ddffa4f",
+        "dd06a13d-20a0-421e-a3f1-d67ce9c4de22"
+      ],
+      "settings": {
+      }
+    },
+    "baf7c368-f816-4a2e-9774-92ea4a761c77": {
+      "type": "nyny-shop",
+      "settings": {
+        "title": "UNLOCK THE POWER OF ORGANS",
+        "description": "<p>Beef organs are the most nutrient-dense and bioavailable foods on the planet. By incorporating these potent sources of essential nutrients into your diet, you can finally address lingering nutrient inadequacies and deficiencies, paving the way for a remarkable transformation in how you feel and function.<\/p>",
+        "products": [
+          "beef-organs",
+          "whole-package",
+          "joint-strength-repair",
+          "grass-fed-colostrum",
+          "skin-hair-nails",
+          "bone-marrow-liver",
+          "warrior",
+          "bone-matrix",
+          "histamine-immune",
+          "mood-memory-brain",
+          "gut-digestion",
+          "lifeblood",
+          "her-package",
+          "fire-starter"
+        ],
+        "item_property": "ab30"
+      }
+    },
+    "d5673af2-0a25-4400-8207-503b56df2cdd": {
+      "type": "customer-trust",
+      "blocks": {
+        "c9a798f1-e14c-472c-8332-2a879bcd7979": {
+          "type": "quote",
+          "settings": {
+            "quote": "...dramatic improvement in my sleep which in turn has given me more energy throughout the day!",
+            "name": "Roderick",
+            "link_url": "shopify:\/\/products\/beef-organs",
+            "link_title": "Beef Organs"
+          }
+        },
+        "ea09ef7c-e3a4-4212-ad38-ad483af57ee4": {
+          "type": "quote",
+          "settings": {
+            "quote": "I felt an almost immediate change in energy and vitality. I’m definitely going to re-order!",
+            "name": "David",
+            "link_url": "shopify:\/\/products\/bone-marrow-liver",
+            "link_title": "Bone Marrow & Liver"
+          }
+        },
+        "31d53cb3-341e-448f-95ed-dfa9ff4a0bb4": {
+          "type": "quote",
+          "settings": {
+            "quote": "I have had more energy, sleeping better and my periods have been less painful!",
+            "name": "Gabrielle",
+            "link_url": "shopify:\/\/products\/her-package",
+            "link_title": "Her Package"
+          }
+        },
+        "4b6c1b44-58b2-4257-b838-15555460e673": {
+          "type": "quote",
+          "settings": {
+            "quote": "I am absolutely stunned by the results and am continuously in disbelief when I look in the mirror!",
+            "name": "Zoey",
+            "link_url": "shopify:\/\/products\/skin-hair-nails",
+            "link_title": "Skin, Hair & Nails"
+          }
+        },
+        "d1d61158-870d-4f3e-bc9d-9bd098c99de8": {
+          "type": "quote",
+          "settings": {
+            "quote": "Definitely noticed a boost in libido and drive early on... and I am feeling much more tenacious in the gym.",
+            "name": "Jonathan",
+            "link_url": "shopify:\/\/products\/whole-package",
+            "link_title": "Whole Package"
+          }
+        },
+        "b2574a07-e1bc-434c-bb8b-f9447e339ad1": {
+          "type": "quote",
+          "settings": {
+            "quote": "I've been able to work out again consistently since taking the supplements because my energy is up.",
+            "name": "Barbara",
+            "link_url": "shopify:\/\/products\/lifeblood",
+            "link_title": "Lifeblood"
+          }
+        }
+      },
+      "block_order": [
+        "c9a798f1-e14c-472c-8332-2a879bcd7979",
+        "ea09ef7c-e3a4-4212-ad38-ad483af57ee4",
+        "31d53cb3-341e-448f-95ed-dfa9ff4a0bb4",
+        "4b6c1b44-58b2-4257-b838-15555460e673",
+        "d1d61158-870d-4f3e-bc9d-9bd098c99de8",
+        "b2574a07-e1bc-434c-bb8b-f9447e339ad1"
+      ],
+      "settings": {
+      }
+    },
+    "2788e124-2117-4c0a-acc2-c7f25d200306": {
+      "type": "quality-nutrition",
+      "settings": {
+      }
+    },
+    "c07ed094-38a9-48f2-9afe-27c6b3e15f37": {
+      "type": "cta-callout-2",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/hs-firestarter-cta-bg.webp",
+        "background_image_mobile": "shopify:\/\/shop_images\/hs-firestarter-cta-bg-mobile.webp",
+        "title": "<p>Don’t miss this limited time offer for a <strong>FREE bottle of Firestarter<\/strong> with purchase!<\/p>",
+        "button_text": "Shop now",
+        "button_url": "#shop"
+      }
+    },
+    "fd9073c3-90f0-40a2-ae19-5b724886b723": {
+      "type": "moneyback-guarantee",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "header",
+    "3701339b-52ba-4013-b94f-e2b491c56135",
+    "37075075-8a78-4329-b1ca-f1f88f0beb55",
+    "baf7c368-f816-4a2e-9774-92ea4a761c77",
+    "d5673af2-0a25-4400-8207-503b56df2cdd",
+    "2788e124-2117-4c0a-acc2-c7f25d200306",
+    "c07ed094-38a9-48f2-9afe-27c6b3e15f37",
+    "fd9073c3-90f0-40a2-ae19-5b724886b723"
+  ]
+}

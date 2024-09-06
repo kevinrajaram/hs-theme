@@ -1,0 +1,53 @@
+<section class="wayfx-warrior__intro" style="--bg: url('{{ 'warrior-intro-bg.jpg' | asset_img_url: '2800x' }}')">
+  
+  <div class="wayfx-warrior__intro-mobile-bg">
+    <img loading="lazy" src="{{ 'warrior-intro-bg-mobile.jpg' | asset_img_url: '780x' }}" alt="Warrior" width="780">
+  </div>
+
+  <div class="wayfx-wrapper">
+    <div class="wayfx-warrior__intro-head">
+      <h2>Introducing <span><img loading="lazy" src="{{ 'gsp-logo.png' | asset_img_url: '134x' }}" alt="Georges St-Pierre" width="68" height="68"> Warrior</span></h2>
+      <p>NOT YOUR AVERAGE SUPPLEMENT</p>
+    </div>
+    <div class="wayfx-warrior__intro-content">
+      <ul>
+        <li>
+          <div class="icon">
+            <img loading="lazy" src="{{ 'warrior-energy-icon.png' | asset_img_url: '112x' }}" aria-hidden="true" width="56" height="56">
+          </div>
+          <div class="text">
+            <h3>All day Warrior energy</h3>
+            <p>Supports energy production at a cellular level, and is rich in the nutrients your body needs to generate energy when you need it most.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">
+            <img loading="lazy" src="{{ 'warrior-muscle-icon.png' | asset_img_url: '112x' }}" aria-hidden="true" width="56" height="56">
+          </div>
+          <div class="text">
+            <h3>Gain the strength of a warrior</h3>
+            <p>Rich in peptides and amino acids necessary for muscle growth to give you the strength of a Warrior.</p>
+          </div>
+        </li>
+        <li>
+          <div class="icon">
+            <img loading="lazy" src="{{ 'warrior-heart-icon.png' | asset_img_url: '112x' }}" aria-hidden="true" width="56" height="56">
+          </div>
+          <div class="text">
+            <h3>Recover to fight another day</h3>
+            <p>Essential nutrients that speed up recovery.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Warrior Intro",
+    "settings": [
+    
+    ]
+  }
+{% endschema %}

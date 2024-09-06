@@ -1,0 +1,1705 @@
+{%- assign title_to_remove = '10.00% Off Auto renew' -%}
+{%- assign total_products = 0 -%}
+{%- assign has_variants = false  -%}
+{%- capture recharge_products -%}
+    {%- for product in collections['all'].products -%}
+        {%- assign total_products = total_products | plus: 1 -%}
+        {%- assign product_title = product.title -%}
+        {%- assign product_description = product.description -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        {%- assign normal_price = current_variant.price -%}
+        {%- assign normal_variant_id = product.variants.first.id -%}
+        {%- assign subscription_variant_id = current_variant.id -%}
+        {%- assign subscription_id = product.metafields.subscriptions.subscription_id -%}
+        {%- assign subscription_price = current_variant.metafields.subscriptions.discount_variant_price | times: 100 -%}
+        {%- assign product_image = product | img_url: 'grande' -%}
+        {%- if subscription_variant_id and subscription_price > 0 -%}
+            <div class="wayfx-product__grid-item" id="wayfx-product-{{ normal_variant_id }}" data-qty="1" data-variant-id="{{ normal_variant_id }}">
+                <div class="wayfx-product__grid-image">
+                    <img src="{{ product_image }}" alt="{{ product.featured_image.alt | escape }}"/>
+                </div>
+                <div class="wayfx-product__grid-info">
+                    <div class="wayfx-product__grid-reviews">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="83" height="14" viewBox="0 0 83 14"><defs><path id="a" d="M0 0h82.833v14H0z"/></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#FF9023" fill-rule="nonzero" d="M7.87444233.29870242l1.59554581 4.62387762 4.98531756.05649475c.4289937.00488896.6065849.53995939.262502.79038321l-3.9996865 2.91382514 1.4856612 4.65864366c.1276437.4008954-.3368682.7311723-.6870559.4883536l-4.06683809-2.8231076-4.06739312 2.8225644c-.34963264.2428187-.81469956-.0880015-.68705589-.4883537l1.48566125-4.65864358L.18141418 5.76891478c-.34408292-.25042382-.16649174-.78549424.26250197-.79038321l4.98531755-.05649475L7.02477951.2981592c.13763317-.3976361.71258463-.3976361.84966282.00054322zm17.87906617 0l1.5955458 4.62387762 4.9853176.05649475c.4289937.00488896.6065849.53995939.262502.79038321l-3.9996865 2.91382514 1.4856613 4.65864366c.1276436.4008954-.3368683.7311723-.6870559.4883536l-4.0668382-2.8231076-4.0673931 2.8225644c-.3496326.2428187-.8146996-.0880015-.6870559-.4883537l1.4856613-4.65864358-3.9996865-2.91382514c-.3440829-.25042382-.1664917-.78549424.262502-.79038321l4.9853175-.05649475L24.9038457.2981592c.1376332-.3976361.7125846-.3976361.8496628.00054322zm18.6240273 0l1.5955458 4.62387762 4.9853176.05649475c.4289937.00488896.6065849.53995939.262502.79038321l-3.9996865 2.91382514 1.4856613 4.65864366c.1276436.4008954-.3368683.7311723-.6870559.4883536l-4.0668382-2.8231076-4.0673931 2.8225644c-.3496326.2428187-.8146996-.0880015-.6870559-.4883537l1.4856613-4.65864358-3.9996865-2.91382514c-.3440829-.25042382-.1664917-.78549424.262502-.79038321l4.9853175-.05649475L43.527873.2981592c.1376332-.3976361.7125846-.3976361.8496628.00054322zm17.8790662 0l1.5955459 4.62387762 4.9853175.05649475c.4289937.00488896.6065849.53995939.262502.79038321l-3.9996865 2.91382514 1.4856613 4.65864366c.1276436.4008954-.3368683.7311723-.6870559.4883536l-4.0668382-2.8231076-4.0673931 2.8225644c-.3496326.2428187-.8146996-.0880015-.6870559-.4883537l1.4856613-4.65864358-3.9996865-2.91382514c-.3440829-.25042382-.1664917-.78549424.262502-.79038321l4.9853175-.05649475L61.4069392.2981592c.1376332-.3976361.7125847-.3976361.8496628.00054322zm17.8790663 0l1.5955458 4.62387762 4.9853175.05649475c.4289937.00488896.6065849.53995939.262502.79038321l-3.9996865 2.91382514 1.4856613 4.65864366c.1276436.4008954-.3368683.7311723-.6870559.4883536l-4.0668382-2.8231076-4.0673931 2.8225644c-.3496326.2428187-.8146995-.0880015-.6870559-.4883537l1.4856613-4.65864358-3.9996865-2.91382514c-.3440829-.25042382-.1664917-.78549424.262502-.79038321l4.9853175-.05649475L79.2860054.2981592c.1376332-.3976361.7125847-.3976361.8496629.00054322z" mask="url(#b)"/></g></svg>
+                        <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" data-product-type="{{product.type}}" data-product-title="{{product.title}}" style="display: inline-block;">{{ product.metafields.stamped.badge }} Reviews</span>
+                    </div>
+                    <div class="wayfx-product__grid-title">{{ product_title }}</div>
+                    <div class="wayfx-product__grid-description">{{ product_description }}</div>
+                    {%- comment -%}
+                        {%- if product.variants.size > 1 -%}
+                            {%- assign has_variants = true -%}
+                            <div class="wayfx-product__variant">
+                                <div class="wfx-select-wrapper">
+                                    <select class="wayfx-product__grid-variants">
+                                        {%- for variant in product.variants -%}
+                                            <option value="{{ variant.id }}">{{ variant.title | escape }}</option>
+                                        {%- endfor -%}
+                                    </select>
+                                </div>
+                            </div>
+                        {%- endif -%}
+                    
+                    <div class="wayfx-product__grid-price">
+                        <span class="wayfx-product__grid-original-price">{{ normal_price | money_without_trailing_zeros }}</span>
+                        <span class="wayfx-product__grid-discount-price">{{ subscription_price | money_without_trailing_zeros }}</span>
+                    </div>
+                    {%- endcomment -%}
+                </div>
+                <div class="wayfx-product__grid-subscribe">
+                    <div class="wayfx-product__grid-price">
+                        <span class="wayfx-product__grid-original-price">{{ normal_price | money_without_trailing_zeros }}</span>
+                        <span class="wayfx-product__grid-discount-price">{{ subscription_price | money_without_trailing_zeros }}</span>
+                    </div>
+                    <div class="wayfx-product__grid-qty">
+                        <div onClick="minusQty(this, '#wayfx-product-{{ normal_variant_id }}')" class="wayfx-btn wayfx-btn--secondary wayfx-btn--outline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 3"><path d="M5.48 2.06H0V0h5.48z" fill="inherit" fill-rule="nonzero"/></svg>
+                        </div>
+                        <input class="qtyTotal" type="number" name="quantity" min="1" value="1" />
+                        <div onClick="addQty(this, '#wayfx-product-{{ normal_variant_id }}')" class="wayfx-btn wayfx-btn--secondary wayfx-btn--outline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 11"><path d="M6.02 0v3.98h4v2.04h-4v4H3.98v-4H0V3.98h3.98V0z" fill="inherit" fill-rule="nonzero"/></svg>
+                        </div>
+                    </div>
+                    <div class="wayfx-product__grid-add-single" style="display: none;">
+                        <button onClick="addNewProduct('subscription', '#wayfx-product-{{ normal_variant_id }}')">Add to order</button>
+                    </div>
+                    <div class="wayfx-product__grid-add-options" style="display: none;">
+                        <strong>Add to order</strong>
+                        <div class="wayfx-product__grid-add-dropdown" style="display: none;">
+                            <ul>
+                                <li class="wfx-add-product-onetime-btn" onClick="addNewProduct('one-time', '#wayfx-product-{{ normal_variant_id }}')">One time - {{ normal_price | money_without_trailing_zeros }}</li>
+                                <li class="wfx-add-product-btn" style="display: flex; align-items: center; justify-content: space-between;" onClick="addNewProduct('subscription', '#wayfx-product-{{ normal_variant_id }}')">
+                                    <strong>Monthly - {{ subscription_price | money_without_trailing_zeros }}</strong>
+                                    <span>RECOMMENDED</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {%- endif -%}
+    {%- endfor -%}
+{%- endcapture -%}
+
+{%- capture swap_products -%}
+    {%- for product in collections['all'].products -%}
+        {%- assign product_title = product.title -%}
+        {%- assign current_variant = product.selected_or_first_available_variant -%}
+        {%- assign normal_price = current_variant.price | money_without_trailing_zeros -%}
+        {%- assign normal_variant_id = product.variants.first.id -%}
+        {%- assign subscription_variant_id = current_variant.id -%}
+        {%- assign subscription_id = product.metafields.subscriptions.subscription_id -%}
+        {%- assign product_image = product | img_url: 'grande' -%}
+        {%- assign subscription_price = current_variant.metafields.subscriptions.discount_variant_price | times: 100 -%}
+        {%- if subscription_variant_id and subscription_price > 0 -%}
+            <div class="wayfx-product__swap-item">
+                <div class="wayfx-product__swap-image">
+                    <img src="{{ product_image }}" alt="{{ product.featured_image.alt | escape }}"/>
+                </div>
+                <div class="wayfx-product__swap-info">
+                    <div class="wayfx-product__swap-title">{{ product_title }}</div>
+                    <div class="wayfx-product__swap-price">
+                        <span class="wayfx-product__swap-discount-price">{{ subscription_price | money }}</span>
+                    </div>
+                </div>
+                <button onClick="swapProduct(this)" class="wayfx-btn wayfx-btn--primary" data-variant-id="{{ normal_variant_id }}">Swap</button>
+            </div>
+        {%- endif -%}
+    {%- endfor -%}
+{%- endcapture -%}
+
+{%- capture product_images -%}
+    {%- for product in collections['all'].products -%}{%- for variant in product.variants -%}"{{ variant.id }}": "{{ product.featured_image.src | img_url: '400x400' }}",{%- endfor -%}{%- if forloop.last -%}"wayfx": "images"{%- endif -%}{%- endfor -%}
+{%- endcapture -%}
+
+<script src="//code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script>
+    // Moment JS
+    !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):e.moment=t()}(this,function(){"use strict";var e,i;function c(){return e.apply(null,arguments)}function o(e){return e instanceof Array||"[object Array]"===Object.prototype.toString.call(e)}function u(e){return null!=e&&"[object Object]"===Object.prototype.toString.call(e)}function l(e){return void 0===e}function h(e){return"number"==typeof e||"[object Number]"===Object.prototype.toString.call(e)}function d(e){return e instanceof Date||"[object Date]"===Object.prototype.toString.call(e)}function f(e,t){var n,s=[];for(n=0;n<e.length;++n)s.push(t(e[n],n));return s}function m(e,t){return Object.prototype.hasOwnProperty.call(e,t)}function _(e,t){for(var n in t)m(t,n)&&(e[n]=t[n]);return m(t,"toString")&&(e.toString=t.toString),m(t,"valueOf")&&(e.valueOf=t.valueOf),e}function y(e,t,n,s){return Tt(e,t,n,s,!0).utc()}function g(e){return null==e._pf&&(e._pf={empty:!1,unusedTokens:[],unusedInput:[],overflow:-2,charsLeftOver:0,nullInput:!1,invalidMonth:null,invalidFormat:!1,userInvalidated:!1,iso:!1,parsedDateParts:[],meridiem:null,rfc2822:!1,weekdayMismatch:!1}),e._pf}function v(e){if(null==e._isValid){var t=g(e),n=i.call(t.parsedDateParts,function(e){return null!=e}),s=!isNaN(e._d.getTime())&&t.overflow<0&&!t.empty&&!t.invalidMonth&&!t.invalidWeekday&&!t.weekdayMismatch&&!t.nullInput&&!t.invalidFormat&&!t.userInvalidated&&(!t.meridiem||t.meridiem&&n);if(e._strict&&(s=s&&0===t.charsLeftOver&&0===t.unusedTokens.length&&void 0===t.bigHour),null!=Object.isFrozen&&Object.isFrozen(e))return s;e._isValid=s}return e._isValid}function p(e){var t=y(NaN);return null!=e?_(g(t),e):g(t).userInvalidated=!0,t}i=Array.prototype.some?Array.prototype.some:function(e){for(var t=Object(this),n=t.length>>>0,s=0;s<n;s++)if(s in t&&e.call(this,t[s],s,t))return!0;return!1};var r=c.momentProperties=[];function w(e,t){var n,s,i;if(l(t._isAMomentObject)||(e._isAMomentObject=t._isAMomentObject),l(t._i)||(e._i=t._i),l(t._f)||(e._f=t._f),l(t._l)||(e._l=t._l),l(t._strict)||(e._strict=t._strict),l(t._tzm)||(e._tzm=t._tzm),l(t._isUTC)||(e._isUTC=t._isUTC),l(t._offset)||(e._offset=t._offset),l(t._pf)||(e._pf=g(t)),l(t._locale)||(e._locale=t._locale),0<r.length)for(n=0;n<r.length;n++)l(i=t[s=r[n]])||(e[s]=i);return e}var t=!1;function M(e){w(this,e),this._d=new Date(null!=e._d?e._d.getTime():NaN),this.isValid()||(this._d=new Date(NaN)),!1===t&&(t=!0,c.updateOffset(this),t=!1)}function k(e){return e instanceof M||null!=e&&null!=e._isAMomentObject}function S(e){return e<0?Math.ceil(e)||0:Math.floor(e)}function D(e){var t=+e,n=0;return 0!==t&&isFinite(t)&&(n=S(t)),n}function a(e,t,n){var s,i=Math.min(e.length,t.length),r=Math.abs(e.length-t.length),a=0;for(s=0;s<i;s++)(n&&e[s]!==t[s]||!n&&D(e[s])!==D(t[s]))&&a++;return a+r}function Y(e){!1===c.suppressDeprecationWarnings&&"undefined"!=typeof console&&console.warn&&console.warn("Deprecation warning: "+e)}function n(i,r){var a=!0;return _(function(){if(null!=c.deprecationHandler&&c.deprecationHandler(null,i),a){for(var e,t=[],n=0;n<arguments.length;n++){if(e="","object"==typeof arguments[n]){for(var s in e+="\n["+n+"] ",arguments[0])e+=s+": "+arguments[0][s]+", ";e=e.slice(0,-2)}else e=arguments[n];t.push(e)}Y(i+"\nArguments: "+Array.prototype.slice.call(t).join("")+"\n"+(new Error).stack),a=!1}return r.apply(this,arguments)},r)}var s,O={};function T(e,t){null!=c.deprecationHandler&&c.deprecationHandler(e,t),O[e]||(Y(t),O[e]=!0)}function b(e){return e instanceof Function||"[object Function]"===Object.prototype.toString.call(e)}function x(e,t){var n,s=_({},e);for(n in t)m(t,n)&&(u(e[n])&&u(t[n])?(s[n]={},_(s[n],e[n]),_(s[n],t[n])):null!=t[n]?s[n]=t[n]:delete s[n]);for(n in e)m(e,n)&&!m(t,n)&&u(e[n])&&(s[n]=_({},s[n]));return s}function P(e){null!=e&&this.set(e)}c.suppressDeprecationWarnings=!1,c.deprecationHandler=null,s=Object.keys?Object.keys:function(e){var t,n=[];for(t in e)m(e,t)&&n.push(t);return n};var W={};function C(e,t){var n=e.toLowerCase();W[n]=W[n+"s"]=W[t]=e}function H(e){return"string"==typeof e?W[e]||W[e.toLowerCase()]:void 0}function R(e){var t,n,s={};for(n in e)m(e,n)&&(t=H(n))&&(s[t]=e[n]);return s}var U={};function F(e,t){U[e]=t}function L(e,t,n){var s=""+Math.abs(e),i=t-s.length;return(0<=e?n?"+":"":"-")+Math.pow(10,Math.max(0,i)).toString().substr(1)+s}var N=/(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g,G=/(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g,V={},E={};function I(e,t,n,s){var i=s;"string"==typeof s&&(i=function(){return this[s]()}),e&&(E[e]=i),t&&(E[t[0]]=function(){return L(i.apply(this,arguments),t[1],t[2])}),n&&(E[n]=function(){return this.localeData().ordinal(i.apply(this,arguments),e)})}function A(e,t){return e.isValid()?(t=j(t,e.localeData()),V[t]=V[t]||function(s){var e,i,t,r=s.match(N);for(e=0,i=r.length;e<i;e++)E[r[e]]?r[e]=E[r[e]]:r[e]=(t=r[e]).match(/\[[\s\S]/)?t.replace(/^\[|\]$/g,""):t.replace(/\\/g,"");return function(e){var t,n="";for(t=0;t<i;t++)n+=b(r[t])?r[t].call(e,s):r[t];return n}}(t),V[t](e)):e.localeData().invalidDate()}function j(e,t){var n=5;function s(e){return t.longDateFormat(e)||e}for(G.lastIndex=0;0<=n&&G.test(e);)e=e.replace(G,s),G.lastIndex=0,n-=1;return e}var Z=/\d/,z=/\d\d/,$=/\d{3}/,q=/\d{4}/,J=/[+-]?\d{6}/,B=/\d\d?/,Q=/\d\d\d\d?/,X=/\d\d\d\d\d\d?/,K=/\d{1,3}/,ee=/\d{1,4}/,te=/[+-]?\d{1,6}/,ne=/\d+/,se=/[+-]?\d+/,ie=/Z|[+-]\d\d:?\d\d/gi,re=/Z|[+-]\d\d(?::?\d\d)?/gi,ae=/[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i,oe={};function ue(e,n,s){oe[e]=b(n)?n:function(e,t){return e&&s?s:n}}function le(e,t){return m(oe,e)?oe[e](t._strict,t._locale):new RegExp(he(e.replace("\\","").replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g,function(e,t,n,s,i){return t||n||s||i})))}function he(e){return e.replace(/[-\/\\^$*+?.()|[\]{}]/g,"\\$&")}var de={};function ce(e,n){var t,s=n;for("string"==typeof e&&(e=[e]),h(n)&&(s=function(e,t){t[n]=D(e)}),t=0;t<e.length;t++)de[e[t]]=s}function fe(e,i){ce(e,function(e,t,n,s){n._w=n._w||{},i(e,n._w,n,s)})}var me=0,_e=1,ye=2,ge=3,ve=4,pe=5,we=6,Me=7,ke=8;function Se(e){return De(e)?366:365}function De(e){return e%4==0&&e%100!=0||e%400==0}I("Y",0,0,function(){var e=this.year();return e<=9999?""+e:"+"+e}),I(0,["YY",2],0,function(){return this.year()%100}),I(0,["YYYY",4],0,"year"),I(0,["YYYYY",5],0,"year"),I(0,["YYYYYY",6,!0],0,"year"),C("year","y"),F("year",1),ue("Y",se),ue("YY",B,z),ue("YYYY",ee,q),ue("YYYYY",te,J),ue("YYYYYY",te,J),ce(["YYYYY","YYYYYY"],me),ce("YYYY",function(e,t){t[me]=2===e.length?c.parseTwoDigitYear(e):D(e)}),ce("YY",function(e,t){t[me]=c.parseTwoDigitYear(e)}),ce("Y",function(e,t){t[me]=parseInt(e,10)}),c.parseTwoDigitYear=function(e){return D(e)+(68<D(e)?1900:2e3)};var Ye,Oe=Te("FullYear",!0);function Te(t,n){return function(e){return null!=e?(xe(this,t,e),c.updateOffset(this,n),this):be(this,t)}}function be(e,t){return e.isValid()?e._d["get"+(e._isUTC?"UTC":"")+t]():NaN}function xe(e,t,n){e.isValid()&&!isNaN(n)&&("FullYear"===t&&De(e.year())&&1===e.month()&&29===e.date()?e._d["set"+(e._isUTC?"UTC":"")+t](n,e.month(),Pe(n,e.month())):e._d["set"+(e._isUTC?"UTC":"")+t](n))}function Pe(e,t){if(isNaN(e)||isNaN(t))return NaN;var n,s=(t%(n=12)+n)%n;return e+=(t-s)/12,1===s?De(e)?29:28:31-s%7%2}Ye=Array.prototype.indexOf?Array.prototype.indexOf:function(e){var t;for(t=0;t<this.length;++t)if(this[t]===e)return t;return-1},I("M",["MM",2],"Mo",function(){return this.month()+1}),I("MMM",0,0,function(e){return this.localeData().monthsShort(this,e)}),I("MMMM",0,0,function(e){return this.localeData().months(this,e)}),C("month","M"),F("month",8),ue("M",B),ue("MM",B,z),ue("MMM",function(e,t){return t.monthsShortRegex(e)}),ue("MMMM",function(e,t){return t.monthsRegex(e)}),ce(["M","MM"],function(e,t){t[_e]=D(e)-1}),ce(["MMM","MMMM"],function(e,t,n,s){var i=n._locale.monthsParse(e,s,n._strict);null!=i?t[_e]=i:g(n).invalidMonth=e});var We=/D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/,Ce="January_February_March_April_May_June_July_August_September_October_November_December".split("_");var He="Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_");function Re(e,t){var n;if(!e.isValid())return e;if("string"==typeof t)if(/^\d+$/.test(t))t=D(t);else if(!h(t=e.localeData().monthsParse(t)))return e;return n=Math.min(e.date(),Pe(e.year(),t)),e._d["set"+(e._isUTC?"UTC":"")+"Month"](t,n),e}function Ue(e){return null!=e?(Re(this,e),c.updateOffset(this,!0),this):be(this,"Month")}var Fe=ae;var Le=ae;function Ne(){function e(e,t){return t.length-e.length}var t,n,s=[],i=[],r=[];for(t=0;t<12;t++)n=y([2e3,t]),s.push(this.monthsShort(n,"")),i.push(this.months(n,"")),r.push(this.months(n,"")),r.push(this.monthsShort(n,""));for(s.sort(e),i.sort(e),r.sort(e),t=0;t<12;t++)s[t]=he(s[t]),i[t]=he(i[t]);for(t=0;t<24;t++)r[t]=he(r[t]);this._monthsRegex=new RegExp("^("+r.join("|")+")","i"),this._monthsShortRegex=this._monthsRegex,this._monthsStrictRegex=new RegExp("^("+i.join("|")+")","i"),this._monthsShortStrictRegex=new RegExp("^("+s.join("|")+")","i")}function Ge(e){var t;if(e<100&&0<=e){var n=Array.prototype.slice.call(arguments);n[0]=e+400,t=new Date(Date.UTC.apply(null,n)),isFinite(t.getUTCFullYear())&&t.setUTCFullYear(e)}else t=new Date(Date.UTC.apply(null,arguments));return t}function Ve(e,t,n){var s=7+t-n;return-((7+Ge(e,0,s).getUTCDay()-t)%7)+s-1}function Ee(e,t,n,s,i){var r,a,o=1+7*(t-1)+(7+n-s)%7+Ve(e,s,i);return a=o<=0?Se(r=e-1)+o:o>Se(e)?(r=e+1,o-Se(e)):(r=e,o),{year:r,dayOfYear:a}}function Ie(e,t,n){var s,i,r=Ve(e.year(),t,n),a=Math.floor((e.dayOfYear()-r-1)/7)+1;return a<1?s=a+Ae(i=e.year()-1,t,n):a>Ae(e.year(),t,n)?(s=a-Ae(e.year(),t,n),i=e.year()+1):(i=e.year(),s=a),{week:s,year:i}}function Ae(e,t,n){var s=Ve(e,t,n),i=Ve(e+1,t,n);return(Se(e)-s+i)/7}I("w",["ww",2],"wo","week"),I("W",["WW",2],"Wo","isoWeek"),C("week","w"),C("isoWeek","W"),F("week",5),F("isoWeek",5),ue("w",B),ue("ww",B,z),ue("W",B),ue("WW",B,z),fe(["w","ww","W","WW"],function(e,t,n,s){t[s.substr(0,1)]=D(e)});function je(e,t){return e.slice(t,7).concat(e.slice(0,t))}I("d",0,"do","day"),I("dd",0,0,function(e){return this.localeData().weekdaysMin(this,e)}),I("ddd",0,0,function(e){return this.localeData().weekdaysShort(this,e)}),I("dddd",0,0,function(e){return this.localeData().weekdays(this,e)}),I("e",0,0,"weekday"),I("E",0,0,"isoWeekday"),C("day","d"),C("weekday","e"),C("isoWeekday","E"),F("day",11),F("weekday",11),F("isoWeekday",11),ue("d",B),ue("e",B),ue("E",B),ue("dd",function(e,t){return t.weekdaysMinRegex(e)}),ue("ddd",function(e,t){return t.weekdaysShortRegex(e)}),ue("dddd",function(e,t){return t.weekdaysRegex(e)}),fe(["dd","ddd","dddd"],function(e,t,n,s){var i=n._locale.weekdaysParse(e,s,n._strict);null!=i?t.d=i:g(n).invalidWeekday=e}),fe(["d","e","E"],function(e,t,n,s){t[s]=D(e)});var Ze="Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_");var ze="Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_");var $e="Su_Mo_Tu_We_Th_Fr_Sa".split("_");var qe=ae;var Je=ae;var Be=ae;function Qe(){function e(e,t){return t.length-e.length}var t,n,s,i,r,a=[],o=[],u=[],l=[];for(t=0;t<7;t++)n=y([2e3,1]).day(t),s=this.weekdaysMin(n,""),i=this.weekdaysShort(n,""),r=this.weekdays(n,""),a.push(s),o.push(i),u.push(r),l.push(s),l.push(i),l.push(r);for(a.sort(e),o.sort(e),u.sort(e),l.sort(e),t=0;t<7;t++)o[t]=he(o[t]),u[t]=he(u[t]),l[t]=he(l[t]);this._weekdaysRegex=new RegExp("^("+l.join("|")+")","i"),this._weekdaysShortRegex=this._weekdaysRegex,this._weekdaysMinRegex=this._weekdaysRegex,this._weekdaysStrictRegex=new RegExp("^("+u.join("|")+")","i"),this._weekdaysShortStrictRegex=new RegExp("^("+o.join("|")+")","i"),this._weekdaysMinStrictRegex=new RegExp("^("+a.join("|")+")","i")}function Xe(){return this.hours()%12||12}function Ke(e,t){I(e,0,0,function(){return this.localeData().meridiem(this.hours(),this.minutes(),t)})}function et(e,t){return t._meridiemParse}I("H",["HH",2],0,"hour"),I("h",["hh",2],0,Xe),I("k",["kk",2],0,function(){return this.hours()||24}),I("hmm",0,0,function(){return""+Xe.apply(this)+L(this.minutes(),2)}),I("hmmss",0,0,function(){return""+Xe.apply(this)+L(this.minutes(),2)+L(this.seconds(),2)}),I("Hmm",0,0,function(){return""+this.hours()+L(this.minutes(),2)}),I("Hmmss",0,0,function(){return""+this.hours()+L(this.minutes(),2)+L(this.seconds(),2)}),Ke("a",!0),Ke("A",!1),C("hour","h"),F("hour",13),ue("a",et),ue("A",et),ue("H",B),ue("h",B),ue("k",B),ue("HH",B,z),ue("hh",B,z),ue("kk",B,z),ue("hmm",Q),ue("hmmss",X),ue("Hmm",Q),ue("Hmmss",X),ce(["H","HH"],ge),ce(["k","kk"],function(e,t,n){var s=D(e);t[ge]=24===s?0:s}),ce(["a","A"],function(e,t,n){n._isPm=n._locale.isPM(e),n._meridiem=e}),ce(["h","hh"],function(e,t,n){t[ge]=D(e),g(n).bigHour=!0}),ce("hmm",function(e,t,n){var s=e.length-2;t[ge]=D(e.substr(0,s)),t[ve]=D(e.substr(s)),g(n).bigHour=!0}),ce("hmmss",function(e,t,n){var s=e.length-4,i=e.length-2;t[ge]=D(e.substr(0,s)),t[ve]=D(e.substr(s,2)),t[pe]=D(e.substr(i)),g(n).bigHour=!0}),ce("Hmm",function(e,t,n){var s=e.length-2;t[ge]=D(e.substr(0,s)),t[ve]=D(e.substr(s))}),ce("Hmmss",function(e,t,n){var s=e.length-4,i=e.length-2;t[ge]=D(e.substr(0,s)),t[ve]=D(e.substr(s,2)),t[pe]=D(e.substr(i))});var tt,nt=Te("Hours",!0),st={calendar:{sameDay:"[Today at] LT",nextDay:"[Tomorrow at] LT",nextWeek:"dddd [at] LT",lastDay:"[Yesterday at] LT",lastWeek:"[Last] dddd [at] LT",sameElse:"L"},longDateFormat:{LTS:"h:mm:ss A",LT:"h:mm A",L:"MM/DD/YYYY",LL:"MMMM D, YYYY",LLL:"MMMM D, YYYY h:mm A",LLLL:"dddd, MMMM D, YYYY h:mm A"},invalidDate:"Invalid date",ordinal:"%d",dayOfMonthOrdinalParse:/\d{1,2}/,relativeTime:{future:"in %s",past:"%s ago",s:"a few seconds",ss:"%d seconds",m:"a minute",mm:"%d minutes",h:"an hour",hh:"%d hours",d:"a day",dd:"%d days",M:"a month",MM:"%d months",y:"a year",yy:"%d years"},months:Ce,monthsShort:He,week:{dow:0,doy:6},weekdays:Ze,weekdaysMin:$e,weekdaysShort:ze,meridiemParse:/[ap]\.?m?\.?/i},it={},rt={};function at(e){return e?e.toLowerCase().replace("_","-"):e}function ot(e){var t=null;if(!it[e]&&"undefined"!=typeof module&&module&&module.exports)try{t=tt._abbr,require("./locale/"+e),ut(t)}catch(e){}return it[e]}function ut(e,t){var n;return e&&((n=l(t)?ht(e):lt(e,t))?tt=n:"undefined"!=typeof console&&console.warn&&console.warn("Locale "+e+" not found. Did you forget to load it?")),tt._abbr}function lt(e,t){if(null===t)return delete it[e],null;var n,s=st;if(t.abbr=e,null!=it[e])T("defineLocaleOverride","use moment.updateLocale(localeName, config) to change an existing locale. moment.defineLocale(localeName, config) should only be used for creating a new locale See http://momentjs.com/guides/#/warnings/define-locale/ for more info."),s=it[e]._config;else if(null!=t.parentLocale)if(null!=it[t.parentLocale])s=it[t.parentLocale]._config;else{if(null==(n=ot(t.parentLocale)))return rt[t.parentLocale]||(rt[t.parentLocale]=[]),rt[t.parentLocale].push({name:e,config:t}),null;s=n._config}return it[e]=new P(x(s,t)),rt[e]&&rt[e].forEach(function(e){lt(e.name,e.config)}),ut(e),it[e]}function ht(e){var t;if(e&&e._locale&&e._locale._abbr&&(e=e._locale._abbr),!e)return tt;if(!o(e)){if(t=ot(e))return t;e=[e]}return function(e){for(var t,n,s,i,r=0;r<e.length;){for(t=(i=at(e[r]).split("-")).length,n=(n=at(e[r+1]))?n.split("-"):null;0<t;){if(s=ot(i.slice(0,t).join("-")))return s;if(n&&n.length>=t&&a(i,n,!0)>=t-1)break;t--}r++}return tt}(e)}function dt(e){var t,n=e._a;return n&&-2===g(e).overflow&&(t=n[_e]<0||11<n[_e]?_e:n[ye]<1||n[ye]>Pe(n[me],n[_e])?ye:n[ge]<0||24<n[ge]||24===n[ge]&&(0!==n[ve]||0!==n[pe]||0!==n[we])?ge:n[ve]<0||59<n[ve]?ve:n[pe]<0||59<n[pe]?pe:n[we]<0||999<n[we]?we:-1,g(e)._overflowDayOfYear&&(t<me||ye<t)&&(t=ye),g(e)._overflowWeeks&&-1===t&&(t=Me),g(e)._overflowWeekday&&-1===t&&(t=ke),g(e).overflow=t),e}function ct(e,t,n){return null!=e?e:null!=t?t:n}function ft(e){var t,n,s,i,r,a=[];if(!e._d){var o,u;for(o=e,u=new Date(c.now()),s=o._useUTC?[u.getUTCFullYear(),u.getUTCMonth(),u.getUTCDate()]:[u.getFullYear(),u.getMonth(),u.getDate()],e._w&&null==e._a[ye]&&null==e._a[_e]&&function(e){var t,n,s,i,r,a,o,u;if(null!=(t=e._w).GG||null!=t.W||null!=t.E)r=1,a=4,n=ct(t.GG,e._a[me],Ie(bt(),1,4).year),s=ct(t.W,1),((i=ct(t.E,1))<1||7<i)&&(u=!0);else{r=e._locale._week.dow,a=e._locale._week.doy;var l=Ie(bt(),r,a);n=ct(t.gg,e._a[me],l.year),s=ct(t.w,l.week),null!=t.d?((i=t.d)<0||6<i)&&(u=!0):null!=t.e?(i=t.e+r,(t.e<0||6<t.e)&&(u=!0)):i=r}s<1||s>Ae(n,r,a)?g(e)._overflowWeeks=!0:null!=u?g(e)._overflowWeekday=!0:(o=Ee(n,s,i,r,a),e._a[me]=o.year,e._dayOfYear=o.dayOfYear)}(e),null!=e._dayOfYear&&(r=ct(e._a[me],s[me]),(e._dayOfYear>Se(r)||0===e._dayOfYear)&&(g(e)._overflowDayOfYear=!0),n=Ge(r,0,e._dayOfYear),e._a[_e]=n.getUTCMonth(),e._a[ye]=n.getUTCDate()),t=0;t<3&&null==e._a[t];++t)e._a[t]=a[t]=s[t];for(;t<7;t++)e._a[t]=a[t]=null==e._a[t]?2===t?1:0:e._a[t];24===e._a[ge]&&0===e._a[ve]&&0===e._a[pe]&&0===e._a[we]&&(e._nextDay=!0,e._a[ge]=0),e._d=(e._useUTC?Ge:function(e,t,n,s,i,r,a){var o;return e<100&&0<=e?(o=new Date(e+400,t,n,s,i,r,a),isFinite(o.getFullYear())&&o.setFullYear(e)):o=new Date(e,t,n,s,i,r,a),o}).apply(null,a),i=e._useUTC?e._d.getUTCDay():e._d.getDay(),null!=e._tzm&&e._d.setUTCMinutes(e._d.getUTCMinutes()-e._tzm),e._nextDay&&(e._a[ge]=24),e._w&&void 0!==e._w.d&&e._w.d!==i&&(g(e).weekdayMismatch=!0)}}var mt=/^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/,_t=/^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/,yt=/Z|[+-]\d\d(?::?\d\d)?/,gt=[["YYYYYY-MM-DD",/[+-]\d{6}-\d\d-\d\d/],["YYYY-MM-DD",/\d{4}-\d\d-\d\d/],["GGGG-[W]WW-E",/\d{4}-W\d\d-\d/],["GGGG-[W]WW",/\d{4}-W\d\d/,!1],["YYYY-DDD",/\d{4}-\d{3}/],["YYYY-MM",/\d{4}-\d\d/,!1],["YYYYYYMMDD",/[+-]\d{10}/],["YYYYMMDD",/\d{8}/],["GGGG[W]WWE",/\d{4}W\d{3}/],["GGGG[W]WW",/\d{4}W\d{2}/,!1],["YYYYDDD",/\d{7}/]],vt=[["HH:mm:ss.SSSS",/\d\d:\d\d:\d\d\.\d+/],["HH:mm:ss,SSSS",/\d\d:\d\d:\d\d,\d+/],["HH:mm:ss",/\d\d:\d\d:\d\d/],["HH:mm",/\d\d:\d\d/],["HHmmss.SSSS",/\d\d\d\d\d\d\.\d+/],["HHmmss,SSSS",/\d\d\d\d\d\d,\d+/],["HHmmss",/\d\d\d\d\d\d/],["HHmm",/\d\d\d\d/],["HH",/\d\d/]],pt=/^\/?Date\((\-?\d+)/i;function wt(e){var t,n,s,i,r,a,o=e._i,u=mt.exec(o)||_t.exec(o);if(u){for(g(e).iso=!0,t=0,n=gt.length;t<n;t++)if(gt[t][1].exec(u[1])){i=gt[t][0],s=!1!==gt[t][2];break}if(null==i)return void(e._isValid=!1);if(u[3]){for(t=0,n=vt.length;t<n;t++)if(vt[t][1].exec(u[3])){r=(u[2]||" ")+vt[t][0];break}if(null==r)return void(e._isValid=!1)}if(!s&&null!=r)return void(e._isValid=!1);if(u[4]){if(!yt.exec(u[4]))return void(e._isValid=!1);a="Z"}e._f=i+(r||"")+(a||""),Yt(e)}else e._isValid=!1}var Mt=/^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/;function kt(e,t,n,s,i,r){var a=[function(e){var t=parseInt(e,10);{if(t<=49)return 2e3+t;if(t<=999)return 1900+t}return t}(e),He.indexOf(t),parseInt(n,10),parseInt(s,10),parseInt(i,10)];return r&&a.push(parseInt(r,10)),a}var St={UT:0,GMT:0,EDT:-240,EST:-300,CDT:-300,CST:-360,MDT:-360,MST:-420,PDT:-420,PST:-480};function Dt(e){var t,n,s,i=Mt.exec(e._i.replace(/\([^)]*\)|[\n\t]/g," ").replace(/(\s\s+)/g," ").replace(/^\s\s*/,"").replace(/\s\s*$/,""));if(i){var r=kt(i[4],i[3],i[2],i[5],i[6],i[7]);if(t=i[1],n=r,s=e,t&&ze.indexOf(t)!==new Date(n[0],n[1],n[2]).getDay()&&(g(s).weekdayMismatch=!0,!(s._isValid=!1)))return;e._a=r,e._tzm=function(e,t,n){if(e)return St[e];if(t)return 0;var s=parseInt(n,10),i=s%100;return(s-i)/100*60+i}(i[8],i[9],i[10]),e._d=Ge.apply(null,e._a),e._d.setUTCMinutes(e._d.getUTCMinutes()-e._tzm),g(e).rfc2822=!0}else e._isValid=!1}function Yt(e){if(e._f!==c.ISO_8601)if(e._f!==c.RFC_2822){e._a=[],g(e).empty=!0;var t,n,s,i,r,a,o,u,l=""+e._i,h=l.length,d=0;for(s=j(e._f,e._locale).match(N)||[],t=0;t<s.length;t++)i=s[t],(n=(l.match(le(i,e))||[])[0])&&(0<(r=l.substr(0,l.indexOf(n))).length&&g(e).unusedInput.push(r),l=l.slice(l.indexOf(n)+n.length),d+=n.length),E[i]?(n?g(e).empty=!1:g(e).unusedTokens.push(i),a=i,u=e,null!=(o=n)&&m(de,a)&&de[a](o,u._a,u,a)):e._strict&&!n&&g(e).unusedTokens.push(i);g(e).charsLeftOver=h-d,0<l.length&&g(e).unusedInput.push(l),e._a[ge]<=12&&!0===g(e).bigHour&&0<e._a[ge]&&(g(e).bigHour=void 0),g(e).parsedDateParts=e._a.slice(0),g(e).meridiem=e._meridiem,e._a[ge]=function(e,t,n){var s;if(null==n)return t;return null!=e.meridiemHour?e.meridiemHour(t,n):(null!=e.isPM&&((s=e.isPM(n))&&t<12&&(t+=12),s||12!==t||(t=0)),t)}(e._locale,e._a[ge],e._meridiem),ft(e),dt(e)}else Dt(e);else wt(e)}function Ot(e){var t,n,s,i,r=e._i,a=e._f;return e._locale=e._locale||ht(e._l),null===r||void 0===a&&""===r?p({nullInput:!0}):("string"==typeof r&&(e._i=r=e._locale.preparse(r)),k(r)?new M(dt(r)):(d(r)?e._d=r:o(a)?function(e){var t,n,s,i,r;if(0===e._f.length)return g(e).invalidFormat=!0,e._d=new Date(NaN);for(i=0;i<e._f.length;i++)r=0,t=w({},e),null!=e._useUTC&&(t._useUTC=e._useUTC),t._f=e._f[i],Yt(t),v(t)&&(r+=g(t).charsLeftOver,r+=10*g(t).unusedTokens.length,g(t).score=r,(null==s||r<s)&&(s=r,n=t));_(e,n||t)}(e):a?Yt(e):l(n=(t=e)._i)?t._d=new Date(c.now()):d(n)?t._d=new Date(n.valueOf()):"string"==typeof n?(s=t,null===(i=pt.exec(s._i))?(wt(s),!1===s._isValid&&(delete s._isValid,Dt(s),!1===s._isValid&&(delete s._isValid,c.createFromInputFallback(s)))):s._d=new Date(+i[1])):o(n)?(t._a=f(n.slice(0),function(e){return parseInt(e,10)}),ft(t)):u(n)?function(e){if(!e._d){var t=R(e._i);e._a=f([t.year,t.month,t.day||t.date,t.hour,t.minute,t.second,t.millisecond],function(e){return e&&parseInt(e,10)}),ft(e)}}(t):h(n)?t._d=new Date(n):c.createFromInputFallback(t),v(e)||(e._d=null),e))}function Tt(e,t,n,s,i){var r,a={};return!0!==n&&!1!==n||(s=n,n=void 0),(u(e)&&function(e){if(Object.getOwnPropertyNames)return 0===Object.getOwnPropertyNames(e).length;var t;for(t in e)if(e.hasOwnProperty(t))return!1;return!0}(e)||o(e)&&0===e.length)&&(e=void 0),a._isAMomentObject=!0,a._useUTC=a._isUTC=i,a._l=n,a._i=e,a._f=t,a._strict=s,(r=new M(dt(Ot(a))))._nextDay&&(r.add(1,"d"),r._nextDay=void 0),r}function bt(e,t,n,s){return Tt(e,t,n,s,!1)}c.createFromInputFallback=n("value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.",function(e){e._d=new Date(e._i+(e._useUTC?" UTC":""))}),c.ISO_8601=function(){},c.RFC_2822=function(){};var xt=n("moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/",function(){var e=bt.apply(null,arguments);return this.isValid()&&e.isValid()?e<this?this:e:p()}),Pt=n("moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/",function(){var e=bt.apply(null,arguments);return this.isValid()&&e.isValid()?this<e?this:e:p()});function Wt(e,t){var n,s;if(1===t.length&&o(t[0])&&(t=t[0]),!t.length)return bt();for(n=t[0],s=1;s<t.length;++s)t[s].isValid()&&!t[s][e](n)||(n=t[s]);return n}var Ct=["year","quarter","month","week","day","hour","minute","second","millisecond"];function Ht(e){var t=R(e),n=t.year||0,s=t.quarter||0,i=t.month||0,r=t.week||t.isoWeek||0,a=t.day||0,o=t.hour||0,u=t.minute||0,l=t.second||0,h=t.millisecond||0;this._isValid=function(e){for(var t in e)if(-1===Ye.call(Ct,t)||null!=e[t]&&isNaN(e[t]))return!1;for(var n=!1,s=0;s<Ct.length;++s)if(e[Ct[s]]){if(n)return!1;parseFloat(e[Ct[s]])!==D(e[Ct[s]])&&(n=!0)}return!0}(t),this._milliseconds=+h+1e3*l+6e4*u+1e3*o*60*60,this._days=+a+7*r,this._months=+i+3*s+12*n,this._data={},this._locale=ht(),this._bubble()}function Rt(e){return e instanceof Ht}function Ut(e){return e<0?-1*Math.round(-1*e):Math.round(e)}function Ft(e,n){I(e,0,0,function(){var e=this.utcOffset(),t="+";return e<0&&(e=-e,t="-"),t+L(~~(e/60),2)+n+L(~~e%60,2)})}Ft("Z",":"),Ft("ZZ",""),ue("Z",re),ue("ZZ",re),ce(["Z","ZZ"],function(e,t,n){n._useUTC=!0,n._tzm=Nt(re,e)});var Lt=/([\+\-]|\d\d)/gi;function Nt(e,t){var n=(t||"").match(e);if(null===n)return null;var s=((n[n.length-1]||[])+"").match(Lt)||["-",0,0],i=60*s[1]+D(s[2]);return 0===i?0:"+"===s[0]?i:-i}function Gt(e,t){var n,s;return t._isUTC?(n=t.clone(),s=(k(e)||d(e)?e.valueOf():bt(e).valueOf())-n.valueOf(),n._d.setTime(n._d.valueOf()+s),c.updateOffset(n,!1),n):bt(e).local()}function Vt(e){return 15*-Math.round(e._d.getTimezoneOffset()/15)}function Et(){return!!this.isValid()&&(this._isUTC&&0===this._offset)}c.updateOffset=function(){};var It=/^(\-|\+)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)(\.\d*)?)?$/,At=/^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;function jt(e,t){var n,s,i,r=e,a=null;return Rt(e)?r={ms:e._milliseconds,d:e._days,M:e._months}:h(e)?(r={},t?r[t]=e:r.milliseconds=e):(a=It.exec(e))?(n="-"===a[1]?-1:1,r={y:0,d:D(a[ye])*n,h:D(a[ge])*n,m:D(a[ve])*n,s:D(a[pe])*n,ms:D(Ut(1e3*a[we]))*n}):(a=At.exec(e))?(n="-"===a[1]?-1:1,r={y:Zt(a[2],n),M:Zt(a[3],n),w:Zt(a[4],n),d:Zt(a[5],n),h:Zt(a[6],n),m:Zt(a[7],n),s:Zt(a[8],n)}):null==r?r={}:"object"==typeof r&&("from"in r||"to"in r)&&(i=function(e,t){var n;if(!e.isValid()||!t.isValid())return{milliseconds:0,months:0};t=Gt(t,e),e.isBefore(t)?n=zt(e,t):((n=zt(t,e)).milliseconds=-n.milliseconds,n.months=-n.months);return n}(bt(r.from),bt(r.to)),(r={}).ms=i.milliseconds,r.M=i.months),s=new Ht(r),Rt(e)&&m(e,"_locale")&&(s._locale=e._locale),s}function Zt(e,t){var n=e&&parseFloat(e.replace(",","."));return(isNaN(n)?0:n)*t}function zt(e,t){var n={};return n.months=t.month()-e.month()+12*(t.year()-e.year()),e.clone().add(n.months,"M").isAfter(t)&&--n.months,n.milliseconds=+t-+e.clone().add(n.months,"M"),n}function $t(s,i){return function(e,t){var n;return null===t||isNaN(+t)||(T(i,"moment()."+i+"(period, number) is deprecated. Please use moment()."+i+"(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info."),n=e,e=t,t=n),qt(this,jt(e="string"==typeof e?+e:e,t),s),this}}function qt(e,t,n,s){var i=t._milliseconds,r=Ut(t._days),a=Ut(t._months);e.isValid()&&(s=null==s||s,a&&Re(e,be(e,"Month")+a*n),r&&xe(e,"Date",be(e,"Date")+r*n),i&&e._d.setTime(e._d.valueOf()+i*n),s&&c.updateOffset(e,r||a))}jt.fn=Ht.prototype,jt.invalid=function(){return jt(NaN)};var Jt=$t(1,"add"),Bt=$t(-1,"subtract");function Qt(e,t){var n=12*(t.year()-e.year())+(t.month()-e.month()),s=e.clone().add(n,"months");return-(n+(t-s<0?(t-s)/(s-e.clone().add(n-1,"months")):(t-s)/(e.clone().add(n+1,"months")-s)))||0}function Xt(e){var t;return void 0===e?this._locale._abbr:(null!=(t=ht(e))&&(this._locale=t),this)}c.defaultFormat="YYYY-MM-DDTHH:mm:ssZ",c.defaultFormatUtc="YYYY-MM-DDTHH:mm:ss[Z]";var Kt=n("moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.",function(e){return void 0===e?this.localeData():this.locale(e)});function en(){return this._locale}var tn=126227808e5;function nn(e,t){return(e%t+t)%t}function sn(e,t,n){return e<100&&0<=e?new Date(e+400,t,n)-tn:new Date(e,t,n).valueOf()}function rn(e,t,n){return e<100&&0<=e?Date.UTC(e+400,t,n)-tn:Date.UTC(e,t,n)}function an(e,t){I(0,[e,e.length],0,t)}function on(e,t,n,s,i){var r;return null==e?Ie(this,s,i).year:((r=Ae(e,s,i))<t&&(t=r),function(e,t,n,s,i){var r=Ee(e,t,n,s,i),a=Ge(r.year,0,r.dayOfYear);return this.year(a.getUTCFullYear()),this.month(a.getUTCMonth()),this.date(a.getUTCDate()),this}.call(this,e,t,n,s,i))}I(0,["gg",2],0,function(){return this.weekYear()%100}),I(0,["GG",2],0,function(){return this.isoWeekYear()%100}),an("gggg","weekYear"),an("ggggg","weekYear"),an("GGGG","isoWeekYear"),an("GGGGG","isoWeekYear"),C("weekYear","gg"),C("isoWeekYear","GG"),F("weekYear",1),F("isoWeekYear",1),ue("G",se),ue("g",se),ue("GG",B,z),ue("gg",B,z),ue("GGGG",ee,q),ue("gggg",ee,q),ue("GGGGG",te,J),ue("ggggg",te,J),fe(["gggg","ggggg","GGGG","GGGGG"],function(e,t,n,s){t[s.substr(0,2)]=D(e)}),fe(["gg","GG"],function(e,t,n,s){t[s]=c.parseTwoDigitYear(e)}),I("Q",0,"Qo","quarter"),C("quarter","Q"),F("quarter",7),ue("Q",Z),ce("Q",function(e,t){t[_e]=3*(D(e)-1)}),I("D",["DD",2],"Do","date"),C("date","D"),F("date",9),ue("D",B),ue("DD",B,z),ue("Do",function(e,t){return e?t._dayOfMonthOrdinalParse||t._ordinalParse:t._dayOfMonthOrdinalParseLenient}),ce(["D","DD"],ye),ce("Do",function(e,t){t[ye]=D(e.match(B)[0])});var un=Te("Date",!0);I("DDD",["DDDD",3],"DDDo","dayOfYear"),C("dayOfYear","DDD"),F("dayOfYear",4),ue("DDD",K),ue("DDDD",$),ce(["DDD","DDDD"],function(e,t,n){n._dayOfYear=D(e)}),I("m",["mm",2],0,"minute"),C("minute","m"),F("minute",14),ue("m",B),ue("mm",B,z),ce(["m","mm"],ve);var ln=Te("Minutes",!1);I("s",["ss",2],0,"second"),C("second","s"),F("second",15),ue("s",B),ue("ss",B,z),ce(["s","ss"],pe);var hn,dn=Te("Seconds",!1);for(I("S",0,0,function(){return~~(this.millisecond()/100)}),I(0,["SS",2],0,function(){return~~(this.millisecond()/10)}),I(0,["SSS",3],0,"millisecond"),I(0,["SSSS",4],0,function(){return 10*this.millisecond()}),I(0,["SSSSS",5],0,function(){return 100*this.millisecond()}),I(0,["SSSSSS",6],0,function(){return 1e3*this.millisecond()}),I(0,["SSSSSSS",7],0,function(){return 1e4*this.millisecond()}),I(0,["SSSSSSSS",8],0,function(){return 1e5*this.millisecond()}),I(0,["SSSSSSSSS",9],0,function(){return 1e6*this.millisecond()}),C("millisecond","ms"),F("millisecond",16),ue("S",K,Z),ue("SS",K,z),ue("SSS",K,$),hn="SSSS";hn.length<=9;hn+="S")ue(hn,ne);function cn(e,t){t[we]=D(1e3*("0."+e))}for(hn="S";hn.length<=9;hn+="S")ce(hn,cn);var fn=Te("Milliseconds",!1);I("z",0,0,"zoneAbbr"),I("zz",0,0,"zoneName");var mn=M.prototype;function _n(e){return e}mn.add=Jt,mn.calendar=function(e,t){var n=e||bt(),s=Gt(n,this).startOf("day"),i=c.calendarFormat(this,s)||"sameElse",r=t&&(b(t[i])?t[i].call(this,n):t[i]);return this.format(r||this.localeData().calendar(i,this,bt(n)))},mn.clone=function(){return new M(this)},mn.diff=function(e,t,n){var s,i,r;if(!this.isValid())return NaN;if(!(s=Gt(e,this)).isValid())return NaN;switch(i=6e4*(s.utcOffset()-this.utcOffset()),t=H(t)){case"year":r=Qt(this,s)/12;break;case"month":r=Qt(this,s);break;case"quarter":r=Qt(this,s)/3;break;case"second":r=(this-s)/1e3;break;case"minute":r=(this-s)/6e4;break;case"hour":r=(this-s)/36e5;break;case"day":r=(this-s-i)/864e5;break;case"week":r=(this-s-i)/6048e5;break;default:r=this-s}return n?r:S(r)},mn.endOf=function(e){var t;if(void 0===(e=H(e))||"millisecond"===e||!this.isValid())return this;var n=this._isUTC?rn:sn;switch(e){case"year":t=n(this.year()+1,0,1)-1;break;case"quarter":t=n(this.year(),this.month()-this.month()%3+3,1)-1;break;case"month":t=n(this.year(),this.month()+1,1)-1;break;case"week":t=n(this.year(),this.month(),this.date()-this.weekday()+7)-1;break;case"isoWeek":t=n(this.year(),this.month(),this.date()-(this.isoWeekday()-1)+7)-1;break;case"day":case"date":t=n(this.year(),this.month(),this.date()+1)-1;break;case"hour":t=this._d.valueOf(),t+=36e5-nn(t+(this._isUTC?0:6e4*this.utcOffset()),36e5)-1;break;case"minute":t=this._d.valueOf(),t+=6e4-nn(t,6e4)-1;break;case"second":t=this._d.valueOf(),t+=1e3-nn(t,1e3)-1;break}return this._d.setTime(t),c.updateOffset(this,!0),this},mn.format=function(e){e||(e=this.isUtc()?c.defaultFormatUtc:c.defaultFormat);var t=A(this,e);return this.localeData().postformat(t)},mn.from=function(e,t){return this.isValid()&&(k(e)&&e.isValid()||bt(e).isValid())?jt({to:this,from:e}).locale(this.locale()).humanize(!t):this.localeData().invalidDate()},mn.fromNow=function(e){return this.from(bt(),e)},mn.to=function(e,t){return this.isValid()&&(k(e)&&e.isValid()||bt(e).isValid())?jt({from:this,to:e}).locale(this.locale()).humanize(!t):this.localeData().invalidDate()},mn.toNow=function(e){return this.to(bt(),e)},mn.get=function(e){return b(this[e=H(e)])?this[e]():this},mn.invalidAt=function(){return g(this).overflow},mn.isAfter=function(e,t){var n=k(e)?e:bt(e);return!(!this.isValid()||!n.isValid())&&("millisecond"===(t=H(t)||"millisecond")?this.valueOf()>n.valueOf():n.valueOf()<this.clone().startOf(t).valueOf())},mn.isBefore=function(e,t){var n=k(e)?e:bt(e);return!(!this.isValid()||!n.isValid())&&("millisecond"===(t=H(t)||"millisecond")?this.valueOf()<n.valueOf():this.clone().endOf(t).valueOf()<n.valueOf())},mn.isBetween=function(e,t,n,s){var i=k(e)?e:bt(e),r=k(t)?t:bt(t);return!!(this.isValid()&&i.isValid()&&r.isValid())&&("("===(s=s||"()")[0]?this.isAfter(i,n):!this.isBefore(i,n))&&(")"===s[1]?this.isBefore(r,n):!this.isAfter(r,n))},mn.isSame=function(e,t){var n,s=k(e)?e:bt(e);return!(!this.isValid()||!s.isValid())&&("millisecond"===(t=H(t)||"millisecond")?this.valueOf()===s.valueOf():(n=s.valueOf(),this.clone().startOf(t).valueOf()<=n&&n<=this.clone().endOf(t).valueOf()))},mn.isSameOrAfter=function(e,t){return this.isSame(e,t)||this.isAfter(e,t)},mn.isSameOrBefore=function(e,t){return this.isSame(e,t)||this.isBefore(e,t)},mn.isValid=function(){return v(this)},mn.lang=Kt,mn.locale=Xt,mn.localeData=en,mn.max=Pt,mn.min=xt,mn.parsingFlags=function(){return _({},g(this))},mn.set=function(e,t){if("object"==typeof e)for(var n=function(e){var t=[];for(var n in e)t.push({unit:n,priority:U[n]});return t.sort(function(e,t){return e.priority-t.priority}),t}(e=R(e)),s=0;s<n.length;s++)this[n[s].unit](e[n[s].unit]);else if(b(this[e=H(e)]))return this[e](t);return this},mn.startOf=function(e){var t;if(void 0===(e=H(e))||"millisecond"===e||!this.isValid())return this;var n=this._isUTC?rn:sn;switch(e){case"year":t=n(this.year(),0,1);break;case"quarter":t=n(this.year(),this.month()-this.month()%3,1);break;case"month":t=n(this.year(),this.month(),1);break;case"week":t=n(this.year(),this.month(),this.date()-this.weekday());break;case"isoWeek":t=n(this.year(),this.month(),this.date()-(this.isoWeekday()-1));break;case"day":case"date":t=n(this.year(),this.month(),this.date());break;case"hour":t=this._d.valueOf(),t-=nn(t+(this._isUTC?0:6e4*this.utcOffset()),36e5);break;case"minute":t=this._d.valueOf(),t-=nn(t,6e4);break;case"second":t=this._d.valueOf(),t-=nn(t,1e3);break}return this._d.setTime(t),c.updateOffset(this,!0),this},mn.subtract=Bt,mn.toArray=function(){var e=this;return[e.year(),e.month(),e.date(),e.hour(),e.minute(),e.second(),e.millisecond()]},mn.toObject=function(){var e=this;return{years:e.year(),months:e.month(),date:e.date(),hours:e.hours(),minutes:e.minutes(),seconds:e.seconds(),milliseconds:e.milliseconds()}},mn.toDate=function(){return new Date(this.valueOf())},mn.toISOString=function(e){if(!this.isValid())return null;var t=!0!==e,n=t?this.clone().utc():this;return n.year()<0||9999<n.year()?A(n,t?"YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]":"YYYYYY-MM-DD[T]HH:mm:ss.SSSZ"):b(Date.prototype.toISOString)?t?this.toDate().toISOString():new Date(this.valueOf()+60*this.utcOffset()*1e3).toISOString().replace("Z",A(n,"Z")):A(n,t?"YYYY-MM-DD[T]HH:mm:ss.SSS[Z]":"YYYY-MM-DD[T]HH:mm:ss.SSSZ")},mn.inspect=function(){if(!this.isValid())return"moment.invalid(/* "+this._i+" */)";var e="moment",t="";this.isLocal()||(e=0===this.utcOffset()?"moment.utc":"moment.parseZone",t="Z");var n="["+e+'("]',s=0<=this.year()&&this.year()<=9999?"YYYY":"YYYYYY",i=t+'[")]';return this.format(n+s+"-MM-DD[T]HH:mm:ss.SSS"+i)},mn.toJSON=function(){return this.isValid()?this.toISOString():null},mn.toString=function(){return this.clone().locale("en").format("ddd MMM DD YYYY HH:mm:ss [GMT]ZZ")},mn.unix=function(){return Math.floor(this.valueOf()/1e3)},mn.valueOf=function(){return this._d.valueOf()-6e4*(this._offset||0)},mn.creationData=function(){return{input:this._i,format:this._f,locale:this._locale,isUTC:this._isUTC,strict:this._strict}},mn.year=Oe,mn.isLeapYear=function(){return De(this.year())},mn.weekYear=function(e){return on.call(this,e,this.week(),this.weekday(),this.localeData()._week.dow,this.localeData()._week.doy)},mn.isoWeekYear=function(e){return on.call(this,e,this.isoWeek(),this.isoWeekday(),1,4)},mn.quarter=mn.quarters=function(e){return null==e?Math.ceil((this.month()+1)/3):this.month(3*(e-1)+this.month()%3)},mn.month=Ue,mn.daysInMonth=function(){return Pe(this.year(),this.month())},mn.week=mn.weeks=function(e){var t=this.localeData().week(this);return null==e?t:this.add(7*(e-t),"d")},mn.isoWeek=mn.isoWeeks=function(e){var t=Ie(this,1,4).week;return null==e?t:this.add(7*(e-t),"d")},mn.weeksInYear=function(){var e=this.localeData()._week;return Ae(this.year(),e.dow,e.doy)},mn.isoWeeksInYear=function(){return Ae(this.year(),1,4)},mn.date=un,mn.day=mn.days=function(e){if(!this.isValid())return null!=e?this:NaN;var t,n,s=this._isUTC?this._d.getUTCDay():this._d.getDay();return null!=e?(t=e,n=this.localeData(),e="string"!=typeof t?t:isNaN(t)?"number"==typeof(t=n.weekdaysParse(t))?t:null:parseInt(t,10),this.add(e-s,"d")):s},mn.weekday=function(e){if(!this.isValid())return null!=e?this:NaN;var t=(this.day()+7-this.localeData()._week.dow)%7;return null==e?t:this.add(e-t,"d")},mn.isoWeekday=function(e){if(!this.isValid())return null!=e?this:NaN;if(null==e)return this.day()||7;var t,n,s=(t=e,n=this.localeData(),"string"==typeof t?n.weekdaysParse(t)%7||7:isNaN(t)?null:t);return this.day(this.day()%7?s:s-7)},mn.dayOfYear=function(e){var t=Math.round((this.clone().startOf("day")-this.clone().startOf("year"))/864e5)+1;return null==e?t:this.add(e-t,"d")},mn.hour=mn.hours=nt,mn.minute=mn.minutes=ln,mn.second=mn.seconds=dn,mn.millisecond=mn.milliseconds=fn,mn.utcOffset=function(e,t,n){var s,i=this._offset||0;if(!this.isValid())return null!=e?this:NaN;if(null==e)return this._isUTC?i:Vt(this);if("string"==typeof e){if(null===(e=Nt(re,e)))return this}else Math.abs(e)<16&&!n&&(e*=60);return!this._isUTC&&t&&(s=Vt(this)),this._offset=e,this._isUTC=!0,null!=s&&this.add(s,"m"),i!==e&&(!t||this._changeInProgress?qt(this,jt(e-i,"m"),1,!1):this._changeInProgress||(this._changeInProgress=!0,c.updateOffset(this,!0),this._changeInProgress=null)),this},mn.utc=function(e){return this.utcOffset(0,e)},mn.local=function(e){return this._isUTC&&(this.utcOffset(0,e),this._isUTC=!1,e&&this.subtract(Vt(this),"m")),this},mn.parseZone=function(){if(null!=this._tzm)this.utcOffset(this._tzm,!1,!0);else if("string"==typeof this._i){var e=Nt(ie,this._i);null!=e?this.utcOffset(e):this.utcOffset(0,!0)}return this},mn.hasAlignedHourOffset=function(e){return!!this.isValid()&&(e=e?bt(e).utcOffset():0,(this.utcOffset()-e)%60==0)},mn.isDST=function(){return this.utcOffset()>this.clone().month(0).utcOffset()||this.utcOffset()>this.clone().month(5).utcOffset()},mn.isLocal=function(){return!!this.isValid()&&!this._isUTC},mn.isUtcOffset=function(){return!!this.isValid()&&this._isUTC},mn.isUtc=Et,mn.isUTC=Et,mn.zoneAbbr=function(){return this._isUTC?"UTC":""},mn.zoneName=function(){return this._isUTC?"Coordinated Universal Time":""},mn.dates=n("dates accessor is deprecated. Use date instead.",un),mn.months=n("months accessor is deprecated. Use month instead",Ue),mn.years=n("years accessor is deprecated. Use year instead",Oe),mn.zone=n("moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/",function(e,t){return null!=e?("string"!=typeof e&&(e=-e),this.utcOffset(e,t),this):-this.utcOffset()}),mn.isDSTShifted=n("isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information",function(){if(!l(this._isDSTShifted))return this._isDSTShifted;var e={};if(w(e,this),(e=Ot(e))._a){var t=e._isUTC?y(e._a):bt(e._a);this._isDSTShifted=this.isValid()&&0<a(e._a,t.toArray())}else this._isDSTShifted=!1;return this._isDSTShifted});var yn=P.prototype;function gn(e,t,n,s){var i=ht(),r=y().set(s,t);return i[n](r,e)}function vn(e,t,n){if(h(e)&&(t=e,e=void 0),e=e||"",null!=t)return gn(e,t,n,"month");var s,i=[];for(s=0;s<12;s++)i[s]=gn(e,s,n,"month");return i}function pn(e,t,n,s){t=("boolean"==typeof e?h(t)&&(n=t,t=void 0):(t=e,e=!1,h(n=t)&&(n=t,t=void 0)),t||"");var i,r=ht(),a=e?r._week.dow:0;if(null!=n)return gn(t,(n+a)%7,s,"day");var o=[];for(i=0;i<7;i++)o[i]=gn(t,(i+a)%7,s,"day");return o}yn.calendar=function(e,t,n){var s=this._calendar[e]||this._calendar.sameElse;return b(s)?s.call(t,n):s},yn.longDateFormat=function(e){var t=this._longDateFormat[e],n=this._longDateFormat[e.toUpperCase()];return t||!n?t:(this._longDateFormat[e]=n.replace(/MMMM|MM|DD|dddd/g,function(e){return e.slice(1)}),this._longDateFormat[e])},yn.invalidDate=function(){return this._invalidDate},yn.ordinal=function(e){return this._ordinal.replace("%d",e)},yn.preparse=_n,yn.postformat=_n,yn.relativeTime=function(e,t,n,s){var i=this._relativeTime[n];return b(i)?i(e,t,n,s):i.replace(/%d/i,e)},yn.pastFuture=function(e,t){var n=this._relativeTime[0<e?"future":"past"];return b(n)?n(t):n.replace(/%s/i,t)},yn.set=function(e){var t,n;for(n in e)b(t=e[n])?this[n]=t:this["_"+n]=t;this._config=e,this._dayOfMonthOrdinalParseLenient=new RegExp((this._dayOfMonthOrdinalParse.source||this._ordinalParse.source)+"|"+/\d{1,2}/.source)},yn.months=function(e,t){return e?o(this._months)?this._months[e.month()]:this._months[(this._months.isFormat||We).test(t)?"format":"standalone"][e.month()]:o(this._months)?this._months:this._months.standalone},yn.monthsShort=function(e,t){return e?o(this._monthsShort)?this._monthsShort[e.month()]:this._monthsShort[We.test(t)?"format":"standalone"][e.month()]:o(this._monthsShort)?this._monthsShort:this._monthsShort.standalone},yn.monthsParse=function(e,t,n){var s,i,r;if(this._monthsParseExact)return function(e,t,n){var s,i,r,a=e.toLocaleLowerCase();if(!this._monthsParse)for(this._monthsParse=[],this._longMonthsParse=[],this._shortMonthsParse=[],s=0;s<12;++s)r=y([2e3,s]),this._shortMonthsParse[s]=this.monthsShort(r,"").toLocaleLowerCase(),this._longMonthsParse[s]=this.months(r,"").toLocaleLowerCase();return n?"MMM"===t?-1!==(i=Ye.call(this._shortMonthsParse,a))?i:null:-1!==(i=Ye.call(this._longMonthsParse,a))?i:null:"MMM"===t?-1!==(i=Ye.call(this._shortMonthsParse,a))?i:-1!==(i=Ye.call(this._longMonthsParse,a))?i:null:-1!==(i=Ye.call(this._longMonthsParse,a))?i:-1!==(i=Ye.call(this._shortMonthsParse,a))?i:null}.call(this,e,t,n);for(this._monthsParse||(this._monthsParse=[],this._longMonthsParse=[],this._shortMonthsParse=[]),s=0;s<12;s++){if(i=y([2e3,s]),n&&!this._longMonthsParse[s]&&(this._longMonthsParse[s]=new RegExp("^"+this.months(i,"").replace(".","")+"$","i"),this._shortMonthsParse[s]=new RegExp("^"+this.monthsShort(i,"").replace(".","")+"$","i")),n||this._monthsParse[s]||(r="^"+this.months(i,"")+"|^"+this.monthsShort(i,""),this._monthsParse[s]=new RegExp(r.replace(".",""),"i")),n&&"MMMM"===t&&this._longMonthsParse[s].test(e))return s;if(n&&"MMM"===t&&this._shortMonthsParse[s].test(e))return s;if(!n&&this._monthsParse[s].test(e))return s}},yn.monthsRegex=function(e){return this._monthsParseExact?(m(this,"_monthsRegex")||Ne.call(this),e?this._monthsStrictRegex:this._monthsRegex):(m(this,"_monthsRegex")||(this._monthsRegex=Le),this._monthsStrictRegex&&e?this._monthsStrictRegex:this._monthsRegex)},yn.monthsShortRegex=function(e){return this._monthsParseExact?(m(this,"_monthsRegex")||Ne.call(this),e?this._monthsShortStrictRegex:this._monthsShortRegex):(m(this,"_monthsShortRegex")||(this._monthsShortRegex=Fe),this._monthsShortStrictRegex&&e?this._monthsShortStrictRegex:this._monthsShortRegex)},yn.week=function(e){return Ie(e,this._week.dow,this._week.doy).week},yn.firstDayOfYear=function(){return this._week.doy},yn.firstDayOfWeek=function(){return this._week.dow},yn.weekdays=function(e,t){var n=o(this._weekdays)?this._weekdays:this._weekdays[e&&!0!==e&&this._weekdays.isFormat.test(t)?"format":"standalone"];return!0===e?je(n,this._week.dow):e?n[e.day()]:n},yn.weekdaysMin=function(e){return!0===e?je(this._weekdaysMin,this._week.dow):e?this._weekdaysMin[e.day()]:this._weekdaysMin},yn.weekdaysShort=function(e){return!0===e?je(this._weekdaysShort,this._week.dow):e?this._weekdaysShort[e.day()]:this._weekdaysShort},yn.weekdaysParse=function(e,t,n){var s,i,r;if(this._weekdaysParseExact)return function(e,t,n){var s,i,r,a=e.toLocaleLowerCase();if(!this._weekdaysParse)for(this._weekdaysParse=[],this._shortWeekdaysParse=[],this._minWeekdaysParse=[],s=0;s<7;++s)r=y([2e3,1]).day(s),this._minWeekdaysParse[s]=this.weekdaysMin(r,"").toLocaleLowerCase(),this._shortWeekdaysParse[s]=this.weekdaysShort(r,"").toLocaleLowerCase(),this._weekdaysParse[s]=this.weekdays(r,"").toLocaleLowerCase();return n?"dddd"===t?-1!==(i=Ye.call(this._weekdaysParse,a))?i:null:"ddd"===t?-1!==(i=Ye.call(this._shortWeekdaysParse,a))?i:null:-1!==(i=Ye.call(this._minWeekdaysParse,a))?i:null:"dddd"===t?-1!==(i=Ye.call(this._weekdaysParse,a))?i:-1!==(i=Ye.call(this._shortWeekdaysParse,a))?i:-1!==(i=Ye.call(this._minWeekdaysParse,a))?i:null:"ddd"===t?-1!==(i=Ye.call(this._shortWeekdaysParse,a))?i:-1!==(i=Ye.call(this._weekdaysParse,a))?i:-1!==(i=Ye.call(this._minWeekdaysParse,a))?i:null:-1!==(i=Ye.call(this._minWeekdaysParse,a))?i:-1!==(i=Ye.call(this._weekdaysParse,a))?i:-1!==(i=Ye.call(this._shortWeekdaysParse,a))?i:null}.call(this,e,t,n);for(this._weekdaysParse||(this._weekdaysParse=[],this._minWeekdaysParse=[],this._shortWeekdaysParse=[],this._fullWeekdaysParse=[]),s=0;s<7;s++){if(i=y([2e3,1]).day(s),n&&!this._fullWeekdaysParse[s]&&(this._fullWeekdaysParse[s]=new RegExp("^"+this.weekdays(i,"").replace(".","\\.?")+"$","i"),this._shortWeekdaysParse[s]=new RegExp("^"+this.weekdaysShort(i,"").replace(".","\\.?")+"$","i"),this._minWeekdaysParse[s]=new RegExp("^"+this.weekdaysMin(i,"").replace(".","\\.?")+"$","i")),this._weekdaysParse[s]||(r="^"+this.weekdays(i,"")+"|^"+this.weekdaysShort(i,"")+"|^"+this.weekdaysMin(i,""),this._weekdaysParse[s]=new RegExp(r.replace(".",""),"i")),n&&"dddd"===t&&this._fullWeekdaysParse[s].test(e))return s;if(n&&"ddd"===t&&this._shortWeekdaysParse[s].test(e))return s;if(n&&"dd"===t&&this._minWeekdaysParse[s].test(e))return s;if(!n&&this._weekdaysParse[s].test(e))return s}},yn.weekdaysRegex=function(e){return this._weekdaysParseExact?(m(this,"_weekdaysRegex")||Qe.call(this),e?this._weekdaysStrictRegex:this._weekdaysRegex):(m(this,"_weekdaysRegex")||(this._weekdaysRegex=qe),this._weekdaysStrictRegex&&e?this._weekdaysStrictRegex:this._weekdaysRegex)},yn.weekdaysShortRegex=function(e){return this._weekdaysParseExact?(m(this,"_weekdaysRegex")||Qe.call(this),e?this._weekdaysShortStrictRegex:this._weekdaysShortRegex):(m(this,"_weekdaysShortRegex")||(this._weekdaysShortRegex=Je),this._weekdaysShortStrictRegex&&e?this._weekdaysShortStrictRegex:this._weekdaysShortRegex)},yn.weekdaysMinRegex=function(e){return this._weekdaysParseExact?(m(this,"_weekdaysRegex")||Qe.call(this),e?this._weekdaysMinStrictRegex:this._weekdaysMinRegex):(m(this,"_weekdaysMinRegex")||(this._weekdaysMinRegex=Be),this._weekdaysMinStrictRegex&&e?this._weekdaysMinStrictRegex:this._weekdaysMinRegex)},yn.isPM=function(e){return"p"===(e+"").toLowerCase().charAt(0)},yn.meridiem=function(e,t,n){return 11<e?n?"pm":"PM":n?"am":"AM"},ut("en",{dayOfMonthOrdinalParse:/\d{1,2}(th|st|nd|rd)/,ordinal:function(e){var t=e%10;return e+(1===D(e%100/10)?"th":1===t?"st":2===t?"nd":3===t?"rd":"th")}}),c.lang=n("moment.lang is deprecated. Use moment.locale instead.",ut),c.langData=n("moment.langData is deprecated. Use moment.localeData instead.",ht);var wn=Math.abs;function Mn(e,t,n,s){var i=jt(t,n);return e._milliseconds+=s*i._milliseconds,e._days+=s*i._days,e._months+=s*i._months,e._bubble()}function kn(e){return e<0?Math.floor(e):Math.ceil(e)}function Sn(e){return 4800*e/146097}function Dn(e){return 146097*e/4800}function Yn(e){return function(){return this.as(e)}}var On=Yn("ms"),Tn=Yn("s"),bn=Yn("m"),xn=Yn("h"),Pn=Yn("d"),Wn=Yn("w"),Cn=Yn("M"),Hn=Yn("Q"),Rn=Yn("y");function Un(e){return function(){return this.isValid()?this._data[e]:NaN}}var Fn=Un("milliseconds"),Ln=Un("seconds"),Nn=Un("minutes"),Gn=Un("hours"),Vn=Un("days"),En=Un("months"),In=Un("years");var An=Math.round,jn={ss:44,s:45,m:45,h:22,d:26,M:11};var Zn=Math.abs;function zn(e){return(0<e)-(e<0)||+e}function $n(){if(!this.isValid())return this.localeData().invalidDate();var e,t,n=Zn(this._milliseconds)/1e3,s=Zn(this._days),i=Zn(this._months);t=S((e=S(n/60))/60),n%=60,e%=60;var r=S(i/12),a=i%=12,o=s,u=t,l=e,h=n?n.toFixed(3).replace(/\.?0+$/,""):"",d=this.asSeconds();if(!d)return"P0D";var c=d<0?"-":"",f=zn(this._months)!==zn(d)?"-":"",m=zn(this._days)!==zn(d)?"-":"",_=zn(this._milliseconds)!==zn(d)?"-":"";return c+"P"+(r?f+r+"Y":"")+(a?f+a+"M":"")+(o?m+o+"D":"")+(u||l||h?"T":"")+(u?_+u+"H":"")+(l?_+l+"M":"")+(h?_+h+"S":"")}var qn=Ht.prototype;return qn.isValid=function(){return this._isValid},qn.abs=function(){var e=this._data;return this._milliseconds=wn(this._milliseconds),this._days=wn(this._days),this._months=wn(this._months),e.milliseconds=wn(e.milliseconds),e.seconds=wn(e.seconds),e.minutes=wn(e.minutes),e.hours=wn(e.hours),e.months=wn(e.months),e.years=wn(e.years),this},qn.add=function(e,t){return Mn(this,e,t,1)},qn.subtract=function(e,t){return Mn(this,e,t,-1)},qn.as=function(e){if(!this.isValid())return NaN;var t,n,s=this._milliseconds;if("month"===(e=H(e))||"quarter"===e||"year"===e)switch(t=this._days+s/864e5,n=this._months+Sn(t),e){case"month":return n;case"quarter":return n/3;case"year":return n/12}else switch(t=this._days+Math.round(Dn(this._months)),e){case"week":return t/7+s/6048e5;case"day":return t+s/864e5;case"hour":return 24*t+s/36e5;case"minute":return 1440*t+s/6e4;case"second":return 86400*t+s/1e3;case"millisecond":return Math.floor(864e5*t)+s;default:throw new Error("Unknown unit "+e)}},qn.asMilliseconds=On,qn.asSeconds=Tn,qn.asMinutes=bn,qn.asHours=xn,qn.asDays=Pn,qn.asWeeks=Wn,qn.asMonths=Cn,qn.asQuarters=Hn,qn.asYears=Rn,qn.valueOf=function(){return this.isValid()?this._milliseconds+864e5*this._days+this._months%12*2592e6+31536e6*D(this._months/12):NaN},qn._bubble=function(){var e,t,n,s,i,r=this._milliseconds,a=this._days,o=this._months,u=this._data;return 0<=r&&0<=a&&0<=o||r<=0&&a<=0&&o<=0||(r+=864e5*kn(Dn(o)+a),o=a=0),u.milliseconds=r%1e3,e=S(r/1e3),u.seconds=e%60,t=S(e/60),u.minutes=t%60,n=S(t/60),u.hours=n%24,o+=i=S(Sn(a+=S(n/24))),a-=kn(Dn(i)),s=S(o/12),o%=12,u.days=a,u.months=o,u.years=s,this},qn.clone=function(){return jt(this)},qn.get=function(e){return e=H(e),this.isValid()?this[e+"s"]():NaN},qn.milliseconds=Fn,qn.seconds=Ln,qn.minutes=Nn,qn.hours=Gn,qn.days=Vn,qn.weeks=function(){return S(this.days()/7)},qn.months=En,qn.years=In,qn.humanize=function(e){if(!this.isValid())return this.localeData().invalidDate();var t,n,s,i,r,a,o,u,l,h,d,c=this.localeData(),f=(n=!e,s=c,i=jt(t=this).abs(),r=An(i.as("s")),a=An(i.as("m")),o=An(i.as("h")),u=An(i.as("d")),l=An(i.as("M")),h=An(i.as("y")),(d=r<=jn.ss&&["s",r]||r<jn.s&&["ss",r]||a<=1&&["m"]||a<jn.m&&["mm",a]||o<=1&&["h"]||o<jn.h&&["hh",o]||u<=1&&["d"]||u<jn.d&&["dd",u]||l<=1&&["M"]||l<jn.M&&["MM",l]||h<=1&&["y"]||["yy",h])[2]=n,d[3]=0<+t,d[4]=s,function(e,t,n,s,i){return i.relativeTime(t||1,!!n,e,s)}.apply(null,d));return e&&(f=c.pastFuture(+this,f)),c.postformat(f)},qn.toISOString=$n,qn.toString=$n,qn.toJSON=$n,qn.locale=Xt,qn.localeData=en,qn.toIsoString=n("toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)",$n),qn.lang=Kt,I("X",0,0,"unix"),I("x",0,0,"valueOf"),ue("x",se),ue("X",/[+-]?\d+(\.\d{1,3})?/),ce("X",function(e,t,n){n._d=new Date(1e3*parseFloat(e,10))}),ce("x",function(e,t,n){n._d=new Date(D(e))}),c.version="2.24.0",e=bt,c.fn=mn,c.min=function(){return Wt("isBefore",[].slice.call(arguments,0))},c.max=function(){return Wt("isAfter",[].slice.call(arguments,0))},c.now=function(){return Date.now?Date.now():+new Date},c.utc=y,c.unix=function(e){return bt(1e3*e)},c.months=function(e,t){return vn(e,t,"months")},c.isDate=d,c.locale=ut,c.invalid=p,c.duration=jt,c.isMoment=k,c.weekdays=function(e,t,n){return pn(e,t,n,"weekdays")},c.parseZone=function(){return bt.apply(null,arguments).parseZone()},c.localeData=ht,c.isDuration=Rt,c.monthsShort=function(e,t){return vn(e,t,"monthsShort")},c.weekdaysMin=function(e,t,n){return pn(e,t,n,"weekdaysMin")},c.defineLocale=lt,c.updateLocale=function(e,t){if(null!=t){var n,s,i=st;null!=(s=ot(e))&&(i=s._config),(n=new P(t=x(i,t))).parentLocale=it[e],it[e]=n,ut(e)}else null!=it[e]&&(null!=it[e].parentLocale?it[e]=it[e].parentLocale:null!=it[e]&&delete it[e]);return it[e]},c.locales=function(){return s(it)},c.weekdaysShort=function(e,t,n){return pn(e,t,n,"weekdaysShort")},c.normalizeUnits=H,c.relativeTimeRounding=function(e){return void 0===e?An:"function"==typeof e&&(An=e,!0)},c.relativeTimeThreshold=function(e,t){return void 0!==jn[e]&&(void 0===t?jn[e]:(jn[e]=t,"s"===e&&(jn.ss=t-1),!0))},c.calendarFormat=function(e,t){var n=e.diff(t,"days",!0);return n<-6?"sameElse":n<-1?"lastWeek":n<0?"lastDay":n<1?"sameDay":n<2?"nextDay":n<7?"nextWeek":"sameElse"},c.prototype=mn,c.HTML5_FMT={DATETIME_LOCAL:"YYYY-MM-DDTHH:mm",DATETIME_LOCAL_SECONDS:"YYYY-MM-DDTHH:mm:ss",DATETIME_LOCAL_MS:"YYYY-MM-DDTHH:mm:ss.SSS",DATE:"YYYY-MM-DD",TIME:"HH:mm",TIME_SECONDS:"HH:mm:ss",TIME_MS:"HH:mm:ss.SSS",WEEK:"GGGG-[W]WW",MONTH:"YYYY-MM"},c});
+    // Date Picker
+    !function(t,e,i){!function(){var s,a,n,h="2.2.3",o="datepicker",r=".datepicker-here",c=!1,d='<div class="datepicker"><i class="datepicker--pointer"></i><nav class="datepicker--nav"></nav><div class="datepicker--content"></div></div>',l={classes:"",inline:!1,language:"ru",startDate:new Date,firstDay:"",weekends:[6,0],dateFormat:"",altField:"",altFieldDateFormat:"@",toggleSelected:!0,keyboardNav:!0,position:"bottom left",offset:12,view:"days",minView:"days",showOtherMonths:!0,selectOtherMonths:!0,moveToOtherMonthsOnSelect:!0,showOtherYears:!0,selectOtherYears:!0,moveToOtherYearsOnSelect:!0,minDate:"",maxDate:"",disableNavWhenOutOfRange:!0,multipleDates:!1,multipleDatesSeparator:",",range:!1,todayButton:!1,clearButton:!1,showEvent:"focus",autoClose:!1,monthsField:"monthsShort",prevHtml:'<svg><path d="M 17,12 l -5,5 l 5,5"></path></svg>',nextHtml:'<svg><path d="M 14,12 l 5,5 l -5,5"></path></svg>',navTitles:{days:"MM, <i>yyyy</i>",months:"yyyy",years:"yyyy1 - yyyy2"},timepicker:!1,onlyTimepicker:!1,dateTimeSeparator:" ",timeFormat:"",minHours:0,maxHours:24,minMinutes:0,maxMinutes:59,hoursStep:1,minutesStep:1,onSelect:"",onShow:"",onHide:"",onChangeMonth:"",onChangeYear:"",onChangeDecade:"",onChangeView:"",onRenderCell:""},u={ctrlRight:[17,39],ctrlUp:[17,38],ctrlLeft:[17,37],ctrlDown:[17,40],shiftRight:[16,39],shiftUp:[16,38],shiftLeft:[16,37],shiftDown:[16,40],altUp:[18,38],altRight:[18,39],altLeft:[18,37],altDown:[18,40],ctrlShiftUp:[16,17,38]},m=function(t,a){this.el=t,this.$el=e(t),this.opts=e.extend(!0,{},l,a,this.$el.data()),s==i&&(s=e("body")),this.opts.startDate||(this.opts.startDate=new Date),"INPUT"==this.el.nodeName&&(this.elIsInput=!0),this.opts.altField&&(this.$altField="string"==typeof this.opts.altField?e(this.opts.altField):this.opts.altField),this.inited=!1,this.visible=!1,this.silent=!1,this.currentDate=this.opts.startDate,this.currentView=this.opts.view,this._createShortCuts(),this.selectedDates=[],this.views={},this.keys=[],this.minRange="",this.maxRange="",this._prevOnSelectValue="",this.init()};n=m,n.prototype={VERSION:h,viewIndexes:["days","months","years"],init:function(){c||this.opts.inline||!this.elIsInput||this._buildDatepickersContainer(),this._buildBaseHtml(),this._defineLocale(this.opts.language),this._syncWithMinMaxDates(),this.elIsInput&&(this.opts.inline||(this._setPositionClasses(this.opts.position),this._bindEvents()),this.opts.keyboardNav&&!this.opts.onlyTimepicker&&this._bindKeyboardEvents(),this.$datepicker.on("mousedown",this._onMouseDownDatepicker.bind(this)),this.$datepicker.on("mouseup",this._onMouseUpDatepicker.bind(this))),this.opts.classes&&this.$datepicker.addClass(this.opts.classes),this.opts.timepicker&&(this.timepicker=new e.fn.datepicker.Timepicker(this,this.opts),this._bindTimepickerEvents()),this.opts.onlyTimepicker&&this.$datepicker.addClass("-only-timepicker-"),this.views[this.currentView]=new e.fn.datepicker.Body(this,this.currentView,this.opts),this.views[this.currentView].show(),this.nav=new e.fn.datepicker.Navigation(this,this.opts),this.view=this.currentView,this.$el.on("clickCell.adp",this._onClickCell.bind(this)),this.$datepicker.on("mouseenter",".datepicker--cell",this._onMouseEnterCell.bind(this)),this.$datepicker.on("mouseleave",".datepicker--cell",this._onMouseLeaveCell.bind(this)),this.inited=!0},_createShortCuts:function(){this.minDate=this.opts.minDate?this.opts.minDate:new Date(-86399999136e5),this.maxDate=this.opts.maxDate?this.opts.maxDate:new Date(86399999136e5)},_bindEvents:function(){this.$el.on(this.opts.showEvent+".adp",this._onShowEvent.bind(this)),this.$el.on("mouseup.adp",this._onMouseUpEl.bind(this)),this.$el.on("blur.adp",this._onBlur.bind(this)),this.$el.on("keyup.adp",this._onKeyUpGeneral.bind(this)),e(t).on("resize.adp",this._onResize.bind(this)),e("body").on("mouseup.adp",this._onMouseUpBody.bind(this))},_bindKeyboardEvents:function(){this.$el.on("keydown.adp",this._onKeyDown.bind(this)),this.$el.on("keyup.adp",this._onKeyUp.bind(this)),this.$el.on("hotKey.adp",this._onHotKey.bind(this))},_bindTimepickerEvents:function(){this.$el.on("timeChange.adp",this._onTimeChange.bind(this))},isWeekend:function(t){return-1!==this.opts.weekends.indexOf(t)},_defineLocale:function(t){"string"==typeof t?(this.loc=e.fn.datepicker.language[t],this.loc||(console.warn("Can't find language \""+t+'" in Datepicker.language, will use "ru" instead'),this.loc=e.extend(!0,{},e.fn.datepicker.language.ru)),this.loc=e.extend(!0,{},e.fn.datepicker.language.ru,e.fn.datepicker.language[t])):this.loc=e.extend(!0,{},e.fn.datepicker.language.ru,t),this.opts.dateFormat&&(this.loc.dateFormat=this.opts.dateFormat),this.opts.timeFormat&&(this.loc.timeFormat=this.opts.timeFormat),""!==this.opts.firstDay&&(this.loc.firstDay=this.opts.firstDay),this.opts.timepicker&&(this.loc.dateFormat=[this.loc.dateFormat,this.loc.timeFormat].join(this.opts.dateTimeSeparator)),this.opts.onlyTimepicker&&(this.loc.dateFormat=this.loc.timeFormat);var i=this._getWordBoundaryRegExp;(this.loc.timeFormat.match(i("aa"))||this.loc.timeFormat.match(i("AA")))&&(this.ampm=!0)},_buildDatepickersContainer:function(){c=!0,s.append('<div class="datepickers-container" id="datepickers-container"></div>'),a=e("#datepickers-container")},_buildBaseHtml:function(){var t,i=e('<div class="datepicker-inline">');t="INPUT"==this.el.nodeName?this.opts.inline?i.insertAfter(this.$el):a:i.appendTo(this.$el),this.$datepicker=e(d).appendTo(t),this.$content=e(".datepicker--content",this.$datepicker),this.$nav=e(".datepicker--nav",this.$datepicker)},_triggerOnChange:function(){if(!this.selectedDates.length){if(""===this._prevOnSelectValue)return;return this._prevOnSelectValue="",this.opts.onSelect("","",this)}var t,e=this.selectedDates,i=n.getParsedDate(e[0]),s=this,a=new Date(i.year,i.month,i.date,i.hours,i.minutes);t=e.map(function(t){return s.formatDate(s.loc.dateFormat,t)}).join(this.opts.multipleDatesSeparator),(this.opts.multipleDates||this.opts.range)&&(a=e.map(function(t){var e=n.getParsedDate(t);return new Date(e.year,e.month,e.date,e.hours,e.minutes)})),this._prevOnSelectValue=t,this.opts.onSelect(t,a,this)},next:function(){var t=this.parsedDate,e=this.opts;switch(this.view){case"days":this.date=new Date(t.year,t.month+1,1),e.onChangeMonth&&e.onChangeMonth(this.parsedDate.month,this.parsedDate.year);break;case"months":this.date=new Date(t.year+1,t.month,1),e.onChangeYear&&e.onChangeYear(this.parsedDate.year);break;case"years":this.date=new Date(t.year+10,0,1),e.onChangeDecade&&e.onChangeDecade(this.curDecade)}},prev:function(){var t=this.parsedDate,e=this.opts;switch(this.view){case"days":this.date=new Date(t.year,t.month-1,1),e.onChangeMonth&&e.onChangeMonth(this.parsedDate.month,this.parsedDate.year);break;case"months":this.date=new Date(t.year-1,t.month,1),e.onChangeYear&&e.onChangeYear(this.parsedDate.year);break;case"years":this.date=new Date(t.year-10,0,1),e.onChangeDecade&&e.onChangeDecade(this.curDecade)}},formatDate:function(t,e){e=e||this.date;var i,s=t,a=this._getWordBoundaryRegExp,h=this.loc,o=n.getLeadingZeroNum,r=n.getDecade(e),c=n.getParsedDate(e),d=c.fullHours,l=c.hours,u=t.match(a("aa"))||t.match(a("AA")),m="am",p=this._replacer;switch(this.opts.timepicker&&this.timepicker&&u&&(i=this.timepicker._getValidHoursFromDate(e,u),d=o(i.hours),l=i.hours,m=i.dayPeriod),!0){case/@/.test(s):s=s.replace(/@/,e.getTime());case/aa/.test(s):s=p(s,a("aa"),m);case/AA/.test(s):s=p(s,a("AA"),m.toUpperCase());case/dd/.test(s):s=p(s,a("dd"),c.fullDate);case/d/.test(s):s=p(s,a("d"),c.date);case/DD/.test(s):s=p(s,a("DD"),h.days[c.day]);case/D/.test(s):s=p(s,a("D"),h.daysShort[c.day]);case/mm/.test(s):s=p(s,a("mm"),c.fullMonth);case/m/.test(s):s=p(s,a("m"),c.month+1);case/MM/.test(s):s=p(s,a("MM"),this.loc.months[c.month]);case/M/.test(s):s=p(s,a("M"),h.monthsShort[c.month]);case/ii/.test(s):s=p(s,a("ii"),c.fullMinutes);case/i/.test(s):s=p(s,a("i"),c.minutes);case/hh/.test(s):s=p(s,a("hh"),d);case/h/.test(s):s=p(s,a("h"),l);case/yyyy/.test(s):s=p(s,a("yyyy"),c.year);case/yyyy1/.test(s):s=p(s,a("yyyy1"),r[0]);case/yyyy2/.test(s):s=p(s,a("yyyy2"),r[1]);case/yy/.test(s):s=p(s,a("yy"),c.year.toString().slice(-2))}return s},_replacer:function(t,e,i){return t.replace(e,function(t,e,s,a){return e+i+a})},_getWordBoundaryRegExp:function(t){var e="\\s|\\.|-|/|\\\\|,|\\$|\\!|\\?|:|;";return new RegExp("(^|>|"+e+")("+t+")($|<|"+e+")","g")},selectDate:function(t){var e=this,i=e.opts,s=e.parsedDate,a=e.selectedDates,h=a.length,o="";if(Array.isArray(t))return void t.forEach(function(t){e.selectDate(t)});if(t instanceof Date){if(this.lastSelectedDate=t,this.timepicker&&this.timepicker._setTime(t),e._trigger("selectDate",t),this.timepicker&&(t.setHours(this.timepicker.hours),t.setMinutes(this.timepicker.minutes)),"days"==e.view&&t.getMonth()!=s.month&&i.moveToOtherMonthsOnSelect&&(o=new Date(t.getFullYear(),t.getMonth(),1)),"years"==e.view&&t.getFullYear()!=s.year&&i.moveToOtherYearsOnSelect&&(o=new Date(t.getFullYear(),0,1)),o&&(e.silent=!0,e.date=o,e.silent=!1,e.nav._render()),i.multipleDates&&!i.range){if(h===i.multipleDates)return;e._isSelected(t)||e.selectedDates.push(t)}else i.range?2==h?(e.selectedDates=[t],e.minRange=t,e.maxRange=""):1==h?(e.selectedDates.push(t),e.maxRange?e.minRange=t:e.maxRange=t,n.bigger(e.maxRange,e.minRange)&&(e.maxRange=e.minRange,e.minRange=t),e.selectedDates=[e.minRange,e.maxRange]):(e.selectedDates=[t],e.minRange=t):e.selectedDates=[t];e._setInputValue(),i.onSelect&&e._triggerOnChange(),i.autoClose&&!this.timepickerIsActive&&(i.multipleDates||i.range?i.range&&2==e.selectedDates.length&&e.hide():e.hide()),e.views[this.currentView]._render()}},removeDate:function(t){var e=this.selectedDates,i=this;if(t instanceof Date)return e.some(function(s,a){return n.isSame(s,t)?(e.splice(a,1),i.selectedDates.length?i.lastSelectedDate=i.selectedDates[i.selectedDates.length-1]:(i.minRange="",i.maxRange="",i.lastSelectedDate=""),i.views[i.currentView]._render(),i._setInputValue(),i.opts.onSelect&&i._triggerOnChange(),!0):void 0})},today:function(){this.silent=!0,this.view=this.opts.minView,this.silent=!1,this.date=new Date,this.opts.todayButton instanceof Date&&this.selectDate(this.opts.todayButton)},clear:function(){this.selectedDates=[],this.minRange="",this.maxRange="",this.views[this.currentView]._render(),this._setInputValue(),this.opts.onSelect&&this._triggerOnChange()},update:function(t,i){var s=arguments.length,a=this.lastSelectedDate;return 2==s?this.opts[t]=i:1==s&&"object"==typeof t&&(this.opts=e.extend(!0,this.opts,t)),this._createShortCuts(),this._syncWithMinMaxDates(),this._defineLocale(this.opts.language),this.nav._addButtonsIfNeed(),this.opts.onlyTimepicker||this.nav._render(),this.views[this.currentView]._render(),this.elIsInput&&!this.opts.inline&&(this._setPositionClasses(this.opts.position),this.visible&&this.setPosition(this.opts.position)),this.opts.classes&&this.$datepicker.addClass(this.opts.classes),this.opts.onlyTimepicker&&this.$datepicker.addClass("-only-timepicker-"),this.opts.timepicker&&(a&&this.timepicker._handleDate(a),this.timepicker._updateRanges(),this.timepicker._updateCurrentTime(),a&&(a.setHours(this.timepicker.hours),a.setMinutes(this.timepicker.minutes))),this._setInputValue(),this},_syncWithMinMaxDates:function(){var t=this.date.getTime();this.silent=!0,this.minTime>t&&(this.date=this.minDate),this.maxTime<t&&(this.date=this.maxDate),this.silent=!1},_isSelected:function(t,e){var i=!1;return this.selectedDates.some(function(s){return n.isSame(s,t,e)?(i=s,!0):void 0}),i},_setInputValue:function(){var t,e=this,i=e.opts,s=e.loc.dateFormat,a=i.altFieldDateFormat,n=e.selectedDates.map(function(t){return e.formatDate(s,t)});i.altField&&e.$altField.length&&(t=this.selectedDates.map(function(t){return e.formatDate(a,t)}),t=t.join(this.opts.multipleDatesSeparator),this.$altField.val(t)),n=n.join(this.opts.multipleDatesSeparator),this.$el.val(n)},_isInRange:function(t,e){var i=t.getTime(),s=n.getParsedDate(t),a=n.getParsedDate(this.minDate),h=n.getParsedDate(this.maxDate),o=new Date(s.year,s.month,a.date).getTime(),r=new Date(s.year,s.month,h.date).getTime(),c={day:i>=this.minTime&&i<=this.maxTime,month:o>=this.minTime&&r<=this.maxTime,year:s.year>=a.year&&s.year<=h.year};return e?c[e]:c.day},_getDimensions:function(t){var e=t.offset();return{width:t.outerWidth(),height:t.outerHeight(),left:e.left,top:e.top}},_getDateFromCell:function(t){var e=this.parsedDate,s=t.data("year")||e.year,a=t.data("month")==i?e.month:t.data("month"),n=t.data("date")||1;return new Date(s,a,n)},_setPositionClasses:function(t){t=t.split(" ");var e=t[0],i=t[1],s="datepicker -"+e+"-"+i+"- -from-"+e+"-";this.visible&&(s+=" active"),this.$datepicker.removeAttr("class").addClass(s)},setPosition:function(t){t=t||this.opts.position;var e,i,s=this._getDimensions(this.$el),a=this._getDimensions(this.$datepicker),n=t.split(" "),h=this.opts.offset,o=n[0],r=n[1];switch(o){case"top":e=s.top-a.height-h;break;case"right":i=s.left+s.width+h;break;case"bottom":e=s.top+s.height+h;break;case"left":i=s.left-a.width-h}switch(r){case"top":e=s.top;break;case"right":i=s.left+s.width-a.width;break;case"bottom":e=s.top+s.height-a.height;break;case"left":i=s.left;break;case"center":/left|right/.test(o)?e=s.top+s.height/2-a.height/2:i=s.left+s.width/2-a.width/2}this.$datepicker.css({left:i,top:e})},show:function(){var t=this.opts.onShow;this.setPosition(this.opts.position),this.$datepicker.addClass("active"),this.visible=!0,t&&this._bindVisionEvents(t)},hide:function(){var t=this.opts.onHide;this.$datepicker.removeClass("active").css({left:"-100000px"}),this.focused="",this.keys=[],this.inFocus=!1,this.visible=!1,this.$el.blur(),t&&this._bindVisionEvents(t)},down:function(t){this._changeView(t,"down")},up:function(t){this._changeView(t,"up")},_bindVisionEvents:function(t){this.$datepicker.off("transitionend.dp"),t(this,!1),this.$datepicker.one("transitionend.dp",t.bind(this,this,!0))},_changeView:function(t,e){t=t||this.focused||this.date;var i="up"==e?this.viewIndex+1:this.viewIndex-1;i>2&&(i=2),0>i&&(i=0),this.silent=!0,this.date=new Date(t.getFullYear(),t.getMonth(),1),this.silent=!1,this.view=this.viewIndexes[i]},_handleHotKey:function(t){var e,i,s,a=n.getParsedDate(this._getFocusedDate()),h=this.opts,o=!1,r=!1,c=!1,d=a.year,l=a.month,u=a.date;switch(t){case"ctrlRight":case"ctrlUp":l+=1,o=!0;break;case"ctrlLeft":case"ctrlDown":l-=1,o=!0;break;case"shiftRight":case"shiftUp":r=!0,d+=1;break;case"shiftLeft":case"shiftDown":r=!0,d-=1;break;case"altRight":case"altUp":c=!0,d+=10;break;case"altLeft":case"altDown":c=!0,d-=10;break;case"ctrlShiftUp":this.up()}s=n.getDaysCount(new Date(d,l)),i=new Date(d,l,u),u>s&&(u=s),i.getTime()<this.minTime?i=this.minDate:i.getTime()>this.maxTime&&(i=this.maxDate),this.focused=i,e=n.getParsedDate(i),o&&h.onChangeMonth&&h.onChangeMonth(e.month,e.year),r&&h.onChangeYear&&h.onChangeYear(e.year),c&&h.onChangeDecade&&h.onChangeDecade(this.curDecade)},_registerKey:function(t){var e=this.keys.some(function(e){return e==t});e||this.keys.push(t)},_unRegisterKey:function(t){var e=this.keys.indexOf(t);this.keys.splice(e,1)},_isHotKeyPressed:function(){var t,e=!1,i=this,s=this.keys.sort();for(var a in u)t=u[a],s.length==t.length&&t.every(function(t,e){return t==s[e]})&&(i._trigger("hotKey",a),e=!0);return e},_trigger:function(t,e){this.$el.trigger(t,e)},_focusNextCell:function(t,e){e=e||this.cellType;var i=n.getParsedDate(this._getFocusedDate()),s=i.year,a=i.month,h=i.date;if(!this._isHotKeyPressed()){switch(t){case 37:"day"==e?h-=1:"","month"==e?a-=1:"","year"==e?s-=1:"";break;case 38:"day"==e?h-=7:"","month"==e?a-=3:"","year"==e?s-=4:"";break;case 39:"day"==e?h+=1:"","month"==e?a+=1:"","year"==e?s+=1:"";break;case 40:"day"==e?h+=7:"","month"==e?a+=3:"","year"==e?s+=4:""}var o=new Date(s,a,h);o.getTime()<this.minTime?o=this.minDate:o.getTime()>this.maxTime&&(o=this.maxDate),this.focused=o}},_getFocusedDate:function(){var t=this.focused||this.selectedDates[this.selectedDates.length-1],e=this.parsedDate;if(!t)switch(this.view){case"days":t=new Date(e.year,e.month,(new Date).getDate());break;case"months":t=new Date(e.year,e.month,1);break;case"years":t=new Date(e.year,0,1)}return t},_getCell:function(t,i){i=i||this.cellType;var s,a=n.getParsedDate(t),h='.datepicker--cell[data-year="'+a.year+'"]';switch(i){case"month":h='[data-month="'+a.month+'"]';break;case"day":h+='[data-month="'+a.month+'"][data-date="'+a.date+'"]'}return s=this.views[this.currentView].$el.find(h),s.length?s:e("")},destroy:function(){var t=this;t.$el.off(".adp").data("datepicker",""),t.selectedDates=[],t.focused="",t.views={},t.keys=[],t.minRange="",t.maxRange="",t.opts.inline||!t.elIsInput?t.$datepicker.closest(".datepicker-inline").remove():t.$datepicker.remove()},_handleAlreadySelectedDates:function(t,e){this.opts.range?this.opts.toggleSelected?this.removeDate(e):2!=this.selectedDates.length&&this._trigger("clickCell",e):this.opts.toggleSelected&&this.removeDate(e),this.opts.toggleSelected||(this.lastSelectedDate=t,this.opts.timepicker&&(this.timepicker._setTime(t),this.timepicker.update()))},_onShowEvent:function(t){this.visible||this.show()},_onBlur:function(){!this.inFocus&&this.visible&&this.hide()},_onMouseDownDatepicker:function(t){this.inFocus=!0},_onMouseUpDatepicker:function(t){this.inFocus=!1,t.originalEvent.inFocus=!0,t.originalEvent.timepickerFocus||this.$el.focus()},_onKeyUpGeneral:function(t){var e=this.$el.val();e||this.clear()},_onResize:function(){this.visible&&this.setPosition()},_onMouseUpBody:function(t){t.originalEvent.inFocus||this.visible&&!this.inFocus&&this.hide()},_onMouseUpEl:function(t){t.originalEvent.inFocus=!0,setTimeout(this._onKeyUpGeneral.bind(this),4)},_onKeyDown:function(t){var e=t.which;if(this._registerKey(e),e>=37&&40>=e&&(t.preventDefault(),this._focusNextCell(e)),13==e&&this.focused){if(this._getCell(this.focused).hasClass("-disabled-"))return;if(this.view!=this.opts.minView)this.down();else{var i=this._isSelected(this.focused,this.cellType);if(!i)return this.timepicker&&(this.focused.setHours(this.timepicker.hours),this.focused.setMinutes(this.timepicker.minutes)),void this.selectDate(this.focused);this._handleAlreadySelectedDates(i,this.focused)}}27==e&&this.hide()},_onKeyUp:function(t){var e=t.which;this._unRegisterKey(e)},_onHotKey:function(t,e){this._handleHotKey(e)},_onMouseEnterCell:function(t){var i=e(t.target).closest(".datepicker--cell"),s=this._getDateFromCell(i);this.silent=!0,this.focused&&(this.focused=""),i.addClass("-focus-"),this.focused=s,this.silent=!1,this.opts.range&&1==this.selectedDates.length&&(this.minRange=this.selectedDates[0],this.maxRange="",n.less(this.minRange,this.focused)&&(this.maxRange=this.minRange,this.minRange=""),this.views[this.currentView]._update())},_onMouseLeaveCell:function(t){var i=e(t.target).closest(".datepicker--cell");i.removeClass("-focus-"),this.silent=!0,this.focused="",this.silent=!1},_onTimeChange:function(t,e,i){var s=new Date,a=this.selectedDates,n=!1;a.length&&(n=!0,s=this.lastSelectedDate),s.setHours(e),s.setMinutes(i),n||this._getCell(s).hasClass("-disabled-")?(this._setInputValue(),this.opts.onSelect&&this._triggerOnChange()):this.selectDate(s)},_onClickCell:function(t,e){this.timepicker&&(e.setHours(this.timepicker.hours),e.setMinutes(this.timepicker.minutes)),this.selectDate(e)},set focused(t){if(!t&&this.focused){var e=this._getCell(this.focused);e.length&&e.removeClass("-focus-")}this._focused=t,this.opts.range&&1==this.selectedDates.length&&(this.minRange=this.selectedDates[0],this.maxRange="",n.less(this.minRange,this._focused)&&(this.maxRange=this.minRange,this.minRange="")),this.silent||(this.date=t)},get focused(){return this._focused},get parsedDate(){return n.getParsedDate(this.date)},set date(t){return t instanceof Date?(this.currentDate=t,this.inited&&!this.silent&&(this.views[this.view]._render(),this.nav._render(),this.visible&&this.elIsInput&&this.setPosition()),t):void 0},get date(){return this.currentDate},set view(t){return this.viewIndex=this.viewIndexes.indexOf(t),this.viewIndex<0?void 0:(this.prevView=this.currentView,this.currentView=t,this.inited&&(this.views[t]?this.views[t]._render():this.views[t]=new e.fn.datepicker.Body(this,t,this.opts),this.views[this.prevView].hide(),this.views[t].show(),this.nav._render(),this.opts.onChangeView&&this.opts.onChangeView(t),this.elIsInput&&this.visible&&this.setPosition()),t)},get view(){return this.currentView},get cellType(){return this.view.substring(0,this.view.length-1)},get minTime(){var t=n.getParsedDate(this.minDate);return new Date(t.year,t.month,t.date).getTime()},get maxTime(){var t=n.getParsedDate(this.maxDate);return new Date(t.year,t.month,t.date).getTime()},get curDecade(){return n.getDecade(this.date)}},n.getDaysCount=function(t){return new Date(t.getFullYear(),t.getMonth()+1,0).getDate()},n.getParsedDate=function(t){return{year:t.getFullYear(),month:t.getMonth(),fullMonth:t.getMonth()+1<10?"0"+(t.getMonth()+1):t.getMonth()+1,date:t.getDate(),fullDate:t.getDate()<10?"0"+t.getDate():t.getDate(),day:t.getDay(),hours:t.getHours(),fullHours:t.getHours()<10?"0"+t.getHours():t.getHours(),minutes:t.getMinutes(),fullMinutes:t.getMinutes()<10?"0"+t.getMinutes():t.getMinutes()}},n.getDecade=function(t){var e=10*Math.floor(t.getFullYear()/10);return[e,e+9]},n.template=function(t,e){return t.replace(/#\{([\w]+)\}/g,function(t,i){return e[i]||0===e[i]?e[i]:void 0})},n.isSame=function(t,e,i){if(!t||!e)return!1;var s=n.getParsedDate(t),a=n.getParsedDate(e),h=i?i:"day",o={day:s.date==a.date&&s.month==a.month&&s.year==a.year,month:s.month==a.month&&s.year==a.year,year:s.year==a.year};return o[h]},n.less=function(t,e,i){return t&&e?e.getTime()<t.getTime():!1},n.bigger=function(t,e,i){return t&&e?e.getTime()>t.getTime():!1},n.getLeadingZeroNum=function(t){return parseInt(t)<10?"0"+t:t},n.resetTime=function(t){return"object"==typeof t?(t=n.getParsedDate(t),new Date(t.year,t.month,t.date)):void 0},e.fn.datepicker=function(t){return this.each(function(){if(e.data(this,o)){var i=e.data(this,o);i.opts=e.extend(!0,i.opts,t),i.update()}else e.data(this,o,new m(this,t))})},e.fn.datepicker.Constructor=m,e.fn.datepicker.language={ru:{days:["Воскресенье","Понедельник","Вторник","Среда","Четверг","Пятница","Суббота"],daysShort:["Вос","Пон","Вто","Сре","Чет","Пят","Суб"],daysMin:["Вс","Пн","Вт","Ср","Чт","Пт","Сб"],months:["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],monthsShort:["Янв","Фев","Мар","Апр","Май","Июн","Июл","Авг","Сен","Окт","Ноя","Дек"],today:"Сегодня",clear:"Очистить",dateFormat:"dd.mm.yyyy",timeFormat:"hh:ii",firstDay:1}},e(function(){e(r).datepicker()})}(),function(){var t={days:'<div class="datepicker--days datepicker--body"><div class="datepicker--days-names"></div><div class="datepicker--cells datepicker--cells-days"></div></div>',months:'<div class="datepicker--months datepicker--body"><div class="datepicker--cells datepicker--cells-months"></div></div>',years:'<div class="datepicker--years datepicker--body"><div class="datepicker--cells datepicker--cells-years"></div></div>'},s=e.fn.datepicker,a=s.Constructor;s.Body=function(t,i,s){this.d=t,this.type=i,this.opts=s,this.$el=e(""),this.opts.onlyTimepicker||this.init()},s.Body.prototype={init:function(){this._buildBaseHtml(),this._render(),this._bindEvents()},_bindEvents:function(){this.$el.on("click",".datepicker--cell",e.proxy(this._onClickCell,this))},_buildBaseHtml:function(){this.$el=e(t[this.type]).appendTo(this.d.$content),this.$names=e(".datepicker--days-names",this.$el),this.$cells=e(".datepicker--cells",this.$el)},_getDayNamesHtml:function(t,e,s,a){return e=e!=i?e:t,s=s?s:"",a=a!=i?a:0,a>7?s:7==e?this._getDayNamesHtml(t,0,s,++a):(s+='<div class="datepicker--day-name'+(this.d.isWeekend(e)?" -weekend-":"")+'">'+this.d.loc.daysMin[e]+"</div>",this._getDayNamesHtml(t,++e,s,++a))},_getCellContents:function(t,e){var i="datepicker--cell datepicker--cell-"+e,s=new Date,n=this.d,h=a.resetTime(n.minRange),o=a.resetTime(n.maxRange),r=n.opts,c=a.getParsedDate(t),d={},l=c.date;switch(e){case"day":n.isWeekend(c.day)&&(i+=" -weekend-"),c.month!=this.d.parsedDate.month&&(i+=" -other-month-",r.selectOtherMonths||(i+=" -disabled-"),r.showOtherMonths||(l=""));break;case"month":l=n.loc[n.opts.monthsField][c.month];break;case"year":var u=n.curDecade;l=c.year,(c.year<u[0]||c.year>u[1])&&(i+=" -other-decade-",r.selectOtherYears||(i+=" -disabled-"),r.showOtherYears||(l=""))}return r.onRenderCell&&(d=r.onRenderCell(t,e)||{},l=d.html?d.html:l,i+=d.classes?" "+d.classes:""),r.range&&(a.isSame(h,t,e)&&(i+=" -range-from-"),a.isSame(o,t,e)&&(i+=" -range-to-"),1==n.selectedDates.length&&n.focused?((a.bigger(h,t)&&a.less(n.focused,t)||a.less(o,t)&&a.bigger(n.focused,t))&&(i+=" -in-range-"),a.less(o,t)&&a.isSame(n.focused,t)&&(i+=" -range-from-"),a.bigger(h,t)&&a.isSame(n.focused,t)&&(i+=" -range-to-")):2==n.selectedDates.length&&a.bigger(h,t)&&a.less(o,t)&&(i+=" -in-range-")),a.isSame(s,t,e)&&(i+=" -current-"),n.focused&&a.isSame(t,n.focused,e)&&(i+=" -focus-"),n._isSelected(t,e)&&(i+=" -selected-"),(!n._isInRange(t,e)||d.disabled)&&(i+=" -disabled-"),{html:l,classes:i}},_getDaysHtml:function(t){var e=a.getDaysCount(t),i=new Date(t.getFullYear(),t.getMonth(),1).getDay(),s=new Date(t.getFullYear(),t.getMonth(),e).getDay(),n=i-this.d.loc.firstDay,h=6-s+this.d.loc.firstDay;n=0>n?n+7:n,h=h>6?h-7:h;for(var o,r,c=-n+1,d="",l=c,u=e+h;u>=l;l++)r=t.getFullYear(),o=t.getMonth(),d+=this._getDayHtml(new Date(r,o,l));return d},_getDayHtml:function(t){var e=this._getCellContents(t,"day");return'<div class="'+e.classes+'" data-date="'+t.getDate()+'" data-month="'+t.getMonth()+'" data-year="'+t.getFullYear()+'">'+e.html+"</div>"},_getMonthsHtml:function(t){for(var e="",i=a.getParsedDate(t),s=0;12>s;)e+=this._getMonthHtml(new Date(i.year,s)),s++;return e},_getMonthHtml:function(t){var e=this._getCellContents(t,"month");return'<div class="'+e.classes+'" data-month="'+t.getMonth()+'">'+e.html+"</div>"},_getYearsHtml:function(t){var e=(a.getParsedDate(t),a.getDecade(t)),i=e[0]-1,s="",n=i;for(n;n<=e[1]+1;n++)s+=this._getYearHtml(new Date(n,0));return s},_getYearHtml:function(t){var e=this._getCellContents(t,"year");return'<div class="'+e.classes+'" data-year="'+t.getFullYear()+'">'+e.html+"</div>"},_renderTypes:{days:function(){var t=this._getDayNamesHtml(this.d.loc.firstDay),e=this._getDaysHtml(this.d.currentDate);this.$cells.html(e),this.$names.html(t)},months:function(){var t=this._getMonthsHtml(this.d.currentDate);this.$cells.html(t)},years:function(){var t=this._getYearsHtml(this.d.currentDate);this.$cells.html(t)}},_render:function(){this.opts.onlyTimepicker||this._renderTypes[this.type].bind(this)()},_update:function(){var t,i,s,a=e(".datepicker--cell",this.$cells),n=this;a.each(function(a,h){i=e(this),s=n.d._getDateFromCell(e(this)),t=n._getCellContents(s,n.d.cellType),i.attr("class",t.classes)})},show:function(){this.opts.onlyTimepicker||(this.$el.addClass("active"),this.acitve=!0)},hide:function(){this.$el.removeClass("active"),this.active=!1},_handleClick:function(t){var e=t.data("date")||1,i=t.data("month")||0,s=t.data("year")||this.d.parsedDate.year,a=this.d;if(a.view!=this.opts.minView)return void a.down(new Date(s,i,e));var n=new Date(s,i,e),h=this.d._isSelected(n,this.d.cellType);return h?void a._handleAlreadySelectedDates.bind(a,h,n)():void a._trigger("clickCell",n)},_onClickCell:function(t){var i=e(t.target).closest(".datepicker--cell");i.hasClass("-disabled-")||this._handleClick.bind(this)(i)}}}(),function(){var t='<div class="datepicker--nav-action" data-action="prev">#{prevHtml}</div><div class="datepicker--nav-title">#{title}</div><div class="datepicker--nav-action" data-action="next">#{nextHtml}</div>',i='<div class="datepicker--buttons"></div>',s='<span class="datepicker--button" data-action="#{action}">#{label}</span>',a=e.fn.datepicker,n=a.Constructor;a.Navigation=function(t,e){this.d=t,this.opts=e,this.$buttonsContainer="",this.init()},a.Navigation.prototype={init:function(){this._buildBaseHtml(),this._bindEvents()},_bindEvents:function(){this.d.$nav.on("click",".datepicker--nav-action",e.proxy(this._onClickNavButton,this)),this.d.$nav.on("click",".datepicker--nav-title",e.proxy(this._onClickNavTitle,this)),this.d.$datepicker.on("click",".datepicker--button",e.proxy(this._onClickNavButton,this))},_buildBaseHtml:function(){this.opts.onlyTimepicker||this._render(),this._addButtonsIfNeed()},_addButtonsIfNeed:function(){this.opts.todayButton&&this._addButton("today"),this.opts.clearButton&&this._addButton("clear")},_render:function(){var i=this._getTitle(this.d.currentDate),s=n.template(t,e.extend({title:i},this.opts));this.d.$nav.html(s),"years"==this.d.view&&e(".datepicker--nav-title",this.d.$nav).addClass("-disabled-"),this.setNavStatus()},_getTitle:function(t){return this.d.formatDate(this.opts.navTitles[this.d.view],t)},_addButton:function(t){this.$buttonsContainer.length||this._addButtonsContainer();var i={action:t,label:this.d.loc[t]},a=n.template(s,i);e("[data-action="+t+"]",this.$buttonsContainer).length||this.$buttonsContainer.append(a)},_addButtonsContainer:function(){this.d.$datepicker.append(i),this.$buttonsContainer=e(".datepicker--buttons",this.d.$datepicker)},setNavStatus:function(){if((this.opts.minDate||this.opts.maxDate)&&this.opts.disableNavWhenOutOfRange){var t=this.d.parsedDate,e=t.month,i=t.year,s=t.date;switch(this.d.view){case"days":this.d._isInRange(new Date(i,e-1,1),"month")||this._disableNav("prev"),this.d._isInRange(new Date(i,e+1,1),"month")||this._disableNav("next");break;case"months":this.d._isInRange(new Date(i-1,e,s),"year")||this._disableNav("prev"),this.d._isInRange(new Date(i+1,e,s),"year")||this._disableNav("next");break;case"years":var a=n.getDecade(this.d.date);this.d._isInRange(new Date(a[0]-1,0,1),"year")||this._disableNav("prev"),this.d._isInRange(new Date(a[1]+1,0,1),"year")||this._disableNav("next")}}},_disableNav:function(t){e('[data-action="'+t+'"]',this.d.$nav).addClass("-disabled-")},_activateNav:function(t){e('[data-action="'+t+'"]',this.d.$nav).removeClass("-disabled-")},_onClickNavButton:function(t){var i=e(t.target).closest("[data-action]"),s=i.data("action");this.d[s]()},_onClickNavTitle:function(t){return e(t.target).hasClass("-disabled-")?void 0:"days"==this.d.view?this.d.view="months":void(this.d.view="years")}}}(),function(){var t='<div class="datepicker--time"><div class="datepicker--time-current">   <span class="datepicker--time-current-hours">#{hourVisible}</span>   <span class="datepicker--time-current-colon">:</span>   <span class="datepicker--time-current-minutes">#{minValue}</span></div><div class="datepicker--time-sliders">   <div class="datepicker--time-row">      <input type="range" name="hours" value="#{hourValue}" min="#{hourMin}" max="#{hourMax}" step="#{hourStep}"/>   </div>   <div class="datepicker--time-row">      <input type="range" name="minutes" value="#{minValue}" min="#{minMin}" max="#{minMax}" step="#{minStep}"/>   </div></div></div>',i=e.fn.datepicker,s=i.Constructor;i.Timepicker=function(t,e){this.d=t,this.opts=e,this.init()},i.Timepicker.prototype={init:function(){var t="input";this._setTime(this.d.date),this._buildHTML(),navigator.userAgent.match(/trident/gi)&&(t="change"),this.d.$el.on("selectDate",this._onSelectDate.bind(this)),this.$ranges.on(t,this._onChangeRange.bind(this)),this.$ranges.on("mouseup",this._onMouseUpRange.bind(this)),this.$ranges.on("mousemove focus ",this._onMouseEnterRange.bind(this)),this.$ranges.on("mouseout blur",this._onMouseOutRange.bind(this))},_setTime:function(t){var e=s.getParsedDate(t);this._handleDate(t),this.hours=e.hours<this.minHours?this.minHours:e.hours,this.minutes=e.minutes<this.minMinutes?this.minMinutes:e.minutes},_setMinTimeFromDate:function(t){this.minHours=t.getHours(),this.minMinutes=t.getMinutes(),this.d.lastSelectedDate&&this.d.lastSelectedDate.getHours()>t.getHours()&&(this.minMinutes=this.opts.minMinutes)},_setMaxTimeFromDate:function(t){this.maxHours=t.getHours(),this.maxMinutes=t.getMinutes(),this.d.lastSelectedDate&&this.d.lastSelectedDate.getHours()<t.getHours()&&(this.maxMinutes=this.opts.maxMinutes)},_setDefaultMinMaxTime:function(){var t=23,e=59,i=this.opts;this.minHours=i.minHours<0||i.minHours>t?0:i.minHours,this.minMinutes=i.minMinutes<0||i.minMinutes>e?0:i.minMinutes,this.maxHours=i.maxHours<0||i.maxHours>t?t:i.maxHours,this.maxMinutes=i.maxMinutes<0||i.maxMinutes>e?e:i.maxMinutes},_validateHoursMinutes:function(t){this.hours<this.minHours?this.hours=this.minHours:this.hours>this.maxHours&&(this.hours=this.maxHours),this.minutes<this.minMinutes?this.minutes=this.minMinutes:this.minutes>this.maxMinutes&&(this.minutes=this.maxMinutes)},_buildHTML:function(){var i=s.getLeadingZeroNum,a={hourMin:this.minHours,hourMax:i(this.maxHours),hourStep:this.opts.hoursStep,hourValue:this.hours,hourVisible:i(this.displayHours),minMin:this.minMinutes,minMax:i(this.maxMinutes),minStep:this.opts.minutesStep,minValue:i(this.minutes)},n=s.template(t,a);this.$timepicker=e(n).appendTo(this.d.$datepicker),this.$ranges=e('[type="range"]',this.$timepicker),this.$hours=e('[name="hours"]',this.$timepicker),this.$minutes=e('[name="minutes"]',this.$timepicker),this.$hoursText=e(".datepicker--time-current-hours",this.$timepicker),this.$minutesText=e(".datepicker--time-current-minutes",this.$timepicker),this.d.ampm&&(this.$ampm=e('<span class="datepicker--time-current-ampm">').appendTo(e(".datepicker--time-current",this.$timepicker)).html(this.dayPeriod),this.$timepicker.addClass("-am-pm-"))},_updateCurrentTime:function(){var t=s.getLeadingZeroNum(this.displayHours),e=s.getLeadingZeroNum(this.minutes);this.$hoursText.html(t),this.$minutesText.html(e),this.d.ampm&&this.$ampm.html(this.dayPeriod)},_updateRanges:function(){this.$hours.attr({min:this.minHours,max:this.maxHours}).val(this.hours),this.$minutes.attr({min:this.minMinutes,max:this.maxMinutes}).val(this.minutes)},_handleDate:function(t){this._setDefaultMinMaxTime(),t&&(s.isSame(t,this.d.opts.minDate)?this._setMinTimeFromDate(this.d.opts.minDate):s.isSame(t,this.d.opts.maxDate)&&this._setMaxTimeFromDate(this.d.opts.maxDate)),this._validateHoursMinutes(t)},update:function(){this._updateRanges(),this._updateCurrentTime()},_getValidHoursFromDate:function(t,e){var i=t,a=t;t instanceof Date&&(i=s.getParsedDate(t),a=i.hours);var n=e||this.d.ampm,h="am";if(n)switch(!0){case 0==a:a=12;break;case 12==a:h="pm";break;case a>11:a-=12,h="pm"}return{hours:a,dayPeriod:h}},set hours(t){this._hours=t;var e=this._getValidHoursFromDate(t);this.displayHours=e.hours,this.dayPeriod=e.dayPeriod},get hours(){return this._hours},_onChangeRange:function(t){var i=e(t.target),s=i.attr("name");this.d.timepickerIsActive=!0,this[s]=i.val(),this._updateCurrentTime(),this.d._trigger("timeChange",[this.hours,this.minutes]),this._handleDate(this.d.lastSelectedDate),this.update()},_onSelectDate:function(t,e){this._handleDate(e),this.update()},_onMouseEnterRange:function(t){var i=e(t.target).attr("name");e(".datepicker--time-current-"+i,this.$timepicker).addClass("-focus-")},_onMouseOutRange:function(t){var i=e(t.target).attr("name");this.d.inFocus||e(".datepicker--time-current-"+i,this.$timepicker).removeClass("-focus-")},_onMouseUpRange:function(t){this.d.timepickerIsActive=!1}}}()}(window,jQuery);
+    // Underscore.js 1.10.2
+    !function(n,r){var t,e;"object"==typeof exports&&"undefined"!=typeof module?module.exports=r():"function"==typeof define&&define.amd?define("underscore",r):(t=n._,e=r(),(n._=e).noConflict=function(){return n._=t,e})}(this,function(){
+        var n="object"==typeof self&&self.self===self&&self||"object"==typeof global&&global.global===global&&global||Function("return this")()||{},e=Array.prototype,i=Object.prototype,p="undefined"!=typeof Symbol?Symbol.prototype:null,u=e.push,f=e.slice,s=i.toString,o=i.hasOwnProperty,r=Array.isArray,a=Object.keys,t=Object.create,c=n.isNaN,l=n.isFinite,v=function(){};function h(n){return n instanceof h?n:this instanceof h?void(this._wrapped=n):new h(n)}var g=h.VERSION="1.10.2";function y(u,o,n){if(void 0===o)return u;switch(null==n?3:n){case 1:return function(n){return u.call(o,n)};case 3:return function(n,r,t){return u.call(o,n,r,t)};case 4:return function(n,r,t,e){return u.call(o,n,r,t,e)}}return function(){return u.apply(o,arguments)}}function d(n,r,t){return null==n?ur:Cn(n)?y(n,r,t):Ln(n)&&!Kn(n)?ir(n):or(n)}function m(n,r){return d(n,r,1/0)}function b(n,r,t){return h.iteratee!==m?h.iteratee(n,r):d(n,r,t)}function j(u,o){return o=null==o?u.length-1:+o,function(){for(var n=Math.max(arguments.length-o,0),r=Array(n),t=0;t<n;t++)r[t]=arguments[t+o];switch(o){case 0:return u.call(this,r);case 1:return u.call(this,arguments[0],r);case 2:return u.call(this,arguments[0],arguments[1],r)}var e=Array(o+1);for(t=0;t<o;t++)e[t]=arguments[t];return e[o]=r,u.apply(this,e)}}function _(n){if(!Ln(n))return{};if(t)return t(n);v.prototype=n;var r=new v;return v.prototype=null,r}function w(r){return function(n){return null==n?void 0:n[r]}}function x(n,r){return null!=n&&o.call(n,r)}function S(n,r){for(var t=r.length,e=0;e<t;e++){if(null==n)return;n=n[r[e]]}return t?n:void 0}h.iteratee=m;var A=Math.pow(2,53)-1,O=w("length");function M(n){var r=O(n);return"number"==typeof r&&0<=r&&r<=A}function E(n,r,t){var e,u;if(r=y(r,t),M(n))for(e=0,u=n.length;e<u;e++)r(n[e],e,n);else{var o=Sn(n);for(e=0,u=o.length;e<u;e++)r(n[o[e]],o[e],n)}return n}function N(n,r,t){r=b(r,t);for(var e=!M(n)&&Sn(n),u=(e||n).length,o=Array(u),i=0;i<u;i++){var a=e?e[i]:i;o[i]=r(n[a],a,n)}return o}function k(f){return function(n,r,t,e){var u=3<=arguments.length;return function(n,r,t,e){var u=!M(n)&&Sn(n),o=(u||n).length,i=0<f?0:o-1;for(e||(t=n[u?u[i]:i],i+=f);0<=i&&i<o;i+=f){var a=u?u[i]:i;t=r(t,n[a],a,n)}return t}(n,y(r,e,4),t,u)}}var I=k(1),T=k(-1);function B(n,r,t){var e=(M(n)?on:Tn)(n,r,t);if(void 0!==e&&-1!==e)return n[e]}function R(n,e,r){var u=[];return e=b(e,r),E(n,function(n,r,t){e(n,r,t)&&u.push(n)}),u}function F(n,r,t){r=b(r,t);for(var e=!M(n)&&Sn(n),u=(e||n).length,o=0;o<u;o++){var i=e?e[o]:o;if(!r(n[i],i,n))return!1}return!0}function q(n,r,t){r=b(r,t);for(var e=!M(n)&&Sn(n),u=(e||n).length,o=0;o<u;o++){var i=e?e[o]:o;if(r(n[i],i,n))return!0}return!1}function D(n,r,t,e){return M(n)||(n=On(n)),("number"!=typeof t||e)&&(t=0),0<=ln(n,r,t)}var W=j(function(n,t,e){var u,o;return Cn(t)?o=t:Kn(t)&&(u=t.slice(0,-1),t=t[t.length-1]),N(n,function(n){var r=o;if(!r){if(u&&u.length&&(n=S(n,u)),null==n)return;r=n[t]}return null==r?r:r.apply(n,e)})});function z(n,r){return N(n,or(r))}function P(n,e,r){var t,u,o=-1/0,i=-1/0;if(null==e||"number"==typeof e&&"object"!=typeof n[0]&&null!=n)for(var a=0,f=(n=M(n)?n:On(n)).length;a<f;a++)null!=(t=n[a])&&o<t&&(o=t);else e=b(e,r),E(n,function(n,r,t){u=e(n,r,t),(i<u||u===-1/0&&o===-1/0)&&(o=n,i=u)});return o}function K(n,r,t){if(null==r||t)return M(n)||(n=On(n)),n[ar(n.length-1)];var e=M(n)?Dn(n):On(n),u=O(e);r=Math.max(Math.min(r,u),0);for(var o=u-1,i=0;i<r;i++){var a=ar(i,o),f=e[i];e[i]=e[a],e[a]=f}return e.slice(0,r)}function L(i,r){return function(e,u,n){var o=r?[[],[]]:{};return u=b(u,n),E(e,function(n,r){var t=u(n,r,e);i(o,n,t)}),o}}var V=L(function(n,r,t){x(n,t)?n[t].push(r):n[t]=[r]}),C=L(function(n,r,t){n[t]=r}),J=L(function(n,r,t){x(n,t)?n[t]++:n[t]=1}),U=/[^\ud800-\udfff]|[\ud800-\udbff][\udc00-\udfff]|[\ud800-\udfff]/g;var $=L(function(n,r,t){n[t?0:1].push(r)},!0);function G(n,r,t){return null==n||n.length<1?null==r?void 0:[]:null==r||t?n[0]:H(n,n.length-r)}function H(n,r,t){return f.call(n,0,Math.max(0,n.length-(null==r||t?1:r)))}function Q(n,r,t){return f.call(n,null==r||t?1:r)}function X(n,r,t,e){for(var u=(e=e||[]).length,o=0,i=O(n);o<i;o++){var a=n[o];if(M(a)&&(Kn(a)||Vn(a)))if(r)for(var f=0,c=a.length;f<c;)e[u++]=a[f++];else X(a,r,t,e),u=e.length;else t||(e[u++]=a)}return e}var Y=j(function(n,r){return rn(n,r)});function Z(n,r,t,e){er(r)||(e=t,t=r,r=!1),null!=t&&(t=b(t,e));for(var u=[],o=[],i=0,a=O(n);i<a;i++){var f=n[i],c=t?t(f,i,n):f;r&&!t?(i&&o===c||u.push(f),o=c):t?D(o,c)||(o.push(c),u.push(f)):D(u,f)||u.push(f)}return u}var nn=j(function(n){return Z(X(n,!0,!0))});var rn=j(function(n,r){return r=X(r,!0,!0),R(n,function(n){return!D(r,n)})});function tn(n){for(var r=n&&P(n,O).length||0,t=Array(r),e=0;e<r;e++)t[e]=z(n,e);return t}var en=j(tn);function un(o){return function(n,r,t){r=b(r,t);for(var e=O(n),u=0<o?0:e-1;0<=u&&u<e;u+=o)if(r(n[u],u,n))return u;return-1}}var on=un(1),an=un(-1);function fn(n,r,t,e){for(var u=(t=b(t,e,1))(r),o=0,i=O(n);o<i;){var a=Math.floor((o+i)/2);t(n[a])<u?o=a+1:i=a}return o}function cn(o,i,a){return function(n,r,t){var e=0,u=O(n);if("number"==typeof t)0<o?e=0<=t?t:Math.max(t+u,e):u=0<=t?Math.min(t+1,u):t+u+1;else if(a&&t&&u)return n[t=a(n,r)]===r?t:-1;if(r!=r)return 0<=(t=i(f.call(n,e,u),tr))?t+e:-1;for(t=0<o?e:u-1;0<=t&&t<u;t+=o)if(n[t]===r)return t;return-1}}var ln=cn(1,on,fn),pn=cn(-1,an);function sn(n,r,t,e,u){if(!(e instanceof r))return n.apply(t,u);var o=_(n.prototype),i=n.apply(o,u);return Ln(i)?i:o}var vn=j(function(r,t,e){if(!Cn(r))throw new TypeError("Bind must be called on a function");var u=j(function(n){return sn(r,u,t,this,e.concat(n))});return u}),hn=j(function(u,o){var i=hn.placeholder,a=function(){for(var n=0,r=o.length,t=Array(r),e=0;e<r;e++)t[e]=o[e]===i?arguments[n++]:o[e];for(;n<arguments.length;)t.push(arguments[n++]);return sn(u,a,this,this,t)};return a});hn.placeholder=h;var gn=j(function(n,r){var t=(r=X(r,!1,!1)).length;if(t<1)throw new Error("bindAll must be passed function names");for(;t--;){var e=r[t];n[e]=vn(n[e],n)}});var yn=j(function(n,r,t){return setTimeout(function(){return n.apply(null,t)},r)}),dn=hn(yn,h,1);function mn(n){return function(){return!n.apply(this,arguments)}}function bn(n,r){var t;return function(){return 0<--n&&(t=r.apply(this,arguments)),n<=1&&(r=null),t}}var jn=hn(bn,2),_n=!{toString:null}.propertyIsEnumerable("toString"),wn=["valueOf","isPrototypeOf","toString","propertyIsEnumerable","hasOwnProperty","toLocaleString"];function xn(n,r){var t=wn.length,e=n.constructor,u=Cn(e)&&e.prototype||i,o="constructor";for(x(n,o)&&!D(r,o)&&r.push(o);t--;)(o=wn[t])in n&&n[o]!==u[o]&&!D(r,o)&&r.push(o)}function Sn(n){if(!Ln(n))return[];if(a)return a(n);var r=[];for(var t in n)x(n,t)&&r.push(t);return _n&&xn(n,r),r}function An(n){if(!Ln(n))return[];var r=[];for(var t in n)r.push(t);return _n&&xn(n,r),r}function On(n){for(var r=Sn(n),t=r.length,e=Array(t),u=0;u<t;u++)e[u]=n[r[u]];return e}function Mn(n){for(var r={},t=Sn(n),e=0,u=t.length;e<u;e++)r[n[t[e]]]=t[e];return r}function En(n){var r=[];for(var t in n)Cn(n[t])&&r.push(t);return r.sort()}function Nn(f,c){return function(n){var r=arguments.length;if(c&&(n=Object(n)),r<2||null==n)return n;for(var t=1;t<r;t++)for(var e=arguments[t],u=f(e),o=u.length,i=0;i<o;i++){var a=u[i];c&&void 0!==n[a]||(n[a]=e[a])}return n}}var kn=Nn(An),In=Nn(Sn);function Tn(n,r,t){r=b(r,t);for(var e,u=Sn(n),o=0,i=u.length;o<i;o++)if(r(n[e=u[o]],e,n))return e}function Bn(n,r,t){return r in t}var Rn=j(function(n,r){var t={},e=r[0];if(null==n)return t;Cn(e)?(1<r.length&&(e=y(e,r[1])),r=An(n)):(e=Bn,r=X(r,!1,!1),n=Object(n));for(var u=0,o=r.length;u<o;u++){var i=r[u],a=n[i];e(a,i,n)&&(t[i]=a)}return t}),Fn=j(function(n,t){var r,e=t[0];return Cn(e)?(e=mn(e),1<t.length&&(r=t[1])):(t=N(X(t,!1,!1),String),e=function(n,r){return!D(t,r)}),Rn(n,e,r)}),qn=Nn(An,!0);function Dn(n){return Ln(n)?Kn(n)?n.slice():kn({},n):n}function Wn(n,r){var t=Sn(r),e=t.length;if(null==n)return!e;for(var u=Object(n),o=0;o<e;o++){var i=t[o];if(r[i]!==u[i]||!(i in u))return!1}return!0}function zn(n,r,t,e){if(n===r)return 0!==n||1/n==1/r;if(null==n||null==r)return!1;if(n!=n)return r!=r;var u=typeof n;return("function"===u||"object"===u||"object"==typeof r)&&function(n,r,t,e){n instanceof h&&(n=n._wrapped);r instanceof h&&(r=r._wrapped);var u=s.call(n);if(u!==s.call(r))return!1;switch(u){case"[object RegExp]":case"[object String]":return""+n==""+r;case"[object Number]":return+n!=+n?+r!=+r:0==+n?1/+n==1/r:+n==+r;case"[object Date]":case"[object Boolean]":return+n==+r;case"[object Symbol]":return p.valueOf.call(n)===p.valueOf.call(r)}var o="[object Array]"===u;if(!o){if("object"!=typeof n||"object"!=typeof r)return!1;var i=n.constructor,a=r.constructor;if(i!==a&&!(Cn(i)&&i instanceof i&&Cn(a)&&a instanceof a)&&"constructor"in n&&"constructor"in r)return!1}e=e||[];var f=(t=t||[]).length;for(;f--;)if(t[f]===n)return e[f]===r;if(t.push(n),e.push(r),o){if((f=n.length)!==r.length)return!1;for(;f--;)if(!zn(n[f],r[f],t,e))return!1}else{var c,l=Sn(n);if(f=l.length,Sn(r).length!==f)return!1;for(;f--;)if(c=l[f],!x(r,c)||!zn(n[c],r[c],t,e))return!1}return t.pop(),e.pop(),!0}(n,r,t,e)}function Pn(r){return function(n){return s.call(n)==="[object "+r+"]"}}var Kn=r||Pn("Array");function Ln(n){var r=typeof n;return"function"===r||"object"===r&&!!n}var Vn=Pn("Arguments"),Cn=Pn("Function"),Jn=Pn("String"),Un=Pn("Number"),$n=Pn("Date"),Gn=Pn("RegExp"),Hn=Pn("Error"),Qn=Pn("Symbol"),Xn=Pn("Map"),Yn=Pn("WeakMap"),Zn=Pn("Set"),nr=Pn("WeakSet");!function(){Vn(arguments)||(Vn=function(n){return x(n,"callee")})}();var rr=n.document&&n.document.childNodes;function tr(n){return Un(n)&&c(n)}function er(n){return!0===n||!1===n||"[object Boolean]"===s.call(n)}function ur(n){return n}function or(r){return Kn(r)?function(n){return S(n,r)}:w(r)}function ir(r){return r=In({},r),function(n){return Wn(n,r)}}function ar(n,r){return null==r&&(r=n,n=0),n+Math.floor(Math.random()*(r-n+1))}"function"!=typeof/./&&"object"!=typeof Int8Array&&"function"!=typeof rr&&(Cn=function(n){return"function"==typeof n||!1});var fr=Date.now||function(){return(new Date).getTime()},cr={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","`":"&#x60;"},lr=Mn(cr);function pr(r){var t=function(n){return r[n]},n="(?:"+Sn(r).join("|")+")",e=RegExp(n),u=RegExp(n,"g");return function(n){return n=null==n?"":""+n,e.test(n)?n.replace(u,t):n}}var sr=pr(cr),vr=pr(lr);var hr=0;var gr=h.templateSettings={evaluate:/<%([\s\S]+?)%>/g,interpolate:/<%=([\s\S]+?)%>/g,escape:/<%-([\s\S]+?)%>/g},yr=/(.)^/,dr={"'":"'","\\":"\\","\r":"r","\n":"n","\u2028":"u2028","\u2029":"u2029"},mr=/\\|'|\r|\n|\u2028|\u2029/g,br=function(n){return"\\"+dr[n]};function jr(n,r){return n._chain?h(r).chain():r}function _r(t){return E(En(t),function(n){var r=h[n]=t[n];h.prototype[n]=function(){var n=[this._wrapped];return u.apply(n,arguments),jr(this,r.apply(h,n))}}),h}E(["pop","push","reverse","shift","sort","splice","unshift"],function(r){var t=e[r];h.prototype[r]=function(){var n=this._wrapped;return t.apply(n,arguments),"shift"!==r&&"splice"!==r||0!==n.length||delete n[0],jr(this,n)}}),E(["concat","join","slice"],function(n){var r=e[n];h.prototype[n]=function(){return jr(this,r.apply(this._wrapped,arguments))}}),h.prototype.valueOf=h.prototype.toJSON=h.prototype.value=function(){return this._wrapped},h.prototype.toString=function(){return String(this._wrapped)};var wr=_r({default:h,VERSION:g,iteratee:m,restArguments:j,each:E,forEach:E,map:N,collect:N,reduce:I,foldl:I,inject:I,reduceRight:T,foldr:T,find:B,detect:B,filter:R,select:R,reject:function(n,r,t){return R(n,mn(b(r)),t)},every:F,all:F,some:q,any:q,contains:D,includes:D,include:D,invoke:W,pluck:z,where:function(n,r){return R(n,ir(r))},findWhere:function(n,r){return B(n,ir(r))},max:P,min:function(n,e,r){var t,u,o=1/0,i=1/0;if(null==e||"number"==typeof e&&"object"!=typeof n[0]&&null!=n)for(var a=0,f=(n=M(n)?n:On(n)).length;a<f;a++)null!=(t=n[a])&&t<o&&(o=t);else e=b(e,r),E(n,function(n,r,t){((u=e(n,r,t))<i||u===1/0&&o===1/0)&&(o=n,i=u)});return o},shuffle:function(n){return K(n,1/0)},sample:K,sortBy:function(n,e,r){var u=0;return e=b(e,r),z(N(n,function(n,r,t){return{value:n,index:u++,criteria:e(n,r,t)}}).sort(function(n,r){var t=n.criteria,e=r.criteria;if(t!==e){if(e<t||void 0===t)return 1;if(t<e||void 0===e)return-1}return n.index-r.index}),"value")},groupBy:V,indexBy:C,countBy:J,toArray:function(n){return n?Kn(n)?f.call(n):Jn(n)?n.match(U):M(n)?N(n,ur):On(n):[]},size:function(n){return null==n?0:M(n)?n.length:Sn(n).length},partition:$,first:G,head:G,take:G,initial:H,last:function(n,r,t){return null==n||n.length<1?null==r?void 0:[]:null==r||t?n[n.length-1]:Q(n,Math.max(0,n.length-r))},rest:Q,tail:Q,drop:Q,compact:function(n){return R(n,Boolean)},flatten:function(n,r){return X(n,r,!1)},without:Y,uniq:Z,unique:Z,union:nn,intersection:function(n){for(var r=[],t=arguments.length,e=0,u=O(n);e<u;e++){var o=n[e];if(!D(r,o)){var i;for(i=1;i<t&&D(arguments[i],o);i++);i===t&&r.push(o)}}return r},difference:rn,unzip:tn,zip:en,object:function(n,r){for(var t={},e=0,u=O(n);e<u;e++)r?t[n[e]]=r[e]:t[n[e][0]]=n[e][1];return t},findIndex:on,findLastIndex:an,sortedIndex:fn,indexOf:ln,lastIndexOf:pn,range:function(n,r,t){null==r&&(r=n||0,n=0),t||(t=r<n?-1:1);for(var e=Math.max(Math.ceil((r-n)/t),0),u=Array(e),o=0;o<e;o++,n+=t)u[o]=n;return u},chunk:function(n,r){if(null==r||r<1)return[];for(var t=[],e=0,u=n.length;e<u;)t.push(f.call(n,e,e+=r));return t},bind:vn,partial:hn,bindAll:gn,memoize:function(e,u){var o=function(n){var r=o.cache,t=""+(u?u.apply(this,arguments):n);return x(r,t)||(r[t]=e.apply(this,arguments)),r[t]};return o.cache={},o},delay:yn,defer:dn,throttle:function(t,e,u){var o,i,a,f,c=0;u||(u={});var l=function(){c=!1===u.leading?0:fr(),o=null,f=t.apply(i,a),o||(i=a=null)},n=function(){var n=fr();c||!1!==u.leading||(c=n);var r=e-(n-c);return i=this,a=arguments,r<=0||e<r?(o&&(clearTimeout(o),o=null),c=n,f=t.apply(i,a),o||(i=a=null)):o||!1===u.trailing||(o=setTimeout(l,r)),f};return n.cancel=function(){clearTimeout(o),c=0,o=i=a=null},n},debounce:function(t,e,u){var o,i,a=function(n,r){o=null,r&&(i=t.apply(n,r))},n=j(function(n){if(o&&clearTimeout(o),u){var r=!o;o=setTimeout(a,e),r&&(i=t.apply(this,n))}else o=yn(a,e,this,n);return i});return n.cancel=function(){clearTimeout(o),o=null},n},wrap:function(n,r){return hn(r,n)},negate:mn,compose:function(){var t=arguments,e=t.length-1;return function(){for(var n=e,r=t[e].apply(this,arguments);n--;)r=t[n].call(this,r);return r}},after:function(n,r){return function(){if(--n<1)return r.apply(this,arguments)}},before:bn,once:jn,keys:Sn,allKeys:An,values:On,mapObject:function(n,r,t){r=b(r,t);for(var e=Sn(n),u=e.length,o={},i=0;i<u;i++){var a=e[i];o[a]=r(n[a],a,n)}return o},pairs:function(n){for(var r=Sn(n),t=r.length,e=Array(t),u=0;u<t;u++)e[u]=[r[u],n[r[u]]];return e},invert:Mn,functions:En,methods:En,extend:kn,extendOwn:In,assign:In,findKey:Tn,pick:Rn,omit:Fn,defaults:qn,create:function(n,r){var t=_(n);return r&&In(t,r),t},clone:Dn,tap:function(n,r){return r(n),n},isMatch:Wn,isEqual:function(n,r){return zn(n,r)},isEmpty:function(n){return null==n||(M(n)&&(Kn(n)||Jn(n)||Vn(n))?0===n.length:0===Sn(n).length)},isElement:function(n){return!(!n||1!==n.nodeType)},isArray:Kn,isObject:Ln,isArguments:Vn,isFunction:Cn,isString:Jn,isNumber:Un,isDate:$n,isRegExp:Gn,isError:Hn,isSymbol:Qn,isMap:Xn,isWeakMap:Yn,isSet:Zn,isWeakSet:nr,isFinite:function(n){return!Qn(n)&&l(n)&&!c(parseFloat(n))},isNaN:tr,isBoolean:er,isNull:function(n){return null===n},isUndefined:function(n){return void 0===n},has:function(n,r){if(!Kn(r))return x(n,r);for(var t=r.length,e=0;e<t;e++){var u=r[e];if(null==n||!o.call(n,u))return!1;n=n[u]}return!!t},identity:ur,constant:function(n){return function(){return n}},noop:function(){},property:or,propertyOf:function(r){return null==r?function(){}:function(n){return Kn(n)?S(r,n):r[n]}},matcher:ir,matches:ir,times:function(n,r,t){var e=Array(Math.max(0,n));r=y(r,t,1);for(var u=0;u<n;u++)e[u]=r(u);return e},random:ar,now:fr,escape:sr,unescape:vr,result:function(n,r,t){Kn(r)||(r=[r]);var e=r.length;if(!e)return Cn(t)?t.call(n):t;for(var u=0;u<e;u++){var o=null==n?void 0:n[r[u]];void 0===o&&(o=t,u=e),n=Cn(o)?o.call(n):o}return n},uniqueId:function(n){var r=++hr+"";return n?n+r:r},templateSettings:gr,template:function(o,n,r){!n&&r&&(n=r),n=qn({},n,h.templateSettings);var t,e=RegExp([(n.escape||yr).source,(n.interpolate||yr).source,(n.evaluate||yr).source].join("|")+"|$","g"),i=0,a="__p+='";o.replace(e,function(n,r,t,e,u){return a+=o.slice(i,u).replace(mr,br),i=u+n.length,r?a+="'+\n((__t=("+r+"))==null?'':_.escape(__t))+\n'":t?a+="'+\n((__t=("+t+"))==null?'':__t)+\n'":e&&(a+="';\n"+e+"\n__p+='"),n}),a+="';\n",n.variable||(a="with(obj||{}){\n"+a+"}\n"),a="var __t,__p='',__j=Array.prototype.join,"+"print=function(){__p+=__j.call(arguments,'');};\n"+a+"return __p;\n";try{t=new Function(n.variable||"obj","_",a)}catch(n){throw n.source=a,n}var u=function(n){return t.call(this,n,h)},f=n.variable||"obj";return u.source="function("+f+"){\n"+a+"}",u},chain:function(n){var r=h(n);return r._chain=!0,r},mixin:_r});return wr._=wr});
+</script>
+<script>
+    window.wayfx = window.wayfx || {};
+    wayfx = {
+        html                        : $('html'),
+        body						: $('body'),
+        header                      : $('.wayfx-header'),
+        footer                      : $('.wayfx-footer'),
+        customerToken               : getToken(),
+        customerHash                : window.location.pathname.split('/')[4],
+        index                       : ".wayfx-subscription-index",
+        subscriptions               : ".wayfx-has-subscription",
+        noSubscriptions             : ".wayfx-no-subscription",
+        drawer                      : ".wayfx-drawer",
+        drawerBlock                 : ".wayfx-drawer__block",
+        drawerProduct               : "#wayfx-drawer__product-info",
+        drawerProductBlock          : ".wayfx-drawer__product",
+        drawerProductQty            : ".wayfx-drawer__product-qty .qtyTotal",
+        drawerNormalBlock           : ".wayfx-drawer__normal",
+        deliveryDate                : "#deliveryDate",
+        deliveryFrequency           : "#deliveryFrequency",
+        discountBlock				: "#wayfx_portal_discount",
+        cancelSubscription          : "#wayfx_cancel_subscription",
+        cancelProduct               : "#wayfx-drawer__product-cancel",
+        editShippingUrl             : "#editShippingUrl",
+        portalNotification          : ".wayfx-notification",
+        mobileNavDropdown           : ".wayfx-nav__current-page",
+        navLinks                    : ".wayfx-nav ul",
+        orderHeading                : ".wayfx-order-row__heading",
+        orderBody                   : ".wayfx-order-row__body",
+        addProduct					: ".wayfx-product__grid-add-single",
+        addDropdownWrapper			: ".wayfx-product__grid-add-options",
+        addDropdown					: ".wayfx-product__grid-add-dropdown",
+        swapBlock                   : ".wayfx-drawer__product__swap",
+        swapButton                  : "#wayfx-drawer__product-swap",
+        skipButton					: "#wayfx_skip_shipment",
+        upcomingOrder               : "#upcomingOrder",
+        updatingAccount             : "#wayfxPortalUpdating"
+    }
+
+    function getToken() {
+        var value = new RegExp("[?&]token=([^&#]*)", "i").exec(window.location.href);
+        return value ? value[1] : '';
+    }
+
+    window.customerToken = getToken();
+    if (!window.customerToken) {
+        //window.location.href = '/tools/recurring/login';
+    }
+</script>
+
+<!-- PREVIOUS -->
+<script>
+    var productImageData = '[{"product_images": { {%- for product in collections['all'].products -%}{%- for variant in product.variants -%}"{{ variant.id }}": "{{ product.featured_image.src | img_url: '400x400' }}",{%- endfor -%}{%- if forloop.last -%}"wayfx": "images"{%- endif -%}{%- endfor -%} }}]';
+    var productImageJson = $.parseJSON(productImageData);
+
+    var data,
+        current_shipment_date,
+        delivery_date,
+        delivery_date_formatted,
+        delivery_frequency,
+        first_name,
+        last_name,
+        full_name,
+        address,
+        address_id,
+        edit_shipping_url,
+        shipping_address,
+        street_address_1,
+        street_address_2,
+        city,
+        province,
+        zip,
+        country,
+        billing_address,
+        order,
+        order_address_id,
+        phone,
+        product,
+        product_title,
+        product_id,
+        product_address_id,
+        product_subscription_id,
+        product_onetime_id,
+        product_image_url,
+        product_quantity,
+        product_variant_title,
+        product_price,
+        product_total_price,
+        product_item,
+        product_details,
+        product_details_container,
+        product_next_charge,
+        product_updated_next_charge,
+        product_charge_id,
+        product_status,
+        product_type,
+        urlPathArray,
+        subscription_id,
+        subscription_total,
+        subscription_name,
+        subscription_item,
+        discount_total,
+        discount_code_current,
+        before_discount_total,
+        discount_code;
+
+    $(document).ajaxStart(function () {
+        wayfxAlert('update');
+    });
+
+    $(document).ajaxError(function () {
+        wayfxAlert('error');
+    });
+
+    $(document).ajaxStop(function () {
+        wayfxAlert('done');
+    });
+
+    $.fn.datepicker.language['en'] = {
+        days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        daysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        daysMin: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        today: 'Today',
+        clear: 'Clear',
+        dateFormat: 'yyyy-mm-dd',
+        timeFormat: 'hh:ii aa',
+    }
+
+    function wayfxAlert(status) {
+        if(status === 'success') {
+            $(wayfx.portalNotification).addClass('active');
+        }
+        if(status === 'update') {
+            $(wayfx.updatingAccount).addClass('active');
+            $(wayfx.portalNotification).removeClass('active');
+        }
+        if(status === 'error') {
+            $(wayfx.updatingAccount).removeClass('active');
+            $(wayfx.portalNotification).removeClass('active');
+        }
+        if(status === 'done') {
+            $(wayfx.updatingAccount).removeClass('active');
+        }
+    }
+
+    function addressId(type, id) {
+        if(type === 'set') {
+            $('body').attr('data-address-id', id);
+        } else {
+            return $('body').attr('data-address-id');
+        }
+    }
+
+    function closeSidebar() {
+        $(wayfx.index).removeClass('wayfx-drawer-active');
+        $(wayfx.drawer).removeClass('active');
+        $(wayfx.drawerBlock).hide();
+        $(wayfx.swapBlock).hide();
+        $(wayfx.drawerNormalBlock).show();
+    }
+
+    function cancelSwap() {
+        $(wayfx.swapBlock).hide();
+        $(wayfx.drawerNormalBlock).fadeIn();
+    }
+
+    function swapProduct(t) {
+        var $this = $(t);
+        var current_subscription = $this.data('current-subscription'),
+            swap_product_id = $this.data('variant-id'),
+            one_time_id = $(wayfx.drawerProduct).attr("data-product-onetime-id");
+        closeSidebar();
+        $(wayfx.updatingAccount).addClass('active');
+        wayfxSwapProduct(current_subscription, one_time_id, swap_product_id, null);
+    }
+
+    function wfxShowSwapProducts() {
+        $(wayfx.drawerNormalBlock).hide();
+        $(wayfx.swapBlock).fadeIn();
+    }
+
+    function wfxRetention() {
+        return $.ajax({
+            url: '/tools/recurring/portal/' + wayfx.customerHash + '/request_objects?token=' + wayfx.customerToken,
+            type: 'get',
+            dataType: 'json',
+            data: {schema: '{ "retention_strategies": [] }'}
+        });
+    }
+
+    function wfxAddress() {
+        return $.ajax({
+            url: '/tools/recurring/portal/'+ wayfx.customerHash +'/request_objects?token=' + wayfx.customerToken,
+            type: 'get',
+            dataType: 'json',
+            data: { schema: '{ "addresses": [] }' },
+        });
+    }
+
+    function wfxFrequency() {
+        return $.ajax({
+            url: '/tools/recurring/portal/'+ wayfx.customerHash +'/request_objects?token=' + wayfx.customerToken,
+            type: 'get',
+            dataType: 'json',
+            data: { schema: '{ "products": [] }' },
+        });
+    }
+
+    function wfxCharges() {
+        return $.ajax({
+            url: '/tools/recurring/portal/'+ wayfx.customerHash +'/request_objects?token=' + wayfx.customerToken,
+            type: 'get',
+            dataType: 'json',
+            data: { schema: '{ "charges": { "status": "SUCCESS" } }' },
+        }).done(function (response) {
+            var minimum = parseInt($('body').attr('data-cancellation-minimum'));
+            var allow_cancellation = $('body').attr('data-allow-cancellation');
+
+            if(allow_cancellation === 'true') {
+                if(response.charges.length >= minimum) {
+                    $(wayfx.cancelSubscription).show();
+                    $(wayfx.cancelProduct).show();
+                }
+            }
+        });
+    }
+
+    function wfxPaymentSource() {
+        return $.ajax({
+            url: '/tools/recurring/portal/' + wayfx.customerHash + '/request_objects?token=' + wayfx.customerToken,
+            type: 'get',
+            dataType: 'json',
+            data: {schema: '{ "payment_sources": [] }'}
+        });
+    }
+
+    function wfxBillingDetails() {
+        wfxPaymentSource().done(function (response) {
+            var payment = response.payment_sources[0],
+                payment_address = payment.billing_address,
+                payment_method_brand = payment.card_brand,
+                payment_method_card_last4 = payment.card_last4,
+                payment_method_card_exp_month = payment.card_exp_month,
+                payment_method_card_exp_year = payment.card_exp_year,
+                payment_type = payment.payment_type,
+                first_name = payment_address.first_name,
+                last_name = payment_address.last_name,
+                street_address_1 = payment_address.address1,
+                street_address_2 = payment_address.address2,
+                city = payment_address.city,
+                province = payment_address.province,
+                country = payment_address.country,
+                zip = payment_address.zip,
+                phone = payment_address.phone,
+                full_name = first_name + ' ' + last_name;
+            if(street_address_2 === null) {
+                street_address_2 = '';
+            }
+            var billing_address = street_address_1 + ' ' + street_address_2 + '<br />' + city + ', ' + province + ' ' + zip + '<br />' + country + '<br />' + phone;
+
+            $('#billingAddress, #billingAddress2').html(full_name + '<br />' + billing_address).removeClass('loading');
+
+            if (payment_type === 'credit' || payment_type === 'debit') {
+                var payment_method_brand_image = '';
+                switch (payment_method_brand) {
+                    case 'visa':
+                        payment_method_brand_image = 'https://ucarecdn.com/b493e387-2385-412f-8569-995ce7d9b506/visa.svg';
+                        break;
+                    case 'american_express':
+                        payment_method_brand_image = 'https://ucarecdn.com/ddb5579f-f16c-4e86-b148-b0c33f627860/amex.svg';
+                        break;
+                    case 'mastercard':
+                        payment_method_brand_image = 'https://ucarecdn.com/9a740cdf-8832-4dc6-8ec1-f89c9268aea2/mastercard.svg';
+                        break;
+                    case 'discover':
+                        payment_method_brand_image = 'https://ucarecdn.com/578a9ba3-77eb-4de4-95c1-265964993a55/discover.svg';
+                        break;
+                }
+                if (payment_method_brand_image === '') {
+                    $('#cardType, #cardType2').html(payment_method_brand);
+                } else {
+                    $('#cardType, #cardType2').html('<img src="' + payment_method_brand_image + '" alt="" />');
+                }
+                $('#cardLast4, #cardLast42').html('*' + payment_method_card_last4);
+                $('#cardMonth, #cardMonth2').html(payment_method_card_exp_month + '/');
+                $('#cardYear, #cardYear2').html(payment_method_card_exp_year);
+            } else if (payment_type === 'paypal') {
+                $('#cardType, #cardType2').html("<img src='https://ucarecdn.com/22112e92-0b61-4017-8fdf-0bbdb8d15c5e/paypal.svg' alt='' />");
+            } else {
+                $('#cardType, #cardType2').html('Apple Pay');
+            }
+        });
+    }
+
+    function showDiscountInput() {
+        $(wayfx.discountBlock).find('.wayfx-block__discount-btn').hide();
+        $(wayfx.discountBlock).find('.wayfx-block__discount-form').show();
+    }
+
+    function wayfxSwapProduct(subscription, onetime_id, product, qty) {
+        var url,
+            data;
+
+        if(subscription) {
+            url = '/tools/recurring/portal/' + wayfx.customerHash + '/subscriptions/' + subscription + '/swap?token=' + wayfx.customerToken;
+        } else {
+            url = '/tools/recurring/portal/' + wayfx.customerHash + '/onetimes/' + onetime_id + '?token=' + wayfx.customerToken
+        }
+
+        if(qty) {
+            data = { "quantity": qty };
+        } else {
+            data = { "shopify_variant_id": product };
+        }
+
+        return $.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            data: data
+        }).done(function (response) {
+            var address_id = addressId('get');
+            wfxSubscription(address_id, "update");
+            wayfxAlert("success");
+        })
+            .fail(function (response) {
+                {%- if enable_dev_mode -%}
+                console.log(response);
+                {%- endif -%}
+                wayfxAlert("error");
+            });
+    }
+
+    {%- if request.path contains 'payment_sources' or request.path contains 'orders' -%}
+
+    function wfxPortalLoad() {
+        var searchParams = new URLSearchParams(window.location.search),
+            order_address_id = searchParams.get('address_id');
+
+        if(order_address_id) {
+            wfxSubscription(order_address_id, 'update');
+        } else {
+            wfxAddress().done(function addresses(response) {
+                wfxCharges();
+
+                address = response.addresses[0];
+                address_id = address.id;
+                edit_shipping_url = '<a href="/tools/recurring/portal/' + wayfx.customerHash + '/addresses/' + response.addresses[0].id + '" class="wayfx-btn wayfx-btn--primary">Edit Shipping Address</a>';
+                $(wayfx.editShippingUrl).html(edit_shipping_url);
+                first_name = address.first_name;
+                last_name = address.last_name;
+                street_address_1 = address.address1;
+                street_address_2 = address.address2;
+                city = address.city;
+                province = address.province;
+                country = address.country;
+                zip = address.zip;
+                phone = address.phone;
+                full_name = first_name + ' ' + last_name;
+
+                if(street_address_2 === null) {
+                    street_address_2 = '';
+                }
+
+                shipping_address = street_address_1 + ' ' + street_address_2 + '<br />' + city + ', ' + province + ' ' + zip + '<br />' + country + '<br />' + phone;
+                $('#shippingAddress, #shippingAddress2').html(full_name + '<br />' + shipping_address).removeClass('loading');
+                $("#addressPaymentLink a, #paymentBillingLink").attr('href', '/tools/recurring/portal/' + wayfx.customerHash + '/payment_sources?address_id=' + address_id + '&token=' + wayfx.customerToken);
+            }).fail(function (response) {
+                {%- if enable_dev_mode -%}
+                console.log(response);
+                {%- endif -%}
+            });
+        }
+    }
+
+    {%- else -%}
+
+    function wfxPortalLoad() {
+        $(wayfx.upcomingOrder).empty();
+
+        return $.ajax({
+            url: '/tools/recurring/portal/' + wayfx.customerHash + '/request_objects?token=' + wayfx.customerToken,
+            type: 'get',
+            dataType: 'json',
+            data: {schema: '{ "orders": { "status": "SUCCESS" }, "settings": {}, "onetimes": [], "subscriptions": {"status": "ACTIVE" } }'}
+        }).done(function (response) {
+            var allow_onetime = response.settings.customer_portal.onetime.enabled,
+                allow_skipping = response.settings.customer_portal.subscription.skip_scheduled_order,
+                allow_swapping = response.settings.customer_portal.subscription.change_product,
+                allow_discounts = response.settings.customer_portal.discount_input,
+                allow_cancellation = response.settings.customer_portal.subscription.cancel_subscription,
+                cancellation_minimum_order_count = response.settings.customer_portal.subscription.cancellation_minimum_order_count;
+
+            var subscription_total = 0,
+                subscription_products = $.parseJSON(JSON.stringify(_.groupBy(response.subscriptions, ['address_id'])));
+
+            wfxFrequency().done(function (response) {
+                var unit = response.products[0].subscription_defaults.order_interval_unit;
+                var frequency_options = response.products[0].subscription_defaults.order_interval_frequency_options;
+
+                $('body').attr('data-subscription-unit', unit);
+
+                for (var s = 0; s < frequency_options.length; s++) {
+                    var frequency_button = '<button class="wayfx-btn wayfx-btn--primary wayfx-drawer__frequency-' + frequency_options[s] + '" data-frequency="' + frequency_options[s] + '" data-unit="' + unit + '">' + frequency_options[s] + ' ' + unit + '</button>';
+                    $(frequency_button).appendTo('.wayfx-drawer__frequency .wayfx-drawer__body');
+                }
+            });
+
+            $('body').attr('data-allow-onetime', allow_onetime)
+                .attr('data-allow-skipping', allow_skipping)
+                .attr('data-allow-swapping', allow_swapping)
+                .attr('data-allow-discounts', allow_discounts)
+                .attr('data-allow-cancellation', allow_cancellation)
+                .attr('data-cancellation-minimum', cancellation_minimum_order_count);
+
+            wfxCharges();
+
+            if(allow_swapping) {
+                $(wayfx.swapButton).show();
+            } else {
+                $(wayfx.swapButton).hide();
+            }
+
+            if(allow_discounts) {
+                $(wayfx.discountBlock).show();
+            }
+
+            if(allow_skipping) {
+                $(wayfx.skipButton).show();
+            }
+
+            if(allow_onetime) {
+                $(wayfx.addDropdownWrapper).show();
+            } else {
+                $(wayfx.addProduct).show();
+            }
+
+            $.each(subscription_products, function(key, value) {
+                var subscriptionDateChecker = moment(subscription_products[key][0].created_at).isAfter('2020-12-28');
+
+                if(subscriptionDateChecker) {
+                    subscription_total++;
+                    delivery_date = subscription_products[key][0].next_charge_scheduled_at;
+                    delivery_frequency = subscription_products[key][0].order_interval_frequency;
+                    order_address_id = key;
+                    subscription_item = '<li data-subscription-name="Subscription" data-subscription-frequency="' + delivery_frequency + '" data-subscription-date="'+ delivery_date +'" data-address="' + key + '"><div class="wfx-subscription-date">' + moment(delivery_date).format('MMM Do') + '</div></li>';
+                    $(subscription_item).appendTo('#wfx-portal-subscriptions');
+                }
+            });
+
+            if(subscription_total === 1) {
+                $("#wfx-portal-subscription-phrase").html("Your Subscription");
+                $("#wfx-portal-active-subscriptions").hide().empty();
+                wfxSubscription(order_address_id);
+            }
+
+            if (subscription_total < 1) {
+                $("#wfx-portal-active-subscriptions").empty();
+                $(wayfx.subscriptions).hide();
+                $(wayfx.noSubscriptions).show();
+            }
+
+            if (subscription_total > 1) {
+                $("#wfx-portal-subscription-notice").show();
+                $.each(subscription_products, function(key, value) {
+                    order_address_id = key;
+                    delivery_date = subscription_products[key][0].next_charge_scheduled_at;
+                    $("#wfx-portal-subscription-phrase").html("Your Subscriptions");
+                    $("#wfx-portal-active-subscriptions").show();
+                });
+
+                $('#wfx-portal-subscriptions li[data-address=' + order_address_id + ']').addClass('active');
+                $("#wfx-portal-subscription-date").html(moment(delivery_date).format('MMM Do'));
+                wfxSubscription(order_address_id, 'update');
+
+                $(document).on("click", "#wfx-portal-subscriptions li", function () {
+                    $('#wfx-portal-subscriptions li').removeClass('active');
+
+                    var subscription_address_id = $(this).attr('data-address');
+
+                    $("#wfx-portal-subscription-date").html('').addClass('loading');
+
+                    wfxSubscription(subscription_address_id, 'update');
+                    $(this).addClass('active');
+                });
+            }
+        }).fail(function (response) {
+            {%- if enable_dev_mode -%}
+            console.log(response);
+            {%- endif -%}
+        });
+    }
+
+    {%- endif -%}
+
+    function wayfxOrders() {
+        return $.ajax({
+            url: '/tools/recurring/portal/' + wayfx.customerHash + '/request_objects?token=' + wayfx.customerToken,
+            type: 'get',
+            dataType: 'json',
+            data: {schema: '{ "orders": [], "addresses": [], "subscriptions": { "status": "ACTIVE" }, "charges": [] }'}
+        });
+    }
+
+    function wayfxBulkUpdate(id, d) {
+        var data = JSON.stringify(d);
+        return $.ajax({
+            url: '/tools/recurring/portal/' + wayfx.customerHash + '/addresses/' + id + '/subscriptions-bulk-update?token=' + wayfx.customerToken,
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: data
+        });
+    }
+
+    function wayfxSetDate(type, d, id, status) {
+        var url,
+            data = d;
+
+        if(type === 'one-time') {
+            url = '/tools/recurring/portal/'+ wayfx.customerHash + '/onetimes/' + id + '/set_next_charge_date?token=' + wayfx.customerToken;
+        } else {
+            url = '/tools/recurring/portal/'+ wayfx.customerHash +'/subscriptions/' + id + '/set_next_charge_date?token=' + wayfx.customerToken;
+        }
+
+        return $.ajax({
+            url: url,
+            type: 'post',
+            async: false,
+            dataType: 'json',
+            data: data
+        }).done(function (response) {
+            if(status) {
+                wayfxAlert("success");
+            }
+            {%- if enable_dev_mode -%}
+            console.log(response);
+            {%- endif -%}
+        }).fail(function (response) {
+            if(status) {
+                wayfxAlert("error");
+            }
+            {%- if enable_dev_mode -%}
+            console.log(response);
+            {%- endif -%}
+        });
+    }
+
+    function minusQty(el, d) {
+        var $this = $(el),
+            qtyTotal = $this.next('.qtyTotal'),
+            current_count = qtyTotal.val();
+
+        if (current_count === '1') {
+            return;
+        }
+
+        var new_count = current_count - 1;
+        qtyTotal.val(new_count);
+
+        if(d) {
+            $(d).attr('data-qty', new_count);
+        }
+    }
+
+    function addQty(el, d) {
+        var $this = $(el),
+            qtyTotal = $this.prev('.qtyTotal'),
+            current_count = qtyTotal.val();
+        current_count++;
+        var new_count = current_count;
+        qtyTotal.val(new_count);
+
+        if(d) {
+            $(d).attr('data-qty', new_count);
+        }
+    }
+
+    function wfxProductUpdate(type) {
+        product_details_container = $(wayfx.drawerProduct);
+        subscription_id = product_details_container.attr('data-subscription-id');
+        product_onetime_id = product_details_container.attr('data-product-onetime-id');
+        product_quantity = $(".wayfx-drawer__product-qty input").val();
+        closeSidebar();
+        if(type === 'no-swap') {
+            var data = {"quantity": product_quantity};
+            if(product_onetime_id !== undefined) {
+                $.ajax({
+                    url: '/tools/recurring/portal/' + wayfx.customerHash + '/onetimes/' + product_onetime_id + '?token=' + wayfx.customerToken,
+                    type: 'post',
+                    dataType: 'json',
+                    data: data
+                }).done(function () {
+                    var s_address_id = addressId('get');
+                    wfxSubscription(s_address_id, "update");
+                    wayfxAlert("success");
+                }).fail(function (response) {
+                    console.log(response);
+                });
+            } else {
+                $.ajax({
+                    url: '/tools/recurring/portal/' + wayfx.customerHash + '/subscriptions/' + subscription_id + '?token=' + wayfx.customerToken,
+                    type: 'post',
+                    dataType: 'json',
+                    data: data
+                }).done(function () {
+                    var s_address_id = addressId('get');
+                    wfxSubscription(s_address_id, "update");
+                    wayfxAlert("success");
+                }).fail(function (response) {
+                    console.log(response);
+                });
+            }
+        } else {
+            wayfxSwapProduct(subscription_id, product_onetime_id, product_onetime_id, product_quantity);
+        }
+    }
+
+    function delayShipment(days) {
+        $("#wfx-portal-cancellation-popup").hide();
+        $(wayfx.updatingAccount).addClass('active');
+
+        setTimeout(function() {
+            $('#upcomingOrder .wayfx-product__item').each(function () {
+                subscription_id = $(this).attr('data-subscription-id');
+                var address_id = addressId('get');
+                product_next_charge = moment($('body').attr('data-subscription-date')).format("YYYY-MM-DD");
+                product_updated_next_charge = moment(product_next_charge).add(days, "days").format("YYYY-MM-DD");
+                product_type = $(this).attr('data-product-type');
+
+                if(product_type === 'one-time') {
+                    var product_onetime_id = $(this).attr('data-product-onetime-id');
+                    data = {
+                        "next_charge_scheduled_at": product_updated_next_charge
+                    };
+                    wayfxSetDate('one-time', data, product_onetime_id);
+                } else {
+                    data = {
+                        "date": product_updated_next_charge
+                    };
+                    wayfxSetDate('subscription', data, subscription_id);
+                }
+
+                var shipmentPicker = $('#nextShipmentCalendar').datepicker({
+                    inline: true,
+                    language: 'en',
+                    minDate: new Date(),
+                    toggleSelected: false,
+                    onSelect: function onSelect(fd) {
+                        current_shipment_date = moment(product_next_charge).format('YYYY-MM-DD');
+                        var address_id = addressId('get');
+
+                        if (fd !== current_shipment_date) {
+                            closeSidebar();
+                            $(wayfx.updatingAccount).addClass('active');
+                            var data = [];
+                            $('#upcomingOrder .wayfx-product__item').each(function () {
+                                subscription_id = $(this).attr('data-subscription-id');
+                                product_type = $(this).attr('data-product-type');
+                                if(product_type === 'one-time') {
+                                    var product_onetime_id = $(this).attr('data-product-onetime-id');
+                                    data = {
+                                        "next_charge_scheduled_at": fd
+                                    };
+                                    wayfxSetDate('one-time', data, product_onetime_id, false);
+                                } else {
+                                    data.push({
+                                        "id": subscription_id,
+                                        "first_charge_date": fd,
+                                        "next_charge_scheduled_at": fd
+                                    },);
+                                }
+                            });
+                            var json = { "subscriptions": data };
+
+                            wayfxBulkUpdate(address_id, json)
+                                .done(function(response) {
+                                    {%- if enable_dev_mode -%}
+                                    console.log(response);
+                                    {%- endif -%}
+                                    $(wayfx.updatingAccount).removeClass('active');
+                                    $(wayfx.deliveryDate).html(moment(fd).format('MMM Do'));
+                                    $('#wfx-portal-subscriptions li.active .wfx-subscription-date, #wfx-portal-subscription-date').html(moment(fd).format('MMM Do'));
+                                    $('body, #wfx-portal-subscriptions li.active').attr('data-subscription-date', fd + 'T00:00:00');
+                                    wayfxAlert("success");
+                                }).fail(function(response) {
+                                {%- if enable_dev_mode -%}
+                                console.log(response);
+                                {%- endif -%}
+                            });
+                        }
+                    }
+                });
+
+                $('.wfx-add-product-btn').attr('data-subscription-date', product_updated_next_charge);
+                shipmentPicker.data('datepicker').selectDate(new Date(product_updated_next_charge));
+                $(wayfx.deliveryDate).html(moment(product_updated_next_charge).format('MMM Do'));
+                return false;
+            });
+        }, 100);
+    }
+
+    $(document).mouseup(function(e) {
+        var container = $(wayfx.addDropdownWrapper);
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.find(wayfx.addDropdown).hide();
+            container.removeClass('active');
+        }
+    });
+
+    $(document).on("click", wayfx.addDropdownWrapper, function () {
+        if(!$(this).hasClass('active')) {
+            $(wayfx.addDropdownWrapper).find(wayfx.addDropdown).hide();
+            $(wayfx.addDropdownWrapper).removeClass('active');
+            $(this).addClass('active');
+            $(this).find(wayfx.addDropdown).slideDown(100);
+        } else {
+            $(wayfx.addDropdownWrapper).removeClass('active');
+            $(wayfx.addDropdown).hide();
+        }
+    });
+
+    function wfxUpcomingOrder(a, id) {
+        addressId('set', id);
+
+        var allow_onetime = $('body').attr('data-allow-onetime');
+        var allow_cancellation = $('body').attr('data-allow-cancellation');
+
+        if(allow_onetime === 'true') {
+            $.ajax({
+                url: '/tools/recurring/portal/' + wayfx.customerHash + '/request_objects?token=' + wayfx.customerToken,
+                type: 'get',
+                dataType: 'json',
+                data: { schema: '{ "onetimes": [] }' }
+            }).done(function(response) {
+                for (var s = 0; s < response.onetimes.length; s++) {
+                    product = response.onetimes[s];
+                    product_onetime_id = product.id;
+                    product_address_id = product.address_id;
+                    product_status = product.status;
+                    product_title = product.product_title;
+                    product_price = product.price.toFixed(2);
+                    product_next_charge = product.next_charge_scheduled_at;
+                    product_quantity = product.quantity;
+                    product_total_price = product_price * product_quantity;
+                    product_variant_title = product.variant_title;
+                    product_image_url = productImageJson[0].product_images[product.shopify_variant_id];
+
+                    product_title = product_title.replace(' {{ title_to_remove }}', '');
+
+
+                    if(allow_cancellation === 'true') {
+                        if(s < 1) {
+                            $("#cancelSingleProduct").hide();
+                            $("#cancelAllProducts").show();
+                        }
+
+                        if(s > 0) {
+                            $("#cancelAllProducts").hide();
+                            $("#cancelSingleProduct").show();
+                        }
+
+                    } else {
+                        $("#cancelAllProducts").hide();
+                        $("#cancelSingleProduct").hide();
+                    }
+
+                    if(product_image_url === 'undefined') {
+                        product_image_url = '{{ product_no_image_url }}';
+                    }
+
+                    if(product_address_id === parseInt(id)) {
+                        product_item = '<div class="wayfx-product__item wayfx-product__item--upcoming" data-product-type="one-time" data-product-onetime-id="' + product_onetime_id +'" data-product-price="' + product_price + '" data-product-image="' + product_image_url + '" data-product-title="' + product_title + '" data-product-variant-title="' + product_variant_title + '" data-product-quantity="' + product_quantity +'">' +
+                            '<div class="wayfx-product__image">' +
+                            '<img src="' + product_image_url + '" />' +
+                            '</div>' +
+                            '<div class="wayfx-product__info">' +
+                            '<div class="wayfx-product__title">' + product_title + '</div>' +
+                            '<div class="wayfx-product__variant">' + product_variant_title + '</div>' +
+                            '<div class="wayfx-product__label">One Time Order</div>' +
+                            '<div class="wayfx-product__quantity">Quantity: ' + product_quantity + '</div>' +
+                            '</div>' +
+                            '<div class="wayfx-btn wayfx-btn--secondary wayfx-btn--outline">Edit</div>' +
+                            '</div>';
+                        $(product_item).appendTo('#upcomingOrder');
+                    }
+                }
+            }).fail(function(response) {
+                {%- if enable_dev_mode -%}
+                console.log(response);
+                {%- endif -%}
+            });
+
+        }
+
+        if(a !== null) {
+            for (var s = 0; s < a.length; s++) {
+                product = a[s];
+                product_status = product.status;
+                product_title = product.product_title;
+                delivery_date = moment(product.next_charge_scheduled_at).format('MMM Do');
+                delivery_frequency = product.order_interval_frequency;
+                $("body").attr('data-subscription-date', product.next_charge_scheduled_at).attr('data-subscription-frequency', delivery_frequency);
+                $('.wayfx-drawer__frequency button').removeClass('current');
+                $('.wayfx-drawer__frequency-' + delivery_frequency).addClass('current');
+                product_price = product.price.toFixed(2);
+                product_next_charge = product.next_charge_scheduled_at;
+                product_subscription_id = product.id;
+                product_quantity = product.quantity;
+                product_total_price = product_price * product_quantity;
+                product_variant_title = product.variant_title;
+                product_image_url = productImageJson[0].product_images[product.shopify_variant_id];
+
+                if(product_image_url === undefined) {
+                    product_image_url = '{{ product_no_image_url }}';
+                }
+
+                product_title = product_title.replace('{{ title_to_remove }}', '');
+
+                if(s < 1) {
+                    $("#cancelSingleProduct").hide();
+                    $("#cancelAllProducts").show();
+                }
+
+                if(s > 0) {
+                    $("#cancelAllProducts").hide();
+                    $("#cancelSingleProduct").show();
+                }
+
+                product_item = '<div class="wayfx-product__item wayfx-product__item--upcoming" data-product-type="subscription" data-product-price="' + product_price + '" data-product-image="' + product_image_url + '" data-product-title="' + product_title + '" data-product-variant-title="' + product_variant_title + '" data-product-quantity="' + product_quantity + '" data-subscription-id="' + product_subscription_id + '">' +
+                    '<div class="wayfx-product__image">' +
+                    '<img src="' + product_image_url + '" />' +
+                    '</div>' +
+                    '<div class="wayfx-product__info">' +
+                    '<div class="wayfx-product__title">' + product_title + '</div>' +
+                    '<div class="wayfx-product__variant">' + product_variant_title + '</div>' +
+                    '<div class="wayfx-product__quantity">Quantity: ' + product_quantity + '</div>' +
+                    '</div>' +
+                    '<div class="wayfx-btn wayfx-btn--secondary wayfx-btn--outline">Edit</div>' +
+                    '</div>';
+                $(product_item).appendTo('#upcomingOrder');
+            }
+        }
+    }
+
+    function wfxShippingAddress(address, id) {
+        $("#subscriptionLink a").attr('href', '/tools/recurring/portal/' + wayfx.customerHash + '/subscriptions?token=' + wayfx.customerToken);
+        $("#addressPaymentLink a, #paymentBillingLink").attr('href', '/tools/recurring/portal/' + wayfx.customerHash + '/payment_sources?address_id=' + id + '&token=' + wayfx.customerToken);
+        $("#shippingAddressLink").attr('href', '/tools/recurring/portal/' + wayfx.customerHash + '/addresses/' + id + '?token=' + wayfx.customerToken);
+        edit_shipping_url = '<a href="/tools/recurring/portal/' + wayfx.customerHash + '/addresses/' + id + '?token=' + wayfx.customerToken + '" class="wayfx-btn wayfx-btn--primary">Edit Shipping Address</a>';
+        $(wayfx.editShippingUrl).html(edit_shipping_url);
+        first_name = address.first_name;
+        last_name = address.last_name;
+        street_address_1 = address.address1;
+        street_address_2 = address.address2;
+        city = address.city;
+        province = address.province;
+        country = address.country;
+        zip = address.zip;
+        phone = address.phone;
+        full_name = first_name + ' ' + last_name;
+        if(street_address_2 === null) {
+            street_address_2 = ' ';
+        }
+        shipping_address = street_address_1 + ' ' + street_address_2 + '<br />' + city + ', ' + province + ' ' + zip + '<br />' + country + '<br />' + phone;
+        $('#shippingAddress, #shippingAddress2').html(full_name + '<br />' + shipping_address).removeClass('loading');
+    }
+
+    function wfxSubscription(s_address_id, type) {
+        $('#shippingAddress, #shippingAddress2, #deliveryFrequency, #deliveryDate, #upcomingOrder').html('').addClass('loading');
+
+        wayfxOrders(s_address_id).done(function (response) {
+            if(type === 'update') {
+                $(wayfx.upcomingOrder).empty().removeClass('loading');
+            }
+            var subscription_products = $.parseJSON(JSON.stringify(_.groupBy(response.subscriptions, ['address_id']))),
+                subscription_charges = $.parseJSON(JSON.stringify(_.groupBy(response.charges, ['address_id']))),
+                subscription_active_products = subscription_products[s_address_id],
+                subscription_queued_charges = subscription_charges[s_address_id][0].shipping_address;
+
+            wfxUpcomingOrder(subscription_active_products, s_address_id);
+            wfxShippingAddress(subscription_queued_charges, s_address_id);
+
+            if(subscription_charges[s_address_id][1] !== undefined) {
+                var charge = subscription_charges[s_address_id][1];
+            } else {
+                var charge = subscription_charges[s_address_id][0];
+            }
+
+            discount_total = charge.total_discounts;
+            before_discount_total = charge.total_line_items_price;
+
+            if(charge.discount_codes.length > 0) {
+                discount_code_current = charge.discount_codes[0].code;
+                $("body").attr('data-discount-code', discount_code_current);
+                $("#wfxDiscountCode").val(discount_code_current);
+            }
+
+            $('.wfx-portal-original-total').html('$' + before_discount_total);
+
+            if (discount_total > 0) {
+                subscription_total = charge.total_line_items_price - charge.total_discounts;
+                $('.wfx-portal-final-total').html('$' + subscription_total.toFixed(2));
+                $('.wfx-portal-discount-total').html('You saved $' + discount_total + ' 🎉');
+            } else {
+                subscription_total = charge.total_price;
+                $('.wfx-portal-final-total').html('$' + subscription_total);
+                $('.wfx-portal-original-total, .wfx-portal-discount-total').html('');
+            }
+
+            $('#upcomingOrder, .wfx-portal-total-price, #wfx-portal-subscription-date').removeClass('loading');
+
+            $(wayfx.deliveryFrequency).html(delivery_frequency + ' Days').removeClass('loading');
+
+            if($("#wfx-portal-subscription-switcher").length > 0) {
+                delivery_date = $('#wfx-portal-subscriptions li.active').attr("data-subscription-date");
+                delivery_frequency = $('#wfx-portal-subscriptions li.active').attr("data-subscription-frequency");
+                $('#wfx-portal-subscription-date').html(moment(delivery_date).format('MMM Do'));
+                $(wayfx.deliveryDate).html(moment(delivery_date).format('MMM Do')).removeClass('loading');
+            } else {
+                $('#wfx-portal-subscription-date').html(delivery_date);
+                $(wayfx.deliveryDate).html(delivery_date).removeClass('loading');
+            }
+
+            $("#wfx_add_discount_popup").click(function() {
+                var discount_to_use = $(this).data('discount');
+                $('#wfxDiscountCode').val(discount_to_use);
+                $(".wfx-portal-cancellation-notice").hide();
+                $("#wfx-portal-cancellation-popup").hide();
+                $(".wfx-portal-cancellation-retention").hide();
+
+                $.ajax({
+                    url: '/tools/recurring/portal/' + wayfx.customerHash + '/addresses/' + address_id + '/remove_discount?token=' + wayfx.customerToken,
+                    type: 'post',
+                    dataType: 'json'
+                }).done(function (response) {
+                    {%- if enable_dev_mode -%}
+                    console.log(response);
+                    {%- endif -%}
+
+                    $.ajax({
+                        url: '/tools/recurring/portal/' + wayfx.customerHash + '/addresses/' + address_id + '/apply_discount?token=' + wayfx.customerToken,
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            "discount_code": discount_to_use
+                        }
+                    }).done(function (response) {
+                        {%- if enable_dev_mode -%}
+                        console.log(response);
+                        {%- endif -%}
+                        wayfxAlert("success");
+                    }).fail(function (response) {
+                        $('.wfx-discount-error').html('⚠️ Discount not found.');
+                    });
+                });
+
+            });
+        }).fail(function (response) {
+            $(wayfx.subscriptions).hide();
+            $(wayfx.updatingAccount).removeClass('active');
+            $(wayfx.noSubscriptions).show();
+            {%- if enable_dev_mode -%}
+            console.log(response);
+            {%- endif -%}
+        });
+    }
+
+    function resetCancelPopup() {
+        $("#wfx-portal-cancellation-popup").hide();
+        $(".wfx-portal-cancellation-confirmation").hide();
+        $("#wfx-portal-cancellation-reasons-list").hide();
+        $("#wfx_cancel_product_final").hide();
+        $(".wfx-portal-cancellation-retention").hide();
+        $(".wfx-portal-cancellation-notice").hide();
+        $("#wfx-portal-cancellation-reasons-list li.selected").removeClass("selected");
+    }
+
+    function wfxCancelProduct(step) {
+        if(step === '1') {
+            resetCancelPopup();
+            $(".wayfx-product-cancellation-retention").show();
+            closeSidebar();
+            $("#wfx-portal-cancellation-popup").show();
+        }
+
+        if(step === '2') {
+            $("#wfx-portal-cancellation-popup").hide();
+            $('#shippingAddress, #shippingAddress2, #deliveryFrequency, #deliveryDate, #upcomingOrder').html('').addClass('loading');
+            closeSidebar();
+            product_details_container = $(wayfx.drawerProduct);
+            subscription_id = product_details_container.attr('data-subscription-id');
+            product_onetime_id = product_details_container.attr('data-product-onetime-id');
+            var cancellation_reason = $("#wayfx-product-cancellation-reasons-list li.selected .wfx-retention-reason").text();
+            if(!cancellation_reason) {
+                cancellation_reason = 'Other';
+            }
+            var data = {"cancellation_reason": cancellation_reason};
+
+            {%- if enable_onetime -%}
+            if(product_onetime_id !== '') {
+                $.ajax({
+                    url: '/tools/recurring/portal/' + wayfx.customerHash + '/onetimes/' + product_onetime_id + '/cancel?token=' + wayfx.customerToken,
+                    type: 'post',
+                    async: false,
+                    dataType: 'json',
+                    data: data
+                }).done(function (response) {
+                    var address_id = addressId('get');
+                    wfxSubscription(address_id, "update");
+                    wayfxAlert("success");
+                    {%- if enable_dev_mode -%}
+                    console.log(response);
+                    {%- endif -%}
+                }).fail(function (response) {
+                    {%- if enable_dev_mode -%}
+                    console.log(response);
+                    {%- endif -%}
+                });
+            } else {
+                {%- endif -%}
+                $.ajax({
+                    url: '/tools/recurring/portal/' + wayfx.customerHash + '/subscriptions/' + subscription_id + '/cancel?token=' + wayfx.customerToken,
+                    type: 'post',
+                    async: false,
+                    dataType: 'json',
+                    data: data
+                }).done(function (response) {
+                    var address_id = $("body").attr("data-address-id");
+                    wfxSubscription(address_id, "update");
+                    wayfxAlert("success");
+                    {%- if enable_dev_mode -%}
+                    console.log(response);
+                    {%- endif -%}
+                }).fail(function (response) {
+                    {%- if enable_dev_mode -%}
+                    console.log(response);
+                    {%- endif -%}
+                });
+                {%- if enable_onetime -%}
+            }
+            {%- endif -%}
+        }
+    }
+
+    function wfxSkipSubscription() {
+        $("#wfx-portal-cancellation-popup").hide();
+        $(wayfx.updatingAccount).addClass('active');
+        product_next_charge = moment($("body").attr('data-subscription-date')).format("YYYY-MM-DD");
+        product_updated_next_charge = moment(product_next_charge).add(30, "days").format("YYYY-MM-DD");
+        var address_id = addressId('get');
+
+        var data = [];
+
+        $('#upcomingOrder .wayfx-product__item').each(function () {
+            subscription_id = $(this).attr('data-subscription-id');
+            product_type = $(this).attr('data-product-type');
+            if(product_type === 'one-time') {
+                var product_onetime_id = $(this).attr('data-product-onetime-id'),
+                    oneTimeData = {
+                        "next_charge_scheduled_at": product_updated_next_charge
+                    };
+                wayfxSetDate('one-time', oneTimeData, product_onetime_id, false);
+            } else {
+                data.push({
+                    "id": subscription_id,
+                    "next_charge_scheduled_at": product_updated_next_charge
+                },);
+            }
+        });
+
+        var json = { "subscriptions": data };
+
+        wayfxBulkUpdate(address_id, json)
+            .done(function(response) {
+                {%- if enable_dev_mode -%}
+                console.log(response);
+                {%- endif -%}
+                $('body, #wfx-portal-subscriptions li.active').attr('data-subscription-date', product_updated_next_charge);
+                $('#wfx-portal-subscriptions li.active .wfx-subscription-date, #wfx-portal-subscription-date, #deliveryDate').html(moment(product_updated_next_charge).format('MMM Do'));
+                wayfxAlert("success");
+            }).fail(function(response) {
+            {%- if enable_dev_mode -%}
+            console.log(response);
+            {%- endif -%}
+        });
+    }
+
+    function wfxRemoveDiscount(id) {
+        return $.ajax({
+            url: '/tools/recurring/portal/' + wayfx.customerHash + '/addresses/' + id + '/remove_discount?token=' + wayfx.customerToken,
+            type: 'post',
+            dataType: 'json'
+        });
+    }
+
+    function wfxAddDiscount(id, discount_code) {
+        return $.ajax({
+            url: '/tools/recurring/portal/' + wayfx.customerHash + '/addresses/' + id + '/apply_discount?token=' + wayfx.customerToken,
+            type: 'post',
+            dataType: 'json',
+            data: {
+                "discount_code": discount_code
+            }
+        });
+    }
+
+    function wfxDiscountError(status) {
+        if(status === true) {
+            $('.wfx-discount-error').show().html('⚠️ Discount not found.');
+        } else {
+            $('.wfx-discount-error').hide().html('');
+        }
+    }
+
+    function wfxSubmitDiscount() {
+        var id = addressId('get');
+        discount_code = $('#wfxDiscountCode').val();
+
+        if (discount_total > 0) {
+            wfxRemoveDiscount(id).done(function () {
+                wfxAddDiscount(id, discount_code).done(function () {
+                    wfxSubscription(id, "update");
+                    wayfxAlert("success");
+                    wfxDiscountError(false);
+                }).fail(function () {
+                    var discount_original_code = $("body").attr('data-discount-code');
+                    wfxAddDiscount(id, discount_original_code).done(function () {
+                        wfxSubscription(id, "update");
+                        wfxDiscountError(false);
+                    }).fail(function () {
+                        wfxDiscountError(true);
+                    });
+                });
+            }).fail(function () {
+                wfxDiscountError(true);
+                return false;
+            });
+        } else {
+            wfxAddDiscount(id, discount_code).done(function () {
+                wfxSubscription(id, "update");
+                wayfxAlert("success");
+                wfxDiscountError(false)
+            }).fail(function () {
+                wfxDiscountError(true);
+            });
+        }
+    }
+
+    function triggerFrequencySidebar() {
+        $('.wayfx-drawer__frequency').show();
+        $(wayfx.index).toggleClass('wayfx-drawer-active');
+        $(wayfx.drawer).toggleClass('active');
+        delivery_date = $("body").attr('data-subscription-date');
+
+        var shipmentPicker = $('#nextShipmentCalendar').datepicker({
+            inline: true,
+            language: 'en',
+            minDate: new Date(),
+            toggleSelected: false,
+            onSelect: function onSelect(fd) {
+                current_shipment_date = moment(delivery_date).format('YYYY-MM-DD');
+                address_id = addressId('get');
+
+                if (fd !== current_shipment_date) {
+                    closeSidebar();
+                    $(wayfx.updatingAccount).addClass('active');
+                    var data = [];
+                    $('#upcomingOrder .wayfx-product__item').each(function () {
+                        product_type = $(this).attr('data-product-type');
+                        if (product_type === 'one-time') {
+                            var product_onetime_id = $(this).attr('data-product-onetime-id'),
+                                oneTimeData = {
+                                    "next_charge_scheduled_at": fd
+                                };
+                            wayfxSetDate('one-time', oneTimeData, product_onetime_id, false);
+                        } else {
+                            var subscription_id = $(this).attr('data-subscription-id');
+                            data.push({
+                                "id": subscription_id,
+                                "first_charge_date": fd,
+                                "next_charge_scheduled_at": fd
+                            },);
+                        }
+                    });
+                    var json = { "subscriptions": data };
+
+                    wayfxBulkUpdate(address_id, json)
+                        .done(function (response) {
+                            {%- if enable_dev_mode -%}
+                            console.log(response);
+                            {%- endif -%}
+                            $(wayfx.updatingAccount).removeClass('active');
+                            $(wayfx.deliveryDate).html(moment(fd).format('MMM Do'));
+                            $('#wfx-portal-subscriptions li.active .wfx-subscription-date, #wfx-portal-subscription-date').html(moment(fd).format('MMM Do'));
+                            $('body, #wfx-portal-subscriptions li.active').attr('data-subscription-date', fd + 'T00:00:00');
+                            wayfxAlert("success");
+                        }).fail(function (response) {
+                        wayfxAlert("error");
+                        {%- if enable_dev_mode -%}
+                        console.log(response);
+                        {%- endif -%}
+                    });
+                }
+            }
+        });
+        shipmentPicker.data('datepicker').selectDate(new Date(delivery_date));
+    }
+
+    function wfxShipmentSidebar() {
+        $('.wayfx-drawer__shipment').show();
+        $(wayfx.index).toggleClass('wayfx-drawer-active');
+        $(wayfx.drawer).toggleClass('active');
+        delivery_date = $("body").attr('data-subscription-date');
+
+        var shipmentPicker = $('#nextShipmentCalendar').datepicker({
+            inline: true,
+            language: 'en',
+            minDate: new Date(),
+            toggleSelected: false,
+            onSelect: function onSelect(fd) {
+                current_shipment_date = moment(delivery_date).format('YYYY-MM-DD');
+                address_id = addressId('get');
+
+                if (fd !== current_shipment_date) {
+                    closeSidebar();
+                    $(wayfx.updatingAccount).addClass('active');
+                    var data = [];
+                    $('#upcomingOrder .wayfx-product__item').each(function () {
+                        subscription_id = $(this).attr('data-subscription-id');
+                        product_type = $(this).attr('data-product-type');
+                        if(product_type === 'one-time') {
+                            var product_onetime_id = $(this).attr('data-product-onetime-id'),
+                                oneTimeData = {
+                                    "next_charge_scheduled_at": fd
+                                };
+                            wayfxSetDate('one-time', oneTimeData, product_onetime_id, false);
+                        } else {
+                            data.push({
+                                "id": subscription_id,
+                                "first_charge_date": fd,
+                                "next_charge_scheduled_at": fd
+                            },);
+                        }
+                    });
+                    var json = { "subscriptions": data };
+
+                    wayfxBulkUpdate(address_id, json)
+                        .done(function(response) {
+                            {%- if enable_dev_mode -%}
+                            console.log(response);
+                            {%- endif -%}
+                            $(wayfx.updatingAccount).removeClass('active');
+                            $(wayfx.deliveryDate).html(moment(fd).format('MMM Do'));
+                            $('#wfx-portal-subscriptions li.active .wfx-subscription-date, #wfx-portal-subscription-date').html(moment(fd).format('MMM Do'));
+                            $('body, #wfx-portal-subscriptions li.active').attr('data-subscription-date', fd + 'T00:00:00');
+                            wayfxAlert("success");
+                        }).fail(function(response) {
+                        {%- if enable_dev_mode -%}
+                        console.log(response);
+                        {%- endif -%}
+                    });
+                }
+            }
+        });
+        shipmentPicker.data('datepicker').selectDate(new Date(delivery_date));
+    }
+
+    function wfxCancelSubscription(step) {
+        closeSidebar();
+        if(step === '1') {
+            $(".wfx-portal-cancellation-confirmation").hide();
+            $(".wayfx-product-cancellation-retention").hide();
+            $(".wfx-portal-cancellation-retention").show();
+            $("#wfx-portal-cancellation-reasons-list").show();
+            $("#wfx-portal-cancellation-popup").show();
+        }
+
+        if(step === '2') {
+            $(".wfx-portal-cancellation-retention").hide();
+            $(".wfx-portal-cancellation-notice").show();
+        }
+
+        $(document).on("click", "#wfx_cancel_subscription_rentention", function () {
+            $(".wfx-portal-cancellation-notice").hide();
+            $(".wfx-portal-cancellation-retention").show();
+        });
+
+        if(step === 'final') {
+            $(".wfx-portal-cancellation-retention").hide();
+            $(".wfx-portal-cancellation-notice").hide();
+            $("#wfx-portal-cancellation-popup").hide();
+            $(wayfx.updatingAccount).addClass('active');
+            setTimeout(function() {
+                $('#upcomingOrder .wayfx-product__item').each(function () {
+                    subscription_id = $(this).attr('data-subscription-id');
+                    var cancellation_reason = $("#wfx-portal-cancellation-reasons-list li.selected .wfx-retention-reason").text();
+                    data = {"cancellation_reason": cancellation_reason};
+                    $.ajax({
+                        url: '/tools/recurring/portal/' + wayfx.customerHash + '/subscriptions/' + subscription_id + '/cancel?token=' + wayfx.customerToken,
+                        type: 'post',
+                        async: false,
+                        dataType: 'json',
+                        data: data
+                    }).done(function (response) {
+                        wayfxAlert("success");
+                        {%- if enable_dev_mode -%}
+                        console.log(response);
+                        {%- endif -%}
+                    }).fail(function (response) {
+                        wayfxAlert("error");
+                        {%- if enable_dev_mode -%}
+                        console.log(response);
+                        {%- endif -%}
+                    });
+                    $("#wfx-portal-cancellation-popup").show();
+                    $(".wfx-portal-cancellation-confirmation").show();
+                    $("#wfx-portal-subscription-notice").hide();
+                    $(wayfx.subscriptions).hide();
+                    $(wayfx.noSubscriptions).show();
+                });
+            }, 100);
+        }
+
+        $(document).on("click", "#wfx-portal-cancellation-reasons-list li", function () {
+            $("#wfx-portal-cancellation-reasons-list li").removeClass('selected');
+            $(this).addClass('selected');
+            var discount_code = $(this).data('discount'),
+                prevention_text = $(this).data('prevention'),
+                incentive_type = $(this).data('incentive');
+
+            if(prevention_text) {
+                $('.wfx-portal-cancellation-notice .description').html(prevention_text);
+                $('.wfx-portal-cancellation-notice .wfx-extra-reasons').hide();
+            } else {
+                $('.wfx-portal-cancellation-notice .description').html('Are you sure you want to cancel your subscription? You can always skip a shipment instead.');
+                $('.wfx-portal-cancellation-notice .wfx-extra-reasons').show();
+            }
+
+            if(discount_code) {
+                $("#wfx_skip_shipment_popup").hide();
+                $("#wfx_add_discount_popup").attr('data-discount', discount_code).show();
+            } else {
+                $("#wfx_add_discount_popup").hide();
+                $("#wfx_skip_shipment_popup").show();
+            }
+
+            $("#wfx_cancel_subscription_next").show();
+        });
+
+    }
+
+    $(document).on("click", "#wayfx-product-cancellation-reasons-list li", function () {
+        $("#wayfx-product-cancellation-reasons-list li").removeClass('selected');
+        $(this).addClass('selected');
+        $('#wfx_cancel_product_final').show();
+    });
+
+    /* Retention */
+    wfxRetention().done(function (response) {
+        for (var i = 0; i < response.retention_strategies.length; i++) {
+            var retention_reason = response.retention_strategies[i].cancellation_reason;
+            var retention_prevention = response.retention_strategies[i].prevention_text;
+            var retention_incentive = response.retention_strategies[i].incentive_type;
+            var retention_discount = response.retention_strategies[i].discount_code;
+            var retention_item = '<li data-prevention="'+ retention_prevention.replace(/"/g, "'") +'" data-incentive="' + retention_incentive +'" data-discount="' + retention_discount + '">' +
+                '<div class="wfx-retention-reason">'
+                + retention_reason +
+                '</div>' +
+                '</li>';
+            $(retention_item).appendTo('#wfx-portal-cancellation-reasons-list');
+        }
+    }).fail(function (response) {
+        {%- if enable_dev_mode -%}
+        console.log(response);
+        {%- endif -%}
+    });
+
+    function addNewProduct(type, d) {
+        var url,
+            data,
+            address_id = addressId('get'),
+            delivery_frequency = $("body").attr('data-subscription-frequency'),
+            delivery_unit = $("body").attr('data-subscription-unit'),
+            delivery_date = $("body").attr('data-subscription-date'),
+            delivery_date_formatted = moment(delivery_date).format('YYYY-MM-DD'),
+            variant_id = $(d).attr('data-variant-id'),
+            quantity = $(d).attr('data-qty');
+
+        if(type === 'one-time') {
+            url = '/tools/recurring/portal/' + wayfx.customerHash + '/onetimes?token=' + wayfx.customerToken;
+            data = {
+                "shopify_variant_id": variant_id,
+                "next_charge_scheduled_at": delivery_date_formatted,
+                "address_id": address_id,
+                "quantity": quantity
+            };
+        }
+
+        if(type === 'subscription') {
+            url = '/tools/recurring/portal/' + wayfx.customerHash + '/subscriptions?token=' + wayfx.customerToken;
+            data = {
+                "shopify_variant_id": variant_id,
+                "order_interval_frequency": delivery_frequency,
+                "order_interval_unit": delivery_unit,
+                "charge_interval_frequency": delivery_frequency,
+                "first_charge_date": delivery_date_formatted,
+                "next_charge_scheduled_at": delivery_date_formatted,
+                "address_id": address_id,
+                "quantity": quantity
+            };
+        }
+
+        $.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            data: data
+        }).done(function (response) {
+            {%- if enable_dev_mode -%}
+            console.log(response);
+            {%- endif -%}
+            wfxSubscription(address_id, "update");
+            wayfxAlert("success");
+        }).fail(function (response) {
+            {%- if enable_dev_mode -%}
+            console.log(response);
+            {%- endif -%}
+        });
+
+    }
+
+    $(document).ready(function () {
+        $("#subscriptionLink a").attr('href', '/tools/recurring/portal/' + wayfx.customerHash + '/subscriptions?token=' + wayfx.customerToken);
+        $("#ordersLink a").attr('href', '/tools/recurring/portal/' + wayfx.customerHash + '/orders?token=' + wayfx.customerToken);
+        wfxPortalLoad();
+
+        {% unless request.path contains 'payment_sources' %}
+        wfxBillingDetails();
+
+        $('body').on('change', '.wayfx-product__grid-variants', function () {
+            var wfx_selected_variant = $(this).val();
+            $(this).parent().parent().parent().parent().find('.wayfx-product__grid-image img').attr('src', productImageJson[0].product_images[wfx_selected_variant]);
+            $(this).parent().parent().parent().next('.wfx-add-product-btn').attr('data-variant-id', wfx_selected_variant);
+        });
+
+        $(document).on("click", "#wfx-portal-subscription-switcher", function () {
+            if($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $(this).find('#wfx-portal-subscriptions').fadeOut(100);
+            } else {
+                $(this).addClass('active');
+                $(this).find('#wfx-portal-subscriptions').fadeIn(100);
+            }
+        });
+
+        $(document).mouseup(function (e) {
+            var wfxSidebar = $(".wayfx-drawer");
+            var wfxCancelPopup = $("#wfx-portal-cancellation-popup");
+            var wfxCancelPopupBlock = $("#wfx-portal-cancellation-popup .block");
+            var wfxSubscriptionSwitcher = $('#wfx-portal-subscription-switcher');
+
+            if (!wfxSidebar.is(e.target) && wfxSidebar.has(e.target).length === 0) {
+                closeSidebar();
+            }
+
+            if (!wfxSubscriptionSwitcher.is(e.target) && wfxSubscriptionSwitcher.has(e.target).length === 0) {
+                wfxSubscriptionSwitcher.removeClass('active').find('ul').fadeOut(100);
+            }
+
+            if (!wfxCancelPopupBlock.is(e.target) && wfxCancelPopupBlock.has(e.target).length === 0) {
+                wfxCancelPopup.hide();
+                resetCancelPopup();
+            }
+        });
+
+        $(document).on("click", ".wayfx-drawer__frequency button", function () {
+            closeSidebar();
+            $(wayfx.updatingAccount).addClass('active');
+            var delivery_frequency = $(this).attr('data-frequency'),
+                delivery_unit = $("body").attr('data-subscription-unit'),
+                address_id = addressId('get'),
+                data = [];
+
+            $('#upcomingOrder .wayfx-product__item').each(function () {
+                product_type = $(this).attr('data-product-type');
+                if(product_type === 'subscription') {
+                    var subscription_id = $(this).attr('data-subscription-id');
+                    data.push({
+                        "id": subscription_id,
+                        "order_interval_unit": delivery_unit,
+                        "order_interval_frequency": delivery_frequency,
+                        "charge_interval_frequency": delivery_frequency,
+                    },);
+                }
+
+            });
+
+            var json = { "subscriptions": data };
+
+            wayfxBulkUpdate(address_id, json)
+                .done(function(response) {
+                    {%- if enable_dev_mode -%}
+                    console.log(response);
+                    {%- endif -%}
+                    $(wayfx.deliveryFrequency).html(delivery_frequency + ' ' + delivery_unit);
+                    $("body").attr('data-subscription-frequency', delivery_frequency);
+                    $('.wayfx-drawer__frequency button').removeClass('current');
+                    $('.wayfx-drawer__frequency-' + delivery_frequency).addClass('current');
+                    wayfxAlert("success");
+                }).fail(function(response) {
+                {%- if enable_dev_mode -%}
+                console.log(response);
+                {%- endif -%}
+            });
+        });
+
+        {% endunless %}
+
+    });
+
+    $(document).on("click", ".wayfx-product__item--upcoming", function () {
+        var $this = $(this),
+            product_type = $this.attr('data-product-type'),
+            subscription_id = $this.attr('data-subscription-id'),
+            allow_swapping = $('body').attr('data-allow-swapping');
+
+
+        if(allow_swapping === 'true') {
+            if(product_type === 'one-time') {
+                var product_onetime_id = $this.attr('data-product-onetime-id');
+                $(wayfx.swapButton).hide();
+                product_details_container = $(wayfx.drawerProduct).attr('data-subscription-id', subscription_id).attr('data-product-onetime-id', product_onetime_id);
+            } else {
+                $(wayfx.swapButton).show();
+                product_details_container = $(wayfx.drawerProduct).attr('data-subscription-id', subscription_id).attr('data-product-onetime-id', '');
+            }
+        } else {
+            $(wayfx.swapButton).hide();
+            product_details_container = $(wayfx.drawerProduct).attr('data-subscription-id', subscription_id);
+        }
+
+        product_price = $this.attr('data-product-price');
+        product_image_url = $this.attr('data-product-image');
+        product_title = $this.attr('data-product-title');
+        product_variant_title = $this.attr('data-product-variant-title');
+        product_quantity = $this.attr('data-product-quantity');
+        product_details_container.empty();
+        product_details = '<div class="wayfx-drawer__product-image"><img src="' + product_image_url + '" alt="" /></div>' +
+            '<div class="wayfx-drawer__product-title">' + product_title + '</div>' +
+            '<div class="wayfx-drawer__product-price">$' + product_price + '</div>';
+        $(product_details_container).html(product_details);
+
+        if(allow_swapping === 'true') {
+            $(".wayfx-product__swap-item button").attr("data-current-subscription", subscription_id);
+            $("#wayfx-drawer__product__swap-current").html('<div class="wayfx-drawer__product-image"><img src="' + product_image_url + '" alt="" /></div>' +
+                '<div><div class="wfx-sidebar-swap-title">' + product_title + '</div>' +
+                '<div class="wfx-sidebar-swap-price">$' + product_price + '</div></div>');
+        }
+
+        $(wayfx.drawerProductQty).val(product_quantity);
+        $(wayfx.drawerProductBlock).show();
+        $(wayfx.index).toggleClass('wayfx-drawer-active');
+        $(wayfx.drawer).toggleClass('active');
+    });
+
+
+    $(document).ready(function () {
+        $(wayfx.mobileNavDropdown).click(function () {
+            $(wayfx.navLinks).slideToggle();
+        });
+
+        $(wayfx.orderHeading).click(function () {
+            $(this).toggleClass('active');
+            $(this).next(wayfx.orderBody).slideToggle();
+        });
+    });
+</script>

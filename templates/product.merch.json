@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "main": {
+      "type": "merch-hero",
+      "settings": {
+        "product_subtitle": "FOR THE RADICAL HEALTH SEEKER",
+        "product_lightbox_image": "shopify:\/\/shop_images\/HS-Tee-sizing.min.jpg"
+      }
+    },
+    "fbc90392-edf3-48f9-a454-1ce8f69f2f24": {
+      "type": "section-image",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/hs-merch-cinematic.jpg"
+      }
+    },
+    "33db6c27-1590-415d-9d2f-e36112623c4c": {
+      "type": "shop-by-health-goals",
+      "blocks": {
+        "cecf6020-251f-4ea4-8727-4abbd3be2197": {
+          "type": "health_goal",
+          "settings": {
+            "hg_image": "shopify:\/\/shop_images\/hs-hg-energy.min.png",
+            "hg_title": "Energy",
+            "hg_description": "Improve your overall health, vitality, and performance.",
+            "hg_link": "https:\/\/shop.heartandsoil.co\/collections\/build-your-stack?layout=bundles&selected=8",
+            "hg_title_color": "#3484ff"
+          }
+        },
+        "1b23c72d-e5be-4d3e-b090-e127f27debd4": {
+          "type": "health_goal",
+          "settings": {
+            "hg_image": "shopify:\/\/shop_images\/hs-hg-weight-loss.min.png",
+            "hg_title": "Weight Loss",
+            "hg_description": "Provide strategic support for eliminating unwanted fat.",
+            "hg_link": "https:\/\/shop.heartandsoil.co\/collections\/build-your-stack?layout=bundles&selected=1",
+            "hg_title_color": "#eb7617"
+          }
+        },
+        "d9d2b1a5-6fa5-46b3-bff6-31bc107e09b4": {
+          "type": "health_goal",
+          "settings": {
+            "hg_image": "shopify:\/\/shop_images\/hs-hg-mood.min.png",
+            "hg_title": "Mood",
+            "hg_description": "Support proper neurotransmitter synthesis and balance.",
+            "hg_link": "https:\/\/shop.heartandsoil.co\/collections\/build-your-stack?layout=bundles&selected=15",
+            "hg_title_color": "#f53891"
+          }
+        },
+        "25df3258-a326-441b-97a2-f119c8817552": {
+          "type": "health_goal",
+          "settings": {
+            "hg_image": "shopify:\/\/shop_images\/hs-hg-immune-support.min.png",
+            "hg_title": "Immune Support",
+            "hg_description": "Fortify your immune system, and strengthen your defenses.",
+            "hg_link": "https:\/\/shop.heartandsoil.co\/collections\/build-your-stack?layout=bundles&selected=16",
+            "hg_title_color": "#eeb60a"
+          }
+        }
+      },
+      "block_order": [
+        "cecf6020-251f-4ea4-8727-4abbd3be2197",
+        "1b23c72d-e5be-4d3e-b090-e127f27debd4",
+        "d9d2b1a5-6fa5-46b3-bff6-31bc107e09b4",
+        "25df3258-a326-441b-97a2-f119c8817552"
+      ],
+      "settings": {
+        "section_title": "Shop by health goals",
+        "section_link": "https:\/\/shop.heartandsoil.co\/collections\/build-your-stack?layout=bundles",
+        "section_link_text": "Shop All Health Goals"
+      }
+    },
+    "45c8136f-9c00-4557-acd8-31768f316d43": {
+      "type": "connect",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/hs-help.min.png",
+        "title": "Have us help you get started",
+        "description": "Connect with our Health Success Team today for personalized guidance and support.",
+        "button_url": "https:\/\/heartandsoil.co\/contact-us\/",
+        "button_text": "Connect with Us"
+      }
+    },
+    "16751110721fa9eab9": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "d2d543e8-0ee9-41c4-8f9b-2867ca3267ae": {
+      "type": "newsletter-subscribe",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fbc90392-edf3-48f9-a454-1ce8f69f2f24",
+    "33db6c27-1590-415d-9d2f-e36112623c4c",
+    "45c8136f-9c00-4557-acd8-31768f316d43",
+    "16751110721fa9eab9",
+    "d2d543e8-0ee9-41c4-8f9b-2867ca3267ae"
+  ]
+}

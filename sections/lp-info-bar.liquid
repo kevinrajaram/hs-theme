@@ -1,0 +1,45 @@
+{% comment %}
+-------------------------------------------------------------------------------
+LP Info Bar
+-------------------------------------------------------------------------------
+Usage
+{% section 'lp-info-bar' %}
+-------------------------------------------------------------------------------
+{% endcomment %}
+
+{% liquid
+  assign variable_name = ''
+%}
+
+<section class="rtnu-lp__infobar">
+  <ul>
+  {% for block in section.blocks %}
+    <li>{{ block.settings.text }}</li>
+  {% endfor %}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "LP Info Bar",
+  "blocks": [
+    {
+      "type": "info-item",
+      "name": "Info Item",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Info Bar"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,65 @@
+{%- liquid
+  assign heading_1 = 'How to Use'
+  assign description_1 = product.metafields.sf_basics.instructions
+  assign heading_2 = 'Benefits'
+  assign description_2 = product.metafields.sf_basics.benefits
+  assign heading_3 = 'Quality'
+  assign description_3 = product.metafields.sf_basics.quality
+  assign heading_4 = 'Dietary'
+  assign description_4 = product.metafields.sf_basics.dietary
+-%}
+
+<section class="rtnu-pdp-101">
+  <div class="rtnu-wrapper">
+    <h2>{{ product.title }} 101</h2>
+
+    <ul class="rtnu-pdp-101__list">
+      {%- if description_1 -%}
+      <li class="rtnu-pdp-101__list-item">
+          <div class="rtnu-pdp-101__list-icon">
+            <img src="{{ '101-icon-1.png' | asset_img_url: '163x' }}" alt="" width="81" height="72" loading="lazy">
+          </div>
+
+          <h3>{{ heading_1 }}</h3>
+          {{ description_1 }}
+      </li>
+      {%- endif -%}
+      {%- if description_2 -%}
+      <li class="rtnu-pdp-101__list-item">
+          <div class="rtnu-pdp-101__list-icon">
+            <img src="{{ '101-icon-2.png' | asset_img_url: '180x' }}" alt="" width="90" height="80" loading="lazy">
+          </div>
+
+          <h3>{{ heading_2 }}</h3>
+          {{ description_2 }}
+      </li>
+      {%- endif -%}
+      {%- if description_3 -%}
+      <li class="rtnu-pdp-101__list-item">
+          <div class="rtnu-pdp-101__list-icon">
+            <img src="{{ '101-icon-3.png' | asset_img_url: '102x' }}" alt="" width="50" height="92" loading="lazy">
+          </div>
+
+          <h3>{{ heading_3 }}</h3>
+          {{ description_3 }}
+      </li>
+      {%- endif -%}
+      {%- if description_4 -%}
+      <li class="rtnu-pdp-101__list-item">
+          <div class="rtnu-pdp-101__list-icon">
+            <img src="{{ '101-icon-4.png' | asset_img_url: '206x' }}" alt="" width="103" height="62" loading="lazy">
+          </div>
+
+          <h3>{{ heading_4 }}</h3>
+          {{ description_4 }}
+      </li>
+      {%- endif -%}
+    </ul>
+  </div>
+</section >
+
+{% schema %}
+{
+  "name": "Product 101"
+}
+{% endschema %}
